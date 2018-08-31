@@ -1,0 +1,124 @@
+@page
+@model AnniversaryReminder.Pages.Employees.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.EmployeeIdent)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.EmployeeIdent)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.Gender)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.Gender)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.FirstName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.LastName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.BirthDay)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.BirthDay)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.Street)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.Street)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.HomePhone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.HomePhone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.HomeMobile)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.HomeMobile)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.HomeMailAddress)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.HomeMailAddress)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.BusinessMailAddress)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.BusinessMailAddress)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.DataCare)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.DataCare)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.Active)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.Active)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.Photo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.Photo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.Notes)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.Notes)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.HireDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.HireDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.EndDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.EndDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.LastUpdate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Employee.LastUpdate)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Employee.EmployeeId" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>
