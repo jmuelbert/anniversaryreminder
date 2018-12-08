@@ -8,7 +8,7 @@
     </VersionPrefix>
     <AssemblyName>AnniversaryReminder</AssemblyName>
     <OutputType>Exe</OutputType>
-    <PackageId>AnniversaryReminder</PackageId>
+    <PackageId>AnniversaryReminder_1</PackageId>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/jmuelbert/AnniversaryReminder</RepositoryUrl>
     <ReleaseVersion>0.1</ReleaseVersion>
