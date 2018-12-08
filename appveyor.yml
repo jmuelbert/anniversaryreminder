@@ -39,54 +39,10 @@ build_script:
   - ps: dotnet build -c Release
 
 after_build:
-  - ps: dotnet publish .\src\dotnet_csproj:
-  patch: true
-  file: '**\*.csproj'
-  version: '{version}'
-  package_version: '{version}'
-  assembly_version: '{version}'
-  file_version: '{version}'
-  informational_version: '{version}'
-
-before_build:
-  - appveyor-retry dotnet restore -v Minimal
-
-build_script:
-  - ps: dotnet build -c Release
-
-after_build:
   - ps: dotnet publish .\src\AnniversaryReminder\AnniversaryReminder.csproj -c Release -o .\artifacts
 
 test_script:
   - ps: dotnet test .\tests\AnniversaryReminder.Tests\AnniversaryReminder.Tests.csproj
-
-artifacts:
-- path: artifacts\**\*.*
-  name: ReleaseArtifacts
-
-deploy: off
-# master deployment to release
-# - provider: NuGet
-#   release: $(APPVEYOR_REPO_TAG_NAME)
-#   api_key:
-#     secure: jNtt/O0YdM+cKFiPbqv5EXIgbXlvGzXR45WLJdEWdhIwKTUCoGr44lmUkVY9xigd
-#   artifact: jmbde
-#   draft: true 
-#   on:
-#     appveyor_repo_tag: true
-#     push_release: true    
-# - provider: GitHub
-#   release: $(APPVEYOR_REPO_TAG_NAME)
-#   auth_token:
-#     secure: dgHvp6cRuN111wnt2rANR25qfklalE+m06hxhy7XbFRkoGjW46h9mu8wxqsaTPHj
-#   artifact: jmbde
-#   draft: true
-#   on:
-#     appveyor_repo_tag: true
-#     push_release: true\jmbde.csproj -c Release -o .\artifacts
-
-test_script:
-  - ps: dotnet test .\tests\jmbde.Tests\jmbde.Tests.csproj
 
 artifacts:
 - path: artifacts\**\*.*
