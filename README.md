@@ -1,8 +1,8 @@
 # AnniversaryReminder Application
 
+[![GitHub license](https://img.shields.io/badge/license-EUPL-blue.svg)](https://joinup.ec.europa.eu/page/eupl-text-11-12)
 [![AppVeyor](https://ci.appveyor.com/api/projects/status/ja8a7j6jscj7k3xa/branch/master?svg=true)](https://ci.appveyor.com/project/jmuelbert/AnniversaryReminder)
 [![Build Status](https://travis-ci.org/jmuelbert/AnniversaryReminder.svg?branch=master)](https://travis-ci.org/jmuelbert/AnniversaryReminder)
-[![GitHub license](https://img.shields.io/badge/license-EUPL-blue.svg)](https://joinup.ec.europa.eu/page/eupl-text-11-12)
 
 AnniversaryReminder is a program that do you remind you to anniversaries in a company. i.e. The employee is 10 Years, 25 years in the company. Or the employee has birthday.
 

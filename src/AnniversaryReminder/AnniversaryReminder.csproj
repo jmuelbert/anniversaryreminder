@@ -19,13 +19,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.1.2" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.3" PrivateAssets="All" />
-  </ItemGroup>
+  <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.1.4" />
+  <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.3" />
+  <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Utils" Version="2.1.3" />
+  <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.4" /> 
+</ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\lib\jmbdeData\jmbdeData.csproj" />
-  </ItemGroup>
+<ItemGroup>
+  <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
+</ItemGroup>
+
+<ItemGroup>
+  <ProjectReference Include="..\..\lib\jmbdeData\jmbdeData.csproj" />
+</ItemGroup>
 
 </Project>

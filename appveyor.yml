@@ -1,12 +1,28 @@
-version: 0.1.{build}
+image: Visual Studio 2017
+version: 1.0.{build}
+configuration: Release
+
+init:
+  - git config --global core.autocrlf input
+  - cinst 7zip
+  - cinst opencover.portable
+  - cinst codecov
+
+skip_branch_with_pr: true
+skip_tags: true
+skip_commits:
+  files:
+    - '**/*.md'
+    - docs/*
+environment:
+  Appveyor: true
+
+nuget:
+  disable_publish_on_pr: true
+
 pull_requests:
   do_not_increment_build_number: true
-branches:
-  only:
-  - master
-skip_tags: true
-image: Visual Studio 2017
-configuration: Release
+
 dotnet_csproj:
   patch: true
   file: '**\*.csproj'
@@ -15,29 +31,84 @@ dotnet_csproj:
   assembly_version: '{version}'
   file_version: '{version}'
   informational_version: '{version}'
+
+before_build:
+  - appveyor-retry dotnet restore -v Minimal
+
 build_script:
-- cmd: dotnet restore ./src/AnniversaryReminder/AnniversaryReminder.csproj
+  - ps: dotnet build -c Release
+
+after_build:
+  - ps: dotnet publish .\src\dotnet_csproj:
+  patch: true
+  file: '**\*.csproj'
+  version: '{version}'
+  package_version: '{version}'
+  assembly_version: '{version}'
+  file_version: '{version}'
+  informational_version: '{version}'
+
+before_build:
+  - appveyor-retry dotnet restore -v Minimal
+
+build_script:
+  - ps: dotnet build -c Release
+
+after_build:
+  - ps: dotnet publish .\src\AnniversaryReminder\AnniversaryReminder.csproj -c Release -o .\artifacts
+
 test_script:
-- cmd: dotnet test ./test/AnniversaryReminder.Tests/AnniversaryReminder.Tests.csproj
+  - ps: dotnet test .\tests\AnniversaryReminder.Tests\AnniversaryReminder.Tests.csproj
+
 artifacts:
-- path: \src\AnniversaryReminder\packageoutput\AnniversaryReminder\**\*.nupkg
-  name: jmbde
-deploy:
+- path: artifacts\**\*.*
+  name: ReleaseArtifacts
+
+deploy: off
 # master deployment to release
-- provider: NuGet
-  api_key:
-    secure: jNtt/O0YdM+cKFiPbqv5EXIgbXlvGzXR45WLJdEWdhIwKTUCoGr44lmUkVY9xigd
-  on:
-    branch: master
-  artifact: jmbde
-- provider: NuGet
-  api_key:
-    secure: 8k6x/+D9myin3NcqvffoD/G3S02aNxY8cQpD3Yspu71V0jbnk1wajcsI8+KYN7Sh
-- provider: GitHub
-  tag: $(appveyor_build_version)
-  release: $(appveyor_build_version)
-  auth_token:
-    secure: dgHvp6cRuN111wnt2rANR25qfklalE+m06hxhy7XbFRkoGjW46h9mu8wxqsaTPHj
-  on:
-    branch: master
-  artifact: AnniversaryReminder
+# - provider: NuGet
+#   release: $(APPVEYOR_REPO_TAG_NAME)
+#   api_key:
+#     secure: jNtt/O0YdM+cKFiPbqv5EXIgbXlvGzXR45WLJdEWdhIwKTUCoGr44lmUkVY9xigd
+#   artifact: jmbde
+#   draft: true 
+#   on:
+#     appveyor_repo_tag: true
+#     push_release: true    
+# - provider: GitHub
+#   release: $(APPVEYOR_REPO_TAG_NAME)
+#   auth_token:
+#     secure: dgHvp6cRuN111wnt2rANR25qfklalE+m06hxhy7XbFRkoGjW46h9mu8wxqsaTPHj
+#   artifact: jmbde
+#   draft: true
+#   on:
+#     appveyor_repo_tag: true
+#     push_release: true\jmbde.csproj -c Release -o .\artifacts
+
+test_script:
+  - ps: dotnet test .\tests\jmbde.Tests\jmbde.Tests.csproj
+
+artifacts:
+- path: artifacts\**\*.*
+  name: ReleaseArtifacts
+
+deploy: off
+# master deployment to release
+# - provider: NuGet
+#   release: $(APPVEYOR_REPO_TAG_NAME)
+#   api_key:
+#     secure: jNtt/O0YdM+cKFiPbqv5EXIgbXlvGzXR45WLJdEWdhIwKTUCoGr44lmUkVY9xigd
+#   artifact: jmbde
+#   draft: true 
+#   on:
+#     appveyor_repo_tag: true
+#     push_release: true    
+# - provider: GitHub
+#   release: $(APPVEYOR_REPO_TAG_NAME)
+#   auth_token:
+#     secure: dgHvp6cRuN111wnt2rANR25qfklalE+m06hxhy7XbFRkoGjW46h9mu8wxqsaTPHj
+#   artifact: jmbde
+#   draft: true
+#   on:
+#     appveyor_repo_tag: true
+#     push_release: true

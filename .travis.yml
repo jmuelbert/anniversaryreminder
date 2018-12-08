@@ -1,11 +1,52 @@
 language: csharp
 sudo: required
 mono: none
-dotnet: 2.0.0
 
-install:
-- dotnet restore
+env:
+  global:
+    - DOTNET_SKIP_FIRST_TIME_EXPERIENCE=1
+    - DOTNET_CLI_TELEMETRY_OPTOUT=1
+ 
+matrix:
+  include:
+    - os: linux
+      dist: trusty # Ubuntu 14.04
+      dotnet: 2.1.300
+      mono: none
+      env: DOTNETCORE=2
+      sudo: required
+    - os: osx
+      dotnet: 2.1.300
+      mono: none
+      env: DOTNETCORE=2
+      before_install:
+        - chmod a+x ./runtests.sh
+        - ulimit -n 1024 ;
+        - brew update      
+#        - brew install mariadb
+#        - brew services start mariadb
+#        - brew install redis
+#        - brew services start redis
+
+# services:
+#  - mysql
+#  - redis-server
+
+# before_script:
+#  - echo "USE mysql;\nUPDATE user SET password=PASSWORD('1qazZAQ!') WHERE user='root';\nFLUSH PRIVILEGES;\n" | mysql -u root
+
+before_script:
+  - gem install awesome_bot
 
 script:
- - dotnet build src/nniversaryReminder.csproj
- - dotnet test test/AnniversaryReminder.Tests/AnniversaryReminder.Tests.csproj
+    - awesome_bot README.md --allow-dupe --allow-redirect
+
+before_install:
+  - chmod a+x ./runtests.sh
+
+install:
+  - export DOTNET_CLI_TELEMETRY_OPTOUT=1
+  - export TRAVIS=1
+
+script:
+  - ./runtests.sh
