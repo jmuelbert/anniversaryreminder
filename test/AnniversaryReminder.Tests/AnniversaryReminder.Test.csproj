@@ -11,7 +11,7 @@
     <IsPackable>false</IsPackable>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/jmuelbert/AnniversaryReminder</RepositoryUrl>    
-    <ReleaseVersion>0.4</ReleaseVersion>
+    <ReleaseVersion>0.1</ReleaseVersion>
   </PropertyGroup>
 
 <ItemGroup>
