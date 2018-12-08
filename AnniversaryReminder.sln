@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnniversaryReminder", "src\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{E1E6874A-0D03-4653-82A1-4A5AC9A77BE8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnniversaryReminder.Tests", "test\AnniversaryReminder.Tests\AnniversaryReminder.Test.csproj", "{C72F376A-593D-434B-BED1-E06639C66265}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnniversaryReminder.Tests", "test\AnniversaryReminder.Tests\AnniversaryReminder.Tests.csproj", "{C72F376A-593D-434B-BED1-E06639C66265}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "lib", "lib", "{0E89BF29-BB92-43A6-BFE8-77D8526D48B5}"
 EndProject
