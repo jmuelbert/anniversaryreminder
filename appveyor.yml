@@ -42,7 +42,7 @@ after_build:
   - ps: dotnet publish .\src\AnniversaryReminder\AnniversaryReminder.csproj -c Release -o .\artifacts
 
 test_script:
-  - ps: dotnet test .\tests\AnniversaryReminder.Tests\AnniversaryReminder.Tests.csproj
+  - ps: dotnet test .\test\AnniversaryReminder.Tests\AnniversaryReminder.Tests.csproj
 
 artifacts:
 - path: artifacts\**\*.*
