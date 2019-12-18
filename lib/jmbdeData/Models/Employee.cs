@@ -1,4 +1,4 @@
-﻿/**************************************************************************
+/**************************************************************************
 **
 ** Copyright (c) 2016-2018 Jürgen Mülbert. All rights reserved.
 **
@@ -68,7 +68,7 @@ namespace jmbdeData.Models
         [Required]
         [StringLength(50, ErrorMessage = "Lastname cannot be longer than 50 characters.")]
         public string LastName { get; set; }
-        
+
         [DataType(DataType.Date)]
         public DateTime BirthDay { get; set; }
 
@@ -117,7 +117,7 @@ namespace jmbdeData.Models
         public ICollection<SystemAccount> SystemAccount { get; set; }
         public ICollection<Document> Document { get; set; }
         public ChipCard ChipCard { get; set; }
-        
+
         [DataType(DataType.DateTime)]
         public DateTime LastUpdate { get; set; }
     }

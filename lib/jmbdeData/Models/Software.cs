@@ -1,4 +1,4 @@
-﻿/**************************************************************************
+/**************************************************************************
 **
 ** Copyright (c) 2016-2018 Jürgen Mülbert. All rights reserved.
 **
@@ -51,7 +51,7 @@ namespace jmbdeData.Models
     public partial class Software
     {
         public long SoftwareId { get; set; }
-        
+
         [Required]
         [StringLength(50, ErrorMessage = "Name cannot be longer than 50 characters.")]
         public string Name { get; set; }

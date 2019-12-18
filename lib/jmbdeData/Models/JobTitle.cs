@@ -1,4 +1,4 @@
-﻿/**************************************************************************
+/**************************************************************************
 **
 ** Copyright (c) 2016-2018 Jürgen Mülbert. All rights reserved.
 **
@@ -55,9 +55,9 @@ namespace jmbdeData.Models
         [StringLength(50, ErrorMessage = "Job Title cannot be longer than 50 characters.")]
         public string Name { get; set; }
 
-        [DataType(DataType.Date)]    
+        [DataType(DataType.Date)]
         public DateTime FromDate { get; set; }
-        
+
         [DataType(DataType.DateTime)]
         public DateTime LastUpdate { get; set; }
     }

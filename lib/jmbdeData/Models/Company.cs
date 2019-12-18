@@ -1,4 +1,4 @@
-﻿/**************************************************************************
+/**************************************************************************
 **
 ** Copyright (c) 2016-2018 Jürgen Mülbert. All rights reserved.
 **
@@ -84,7 +84,7 @@ namespace jmbdeData.Models
         public bool Active { get; set; }
 
         public Employee Employee { get; set; }
-        
+
         [DataType(DataType.DateTime)]
         public DateTime LastUpdate { get; set; }
     }

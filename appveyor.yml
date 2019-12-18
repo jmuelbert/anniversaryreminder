@@ -1,4 +1,4 @@
-image: Visual Studio 2017
+image: Visual Studio 2019
 version: 1.0.{build}
 configuration: Release
 
@@ -12,7 +12,7 @@ skip_branch_with_pr: true
 skip_tags: true
 skip_commits:
   files:
-    - '**/*.md'
+    - "**/*.md"
     - docs/*
 environment:
   Appveyor: true
@@ -26,11 +26,11 @@ pull_requests:
 dotnet_csproj:
   patch: true
   file: '**\*.csproj'
-  version: '{version}'
-  package_version: '{version}'
-  assembly_version: '{version}'
-  file_version: '{version}'
-  informational_version: '{version}'
+  version: "{version}"
+  package_version: "{version}"
+  assembly_version: "{version}"
+  file_version: "{version}"
+  informational_version: "{version}"
 
 before_build:
   - appveyor-retry dotnet restore -v Minimal
@@ -45,8 +45,8 @@ test_script:
   - ps: dotnet test .\test\AnniversaryReminder.Tests\AnniversaryReminder.Tests.csproj
 
 artifacts:
-- path: artifacts\**\*.*
-  name: ReleaseArtifacts
+  - path: artifacts\**\*.*
+    name: ReleaseArtifacts
 
 deploy: off
 # master deployment to release
@@ -55,10 +55,10 @@ deploy: off
 #   api_key:
 #     secure: jNtt/O0YdM+cKFiPbqv5EXIgbXlvGzXR45WLJdEWdhIwKTUCoGr44lmUkVY9xigd
 #   artifact: jmbde
-#   draft: true 
+#   draft: true
 #   on:
 #     appveyor_repo_tag: true
-#     push_release: true    
+#     push_release: true
 # - provider: GitHub
 #   release: $(APPVEYOR_REPO_TAG_NAME)
 #   auth_token:

@@ -1,4 +1,4 @@
-﻿/**************************************************************************
+/**************************************************************************
 **
 ** Copyright (c) 2016-2018 Jürgen Mülbert. All rights reserved.
 **
@@ -50,7 +50,7 @@ namespace jmbdeData.Models
     public partial class ChipCardDoor
     {
         public long ChipCardDoorId { get; set; }
-        
+
         [Required]
         [StringLength(25, ErrorMessage = "DoorNumber cannot be longer than 25 characters.")]
         public string Number { get; set; }

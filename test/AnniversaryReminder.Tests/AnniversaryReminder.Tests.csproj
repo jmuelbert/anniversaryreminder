@@ -3,24 +3,24 @@
   <PropertyGroup>
     <Description>Tests for the AnniversaryReminder</Description>
     <Version>0.1.0</Version>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <AssemblyName>jmbde-tests</AssemblyName>
     <OutputType>Exe</OutputType>
     <PackageId>AnniversaryReminder</PackageId>
     <IsPackable>false</IsPackable>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/jmuelbert/AnniversaryReminder</RepositoryUrl>    
+    <RepositoryUrl>https://github.com/jmuelbert/AnniversaryReminder</RepositoryUrl>
     <ReleaseVersion>0.1</ReleaseVersion>
   </PropertyGroup>
 
-<ItemGroup>
+  <ItemGroup>
     <None Remove="jmbdesqlite.db3" />
   </ItemGroup>
-  
+
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.1.4" />
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
     <PackageReference Include="xunit" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
@@ -33,5 +33,3 @@
   </ItemGroup>
 
 </Project>
-
-  

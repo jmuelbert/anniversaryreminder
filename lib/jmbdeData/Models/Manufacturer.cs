@@ -1,4 +1,4 @@
-﻿/**************************************************************************
+/**************************************************************************
 **
 ** Copyright (c) 2016-2018 Jürgen Mülbert. All rights reserved.
 **
@@ -80,7 +80,7 @@ namespace jmbdeData.Models
 
 
         [StringLength(50, ErrorMessage = "Fax Number cannot be longer than 50 characters.")]
-        [DataType(DataType.PhoneNumber)]        
+        [DataType(DataType.PhoneNumber)]
         public string FaxNumber { get; set; }
 
         [StringLength(50, ErrorMessage = "Hotline Number cannot be longer than 50 characters.")]

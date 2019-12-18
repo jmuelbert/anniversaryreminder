@@ -1,4 +1,4 @@
-﻿/**************************************************************************
+/**************************************************************************
 **
 ** Copyright (c) 2016-2018 Jürgen Mülbert. All rights reserved.
 **
@@ -53,12 +53,12 @@ namespace jmbdeData.Models
         public long InventoryId { get; set; }
 
         [Required]
-        [StringLength(50, ErrorMessage = "Identifier cannot be longer than 50 characters.")] 
+        [StringLength(50, ErrorMessage = "Identifier cannot be longer than 50 characters.")]
         public string Identifier { get; set; }
 
         [StringLength(100, ErrorMessage = "Description cannot be longer than 100 characters.")]
         public string Description { get; set; }
- 
+
         public bool Active { get; set; }
 
 

@@ -1,4 +1,4 @@
-﻿/**************************************************************************
+/**************************************************************************
 **
 ** Copyright (c) 2016-2018 Jürgen Mülbert. All rights reserved.
 **
@@ -60,7 +60,7 @@ namespace jmbdeData.Models
         [DataType(DataType.Password)]
         public string PassWord { get; set; }
         public SystemData SystemData { get; set; }
-        
+
         [DataType(DataType.DateTime)]
         public DateTime LastUpdate { get; set; }
     }

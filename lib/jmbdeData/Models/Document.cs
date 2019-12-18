@@ -1,4 +1,4 @@
-﻿/**************************************************************************
+/**************************************************************************
 **
 ** Copyright (c) 2016-2018 Jürgen Mülbert. All rights reserved.
 **
@@ -55,9 +55,9 @@ namespace jmbdeData.Models
         [Required]
         [StringLength(50, ErrorMessage = "Document Name cannot be longer than 50 characters.")]
         public string Name { get; set; }
-      
+
         public byte[] DocumentData { get; set; }
- 
+
        [DataType(DataType.DateTime)]
         public DateTime LastUpdate { get; set; }
     }

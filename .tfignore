@@ -7,7 +7,7 @@
 *.userosscache
 *.sln.docstates
 *.db
-*.db3 
+*.db3
 *.sqlite
 *.DS_Store
 

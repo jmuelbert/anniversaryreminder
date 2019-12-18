@@ -1,4 +1,4 @@
-﻿/**************************************************************************
+/**************************************************************************
 **
 ** Copyright (c) 2016-2018 Jürgen Mülbert. All rights reserved.
 **
@@ -61,8 +61,8 @@ namespace jmbdeData.Models
         public string SerialNumber { get; set; }
 
         [StringLength(10, ErrorMessage = "PIN cannot be longer than 10 characters.")]
-        public string Pin { get; set; }        
-        
+        public string Pin { get; set; }
+
         public bool Active { get; set; }
         public bool Replace { get; set; }
 
@@ -73,7 +73,7 @@ namespace jmbdeData.Models
         public Department Department { get; set; }
         public Manufacturer Manufacturer { get; set; }
         public Inventory Inventory { get; set; }
-        
+
         [DataType(DataType.DateTime)]
         public DateTime LastUpdate { get; set; }
     }
