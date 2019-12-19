@@ -10,11 +10,19 @@ env:
 matrix:
   include:
     - os: linux
-      dist: trusty # Ubuntu 14.04
+      dist: bionic # Ubuntu 18.04
       dotnet: 3.1.101
       mono: none
       env: DOTNETCORE=3
       sudo: required
+      before_install:
+        - wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+        - sudo dpkg -i packages-microsoft-prod.deb
+        - sudo add-apt-repository universe
+        - sudo apt-get update
+        - sudo apt-get install apt-transport-https
+        - sudo apt-get update
+        - sudo apt-get install dotnet-sdk-3.1
     - os: osx
       dotnet: 3.1.101
       mono: none
@@ -23,6 +31,7 @@ matrix:
         - chmod a+x ./runtests.sh
         - ulimit -n 1024 ;
         - brew update
+        - brew cask install dotnet-sdk
 #        - brew install mariadb
 #        - brew services start mariadb
 #        - brew install redis
