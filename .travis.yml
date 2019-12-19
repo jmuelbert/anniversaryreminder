@@ -1,6 +1,7 @@
-language: csharp
-sudo: required
-mono: none
+language: node_js
+
+node_js:
+- "10"
 
 env:
   global:
@@ -13,16 +14,30 @@ matrix:
       dist: bionic # Ubuntu 18.04
       dotnet: 3.1.101
       mono: none
-      env: DOTNETCORE=3
+      env:
+        - DOTNETCORE=3
+        - CXX="g++-7.4"
+        - CC="gcc-7.4"
+        - DISPLAY=:99.0
       sudo: required
       before_install:
+        - Xcfb :99 & sleep 3
+        - dpkg --compare-versions `npm -v` ge 6.7 || npm i -g npm@^6.7
         - wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
         - sudo dpkg -i packages-microsoft-prod.deb
         - sudo add-apt-repository universe
         - sudo apt-get update
         - sudo apt-get install apt-transport-https
         - sudo apt-get update
-        - sudo apt-get install dotnet-sdk-3.1
+
+      addons:
+        apt:
+          sources:
+            - ubuntu-toolchain-r-test
+          packages:
+            - g++
+            - libsecret-1-dev
+
     - os: osx
       dotnet: 3.1.101
       mono: none
@@ -30,8 +45,7 @@ matrix:
       before_install:
         - chmod a+x ./runtests.sh
         - ulimit -n 1024 ;
-        - brew update
-        - brew cask install dotnet-sdk
+
 #        - brew install mariadb
 #        - brew services start mariadb
 #        - brew install redis
@@ -48,6 +62,14 @@ before_install:
 install:
   - export DOTNET_CLI_TELEMETRY_OPTOUT=1
   - export TRAVIS=1
+  - if [["$TRAVIS_OS_NAME" == "linux"]]; then
+    sudo apt-get install dotnet-sdk-3.1
+    sudo apt-get install xvfb
+    fi
+  - if [["$TRAVIS_OS_NAME" == "macos"]]; then
+    brew update
+    brew cask install dotnet-sdk
+    fi
 
 before_script:
   - gem install awesome_bot
