@@ -7,9 +7,8 @@ image:
   - macOS
 
 configuration:
-  - release-fastbuild
-  - release
-  # - debug
+  - Release
+  # - Debug
 
 platform:
   # Disable x86 builds since we only get one concurrent build on AppVeyor and x86
@@ -42,20 +41,34 @@ environment:
   APPVEYOR_YML_DISABLE_PS_LINUX: true
   Appveyor: true
 
-matrix:
-  exclude:
-    # Ubuntu doesn't support "release-fastbuild".
-    - image: Ubuntu
-      configuration: release-fastbuild
-    - image: macos
-      configuration: release-fastbuild
-    # We only want "release-fastbuild" for Windows since "release" consumes too
-    # much memory due to link-time code generation / whole-program optimization.
-    - image: Visual Studio 2019
-      configuration: release
 
 for:
   ########## macOS SPECIFIC CONFIGURATION ##########
+  - matrix:
+    only:
+      - image: macOS
+
+    clone_folder: /Users/appveyor/projects/AnniversaryReminder
+
+    dotnet_csproj:
+      patch: true
+      file: '**/*.csproj'
+      version: "{version}"
+      package_version: "{version}"
+      assembly_version: "{version}"
+      file_version: "{version}"
+      informational_version: "{version}"
+
+    build_script:
+      - dotnet --info
+      - dotnet build ./AnniversaryReminder.sln -c Release
+
+    after_build:
+      - dotnet publish ./AnniversaryReminder.sln -c Release -o ./artifacts
+
+    test_script:
+      - dotnet test ./test/AnniversaryReminder.Tests/AnniversaryReminder.Tests.csproj
+
 
   ########## END macOS SPECIFIC CONFIGURATION ##########
 
@@ -105,10 +118,11 @@ for:
       informational_version: "{version}"
 
     build_script:
-      - ps: dotnet build -c Release
+      - ps: dotnet --info
+      - ps: dotnet build .\AnniversaryReminder.sln -c Release
 
     after_build:
-      - ps: dotnet publish .\src\AnniversaryReminder\AnniversaryReminder.csproj -c Release -o .\artifacts
+      - ps: dotnet publish .\AnniversaryReminder.sln -c Release -o .\artifacts
 
     test_script:
       - ps: dotnet test .\test\AnniversaryReminder.Tests\AnniversaryReminder.Tests.csproj
