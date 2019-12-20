@@ -69,83 +69,83 @@ for:
         - image: Visual Studio 2019
       fast_finish: false # set this flag to true to immediately finish build once one of the jobs fails.
 
-      cache:
-        - C:\Users\appveyor\clcache -> .appveyor.yml, build_msvc\**, **\Makefile.am, **\*.vcxproj.in
+    cache:
+      - C:\Users\appveyor\clcache -> .appveyor.yml, build_msvc\**, **\Makefile.am, **\*.vcxproj.in
 
-      init:
-        - git config --global core.autocrlf input
-        # Uncomment the following line to show RDP info at beginning of job
-        #    - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
-        - call set ENVIRONMENT_NAME=%%ENVIRONMENT_NAME:PLATFORM=%platform%%%
-        - call set ENVIRONMENT_NAME=%%ENVIRONMENT_NAME:CONFIGURATION=%configuration%%%
-        - ps: $ENV:PLATFORM="x64"
-        - ps: $ENV:VCVARSALL="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat"
+    init:
+      - git config --global core.autocrlf input
+      # Uncomment the following line to show RDP info at beginning of job
+      #    - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+      - call set ENVIRONMENT_NAME=%%ENVIRONMENT_NAME:PLATFORM=%platform%%%
+      - call set ENVIRONMENT_NAME=%%ENVIRONMENT_NAME:CONFIGURATION=%configuration%%%
+      - ps: $ENV:PLATFORM="x64"
+      - ps: $ENV:VCVARSALL="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat"
 
-      clone_folder: c:\projects\AnniversaryReminder
+    clone_folder: c:\projects\AnniversaryReminder
 
-      install:
-        # Windows
-        - cinst 7zip
-        - cinst opencover.portable
-        - cinst codecov
-        - nuget install secure-file -ExcludeVersion
+    install:
+      # Windows
+      - cinst 7zip
+      - cinst opencover.portable
+      - cinst codecov
+      - nuget install secure-file -ExcludeVersion
 
-      before_build:
-        - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" %PLATFORM%
-        - cmd: chdir %APPVEYOR_BUILD_FOLDER%
-        - appveyor-retry dotnet restore -v Minimal
+    before_build:
+      - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" %PLATFORM%
+      - cmd: chdir %APPVEYOR_BUILD_FOLDER%
+      - appveyor-retry dotnet restore -v Minimal
 
-      dotnet_csproj:
-        patch: true
-        file: '**\*.csproj'
-        version: "{version}"
-        package_version: "{version}"
-        assembly_version: "{version}"
-        file_version: "{version}"
-        informational_version: "{version}"
+    dotnet_csproj:
+      patch: true
+      file: '**\*.csproj'
+      version: "{version}"
+      package_version: "{version}"
+      assembly_version: "{version}"
+      file_version: "{version}"
+      informational_version: "{version}"
 
-      build_script:
-        - ps: dotnet build -c Release
+    build_script:
+      - ps: dotnet build -c Release
 
-      after_build:
-        - ps: dotnet publish .\src\AnniversaryReminder\AnniversaryReminder.csproj -c Release -o .\artifacts
+    after_build:
+      - ps: dotnet publish .\src\AnniversaryReminder\AnniversaryReminder.csproj -c Release -o .\artifacts
 
-      test_script:
-        - ps: dotnet test .\test\AnniversaryReminder.Tests\AnniversaryReminder.Tests.csproj
+    test_script:
+      - ps: dotnet test .\test\AnniversaryReminder.Tests\AnniversaryReminder.Tests.csproj
 
-      artifacts:
-        - path: artifacts\**\*.*
-          name: ReleaseArtifacts
+    artifacts:
+      - path: artifacts\**\*.*
+        name: ReleaseArtifacts
 
-      deploy: off
-      # master deployment to release
-      # - provider: NuGet
-      #   release: $(APPVEYOR_REPO_TAG_NAME)
-      #   api_key:
-      #     secure: jNtt/O0YdM+cKFiPbqv5EXIgbXlvGzXR45WLJdEWdhIwKTUCoGr44lmUkVY9xigd
-      #   artifact: cReleaseArtifacts
-      #   draft: true
-      #   on:
-      #     appveyor_repo_tag: true
-      #     push_release: true
-      #
-      # - provider: GitHub
-      #   release: $(APPVEYOR_REPO_TAG_NAME)
-      #   auth_token:
-      #     secure: dgHvp6cRuN111wnt2rANR25qfklalE+m06hxhy7XbFRkoGjW46h9mu8wxqsaTPHj
-      #   artifact: ReleaseArtifacts
-      #   draft: true
-      #   on:
-      #     appveyor_repo_tag: true
-      #     push_release: true
+    deploy: off
+    # master deployment to release
+    # - provider: NuGet
+    #   release: $(APPVEYOR_REPO_TAG_NAME)
+    #   api_key:
+    #     secure: jNtt/O0YdM+cKFiPbqv5EXIgbXlvGzXR45WLJdEWdhIwKTUCoGr44lmUkVY9xigd
+    #   artifact: cReleaseArtifacts
+    #   draft: true
+    #   on:
+    #     appveyor_repo_tag: true
+    #     push_release: true
+    #
+    # - provider: GitHub
+    #   release: $(APPVEYOR_REPO_TAG_NAME)
+    #   auth_token:
+    #     secure: dgHvp6cRuN111wnt2rANR25qfklalE+m06hxhy7XbFRkoGjW46h9mu8wxqsaTPHj
+    #   artifact: ReleaseArtifacts
+    #   draft: true
+    #   on:
+    #     appveyor_repo_tag: true
+    #     push_release: true
 
-      on_finish:
-      # Uncomment the following line if you don't want the build VM to be destroyed
-      # and be able to RDP on it until a special “lock” file on VM desktop is deleted
-      # The RDP session is limited by overall build time (60 min).
-      # - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+    on_finish:
+    # Uncomment the following line if you don't want the build VM to be destroyed
+    # and be able to RDP on it until a special “lock” file on VM desktop is deleted
+    # The RDP session is limited by overall build time (60 min).
+    # - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 
-      ########## END WINDOWS SPECIFIC CONFIGURATION ##########
+    ########## END WINDOWS SPECIFIC CONFIGURATION ##########
 
 on_success:
   - echo "*** SUCCESS ***"
