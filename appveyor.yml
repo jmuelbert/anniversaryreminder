@@ -45,8 +45,8 @@ environment:
 for:
   ########## macOS SPECIFIC CONFIGURATION ##########
   - matrix:
-    only:
-      - image: macOS
+      only:
+        - image: macOS
 
     clone_folder: /Users/appveyor/projects/AnniversaryReminder
 
@@ -73,6 +73,32 @@ for:
   ########## END macOS SPECIFIC CONFIGURATION ##########
 
   ########## UBUNTU SPECIFIC CONFIGURATION ##########
+  - matrix:
+      only:
+        - image: ubuntu
+
+    clone_folder: /home/appveyor/projects/AnniversaryReminder
+
+    dotnet_csproj:
+      patch: true
+      file: '**/*.csproj'
+      version: "{version}"
+      package_version: "{version}"
+      assembly_version: "{version}"
+      file_version: "{version}"
+      informational_version: "{version}"
+
+    build_script:
+      - dotnet --info
+      - dotnet build ./AnniversaryReminder.sln -c Release
+
+    after_build:
+      - dotnet publish ./AnniversaryReminder.sln -c Release -o ./artifacts
+
+    test_script:
+      - dotnet test ./test/AnniversaryReminder.Tests/AnniversaryReminder.Tests.csproj
+
+
 
   ########## END UBUNTU SPECIFIC CONFIGURATION ##########
 
