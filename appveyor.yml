@@ -50,24 +50,25 @@ for:
 
     clone_folder: /Users/appveyor/projects/AnniversaryReminder
 
-    dotnet_csproj:
-      patch: true
-      file: '**/*.csproj'
-      version: "{version}"
-      package_version: "{version}"
-      assembly_version: "{version}"
-      file_version: "{version}"
-      informational_version: "{version}"
+    # TODO: Activate by available LTS Version 3.1.100
+    # dotnet_csproj:
+    #  patch: true
+    #  file: '**/*.csproj'
+    #  version: "{version}"
+    #  package_version: "{version}"
+    #  assembly_version: "{version}"
+    #  file_version: "{version}"
+    #  informational_version: "{version}"
 
     build_script:
-      - dotnet --info
-      - dotnet build ./AnniversaryReminder.sln -c Release
+    - dotnet --info
+    #  - dotnet build ./AnniversaryReminder.sln -c Release
 
-    after_build:
-      - dotnet publish ./AnniversaryReminder.sln -c Release -o ./artifacts
+    #after_build:
+    #  - dotnet publish ./AnniversaryReminder.sln -c Release -o ./artifacts
 
-    test_script:
-      - dotnet test ./test/AnniversaryReminder.Tests/AnniversaryReminder.Tests.csproj
+    #test_script:
+    #  - dotnet test ./test/AnniversaryReminder.Tests/AnniversaryReminder.Tests.csproj
 
 
   ########## END macOS SPECIFIC CONFIGURATION ##########
@@ -79,24 +80,25 @@ for:
 
     clone_folder: /home/appveyor/projects/AnniversaryReminder
 
-    dotnet_csproj:
-      patch: true
-      file: '**/*.csproj'
-      version: "{version}"
-      package_version: "{version}"
-      assembly_version: "{version}"
-      file_version: "{version}"
-      informational_version: "{version}"
+    # TODO: Activate by available LTS Version 3.1.100
+    #dotnet_csproj:
+    #  patch: true
+    #  file: '**/*.csproj'
+    #  version: "{version}"
+    #  package_version: "{version}"
+    #  assembly_version: "{version}"
+    #  file_version: "{version}"
+    #  informational_version: "{version}"
 
     build_script:
       - dotnet --info
-      - dotnet build ./AnniversaryReminder.sln -c Release
+    #  - dotnet build ./AnniversaryReminder.sln -c Release
 
-    after_build:
-      - dotnet publish ./AnniversaryReminder.sln -c Release -o ./artifacts
+    #after_build:
+    #  - dotnet publish ./AnniversaryReminder.sln -c Release -o ./artifacts
 
-    test_script:
-      - dotnet test ./test/AnniversaryReminder.Tests/AnniversaryReminder.Tests.csproj
+    #test_script:
+    #  - dotnet test ./test/AnniversaryReminder.Tests/AnniversaryReminder.Tests.csproj
 
 
 
@@ -124,7 +126,6 @@ for:
 
     install:
       # Windows
-      - cinst 7zip
       - cinst opencover.portable
       - cinst codecov
       - nuget install secure-file -ExcludeVersion
