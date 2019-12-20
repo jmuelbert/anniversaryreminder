@@ -1,70 +1,157 @@
-image: Visual Studio 2019
-version: 1.0.{build}
-configuration: Release
+---
+version: 0.2.{build}
+max_jobs: 1
+image:
+  - Visual Studio 2019
+  - Ubuntu
+  - macOS
 
-init:
-  - git config --global core.autocrlf input
-  - cinst 7zip
-  - cinst opencover.portable
-  - cinst codecov
+configuration:
+  - release-fastbuild
+  - release
+  # - debug
 
-skip_branch_with_pr: true
+platform:
+  # Disable x86 builds since we only get one concurrent build on AppVeyor and x86
+  # failures will be caught by Jenkins.
+  # - x86
+  - x64
+
 skip_tags: true
+skip_branch_with_pr: true
 skip_commits:
   files:
     - "**/*.md"
     - docs/*
-environment:
-  Appveyor: true
-
-nuget:
-  disable_publish_on_pr: true
+    - LICENSE
+    - README
+    - CHANGELOG
+    - COPYING
 
 pull_requests:
   do_not_increment_build_number: true
+branches:
+  only:
+    - master
+nuget:
+  disable_publish_on_pr: true
 
-dotnet_csproj:
-  patch: true
-  file: '**\*.csproj'
-  version: "{version}"
-  package_version: "{version}"
-  assembly_version: "{version}"
-  file_version: "{version}"
-  informational_version: "{version}"
+environment:
+  my_secret:
+    secure: NuyAKQY3nsfYHO6P59pRQCWMFPBYGuShNyCwrBWLuqK7jQ/CmRNZeuWuVRUvy/xU
+  APPVEYOR_YML_DISABLE_PS_LINUX: true
+  Appveyor: true
 
-before_build:
-  - appveyor-retry dotnet restore -v Minimal
+matrix:
+  exclude:
+    # Ubuntu doesn't support "release-fastbuild".
+    - image: Ubuntu
+      configuration: release-fastbuild
+    - image: macos
+      configuration: release-fastbuild
+    # We only want "release-fastbuild" for Windows since "release" consumes too
+    # much memory due to link-time code generation / whole-program optimization.
+    - image: Visual Studio 2019
+      configuration: release
 
-build_script:
-  - ps: dotnet build -c Release
+for:
+  ########## macOS SPECIFIC CONFIGURATION ##########
 
-after_build:
-  - ps: dotnet publish .\src\AnniversaryReminder\AnniversaryReminder.csproj -c Release -o .\artifacts
+  ########## END macOS SPECIFIC CONFIGURATION ##########
 
-test_script:
-  - ps: dotnet test .\test\AnniversaryReminder.Tests\AnniversaryReminder.Tests.csproj
+  ########## UBUNTU SPECIFIC CONFIGURATION ##########
 
-artifacts:
-  - path: artifacts\**\*.*
-    name: ReleaseArtifacts
+  ########## END UBUNTU SPECIFIC CONFIGURATION ##########
 
-deploy: off
-# master deployment to release
-# - provider: NuGet
-#   release: $(APPVEYOR_REPO_TAG_NAME)
-#   api_key:
-#     secure: jNtt/O0YdM+cKFiPbqv5EXIgbXlvGzXR45WLJdEWdhIwKTUCoGr44lmUkVY9xigd
-#   artifact: jmbde
-#   draft: true
-#   on:
-#     appveyor_repo_tag: true
-#     push_release: true
-# - provider: GitHub
-#   release: $(APPVEYOR_REPO_TAG_NAME)
-#   auth_token:
-#     secure: dgHvp6cRuN111wnt2rANR25qfklalE+m06hxhy7XbFRkoGjW46h9mu8wxqsaTPHj
-#   artifact: jmbde
-#   draft: true
-#   on:
-#     appveyor_repo_tag: true
-#     push_release: true
+  ########## WINDOWS SPECIFIC CONFIGURATION ##########
+  - matrix:
+      only:
+        - image: Visual Studio 2019
+      fast_finish: false # set this flag to true to immediately finish build once one of the jobs fails.
+
+      cache:
+        - C:\Users\appveyor\clcache -> .appveyor.yml, build_msvc\**, **\Makefile.am, **\*.vcxproj.in
+
+      init:
+        - git config --global core.autocrlf input
+        # Uncomment the following line to show RDP info at beginning of job
+        #    - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+        - call set ENVIRONMENT_NAME=%%ENVIRONMENT_NAME:PLATFORM=%platform%%%
+        - call set ENVIRONMENT_NAME=%%ENVIRONMENT_NAME:CONFIGURATION=%configuration%%%
+        - ps: $ENV:PLATFORM="x64"
+        - ps: $ENV:VCVARSALL="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat"
+
+      clone_folder: c:\projects\AnniversaryReminder
+
+      install:
+        # Windows
+        - cinst 7zip
+        - cinst opencover.portable
+        - cinst codecov
+        - nuget install secure-file -ExcludeVersion
+
+      before_build:
+        - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" %PLATFORM%
+        - cmd: chdir %APPVEYOR_BUILD_FOLDER%
+        - appveyor-retry dotnet restore -v Minimal
+
+      dotnet_csproj:
+        patch: true
+        file: '**\*.csproj'
+        version: "{version}"
+        package_version: "{version}"
+        assembly_version: "{version}"
+        file_version: "{version}"
+        informational_version: "{version}"
+
+      build_script:
+        - ps: dotnet build -c Release
+
+      after_build:
+        - ps: dotnet publish .\src\AnniversaryReminder\AnniversaryReminder.csproj -c Release -o .\artifacts
+
+      test_script:
+        - ps: dotnet test .\test\AnniversaryReminder.Tests\AnniversaryReminder.Tests.csproj
+
+      artifacts:
+        - path: artifacts\**\*.*
+          name: ReleaseArtifacts
+
+      deploy: off
+      # master deployment to release
+      # - provider: NuGet
+      #   release: $(APPVEYOR_REPO_TAG_NAME)
+      #   api_key:
+      #     secure: jNtt/O0YdM+cKFiPbqv5EXIgbXlvGzXR45WLJdEWdhIwKTUCoGr44lmUkVY9xigd
+      #   artifact: cReleaseArtifacts
+      #   draft: true
+      #   on:
+      #     appveyor_repo_tag: true
+      #     push_release: true
+      #
+      # - provider: GitHub
+      #   release: $(APPVEYOR_REPO_TAG_NAME)
+      #   auth_token:
+      #     secure: dgHvp6cRuN111wnt2rANR25qfklalE+m06hxhy7XbFRkoGjW46h9mu8wxqsaTPHj
+      #   artifact: ReleaseArtifacts
+      #   draft: true
+      #   on:
+      #     appveyor_repo_tag: true
+      #     push_release: true
+
+      on_finish:
+      # Uncomment the following line if you don't want the build VM to be destroyed
+      # and be able to RDP on it until a special “lock” file on VM desktop is deleted
+      # The RDP session is limited by overall build time (60 min).
+      # - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+
+      ########## END WINDOWS SPECIFIC CONFIGURATION ##########
+
+on_success:
+  - echo "*** SUCCESS ***"
+
+on_failure:
+  - echo "*** FAILURE ***"
+
+on_finish:
+  - echo "*** DONE ***"
