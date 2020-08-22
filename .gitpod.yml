@@ -1,5 +1,5 @@
 image:
-    file: docker/.gitpod.Dockerfile
+    file: gitpod/workspace-dotnet-vnc
 
 tasks:
     - before: dotnet restore
