@@ -2819,7 +2819,7 @@
 
         this.disableEventListeners();
 
-        // remove the popper if user explicity asked for the deletion on destroy
+        // remove the popper if user explicitly asked for the deletion on destroy
         // do not use `remove` because IE11 doesn't support it
         if (this.options.removeOnDestroy) {
             this.popper.parentNode.removeChild(this.popper);
@@ -3275,7 +3275,7 @@
 
         //
         // extends keepTogether behavior making sure the popper and its
-        // reference have enough pixels in conjuction
+        // reference have enough pixels in conjunction
         //
 
         // top/left side
@@ -4156,7 +4156,7 @@
          * This modifier is used to move the `arrowElement` of the popper to make
          * sure it is positioned between the reference element and its popper element.
          * It will read the outer size of the `arrowElement` node to detect how many
-         * pixels of conjuction are needed.
+         * pixels of conjunction are needed.
          *
          * It has no effect if no `arrowElement` is provided.
          * @memberof modifiers
