@@ -5,10 +5,7 @@
             "label": "build",
             "command": "dotnet",
             "type": "process",
-            "args": [
-                "build",
-                "${workspaceFolder}/src/jmbde/jmbde.csproj"
-            ],
+            "args": ["build", "${workspaceFolder}/src/jmbde/jmbde.csproj"],
             "problemMatcher": "$msCompile"
         }
     ]

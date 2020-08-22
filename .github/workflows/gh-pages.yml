@@ -19,25 +19,25 @@ jobs:
 
             - name: Upgrade CMake and ninja
               run: |
-                brew upgrade cmake
-                brew ls | grep wq ninja | brew install ninja
+                  brew upgrade cmake
+                  brew ls | grep wq ninja | brew install ninja
 
             - name: Install dependencies with homebrew
               run: |
-                brew install graphviz doxygen
-                brew ls | grep -wq freetype | brew install freetype
-                brew ls | grep -wq python | brew install python
-                pip3 install -r docs/requirements.txt
+                  brew install graphviz doxygen
+                  brew ls | grep -wq freetype | brew install freetype
+                  brew ls | grep -wq python | brew install python
+                  pip3 install -r docs/requirements.txt
 
             - name: configure
               run: |
-                ls
-                cmake -G Ninja -S docs -B ./build
+                  ls
+                  cmake -G Ninja -S docs -B ./build
             - name: build
               run: |
-                pushd build
-                ninja Sphinx
-                popd
+                  pushd build
+                  ninja Sphinx
+                  popd
             - name: gh-pages
               uses: actions/checkout@master
               with:

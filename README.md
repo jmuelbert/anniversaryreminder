@@ -5,7 +5,7 @@
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/jmuelbert/AnniversaryReminder.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/jmuelbert/AnniversaryReminder/alerts/)
 [![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/jmuelbert/AnniversaryReminder.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/jmuelbert/AnniversaryReminder/context:javascript)
 [![Language grade: C#](https://img.shields.io/lgtm/grade/csharp/g/jmuelbert/AnniversaryReminder.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/jmuelbert/AnniversaryReminder/context:csharp)
-[![AppVeyor](https://ci.appveyor.com/api/projects/status/ja8a7j6jscj7k3xa/branch/master?svg=true)](https://ci.appveyor.com/project/jmuelbert/AnniversaryReminder)
+[![Build status](https://ci.appveyor.com/api/projects/status/62fnw26b3ka208o9?svg=true)](https://ci.appveyor.com/project/jmuelbert/anniversaryreminder-7whd2)
 ![Misspell fixer](https://github.com/jmuelbert/AnniversaryReminder/workflows/Misspell%20fixer/badge.svg)
 [![GitHub license](https://img.shields.io/badge/license-EUPL-blue.svg)](https://joinup.ec.europa.eu/page/eupl-text-11-12)
 
@@ -17,20 +17,20 @@ Please read the [LICENSE](https://github.com/jmuelbert/AnniversaryReminder/blob/
 
 The master branch represents the latest pre-release code.
 
-- [Releases](https://github.com/jmuelbert/AnniversaryReminder/releases)
+-   [Releases](https://github.com/jmuelbert/AnniversaryReminder/releases)
 
-- [Milestones](https://github.com/jmuelbert/AnniversaryReminder/milestones)
+-   [Milestones](https://github.com/jmuelbert/AnniversaryReminder/milestones)
 
 ## Requests and Bug reports
 
-- [GitHub issues (preferred)](https://github.com/jmuelbert/AnniversaryReminder/issues)
+-   [GitHub issues (preferred)](https://github.com/jmuelbert/AnniversaryReminder/issues)
 
 ## Questions or Comments
 
 ## Wiki
 
-- [Main Page](https://github.com/jmuelbert/AnniversaryReminder/wiki)
-- [User Manual](http://jmuelbert.github.io/AnniversaryReminder/)
+-   [Main Page](https://github.com/jmuelbert/AnniversaryReminder/wiki)
+-   [User Manual](http://jmuelbert.github.io/AnniversaryReminder/)
 
 ## Building
 
@@ -38,53 +38,53 @@ The master branch represents the latest pre-release code.
 
 #### For Windows
 
-- [.NET Core SDK 3.1 for Windows](https://www.microsoft.com/net/download/windows)
+-   [.NET Core SDK 3.1 for Windows](https://www.microsoft.com/net/download/windows)
 
 #### For Linux
 
-- [.NET Core SDK 3.1 for Linux](https://www.microsoft.com/net/download/linux)
+-   [.NET Core SDK 3.1 for Linux](https://www.microsoft.com/net/download/linux)
 
 #### For Mac
 
-- [.NET Core SDK 3.1 for MacOS](https://www.microsoft.com/net/download/macos)
+-   [.NET Core SDK 3.1 for MacOS](https://www.microsoft.com/net/download/macos)
 
 ## Prepare the App
 
 ### Windows
 
-- Open a command prompt and cd `src\AnniversaryReminder`.
-- Run `dotnet build`
-- Run `dotnet ef database update`- Create a new blank database.
+-   Open a command prompt and cd `src\AnniversaryReminder`.
+-   Run `dotnet build`
+-   Run `dotnet ef database update`- Create a new blank database.
 
 ### Linux or macOS
 
-- Open a command prompt and execute `cd src/jAnniversaryReminder`.
-- Run `dotnet build`
-- Run `dotnet ef database update`- Create a new blank database.
+-   Open a command prompt and execute `cd src/jAnniversaryReminder`.
+-   Run `dotnet build`
+-   Run `dotnet ef database update`- Create a new blank database.
 
 ## Run the AnniversaryReminder App
 
 ### Run on Windows
 
-- Open a command prompt and cd `src\AnniversaryReminder`.
-- Run `dotnet run` (This hosts the app in a console application - Application started at URL **`http://localhost:5000/`**).
+-   Open a command prompt and cd `src\AnniversaryReminder`.
+-   Run `dotnet run` (This hosts the app in a console application - Application started at URL **`http://localhost:5000/`**).
 
 ### Run on Linux or macOS
 
-- Open a command prompt and execute `cd src/AnniversaryReminder`.
-- Try run `dotnet run` (This hosts the app in a console application - Application started at URL **`http://localhost:5000/`**).
+-   Open a command prompt and execute `cd src/AnniversaryReminder`.
+-   Try run `dotnet run` (This hosts the app in a console application - Application started at URL **`http://localhost:5000/`**).
 
 ## Publish the AnniversaryReminder App
 
 ### Publish on Windows
 
-- Open a command prompt and cd `src\AnniversaryReminder`.
-- Run `dotnet publish -c Release -o [RELEASEDIRECTORY]`
+-   Open a command prompt and cd `src\AnniversaryReminder`.
+-   Run `dotnet publish -c Release -o [RELEASEDIRECTORY]`
 
 ### Publish on Linux or macOS
 
-- Open a command prompt and execute `cd src/AnniversaryReminder`.
-- Run `dotnet publish -c Release -o [RELEASEDIRECTORY]`
+-   Open a command prompt and execute `cd src/AnniversaryReminder`.
+-   Run `dotnet publish -c Release -o [RELEASEDIRECTORY]`
 
 ## License
 
