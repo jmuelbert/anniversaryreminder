@@ -1,6 +1,13 @@
 {
-    "C_Cpp.clang_format_sortIncludes": true,
-    "C_Cpp.default.cppStandard": "c++17",
-    "C_Cpp.default.intelliSenseMode": "clang-x64",
-    "restructuredtext.confPath": ""
+  // Comment
+  "component.configuration": "value",
+  "[language]": {
+       "component.configuration": "value"
+  },
+  // To show invisibles
+  "editor.renderWhitespace": "all",
+  // Enable wordWrap for markdown files
+  "[markdown]": {
+       "editor.wordWrap": "on"
+   }
 }
