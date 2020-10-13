@@ -61,7 +61,7 @@ jobs:
                   echo "Publishing package version: ${PackageVersion}"
                   dotnet pack -c Release -o packages /p:PackageVersion=$PackageVersion /p:Version=$Version --no-build
             - name: Publish artefacts
-              uses: actions/upload-artifact@v2.1.4
+              uses: actions/upload-artifact@v2.2.0
               with:
                   name: "drop-ci-packages"
                   path: "./packages"
