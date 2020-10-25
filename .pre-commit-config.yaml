@@ -62,7 +62,10 @@ repos:
                   .+\.ico|
                   .+\.svgz
                 )$
+          # - id: forbid-space-in-indent
+          - id: git-check # Configure in .gitattributes
           - id: git-dirty # Configure in .gitignore
+          # - id: markdownlint  # Configure in .mdlrc
           - id: reek
           - id: rubocop
           - id: script-must-not-have-extension
@@ -72,28 +75,21 @@ repos:
             name: Executable Ruby scripts must not have a file extension
             types: [ruby, executable]
           - id: shellcheck
-          - id: shfmt
-
-    - repo: https://github.com/Lucas-C/pre-commit-hooks
-      rev: v1.1.9
-      hooks:
-          - id: insert-license
-            files: \.cs$
             args:
-                - --license-filepath
-                - src/license_header.txt # defaults to: LICENSE.txt
-                - --comment-style
-                - /*| *| */ # defaults to: #
+                [
+                    "--color=always",
+                    "--shell=bash",
+                    "-x",
+                    "-a",
+                    "--exclude=SC1090",
+                ]
+            additional_dependencies: [shellcheck]
+          - id: shfmt
 
     - repo: https://github.com/Lucas-C/pre-commit-hooks-go
       rev: v1.0.1
       hooks:
           - id: checkmake
-
-    - repo: https://github.com/Lucas-C/pre-commit-hooks-markup
-      rev: v1.0.0
-      hooks:
-          - id: rst-linter
 
     - repo: https://github.com/Lucas-C/pre-commit-hooks-java
       rev: 1.3.10
@@ -114,16 +110,6 @@ repos:
           - id: html-tags-blacklist
           - id: html-attributes-blacklist
 
-    - repo: https://github.com/prettier/prettier
-      rev: 2.0.5
-      hooks:
-          - id: prettier
-
-    - repo: https://github.com/IamTheFij/docker-pre-commit
-      rev: v2.0.0
-      hooks:
-          - id: docker-compose-check
-
     - repo: https://github.com/Lucas-C/pre-commit-hooks-safety
       rev: v1.1.3
       hooks:
@@ -140,6 +126,13 @@ repos:
           - id: xcodeproj-sort
             args: [--groups-position=above]
 
+
+    - repo: https://github.com/pryorda/dockerfilelint-precommit-hooks
+      rev: v0.1.0
+      hooks:
+          - id: dockerfilelint
+            stages: [commit]
+
     - repo: https://github.com/jorisroovers/gitlint
       rev: v0.13.1
       hooks:
@@ -150,6 +143,7 @@ repos:
       rev: v2.0.0
       hooks:
           - id: docker-compose-check
+
 
     - repo: https://github.com/milin/giticket
       rev: v1.0
@@ -173,17 +167,19 @@ repos:
           - id: forbid-autopkg-overrides
           - id: forbid-autopkg-trust-info
 
-    - repo: https://github.com/pocc/pre-commit-hooks
-      rev: v1.1.1
+
+    - repo: https://github.com/prettier/prettier
+      rev: 2.0.5
       hooks:
-          - id: clang-format
-            args: [-i, -style=file]
-          # - id: clang-tidy
-          # - id: oclint
-          #   args: [-enable-clang-static-analyzer, -enable-global-analysis]
-          # - id: uncrustify
-          # - id: cppcheck
-          #  args: [--enable=all]
+          - id: prettier
+
+    - repo: https://github.com/milin/giticket
+      rev: v1.0
+      hooks:
+          - id: giticket
+            args: ["--regex=PROJ-[0-9]", "--format={ticket} {commit_msg}"] # Optional
+
+
 
     - repo: https://gitlab.com/smop/pre-commit-hooks
       rev: master
