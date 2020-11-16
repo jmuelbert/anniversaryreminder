@@ -14,7 +14,7 @@
               run: dotnet --info
 
             - name: Download Artefact
-              uses: actions/download-artifact@v2.0.5
+              uses: actions/download-artifact@v2.0.6
               with:
                   name: "drop-ci-packages"
 
