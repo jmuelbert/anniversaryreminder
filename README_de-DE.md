@@ -4,17 +4,20 @@ anniversary reminder ist ein Programm, mit dem Sie an Jubiläen in einem Unterne
 
 ---
 
-[![Gitpod-Ready-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/jmuelbert/anniversaryreminder)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c63d1cf887384176977da4e7ba43495e)](https://app.codacy.com/manual/jmuelbert/anniversaryreminder?utm_source=github.com&utm_medium=referral&utm_content=jmuelbert/anniversaryreminder&utm_campaign=Badge_Grade_Dashboard)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/jmuelbert/anniversaryreminder.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/jmuelbert/anniversaryreminder/alerts/)
-[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/jmuelbert/anniversaryreminder.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/jmuelbert/anniversaryreminder/context:javascript)
-[![Language grade: C#](https://img.shields.io/lgtm/grade/csharp/g/jmuelbert/anniversaryreminder.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/jmuelbert/anniversaryreminder/context:csharp)
-[![GitHub All Releases](https://img.shields.io/github/downloads/jmuelbert/anniversaryreminder/total?label=downloads%40all)](https://github.com/jmuelbert/anniversaryreminder/releases)
-[![GitHub license](https://img.shields.io/badge/license-EUPL-blue.svg)](https://joinup.ec.europa.eu/page/eupl-text-11-12)
-[![Build status](https://ci.appveyor.com/api/projects/status/62fnw26b3ka208o9?svg=true)](https://ci.appveyor.com/project/jmuelbert/anniversaryreminder-7whd2)
-![Misspell fixer](https://github.com/jmuelbert/anniversaryreminder/workflows/Misspell%20fixer/badge.svg)
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
-[![Help wanted issues](https://img.shields.io/github/issues/jmuelbert/anniversaryreminder/help%20wanted)](https://github.com/jmuelbert/anniversaryreminder/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
+[![Gitpod Ready Code][gitpod-shield]][gitpod-url]
+[![Codacy Badge][codacy-shield]][codacy-url]
+[![Total Alerts][lgtm-alerts-shield]][lgtm-alerts-url]
+[![Language grade: c#][lgtm-csharp-shield]][lgtm-csharp-url]
+[![Language grade: Python][lgtm-python-shield]][lgtm-python-url]
+[![Language grade: JavaScript][lgtm-js-shield]][lgtm-js-url]
+[![GitHub All Releases][downloads_all-shield]][downloads_all-url]
+[![Issues][issues-shield]][issues-url]
+[![Help wanted issues][help-issues-shield]][help-issues-url]
+[![Pull Requests][pr-shield]][pr-url] [![pre-commit][pre-commit-shield]][pre-commit-url]
+[![Codecov][codecov-shield]][codecov-url]
+[![Misspell fixer][misspell_fixer-shield]][misspell_fixer-url]
+[![Documentation][documentation-shield]][documentation-url]
+[![License][license-shield]][license-url]
 
 [Features](https://github.com/jmuelbert/anniversaryreminder) | [Documentation](https://jmuelbert.github.io/anniversaryreminder/) | [Changelog](CHANGELOG.md) | [Contributing](CONTRIBUTING.md) | [FAQ](https://github.com/jmuelbert/anniversaryreminder/wiki/FAQ) | [english](README.md)
 
@@ -136,4 +139,54 @@ Der Hauptzweig stellt den neuesten Vorabcode dar.
 
 EUPL-1.2 © [Jürgen Mülbert](https:/github.com/jmuelbert/anniversaryreminder/)
 
-[Nach oben zurückkehren](#top)
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[contributors-shield]: https://img.shields.io/github/contributors/jmuelbert/anniversaryreminder
+[contributors-url]: https://github.com/jmuelbert/anniversaryreminder/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/jmuelbert/anniversaryreminder
+[forks-url]: https://github.com/jmuelbert/anniversaryreminder/network/members
+[issues-shield]: https://img.shields.io/github/issues-raw/jmuelbert/anniversaryreminder
+[issues-url]: https://github.com//jmuelbert/anniversaryreminder/issues
+[license-shield]: https://img.shields.io/badge/license-EUPL-blue.svg
+[license-url]: https://github.com/jmuelbert/anniversaryreminder/blob/master/LICENSE
+[product-screenshot]: images/doc/images/Logo_template.png
+[build-shield]:
+    https://img.shields.io/github/workflow/status/jmuelbert/anniversaryreminder/Build/release
+[build-url]: https://github.com/jmuelbert/anniversaryreminder/workflows/Build
+[gitpod-shield]: https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod
+[gitpod-url]: https://gitpod.io/#https://github.com/jmuelbert/anniversaryreminder
+[codacy-shield]:
+    https://api.codacy.com/project/badge/Grade/c63d1cf887384176977da4e7ba43495e
+[codacy-url]:
+    https://app.codacy.com/manual/jmuelbert/anniversaryreminder?utm_source=github.com&utm_medium=referral&utm_content=jmuelbert/anniversaryreminder&utm_campaign=Badge_Grade_Dashboard
+[downloads_all-shield]:
+    https://img.shields.io/github/downloads/jmuelbert/anniversaryreminder/total?label=downloads%40all
+[downloads_all-url]: https://github.com/jmuelbert/anniversaryreminder/releases
+[pre-commit-shield]:
+    https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
+[pre-commit-url]: https://github.com/pre-commit/pre-commit
+[misspell_fixer-shield]:
+    https://github.com/jmuelbert/anniversaryreminder/workflows/Misspell%20fixer/badge.svg
+[misspell_fixer-url]: https://github.com/marketplace/actions/misspell-fixer-action
+[help-issues-shield]:
+    https://img.shields.io/github/issues/jmuelbert/anniversaryreminder/help%20wanted
+[help-issues-url]:
+    https://github.com/jmuelbert/anniversaryreminder/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22
+[documentation-shield]: https://img.shields.io/badge/Documentation-latest-blue.svg
+[documentation-url]: https://jmuelbert.github.io/anniversaryreminder
+[lgtm-alerts-shield]: https://img.shields.io/lgtm/alerts/g/jmuelbert/anniversaryreminder.svg?logo=lgtm&logoWidth=18
+[lgtm-alerts-url]: https://lgtm.com/projects/g/jmuelbert/anniversaryreminder/alerts/
+[lgtm-csharp-shield]:
+    https://img.shields.io/lgtm/grade/csharp/g/jmuelbert/anniversaryreminder.svg?logo=lgtm&logoWidth=18
+[lgtm-csharp-url]: https://lgtm.com/projects/g/jmuelbert/anniversaryreminder/context:csharp
+[lgtm-python-shield]: https://img.shields.io/lgtm/grade/python/g/jmuelbert/anniversaryreminder.svg?logo=lgtm&logoWidth=18
+[lgtm-python-url]: https://lgtm.com/projects/g/jmuelbert/anniversaryreminder/context:python
+[lgtm-js-shield]: https://img.shields.io/lgtm/grade/javascript/g/jmuelbert/anniversaryreminder.svg?logo=lgtm&logoWidth=18
+[lgtm-js-url]: https://lgtm.com/projects/g/jmuelbert/anniversaryreminder/context:javascript
+[cdash-shield]: https://img.shields.io/badge/CDash-Access-blue.svg
+[cdash-url]: http://my.cdash.org/index.php?project=anniversaryreminder
+[pr-shield]: https://img.shields.io/github/issues-pr-raw/jmuelbert/anniversaryreminder.svg
+[pr-url]: https://github.com/jmuelbert/anniversaryreminder/pulls
+[codecov-shield]: https://codecov.io/gh/jmuelbert/anniversaryreminder/branch/master/graph/badge.svg
+[codecov-url]: https://codecov.io/gh/jmuelbert/anniversaryreminder
