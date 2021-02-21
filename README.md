@@ -20,7 +20,7 @@ anniversaryreminder is a program that do you remind you to anniversaries in a co
 [![Documentation][documentation-shield]][documentation-url]
 [![License][license-shield]][license-url]
 =======
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/945eee726f39449ca83631edd119aee1)](https://app.codacy.com/gh/jmuelbert/anniversaryreminder?utm_source=github.com&utm_medium=referral&utm_content=jmuelbert/anniversaryreminder&utm_campaign=Badge_Grade)
+
 [![Gitpod-Ready-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/jmuelbert/anniversaryreminder)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/c63d1cf887384176977da4e7ba43495e)](https://app.codacy.com/manual/jmuelbert/anniversaryreminder?utm_source=github.com&utm_medium=referral&utm_content=jmuelbert/anniversaryreminder&utm_campaign=Badge_Grade_Dashboard)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/jmuelbert/anniversaryreminder.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/jmuelbert/anniversaryreminder/alerts/)
@@ -174,9 +174,9 @@ EUPL-1.2 © [Jürgen Mülbert](https:/github.com/jmuelbert/anniversaryreminder
 [gitpod-shield]: https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod
 [gitpod-url]: https://gitpod.io/#https://github.com/jmuelbert/anniversaryreminder
 [codacy-shield]:
-    https://api.codacy.com/project/badge/Grade/c63d1cf887384176977da4e7ba43495e
+    https://api.codacy.com/project/badge/Grade/945eee726f39449ca83631edd119aee1
 [codacy-url]:
-    https://app.codacy.com/manual/jmuelbert/anniversaryreminder?utm_source=github.com&utm_medium=referral&utm_content=jmuelbert/anniversaryreminder&utm_campaign=Badge_Grade_Dashboard
+   https://app.codacy.com/gh/jmuelbert/anniversaryreminder?utm_source=github.com&utm_medium=referral&utm_content=jmuelbert/anniversaryreminder&utm_campaign=Badge_Grade
 [downloads_all-shield]:
     https://img.shields.io/github/downloads/jmuelbert/anniversaryreminder/total?label=downloads%40all
 [downloads_all-url]: https://github.com/jmuelbert/anniversaryreminder/releases
