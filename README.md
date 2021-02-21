@@ -4,6 +4,7 @@ anniversaryreminder is a program that do you remind you to anniversaries in a co
 
 ---
 
+<<<<<<< HEAD
 [![Gitpod Ready Code][gitpod-shield]][gitpod-url]
 [![Codacy Badge][codacy-shield]][codacy-url]
 [![Total Alerts][lgtm-alerts-shield]][lgtm-alerts-url]
@@ -18,6 +19,20 @@ anniversaryreminder is a program that do you remind you to anniversaries in a co
 [![Misspell fixer][misspell_fixer-shield]][misspell_fixer-url]
 [![Documentation][documentation-shield]][documentation-url]
 [![License][license-shield]][license-url]
+=======
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/945eee726f39449ca83631edd119aee1)](https://app.codacy.com/gh/jmuelbert/anniversaryreminder?utm_source=github.com&utm_medium=referral&utm_content=jmuelbert/anniversaryreminder&utm_campaign=Badge_Grade)
+[![Gitpod-Ready-Code](https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/jmuelbert/anniversaryreminder)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c63d1cf887384176977da4e7ba43495e)](https://app.codacy.com/manual/jmuelbert/anniversaryreminder?utm_source=github.com&utm_medium=referral&utm_content=jmuelbert/anniversaryreminder&utm_campaign=Badge_Grade_Dashboard)
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/jmuelbert/anniversaryreminder.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/jmuelbert/anniversaryreminder/alerts/)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/jmuelbert/anniversaryreminder.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/jmuelbert/anniversaryreminder/context:javascript)
+[![Language grade: C#](https://img.shields.io/lgtm/grade/csharp/g/jmuelbert/anniversaryreminder.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/jmuelbert/anniversaryreminder/context:csharp)
+[![GitHub All Releases](https://img.shields.io/github/downloads/jmuelbert/anniversaryreminder/total?label=downloads%40all)](https://github.com/jmuelbert/anniversaryreminder/releases)
+[![GitHub license](https://img.shields.io/badge/license-EUPL-blue.svg)](https://joinup.ec.europa.eu/page/eupl-text-11-12)
+[![Build status](https://ci.appveyor.com/api/projects/status/62fnw26b3ka208o9?svg=true)](https://ci.appveyor.com/project/jmuelbert/anniversaryreminder-7whd2)
+![Misspell fixer](https://github.com/jmuelbert/anniversaryreminder/workflows/Misspell%20fixer/badge.svg)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+[![Help wanted issues](https://img.shields.io/github/issues/jmuelbert/anniversaryreminder/help%20wanted)](https://github.com/jmuelbert/anniversaryreminder/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22)
+>>>>>>> 33cb485f0a43c400cff294a15db9966a87bc682f
 
 [Features](https://github.com/jmuelbert/anniversaryreminder) | [Documentation](https://jmuelbert.github.io/anniversaryreminder/) | [Changelog](CHANGELOG.md) | [Contributing](CONTRIBUTING.md) | [FAQ](https://github.com/jmuelbert/anniversaryreminder/wiki/FAQ) | [deutsch](README_de-DE.md)
 
