@@ -19,7 +19,7 @@ jobs:
       - name: Install GitVersion
         uses: gittools/actions/gitversion/setup@v0.9.7
         with:
-          versionSpec: "5.5.x"
+          versionSpec: "5.x"
       - name: Setup dotnet 5.XX sdk
         uses: actions/setup-dotnet@v1.7.2
         with:
@@ -31,8 +31,6 @@ jobs:
       - name: Install dependencies
         run: dotnet restore
 
-
-
       - name: Use GitVersion
         id: gitversion
         uses: gittools/actions/gitversion/execute@v0.9.7
@@ -41,11 +39,11 @@ jobs:
           echo "Version: ${{ steps.gitversion.outputs.semVer }}"
       - name: Build solution
         run: |
-          dotnet build -configuration Release --no-restore -p:version=${{ steps.gitversion.outputs.semVer }}
+          dotnet build -p:Configuration=Release --no-restore -p:version=${{ steps.gitversion.outputs.semVer }}
 
       - name: Unit & integration test
         run: |
-          dotnet test --configuration Release --no-restore -p:version=${{ steps.gitversion.outputs.semVer }}
+          dotnet test -p:Configuration=Release --no-restore -p:version=${{ steps.gitversion.outputs.semVer }}
 
       - name: Collect Artifacts
         uses: actions/upload-artifact@v2
