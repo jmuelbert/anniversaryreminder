@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Description>Tests for the AnniversaryReminder</Description>
     <Version>0.1.0</Version>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <AssemblyName>jmbde-tests</AssemblyName>
     <OutputType>Exe</OutputType>
