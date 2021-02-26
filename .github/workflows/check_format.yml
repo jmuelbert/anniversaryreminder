@@ -1,6 +1,16 @@
+---
 name: "Check Format"
 
-on: [push, pull_request]
+on:
+    push:
+        branches:
+            - develop
+    pull_request:
+        types:
+            - assigned
+            - opened
+            - synchronize
+            - reopened
 
 jobs:
   format:
