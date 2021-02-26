@@ -37,7 +37,7 @@ jobs:
       - name: Install GitVersion
         uses: gittools/actions/gitversion/setup@v0.9.7
         with:
-          versionSpec: "5.5.x"
+          versionSpec: "5.x"
 
       - name: Check dotnet sdk install
         run: dotnet --info
@@ -48,6 +48,7 @@ jobs:
       - name: Use GitVersion
         id: gitversion
         uses: gittools/actions/gitversion/execute@v0.9.7
+
       - name: Display the version
         run: |
           echo "Version: ${{ steps.gitversion.outputs.semVer }}"
