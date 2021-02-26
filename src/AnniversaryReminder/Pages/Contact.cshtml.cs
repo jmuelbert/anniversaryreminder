@@ -46,13 +46,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace AnniversaryReminder.Pages
 {
-    public class ContactModel : PageModel
-    {
-        public string Message { get; set; }
+	public class ContactModel : PageModel
+	{
+		public string Message { get; set; }
 
-        public void OnGet()
-        {
-            Message = "Your contact page.";
-        }
-    }
+		public void OnGet()
+		{
+			Message = "Your contact page.";
+		}
+	}
 }

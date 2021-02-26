@@ -46,43 +46,43 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace jmbdeData.Models
 
 {
-    public partial class Company
-    {
-        public long CompanyId { get; set; }
+	public partial class Company
+	{
+		public long CompanyId { get; set; }
 
-        [Required]
-        [StringLength(50, ErrorMessage = "Company Name cannot be longer than 50 characters.")]
-        public string Name { get; set; }
+		[Required]
+		[StringLength(50, ErrorMessage = "Company Name cannot be longer than 50 characters.")]
+		public string Name { get; set; }
 
-        [StringLength(50, ErrorMessage = "Company Name2 cannot be longer than 50 characters.")]
-        public string Name2 { get; set; }
+		[StringLength(50, ErrorMessage = "Company Name2 cannot be longer than 50 characters.")]
+		public string Name2 { get; set; }
 
-        [StringLength(50, ErrorMessage = "Address cannot be longer than 50 characters.")]
-        public string Street { get; set; }
+		[StringLength(50, ErrorMessage = "Address cannot be longer than 50 characters.")]
+		public string Street { get; set; }
 
-        public ZipCode ZipCode { get; set; }
+		public ZipCode ZipCode { get; set; }
 
-        [StringLength(50, ErrorMessage = "Phone Number cannot be longer than 50 characters.")]
-        [DataType(DataType.PhoneNumber)]
-        public string PhoneNumber { get; set; }
+		[StringLength(50, ErrorMessage = "Phone Number cannot be longer than 50 characters.")]
+		[DataType(DataType.PhoneNumber)]
+		public string PhoneNumber { get; set; }
 
-        [StringLength(50, ErrorMessage = "Fax Number cannot be longer than 50 characters.")]
-        [DataType(DataType.PhoneNumber)]
-        public string FaxNumber { get; set; }
+		[StringLength(50, ErrorMessage = "Fax Number cannot be longer than 50 characters.")]
+		[DataType(DataType.PhoneNumber)]
+		public string FaxNumber { get; set; }
 
-        [StringLength(50, ErrorMessage = "Mobile Number cannot be longer than 50 characters.")]
-        [DataType(DataType.PhoneNumber)]
-        public string MobileNumber { get; set; }
+		[StringLength(50, ErrorMessage = "Mobile Number cannot be longer than 50 characters.")]
+		[DataType(DataType.PhoneNumber)]
+		public string MobileNumber { get; set; }
 
-        [StringLength(50, ErrorMessage = "Mail Address cannot be longer than 50 characters.")]
-        [DataType(DataType.EmailAddress)]
-        public string MailAddress { get; set; }
+		[StringLength(50, ErrorMessage = "Mail Address cannot be longer than 50 characters.")]
+		[DataType(DataType.EmailAddress)]
+		public string MailAddress { get; set; }
 
-        public bool Active { get; set; }
+		public bool Active { get; set; }
 
-        public Employee Employee { get; set; }
+		public Employee Employee { get; set; }
 
-        [DataType(DataType.DateTime)]
-        public DateTime LastUpdate { get; set; }
-    }
+		[DataType(DataType.DateTime)]
+		public DateTime LastUpdate { get; set; }
+	}
 }

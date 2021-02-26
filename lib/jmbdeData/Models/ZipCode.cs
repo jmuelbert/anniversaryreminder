@@ -46,18 +46,18 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace jmbdeData.Models
 
 {
-    public partial class ZipCode
-    {
-        public long ZipCodeId { get; set; }
+	public partial class ZipCode
+	{
+		public long ZipCodeId { get; set; }
 
-        [Required]
-        [StringLength(20, ErrorMessage = "Name cannot be longer than 20 characters.")]
-        public string Code { get; set; }
+		[Required]
+		[StringLength(20, ErrorMessage = "Name cannot be longer than 20 characters.")]
+		public string Code { get; set; }
 
-        [StringLength(20, ErrorMessage = "Countrycode cannot be longer than 20 characters.")]
-        public string Country { get; set; }
+		[StringLength(20, ErrorMessage = "Countrycode cannot be longer than 20 characters.")]
+		public string Country { get; set; }
 
-        [DataType(DataType.DateTime)]
-        public DateTime LastUpdate { get; set; }
-    }
+		[DataType(DataType.DateTime)]
+		public DateTime LastUpdate { get; set; }
+	}
 }

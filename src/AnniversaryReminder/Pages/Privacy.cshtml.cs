@@ -47,10 +47,10 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace AnniversaryReminder.Pages
 {
-    public class PrivacyModel : PageModel
-    {
-        public void OnGet()
-        {
-        }
-    }
+	public class PrivacyModel : PageModel
+	{
+		public void OnGet()
+		{
+		}
+	}
 }

@@ -49,47 +49,47 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace jmbdeData.Models
 
 {
-    public partial class Computer
-    {
-        public long ComputerId { get; set; }
+	public partial class Computer
+	{
+		public long ComputerId { get; set; }
 
-        [Required]
-        [StringLength(50, ErrorMessage = "Name cannot be longer than 50 characters.")]
-        public string Name { get; set; }
+		[Required]
+		[StringLength(50, ErrorMessage = "Name cannot be longer than 50 characters.")]
+		public string Name { get; set; }
 
-        [StringLength(20, ErrorMessage = "Serialnumber cannot be longer than 20 characters.")]
-        public string SerialNumber { get; set; }
+		[StringLength(20, ErrorMessage = "Serialnumber cannot be longer than 20 characters.")]
+		public string SerialNumber { get; set; }
 
-        [StringLength(20, ErrorMessage = "Service Tag cannot be longer than 20 characters.")]
-        public string ServiceTag { get; set; }
+		[StringLength(20, ErrorMessage = "Service Tag cannot be longer than 20 characters.")]
+		public string ServiceTag { get; set; }
 
-        [StringLength(20, ErrorMessage = "Service Number cannot be longer than 20 characters.")]
-        public string ServiceNumber { get; set; }
+		[StringLength(20, ErrorMessage = "Service Number cannot be longer than 20 characters.")]
+		public string ServiceNumber { get; set; }
 
-        public long? Memory { get; set; }
+		public long? Memory { get; set; }
 
-        [StringLength(50, ErrorMessage = "Network cannot be longer than 50 characters.")]
-        public string Network { get; set; }
+		[StringLength(50, ErrorMessage = "Network cannot be longer than 50 characters.")]
+		public string Network { get; set; }
 
-        [StringLength(50, ErrorMessage = "IP-Address cannot be longer than 50 characters.")]
-        public string NetworkIpAddress { get; set; }
+		[StringLength(50, ErrorMessage = "IP-Address cannot be longer than 50 characters.")]
+		public string NetworkIpAddress { get; set; }
 
-        public bool Active { get; set; }
+		public bool Active { get; set; }
 
-        public bool Replace { get; set; }
+		public bool Replace { get; set; }
 
-        public DeviceName DeviceName { get; set; }
-        public DeviceType DeviceType { get; set; }
-        public Place Place { get; set; }
-        public Department Department  { get; set; }
-        public Manufacturer Manufacturer { get; set; }
-        public Inventory Inventory { get; set; }
-        public Processor Processor { get; set; }
-        public Software OS { get; set; }
-        public ICollection<Software> Software { get; set; }
-        // public Printer Printer { get; set; }
+		public DeviceName DeviceName { get; set; }
+		public DeviceType DeviceType { get; set; }
+		public Place Place { get; set; }
+		public Department Department { get; set; }
+		public Manufacturer Manufacturer { get; set; }
+		public Inventory Inventory { get; set; }
+		public Processor Processor { get; set; }
+		public Software OS { get; set; }
+		public ICollection<Software> Software { get; set; }
+		// public Printer Printer { get; set; }
 
-        [DataType(DataType.DateTime)]
-        public DateTime LastUpdate { get; set; }
-    }
+		[DataType(DataType.DateTime)]
+		public DateTime LastUpdate { get; set; }
+	}
 }

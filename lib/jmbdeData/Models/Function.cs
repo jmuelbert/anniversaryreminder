@@ -46,16 +46,16 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace jmbdeData.Models
 
 {
-    public partial class Function
-    {
-        public long FunctionId { get; set; }
+	public partial class Function
+	{
+		public long FunctionId { get; set; }
 
-        [Required]
-        [StringLength(50, ErrorMessage = "Function cannot be longer than 50 characters.")]
-        public string Name { get; set; }
-        public long? Priority { get; set; }
+		[Required]
+		[StringLength(50, ErrorMessage = "Function cannot be longer than 50 characters.")]
+		public string Name { get; set; }
+		public long? Priority { get; set; }
 
-        [DataType(DataType.DateTime)]
-        public DateTime LastUpdate { get; set; }
-    }
+		[DataType(DataType.DateTime)]
+		public DateTime LastUpdate { get; set; }
+	}
 }

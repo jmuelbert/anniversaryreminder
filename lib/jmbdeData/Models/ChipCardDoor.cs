@@ -46,18 +46,18 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace jmbdeData.Models
 
 {
-    public partial class ChipCardDoor
-    {
-        public long ChipCardDoorId { get; set; }
+	public partial class ChipCardDoor
+	{
+		public long ChipCardDoorId { get; set; }
 
-        [Required]
-        [StringLength(25, ErrorMessage = "DoorNumber cannot be longer than 25 characters.")]
-        public string Number { get; set; }
-        public Place Place { get; set; }
-        public Department Department { get; set; }
-        public ICollection<Employee> Employee { get; set; }
+		[Required]
+		[StringLength(25, ErrorMessage = "DoorNumber cannot be longer than 25 characters.")]
+		public string Number { get; set; }
+		public Place Place { get; set; }
+		public Department Department { get; set; }
+		public ICollection<Employee> Employee { get; set; }
 
-        [DataType(DataType.DateTime)]
-        public DateTime LastUpdate { get; set; }
-    }
+		[DataType(DataType.DateTime)]
+		public DateTime LastUpdate { get; set; }
+	}
 }

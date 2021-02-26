@@ -46,15 +46,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace jmbdeData.Models
 
 {
-    public partial class DeviceType
-    {
-        public long DeviceTypeId { get; set; }
+	public partial class DeviceType
+	{
+		public long DeviceTypeId { get; set; }
 
-        [Required]
-        [StringLength(50, ErrorMessage = "Device Type cannot be longer than 50 characters.")]
-        public string Name { get; set; }
+		[Required]
+		[StringLength(50, ErrorMessage = "Device Type cannot be longer than 50 characters.")]
+		public string Name { get; set; }
 
-        [DataType(DataType.DateTime)]
-        public DateTime LastUpdate { get; set; }
-    }
+		[DataType(DataType.DateTime)]
+		public DateTime LastUpdate { get; set; }
+	}
 }

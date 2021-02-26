@@ -46,50 +46,51 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace jmbdeData.Models
 
 {
-    public enum PaperSize {
-        A0, A1, A2, A3, A4, A5, LTR, LGL
-    }
+	public enum PaperSize
+	{
+		A0, A1, A2, A3, A4, A5, LTR, LGL
+	}
 
-    public partial class Printer
-    {
-        public long PrinterId { get; set; }
+	public partial class Printer
+	{
+		public long PrinterId { get; set; }
 
-        [Required]
-        [StringLength(50, ErrorMessage = "Name cannot be longer than 50 characters.")]
-        public string Name { get; set; }
+		[Required]
+		[StringLength(50, ErrorMessage = "Name cannot be longer than 50 characters.")]
+		public string Name { get; set; }
 
-        [StringLength(20, ErrorMessage = "Serialnumber cannot be longer than 20 characters.")]
-        public string SerialNumber { get; set; }
+		[StringLength(20, ErrorMessage = "Serialnumber cannot be longer than 20 characters.")]
+		public string SerialNumber { get; set; }
 
-        [StringLength(20, ErrorMessage = "Service Tag cannot be longer than 20 characters.")]
-        public string ServiceTag { get; set; }
+		[StringLength(20, ErrorMessage = "Service Tag cannot be longer than 20 characters.")]
+		public string ServiceTag { get; set; }
 
-        [StringLength(20, ErrorMessage = "Service Number cannot be longer than 20 characters.")]
-        public string ServiceNumber { get; set; }
+		[StringLength(20, ErrorMessage = "Service Number cannot be longer than 20 characters.")]
+		public string ServiceNumber { get; set; }
 
-        [StringLength(50, ErrorMessage = "Network cannot be longer than 50 characters.")]
-        public string Network { get; set; }
+		[StringLength(50, ErrorMessage = "Network cannot be longer than 50 characters.")]
+		public string Network { get; set; }
 
-        [StringLength(50, ErrorMessage = "IP-Address cannot be longer than 50 characters.")]
-        public string NetworkIpAddress { get; set; }
+		[StringLength(50, ErrorMessage = "IP-Address cannot be longer than 50 characters.")]
+		public string NetworkIpAddress { get; set; }
 
-        public bool Active { get; set; }
+		public bool Active { get; set; }
 
-        public bool Replace { get; set; }
-        public string Resources { get; set; }
-        public PaperSize? PaperSize { get; set; }
-        public bool Color { get; set; }
+		public bool Replace { get; set; }
+		public string Resources { get; set; }
+		public PaperSize? PaperSize { get; set; }
+		public bool Color { get; set; }
 
-        public DeviceName DeviceName { get; set; }
+		public DeviceName DeviceName { get; set; }
 
-        public DeviceType DeviceType { get; set; }
-        public Employee Employee { get; set; }
-        public Place Place { get; set; }
-        public Department Department { get; set; }
-        public Manufacturer Manufacturer { get; set; }
-        public Inventory Inventory { get; set; }
-        // public Computer Computer { get; set; }
-        [DataType(DataType.DateTime)]
-        public DateTime LastUpdate { get; set; }
-    }
+		public DeviceType DeviceType { get; set; }
+		public Employee Employee { get; set; }
+		public Place Place { get; set; }
+		public Department Department { get; set; }
+		public Manufacturer Manufacturer { get; set; }
+		public Inventory Inventory { get; set; }
+		// public Computer Computer { get; set; }
+		[DataType(DataType.DateTime)]
+		public DateTime LastUpdate { get; set; }
+	}
 }

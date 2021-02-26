@@ -46,15 +46,15 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace jmbdeData.Models
 
 {
-    public partial class CityName
-    {
-        public long CityNameId { get; set; }
+	public partial class CityName
+	{
+		public long CityNameId { get; set; }
 
-        [Required]
-        [StringLength(50, ErrorMessage = "City Name cannot be longer than 50 characters.")]
-        public string Name { get; set; }
+		[Required]
+		[StringLength(50, ErrorMessage = "City Name cannot be longer than 50 characters.")]
+		public string Name { get; set; }
 
-        [DataType(DataType.DateTime)]
-        public DateTime LastUpdate { get; set; }
-    }
+		[DataType(DataType.DateTime)]
+		public DateTime LastUpdate { get; set; }
+	}
 }

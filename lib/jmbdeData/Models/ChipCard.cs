@@ -87,20 +87,20 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace jmbdeData.Models
 
 {
-    public partial class ChipCard
-    {
-        public long ChipCardId { get; set; }
+	public partial class ChipCard
+	{
+		public long ChipCardId { get; set; }
 
-        [Required]
-        [StringLength(25, ErrorMessage="ChipCardNumber cannot be longer than 25 characters.")]
-        public string Number { get; set; }
+		[Required]
+		[StringLength(25, ErrorMessage = "ChipCardNumber cannot be longer than 25 characters.")]
+		public string Number { get; set; }
 
-        public bool Locked { get; set; }
-        public ICollection<ChipCardDoor> ChipCardDoor { get; set; }
-        public ICollection<ChipCardProfile> ChipCardProfile { get; set; }
-        public ICollection<Employee> Employee { get; set; }
+		public bool Locked { get; set; }
+		public ICollection<ChipCardDoor> ChipCardDoor { get; set; }
+		public ICollection<ChipCardProfile> ChipCardProfile { get; set; }
+		public ICollection<Employee> Employee { get; set; }
 
-        [DataType(DataType.DateTime)]
-        public DateTime LastUpdate { get; set; }
-    }
+		[DataType(DataType.DateTime)]
+		public DateTime LastUpdate { get; set; }
+	}
 }

@@ -45,21 +45,21 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace jmbdeData.Models
 {
-    public partial class SystemAccount
-    {
-        public long SystemAccountId { get; set; }
+	public partial class SystemAccount
+	{
+		public long SystemAccountId { get; set; }
 
-        [Required]
-        [StringLength(50, ErrorMessage = "UserName cannot be longer than 50 characters.")]
-        public string UserName { get; set; }
+		[Required]
+		[StringLength(50, ErrorMessage = "UserName cannot be longer than 50 characters.")]
+		public string UserName { get; set; }
 
-        [Required]
-        [StringLength(25, ErrorMessage = "Password cannot be longer than 25 characters.")]
-        [DataType(DataType.Password)]
-        public string PassWord { get; set; }
-        public SystemData SystemData { get; set; }
+		[Required]
+		[StringLength(25, ErrorMessage = "Password cannot be longer than 25 characters.")]
+		[DataType(DataType.Password)]
+		public string PassWord { get; set; }
+		public SystemData SystemData { get; set; }
 
-        [DataType(DataType.DateTime)]
-        public DateTime LastUpdate { get; set; }
-    }
+		[DataType(DataType.DateTime)]
+		public DateTime LastUpdate { get; set; }
+	}
 }

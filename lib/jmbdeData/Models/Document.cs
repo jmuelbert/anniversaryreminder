@@ -46,17 +46,17 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace jmbdeData.Models
 
 {
-    public partial class Document
-    {
-        public long DocumentId { get; set; }
+	public partial class Document
+	{
+		public long DocumentId { get; set; }
 
-        [Required]
-        [StringLength(50, ErrorMessage = "Document Name cannot be longer than 50 characters.")]
-        public string Name { get; set; }
+		[Required]
+		[StringLength(50, ErrorMessage = "Document Name cannot be longer than 50 characters.")]
+		public string Name { get; set; }
 
-        public byte[] DocumentData { get; set; }
+		public byte[] DocumentData { get; set; }
 
-       [DataType(DataType.DateTime)]
-        public DateTime LastUpdate { get; set; }
-    }
+		[DataType(DataType.DateTime)]
+		public DateTime LastUpdate { get; set; }
+	}
 }

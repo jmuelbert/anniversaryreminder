@@ -46,21 +46,21 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace jmbdeData.Models
 
 {
-    public partial class Inventory
-    {
-        public long InventoryId { get; set; }
+	public partial class Inventory
+	{
+		public long InventoryId { get; set; }
 
-        [Required]
-        [StringLength(50, ErrorMessage = "Identifier cannot be longer than 50 characters.")]
-        public string Identifier { get; set; }
+		[Required]
+		[StringLength(50, ErrorMessage = "Identifier cannot be longer than 50 characters.")]
+		public string Identifier { get; set; }
 
-        [StringLength(100, ErrorMessage = "Description cannot be longer than 100 characters.")]
-        public string Description { get; set; }
+		[StringLength(100, ErrorMessage = "Description cannot be longer than 100 characters.")]
+		public string Description { get; set; }
 
-        public bool Active { get; set; }
+		public bool Active { get; set; }
 
 
-        [DataType(DataType.DateTime)]
-        public DateTime LastUpdate { get; set; }
-    }
+		[DataType(DataType.DateTime)]
+		public DateTime LastUpdate { get; set; }
+	}
 }

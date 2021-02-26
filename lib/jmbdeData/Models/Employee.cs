@@ -49,74 +49,75 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace jmbdeData.Models
 
 {
-    public enum Gender {
-        F, M
-    }
+	public enum Gender
+	{
+		F, M
+	}
 
-    public partial class Employee
-    {
-        public long EmployeeId { get; set; }
-        public string EmployeeIdent { get; set; }
-        public Gender Gender { get; set; }
-        public JobTitle JobTitle { get; set; }
+	public partial class Employee
+	{
+		public long EmployeeId { get; set; }
+		public string EmployeeIdent { get; set; }
+		public Gender Gender { get; set; }
+		public JobTitle JobTitle { get; set; }
 
-        [StringLength(50, ErrorMessage = "Firstname cannot be longer than 50 characters.")]
-        public string FirstName { get; set; }
+		[StringLength(50, ErrorMessage = "Firstname cannot be longer than 50 characters.")]
+		public string FirstName { get; set; }
 
-        [Required]
-        [StringLength(50, ErrorMessage = "Lastname cannot be longer than 50 characters.")]
-        public string LastName { get; set; }
+		[Required]
+		[StringLength(50, ErrorMessage = "Lastname cannot be longer than 50 characters.")]
+		public string LastName { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateTime BirthDay { get; set; }
+		[DataType(DataType.Date)]
+		public DateTime BirthDay { get; set; }
 
-        [Required]
-        [StringLength(50, ErrorMessage = "Street cannot be longer than 50 characters.")]
-        public string Street { get; set; }
-        public ZipCode ZipCode { get; set; }
+		[Required]
+		[StringLength(50, ErrorMessage = "Street cannot be longer than 50 characters.")]
+		public string Street { get; set; }
+		public ZipCode ZipCode { get; set; }
 
-        [StringLength(50, ErrorMessage = "Phone Number cannot be longer than 50 characters.")]
-        [DataType(DataType.PhoneNumber)]
-        public string HomePhone { get; set; }
+		[StringLength(50, ErrorMessage = "Phone Number cannot be longer than 50 characters.")]
+		[DataType(DataType.PhoneNumber)]
+		public string HomePhone { get; set; }
 
-        [StringLength(50, ErrorMessage = "Mobile Number cannot be longer than 50 characters.")]
-        [DataType(DataType.PhoneNumber)]
-        public string HomeMobile { get; set; }
+		[StringLength(50, ErrorMessage = "Mobile Number cannot be longer than 50 characters.")]
+		[DataType(DataType.PhoneNumber)]
+		public string HomeMobile { get; set; }
 
-        [StringLength(50, ErrorMessage = "Mail Address cannot be longer than 50 characters.")]
-        [DataType(DataType.EmailAddress)]
-        public string HomeMailAddress { get; set; }
+		[StringLength(50, ErrorMessage = "Mail Address cannot be longer than 50 characters.")]
+		[DataType(DataType.EmailAddress)]
+		public string HomeMailAddress { get; set; }
 
-        [StringLength(50, ErrorMessage = "Mail Address cannot be longer than 50 characters.")]
-        [DataType(DataType.EmailAddress)]
-        public string BusinessMailAddress { get; set; }
+		[StringLength(50, ErrorMessage = "Mail Address cannot be longer than 50 characters.")]
+		[DataType(DataType.EmailAddress)]
+		public string BusinessMailAddress { get; set; }
 
-        public bool DataCare { get; set; }
+		public bool DataCare { get; set; }
 
-        public bool Active { get; set; }
+		public bool Active { get; set; }
 
-        public byte[] Photo { get; set; }
+		public byte[] Photo { get; set; }
 
-        [DataType(DataType.MultilineText)]
-        public string Notes { get; set; }
+		[DataType(DataType.MultilineText)]
+		public string Notes { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateTime HireDate { get; set; }
+		[DataType(DataType.Date)]
+		public DateTime HireDate { get; set; }
 
-        [DataType(DataType.Date)]
-        public DateTime EndDate { get; set; }
-        public Department Department { get; set; }
-        public ICollection<Function> Function  { get; set; }
-        public ICollection<Computer> Computer { get; set; }
-        public ICollection<Printer> Printer { get; set; }
-        public  Phone Phone { get; set; }
-        public Mobile Mobile { get; set; }
-        public Fax Fax { get; set; }
-        public ICollection<SystemAccount> SystemAccount { get; set; }
-        public ICollection<Document> Document { get; set; }
-        public ChipCard ChipCard { get; set; }
+		[DataType(DataType.Date)]
+		public DateTime EndDate { get; set; }
+		public Department Department { get; set; }
+		public ICollection<Function> Function { get; set; }
+		public ICollection<Computer> Computer { get; set; }
+		public ICollection<Printer> Printer { get; set; }
+		public Phone Phone { get; set; }
+		public Mobile Mobile { get; set; }
+		public Fax Fax { get; set; }
+		public ICollection<SystemAccount> SystemAccount { get; set; }
+		public ICollection<Document> Document { get; set; }
+		public ChipCard ChipCard { get; set; }
 
-        [DataType(DataType.DateTime)]
-        public DateTime LastUpdate { get; set; }
-    }
+		[DataType(DataType.DateTime)]
+		public DateTime LastUpdate { get; set; }
+	}
 }

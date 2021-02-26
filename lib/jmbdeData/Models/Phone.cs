@@ -46,36 +46,36 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace jmbdeData.Models
 
 {
-    public partial class Phone
-    {
-        public long PhoneId { get; set; }
+	public partial class Phone
+	{
+		public long PhoneId { get; set; }
 
-        [Required]
-        [StringLength(50, ErrorMessage = "Number cannot be longer than 50 characters.")]
-        [DataType(DataType.PhoneNumber)]
-        public string Number { get; set; }
+		[Required]
+		[StringLength(50, ErrorMessage = "Number cannot be longer than 50 characters.")]
+		[DataType(DataType.PhoneNumber)]
+		public string Number { get; set; }
 
-        [StringLength(20, ErrorMessage = "Serialnumber cannot be longer than 20 characters.")]
-        public string SerialNumber { get; set; }
+		[StringLength(20, ErrorMessage = "Serialnumber cannot be longer than 20 characters.")]
+		public string SerialNumber { get; set; }
 
-        [StringLength(10, ErrorMessage = "PIN cannot be longer than 10 characters.")]
-        public string Pin { get; set; }
+		[StringLength(10, ErrorMessage = "PIN cannot be longer than 10 characters.")]
+		public string Pin { get; set; }
 
-        public bool Active { get; set; }
-        public bool Replace { get; set; }
+		public bool Active { get; set; }
+		public bool Replace { get; set; }
 
-        public DeviceName DeviceName { get; set; }
-        public DeviceType DeviceType { get; set; }
-        // public Employee Employee { get; set; }
-        public Place Place { get; set; }
-        public Department Department { get; set; }
-        public Manufacturer Manufacturer { get; set; }
-        public Inventory Inventory { get; set; }
+		public DeviceName DeviceName { get; set; }
+		public DeviceType DeviceType { get; set; }
+		// public Employee Employee { get; set; }
+		public Place Place { get; set; }
+		public Department Department { get; set; }
+		public Manufacturer Manufacturer { get; set; }
+		public Inventory Inventory { get; set; }
 
-        [DataType(DataType.DateTime)]
-        public DateTime LastUpdate
-        {
-            get; set;
-        }
-    }
+		[DataType(DataType.DateTime)]
+		public DateTime LastUpdate
+		{
+			get; set;
+		}
+	}
 }

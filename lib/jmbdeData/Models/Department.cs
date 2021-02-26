@@ -46,21 +46,21 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace jmbdeData.Models
 
 {
-    public partial class Department
-    {
-        public long DepartmentId { get; set; }
+	public partial class Department
+	{
+		public long DepartmentId { get; set; }
 
-        [Required]
-        [StringLength(50, ErrorMessage = "Department Name cannot be longer than 50 characters.")]
-        public string Name { get; set; }
+		[Required]
+		[StringLength(50, ErrorMessage = "Department Name cannot be longer than 50 characters.")]
+		public string Name { get; set; }
 
-        public long? Priority { get; set; }
+		public long? Priority { get; set; }
 
-        public ICollection<Printer> Printer { get; set; }
+		public ICollection<Printer> Printer { get; set; }
 
-        public ICollection<Fax> Fax { get; set; }
+		public ICollection<Fax> Fax { get; set; }
 
-        [DataType(DataType.DateTime)]
-        public DateTime LastUpdate { get; set; }
-    }
+		[DataType(DataType.DateTime)]
+		public DateTime LastUpdate { get; set; }
+	}
 }

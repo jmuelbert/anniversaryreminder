@@ -46,18 +46,18 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace jmbdeData.Models
 
 {
-    public partial class Processor
-    {
-        public long ProcessorId { get; set; }
+	public partial class Processor
+	{
+		public long ProcessorId { get; set; }
 
-        [Required]
-        [StringLength(50, ErrorMessage = "Name cannot be longer than 50 characters.")]
-        public string Name { get; set; }
+		[Required]
+		[StringLength(50, ErrorMessage = "Name cannot be longer than 50 characters.")]
+		public string Name { get; set; }
 
-        public float ClockRate { get; set; }
-        public int Cores { get; set; }
+		public float ClockRate { get; set; }
+		public int Cores { get; set; }
 
-        [DataType(DataType.DateTime)]
-        public DateTime LastUpdate { get; set; }
-    }
+		[DataType(DataType.DateTime)]
+		public DateTime LastUpdate { get; set; }
+	}
 }
