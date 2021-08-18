@@ -1,24 +1,46 @@
+---
 name: Update Changelog file
 
-on: [workflow_dispatch]
+on:
+  push:
+    branches:
+      - master*
+    paths-ignore:
+      - "README.md"
+      - "LICENSE"
+  pull_request_target:
+    types: [labeled]
+    paths-ignore:
+      - "README.md"
+      - "LICENSE"
 
 env:
-    RUNNER_DEBUG: 1
+  PRODUCT: jmbde
+  targetName: jmbde
+  RUNNER_DEBUG: 1
 
 jobs:
-    create-changelog-pull-request:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v2
-            - uses: jackstr/update-changelog@master
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  changelog_prerelease:
+    name: Update Changelog For Prerelease
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: master
 
-            - uses: jackstr/create-pull-request@master
-              with:
-                  branch: update-changelog
-                  branch-suffix: timestamp
-                  title: Update CHANGELOG.md
-                  body: |
-                      Updates CHANGELOG with latest versions.
-                      This is automatically generated pull request.
+      - name: Update Changelog
+        uses: heinrichreimer/github-changelog-generator-action@v2.2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issues: true
+          issuesWoLabels: true
+          pullRequests: true
+          prWoLabels: true
+          unreleased: true
+          addSections: '{"documentation":{"prefix":"**Documentation:**","labels":["documentation"]}}'
+
+      - uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update Changelog for PR
+          file_pattern: CHANGELOG.md
