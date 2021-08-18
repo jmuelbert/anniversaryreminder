@@ -1,6 +1,6 @@
 # anniversaryreminder
 
-anniversary reminder ist ein Programm, mit dem Sie an Jubiläen in einem Unternehmen erinnert werden, d.h. der Mitarbeiter ist 10 Jahre, 25 Jahre im Unternehmen. Oder der Mitarbeiter hat Geburtstag.
+anniversaryreminder is a program that do you remind you to anniversaries in a company. i.e. The employee is 10 Years, 25 years in the company. Or the employee has birthday.
 
 ---
 
@@ -20,49 +20,50 @@ anniversary reminder ist ein Programm, mit dem Sie an Jubiläen in einem Unterne
 [![Documentation][documentation-shield]][documentation-url]
 [![License][license-shield]][license-url]
 
-[Features](https://github.com/jmuelbert/anniversaryreminder) | [Documentation](https://jmuelbert.github.io/anniversaryreminder/) | [Changelog](CHANGELOG.md) | [Contributing](CONTRIBUTING.md) | [FAQ](https://github.com/jmuelbert/anniversaryreminder/wiki/FAQ) | [english](README.md)
-
+[Features](https://github.com/jmuelbert/anniversaryreminder) | [Documentation](https://jmuelbert.github.io/anniversaryreminder/) | [Changelog](CHANGELOG.md) | [Contributing](CONTRIBUTING.md) | [FAQ](https://github.com/jmuelbert/anniversaryreminder/wiki/FAQ) | [deutsch](README_de-DE.md)
 
 anniversaryreminder is free software; you can redistribute it and/or modify it under the terms
 of the [European Public License Version 1.2](https://joinup.ec.europa.eu/page/eupl-text-11-12).
 Please read the [LICENSE](https://github.com/jmuelbert/anniversaryreminder/blob/master/LICENSE.EUPL-1_2.txt) for additional information.
 
-- [Freigaben](https://github.com/jmuelbert/anniversaryreminder/releases)
+ The master branch represents the latest pre-release code.
 
-- [Meilensteine](https://github.com/jmuelbert/anniversaryreminder/milestones)
+- [Releases](https://github.com/jmuelbert/anniversaryreminder/releases)
 
-## Anfragen und Fehlerberichte
+- [Milestones](https://github.com/jmuelbert/anniversaryreminder/milestones)
 
-- [GitHub-Ausgaben (bevorzugt)](https://github.com/jmuelbert/anniversaryreminder/issues)
+## Requests and Bug reports
 
-## Fragen oder Kommentare
+- [GitHub issues (preferred)](https://github.com/jmuelbert/anniversaryreminder/issues)
+
+## Questions or Comments
 
 ## Wiki
 
-- [Hauptseite](https://github.com/jmuelbert/anniversaryreminder/wiki)
-- [Benutzerhandbuch](http://jmuelbert.github.io/anniversaryreminder/)
+- [Main Page](https://github.com/jmuelbert/anniversaryreminder/wiki)
+- [User Manual](http://jmuelbert.github.io/anniversaryreminder/)
 
-## Gebäude
+## Building
 
-### Anfragen
+### Requirments
 
-#### Für Windows
+#### For Windows
 
-- [.NET Core SDK 3.1 für Windows](https://www.microsoft.com/net/download/windows)
+- [.NET Core SDK 3.1 for Windows](https://www.microsoft.com/net/download/windows)
 
-#### Für Linux
+#### For Linux
 
-- [.NET Core SDK 3.1 für Linux](https://www.microsoft.com/net/download/linux)
+- [.NET Core SDK 3.1 for Linux](https://www.microsoft.com/net/download/linux)
 
-#### Für Mac
+#### For Mac
 
-- [.NET Core SDK 3.1 für MacOS](https://www.microsoft.com/net/download/macos)
+- [.NET Core SDK 3.1 for MacOS](https://www.microsoft.com/net/download/macos)
 
-## Bereiten Sie die App vor
+## Prepare the App
 
 ### Windows
 
-- Öffnen Sie eine Eingabeaufforderung
+- Open a command prompt
 
     ```cmd
         cd src\anniversaryreminder
@@ -70,11 +71,11 @@ Please read the [LICENSE](https://github.com/jmuelbert/anniversaryreminder/blob/
         dotnet ef database update
     ```
 
-- Damit wird die Anwendung und eine neue leere Datenbank erstellt.
+- Create the app and a new blank database.
 
-### Linux oder MacOS
+### Linux or macOS
 
-- Öffnen Sie eine Eingabeaufforderung
+- Open a command prompt and execute
 
     ```bash
         cd src/anniversaryreminder
@@ -82,55 +83,56 @@ Please read the [LICENSE](https://github.com/jmuelbert/anniversaryreminder/blob/
         dotnet ef database update
     ```
 
-- Damit wird die Anwendung und eine neue leere Datenbank erstellt.
+- Create the app and a new blank database.
 
-## Starten Sie die Anniversaryreminder-App
+## Run the anniversaryreminder App
 
-### Ausführen unter Windows
+### Run on Windows
 
-- Öffnen Sie eine Eingabeaufforderung
+- Open a command prompt and execute
 
-  ```cmd
-    cd src\anniversaryreminder
-    dotnet run
-  ```
+    ```cmd
+        cd src\anniversaryreminder
+        dotnet run
+    ```
 
-- Dies hostet die Anwendung in einer Konsolenanwendung - Anwendung gestartet unter der URL **`http://localhost:5000/`**.
+- This hosts the app in a console application - Application started at URL **`http://localhost:5000/`**.
 
-### Unter Linux oder MacOS ausführen
 
-- Öffnen Sie eine Eingabeaufforderung
+### Run on Linux or macOS
 
-  ```bash
+- Open a command prompt and execute
+
+    ```bash
         cd src/anniversaryreminder
         dotnet run
-  ```
+    ```
 
-- Dies hostet die Anwendung in einer Konsolenanwendung - Anwendung gestartet unter der URL **`http://localhost:5000/`**.
+- This hosts the app in a console application - Application started at URL **`http://localhost:5000/`**.
 
-## Veröffentlichen Sie die AnniversaryReminder-Anwendung
+## Publish the anniversaryreminder App
 
-### Unter Windows veröffentlichen
+### Publish on Windows
 
-- Öffnen Sie eine Eingabeaufforderung
+- Open a command prompt and execute
 
     ```cmd
         cd src\anniversaryreminder
         dotnet publish -c Release -o [RELEASEDIRECTORY]
     ```
 
-### Veröffentlichen unter Linux oder MacOS
+### Publish on Linux or macOS
 
-- Öffnen Sie eine Eingabeaufforderung
+- Open a command prompt and execute
 
     ```bash
-        cd src/anniversary reminder
+        cd src/anniversaryreminder
         dotnet publish -c Release -o [RELEASEDIRECTORY]
     ```
 
-## Lizenz
+## License
 
-EUPL-1.2 © [Jürgen Mülbert](https:/github.com/jmuelbert/anniversaryreminder/)
+EUPL-1.2 © [Jürgen Mülbert](https:/github.com/jmuelbert/anniversaryreminder/)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
