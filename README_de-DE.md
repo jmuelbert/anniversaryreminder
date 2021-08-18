@@ -1,6 +1,6 @@
 # anniversaryreminder
 
-anniversaryreminder is a program that do you remind you to anniversaries in a company. i.e. The employee is 10 Years, 25 years in the company. Or the employee has birthday.
+anniversary reminder ist ein Programm, mit dem Sie an Jubiläen in einem Unternehmen erinnert werden, d.h. der Mitarbeiter ist 10 Jahre, 25 Jahre im Unternehmen. Oder der Mitarbeiter hat Geburtstag.
 
 ---
 
@@ -19,7 +19,8 @@ anniversaryreminder is a program that do you remind you to anniversaries in a co
 [![Documentation][documentation-shield]][documentation-url]
 [![License][license-shield]][license-url]
 
-[Features](https://github.com/jmuelbert/anniversaryreminder) | [Documentation](https://jmuelbert.github.io/anniversaryreminder/) | [Changelog](CHANGELOG.md) | [Contributing](CONTRIBUTING.md) | [FAQ](https://github.com/jmuelbert/anniversaryreminder/wiki/FAQ) | [deutsch](README_de-DE.md)
+[Features](https://github.com/jmuelbert/anniversaryreminder) | [Documentation](https://jmuelbert.github.io/anniversaryreminder/) | [Changelog](CHANGELOG.md) | [Contributing](CONTRIBUTING.md) | [FAQ](https://github.com/jmuelbert/anniversaryreminder/wiki/FAQ) | [english](README.md)
+
 
 anniversaryreminder is free software; you can redistribute it and/or modify it under the terms
 of the [European Public License Version 1.2](https://joinup.ec.europa.eu/page/eupl-text-11-12).
@@ -28,47 +29,47 @@ Please read the [LICENSE](https://github.com/jmuelbert/anniversaryreminder/blob/
  |  type  |                                 branch                                 |                                                                                                                   build                                                                                                                    |                                                                                downloads                                                                                 |
  | :----: | :--------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------: |
  | alpha  | [master](https://github.com/jmuelbert/anniversaryreminder/tree/master) | [![GitHub Workflow Status](https://github.com/jmuelbert/anniversaryreminder/workflows/CI:%20Build%20Test/badge.svg?branch=master&event=push)](https://github.com/jmuelbert/anniversaryreminder/actions?query=event%3Apush+branch%3Amaster) |                                                                                    -                                                                                     |
- |  beta  | [v0.0.0](https://github.com/jmuelbert/anniversaryreminder/tree/v0.0.0) | [![GitHub Workflow Status](https://github.com/jmuelbert/anniversaryreminder/workflows/CI:%20Build%20Test/badge.svg?branch=v0.0.0&event=push)](https://github.com/jmuelbert/anniversaryreminder/actions?query=event%3Apush+branch%3Av0.0.0) | [![Downloads](https://img.shields.io/github/downloads/jmuelbert/anniversaryreminder/v0.0.0/total)](https://github.com/jmuelbert/anniversaryreminder/releases/tag/v0.0.0) |
- | stable | [v0.0.0](https://github.com/jmuelbert/anniversaryreminder/tree/v0.0.0) | [![GitHub Workflow Status](https://github.com/jmuelbert/anniversaryreminder/workflows/CI:%20Build%20Test/badge.svg?branch=v0.0.0&event=push)](https://github.com/jmuelbert/anniversaryreminder/actions?query=event%3Apush+branch%3v0.0.0)  | [![Downloads](https://img.shields.io/github/downloads/jmuelbert/anniversaryreminder/v0.0.0/total)](https://github.com/jmuelbert/anniversaryreminder/releases/tag/v0.0.0) |
+ |  beta  | [v0.5.2](https://github.com/jmuelbert/anniversaryreminder/tree/v0.0.0) | [![GitHub Workflow Status](https://github.com/jmuelbert/anniversaryreminder/workflows/CI:%20Build%20Test/badge.svg?branch=v0.0.0&event=push)](https://github.com/jmuelbert/anniversaryreminder/actions?query=event%3Apush+branch%3Av0.0.0) | [![Downloads](https://img.shields.io/github/downloads/jmuelbert/anniversaryreminder/v0.0.0/total)](https://github.com/jmuelbert/anniversaryreminder/releases/tag/v0.0.0) |
+ | stable | [v0.5.0](https://github.com/jmuelbert/anniversaryreminder/tree/v0.0.0) | [![GitHub Workflow Status](https://github.com/jmuelbert/anniversaryreminder/workflows/CI:%20Build%20Test/badge.svg?branch=v0.0.0&event=push)](https://github.com/jmuelbert/anniversaryreminder/actions?query=event%3Apush+branch%3v0.0.0)  | [![Downloads](https://img.shields.io/github/downloads/jmuelbert/anniversaryreminder/v0.0.0/total)](https://github.com/jmuelbert/anniversaryreminder/releases/tag/v0.0.0) |
 
-The master branch represents the latest pre-release code.
+Der Hauptzweig stellt den neuesten Vorabcode dar.
 
-- [Releases](https://github.com/jmuelbert/anniversaryreminder/releases)
+- [Freigaben](https://github.com/jmuelbert/anniversaryreminder/releases)
 
-- [Milestones](https://github.com/jmuelbert/anniversaryreminder/milestones)
+- [Meilensteine](https://github.com/jmuelbert/anniversaryreminder/milestones)
 
-## Requests and Bug reports
+## Anfragen und Fehlerberichte
 
-- [GitHub issues (preferred)](https://github.com/jmuelbert/anniversaryreminder/issues)
+- [GitHub-Ausgaben (bevorzugt)](https://github.com/jmuelbert/anniversaryreminder/issues)
 
-## Questions or Comments
+## Fragen oder Kommentare
 
 ## Wiki
 
-- [Main Page](https://github.com/jmuelbert/anniversaryreminder/wiki)
-- [User Manual](http://jmuelbert.github.io/anniversaryreminder/)
+- [Hauptseite](https://github.com/jmuelbert/anniversaryreminder/wiki)
+- [Benutzerhandbuch](http://jmuelbert.github.io/anniversaryreminder/)
 
-## Building
+## Gebäude
 
-### Requirments
+### Anfragen
 
-#### For Windows
+#### Für Windows
 
-- [.NET Core SDK 3.1 for Windows](https://www.microsoft.com/net/download/windows)
+- [.NET Core SDK 3.1 für Windows](https://www.microsoft.com/net/download/windows)
 
-#### For Linux
+#### Für Linux
 
-- [.NET Core SDK 3.1 for Linux](https://www.microsoft.com/net/download/linux)
+- [.NET Core SDK 3.1 für Linux](https://www.microsoft.com/net/download/linux)
 
-#### For Mac
+#### Für Mac
 
-- [.NET Core SDK 3.1 for MacOS](https://www.microsoft.com/net/download/macos)
+- [.NET Core SDK 3.1 für MacOS](https://www.microsoft.com/net/download/macos)
 
-## Prepare the App
+## Bereiten Sie die App vor
 
 ### Windows
 
-- Open a command prompt
+- Öffnen Sie eine Eingabeaufforderung
 
     ```cmd
         cd src\anniversaryreminder
@@ -76,11 +77,11 @@ The master branch represents the latest pre-release code.
         dotnet ef database update
     ```
 
-- Create the app and a new blank database.
+- Damit wird die Anwendung und eine neue leere Datenbank erstellt.
 
-### Linux or macOS
+### Linux oder MacOS
 
-- Open a command prompt and execute
+- Öffnen Sie eine Eingabeaufforderung
 
     ```bash
         cd src/anniversaryreminder
@@ -88,56 +89,55 @@ The master branch represents the latest pre-release code.
         dotnet ef database update
     ```
 
-- Create the app and a new blank database.
+- Damit wird die Anwendung und eine neue leere Datenbank erstellt.
 
-## Run the anniversaryreminder App
+## Starten Sie die Anniversaryreminder-App
 
-### Run on Windows
+### Ausführen unter Windows
 
-- Open a command prompt and execute
+- Öffnen Sie eine Eingabeaufforderung
 
-    ```cmd
-        cd src\anniversaryreminder
-        dotnet run
-    ```
+  ```cmd
+    cd src\anniversaryreminder
+    dotnet run
+  ```
 
-- This hosts the app in a console application - Application started at URL **`http://localhost:5000/`**.
+- Dies hostet die Anwendung in einer Konsolenanwendung - Anwendung gestartet unter der URL **`http://localhost:5000/`**.
 
+### Unter Linux oder MacOS ausführen
 
-### Run on Linux or macOS
+- Öffnen Sie eine Eingabeaufforderung
 
-- Open a command prompt and execute
-
-    ```bash
+  ```bash
         cd src/anniversaryreminder
         dotnet run
-    ```
+  ```
 
-- This hosts the app in a console application - Application started at URL **`http://localhost:5000/`**.
+- Dies hostet die Anwendung in einer Konsolenanwendung - Anwendung gestartet unter der URL **`http://localhost:5000/`**.
 
-## Publish the anniversaryreminder App
+## Veröffentlichen Sie die AnniversaryReminder-Anwendung
 
-### Publish on Windows
+### Unter Windows veröffentlichen
 
-- Open a command prompt and execute
+- Öffnen Sie eine Eingabeaufforderung
 
     ```cmd
         cd src\anniversaryreminder
         dotnet publish -c Release -o [RELEASEDIRECTORY]
     ```
 
-### Publish on Linux or macOS
+### Veröffentlichen unter Linux oder MacOS
 
-- Open a command prompt and execute
+- Öffnen Sie eine Eingabeaufforderung
 
     ```bash
-        cd src/anniversaryreminder
+        cd src/anniversary reminder
         dotnet publish -c Release -o [RELEASEDIRECTORY]
     ```
 
-## License
+## Lizenz
 
-EUPL-1.2 © [Jürgen Mülbert](https:/github.com/jmuelbert/anniversaryreminder/)
+EUPL-1.2 © [Jürgen Mülbert](https:/github.com/jmuelbert/anniversaryreminder/)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->

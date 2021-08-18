@@ -19,10 +19,11 @@
 ## Checklist
 <!--- Go over all the following points, and put an `x` in all the boxes that apply. -->
 <!--- You can open a pull request before all these are done, but they should be done before getting merged. -->
-- [ ] If the key of a setting is changed, the `old` attribute is updated or it is resolved in SettingsUpdater.
-- [ ] If there are changes of the text displayed in the UI, they are wrapped in `tr()` or `QCoreApplication::translate()`.
-- [ ] If needed, I have opened a pull request or an issue to update the [documentation](http://jmuelbert.github.io/jmbde-aspnet/).
-- [ ] If these changes are notable, they are documented in [CHANGELOG.md](https://github.com/jmuelbert/jmbde-aspnet/blob/master/CHANGELOG.md).
 
-## Additional text
-<!--- Anything else you want to say. For example, mention the translators if the translations need to be updated. --->
+- [ ] Have you followed the guidelines in our [Contributing](https://github.com/jmuelbert/anniversaryreminder/blob/master/CONTRIBUTING.md) document?
+- [ ] Have you checked to ensure there aren't other open [Pull Requests](https://github.com/jmuelbert/anniversaryreminder/pulls) for the same change?
+- [ ] Have you added an explanation of what your changes do and why you'd like us to include them?
+-   [ ] Have you written new tests for your changes? [Here's an introduction](https://help.github.com/articles/creating-a-pull-request/).
+- [ ] If needed, I have opened a pull request or an issue to update the [documentation](http://jmuelbert.github.io/anniversaryreminder/).
+- [ ] If these changes are notable, they are documented in [CHANGELOG.md](https://github.com/jmuelbert/anniversaryreminder/blob/master/CHANGELOG.md).
+---
