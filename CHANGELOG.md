@@ -107,7 +107,6 @@
 - Bump Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore from 3.1.8 to 3.1.9 [\#39](https://github.com/jmuelbert/anniversaryreminder/pull/39)
 - Bump Microsoft.AspNetCore.Identity.UI from 3.1.8 to 3.1.9 [\#38](https://github.com/jmuelbert/anniversaryreminder/pull/38)
 - Bump Microsoft.AspNetCore.Identity.EntityFrameworkCore from 3.1.8 to 3.1.9 [\#37](https://github.com/jmuelbert/anniversaryreminder/pull/37)
-- Bump Microsoft.EntityFrameworkCore.Sqlite from 3.1.8 to 3.1.9 [\#36](https://github.com/jmuelbert/anniversaryreminder/pull/36)
 
 
 
