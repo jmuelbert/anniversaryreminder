@@ -4,6 +4,7 @@
 
 **Merged pull requests:**
 
+- Bump codacy/codacy-analysis-cli-action from 1.1.0 to 4.0.0 [\#189](https://github.com/jmuelbert/anniversaryreminder/pull/189)
 - Bump Microsoft.AspNetCore.Identity.EntityFrameworkCore from 5.0.7 to 5.0.9 [\#186](https://github.com/jmuelbert/anniversaryreminder/pull/186)
 - Bump Microsoft.EntityFrameworkCore.InMemory from 5.0.6 to 5.0.9 [\#185](https://github.com/jmuelbert/anniversaryreminder/pull/185)
 - Bump Microsoft.EntityFrameworkCore.Sqlserver from 5.0.8 to 5.0.9 [\#184](https://github.com/jmuelbert/anniversaryreminder/pull/184)
@@ -105,8 +106,6 @@
 - Bump Microsoft.EntityFrameworkCore.InMemory from 3.1.8 to 3.1.9 [\#41](https://github.com/jmuelbert/anniversaryreminder/pull/41)
 - Bump Microsoft.EntityFrameworkCore.Tools from 3.1.8 to 3.1.9 [\#40](https://github.com/jmuelbert/anniversaryreminder/pull/40)
 - Bump Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore from 3.1.8 to 3.1.9 [\#39](https://github.com/jmuelbert/anniversaryreminder/pull/39)
-- Bump Microsoft.AspNetCore.Identity.UI from 3.1.8 to 3.1.9 [\#38](https://github.com/jmuelbert/anniversaryreminder/pull/38)
-- Bump Microsoft.AspNetCore.Identity.EntityFrameworkCore from 3.1.8 to 3.1.9 [\#37](https://github.com/jmuelbert/anniversaryreminder/pull/37)
 
 
 
