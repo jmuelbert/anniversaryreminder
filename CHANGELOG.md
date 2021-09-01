@@ -4,6 +4,8 @@
 
 **Merged pull requests:**
 
+- Bump david-a-wheeler/flawfinder from 2.0.19.pre.alpha1 to 2.0.19 [\#193](https://github.com/jmuelbert/anniversaryreminder/pull/193)
+- Bump FluentValidation from 10.3.1 to 10.3.3 [\#192](https://github.com/jmuelbert/anniversaryreminder/pull/192)
 - Bump FluentValidation from 10.3.0 to 10.3.1 [\#191](https://github.com/jmuelbert/anniversaryreminder/pull/191)
 - Bump peter-evans/create-pull-request from 3.10.0 to 3.10.1 [\#190](https://github.com/jmuelbert/anniversaryreminder/pull/190)
 - Bump codacy/codacy-analysis-cli-action from 1.1.0 to 4.0.0 [\#189](https://github.com/jmuelbert/anniversaryreminder/pull/189)
@@ -104,9 +106,6 @@
 - Bump Microsoft.NetCore.Analyzers from 3.3.0 to 3.3.1 [\#46](https://github.com/jmuelbert/anniversaryreminder/pull/46)
 - Bump Microsoft.CodeAnalysis.FxCopAnalyzers from 3.3.0 to 3.3.1 [\#45](https://github.com/jmuelbert/anniversaryreminder/pull/45)
 - Bump Microsoft.CodeQuality.Analyzers from 2.9.8 to 3.3.1 [\#44](https://github.com/jmuelbert/anniversaryreminder/pull/44)
-- Bump release-drafter/release-drafter from v5.11.0 to v5.12.1 [\#43](https://github.com/jmuelbert/anniversaryreminder/pull/43)
-- Bump Microsoft.EntityFrameworkCore.InMemory from 3.1.8 to 3.1.9 [\#41](https://github.com/jmuelbert/anniversaryreminder/pull/41)
-- Bump Microsoft.EntityFrameworkCore.Tools from 3.1.8 to 3.1.9 [\#40](https://github.com/jmuelbert/anniversaryreminder/pull/40)
 
 
 
