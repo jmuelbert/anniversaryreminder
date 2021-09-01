@@ -4,6 +4,7 @@
 
 **Merged pull requests:**
 
+- Bump Bogus from 33.0.2 to 33.1.1 [\#194](https://github.com/jmuelbert/anniversaryreminder/pull/194)
 - Bump david-a-wheeler/flawfinder from 2.0.19.pre.alpha1 to 2.0.19 [\#193](https://github.com/jmuelbert/anniversaryreminder/pull/193)
 - Bump FluentValidation from 10.3.1 to 10.3.3 [\#192](https://github.com/jmuelbert/anniversaryreminder/pull/192)
 - Bump FluentValidation from 10.3.0 to 10.3.1 [\#191](https://github.com/jmuelbert/anniversaryreminder/pull/191)
@@ -105,7 +106,6 @@
 - Bump Microsoft.NetFramework.Analyzers from 3.3.0 to 3.3.1 [\#47](https://github.com/jmuelbert/anniversaryreminder/pull/47)
 - Bump Microsoft.NetCore.Analyzers from 3.3.0 to 3.3.1 [\#46](https://github.com/jmuelbert/anniversaryreminder/pull/46)
 - Bump Microsoft.CodeAnalysis.FxCopAnalyzers from 3.3.0 to 3.3.1 [\#45](https://github.com/jmuelbert/anniversaryreminder/pull/45)
-- Bump Microsoft.CodeQuality.Analyzers from 2.9.8 to 3.3.1 [\#44](https://github.com/jmuelbert/anniversaryreminder/pull/44)
 
 
 
