@@ -102,10 +102,6 @@
 - Bump Microsoft.AspNetCore.Identity.UI from 3.1.9 to 5.0.0 [\#51](https://github.com/jmuelbert/anniversaryreminder/pull/51)
 - Bump Microsoft.VisualStudio.Web.CodeGeneration.Utils from 3.1.4 to 5.0.0 [\#50](https://github.com/jmuelbert/anniversaryreminder/pull/50)
 - Bump Microsoft.NET.Test.Sdk from 16.7.1 to 16.8.0 [\#49](https://github.com/jmuelbert/anniversaryreminder/pull/49)
-- Bump Microsoft.CodeAnalysis.Analyzers from 3.3.0 to 3.3.1 [\#48](https://github.com/jmuelbert/anniversaryreminder/pull/48)
-- Bump Microsoft.NetFramework.Analyzers from 3.3.0 to 3.3.1 [\#47](https://github.com/jmuelbert/anniversaryreminder/pull/47)
-- Bump Microsoft.NetCore.Analyzers from 3.3.0 to 3.3.1 [\#46](https://github.com/jmuelbert/anniversaryreminder/pull/46)
-- Bump Microsoft.CodeAnalysis.FxCopAnalyzers from 3.3.0 to 3.3.1 [\#45](https://github.com/jmuelbert/anniversaryreminder/pull/45)
 
 
 
