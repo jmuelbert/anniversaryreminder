@@ -4,6 +4,8 @@
 
 **Merged pull requests:**
 
+- Bump Microsoft.EntityFrameworkCore.Sqlserver from 5.0.9 to 5.0.10 [\#200](https://github.com/jmuelbert/anniversaryreminder/pull/200)
+- Bump Microsoft.AspNetCore.Identity.EntityFrameworkCore from 5.0.9 to 5.0.10 [\#199](https://github.com/jmuelbert/anniversaryreminder/pull/199)
 - Bump Bogus from 33.0.2 to 33.1.1 [\#194](https://github.com/jmuelbert/anniversaryreminder/pull/194)
 - Bump david-a-wheeler/flawfinder from 2.0.19.pre.alpha1 to 2.0.19 [\#193](https://github.com/jmuelbert/anniversaryreminder/pull/193)
 - Bump FluentValidation from 10.3.1 to 10.3.3 [\#192](https://github.com/jmuelbert/anniversaryreminder/pull/192)
