@@ -4,8 +4,16 @@
 
 **Merged pull requests:**
 
+- Bump Microsoft.EntityFrameworkCore.Sqlite from 5.0.9 to 5.0.10 [\#206](https://github.com/jmuelbert/anniversaryreminder/pull/206)
+- Bump Microsoft.EntityFrameworkCore.Design from 5.0.9 to 5.0.10 [\#205](https://github.com/jmuelbert/anniversaryreminder/pull/205)
+- Bump Microsoft.EntityFrameworkCore.InMemory from 5.0.9 to 5.0.10 [\#204](https://github.com/jmuelbert/anniversaryreminder/pull/204)
+- Bump Microsoft.EntityFrameworkCore.Tools from 5.0.9 to 5.0.10 [\#203](https://github.com/jmuelbert/anniversaryreminder/pull/203)
+- Bump Microsoft.AspNetCore.Identity.UI from 5.0.9 to 5.0.10 [\#202](https://github.com/jmuelbert/anniversaryreminder/pull/202)
+- Bump Microsoft.EntityFrameworkCore from 5.0.9 to 5.0.10 [\#201](https://github.com/jmuelbert/anniversaryreminder/pull/201)
 - Bump Microsoft.EntityFrameworkCore.Sqlserver from 5.0.9 to 5.0.10 [\#200](https://github.com/jmuelbert/anniversaryreminder/pull/200)
 - Bump Microsoft.AspNetCore.Identity.EntityFrameworkCore from 5.0.9 to 5.0.10 [\#199](https://github.com/jmuelbert/anniversaryreminder/pull/199)
+- Bump Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore from 5.0.9 to 5.0.10 [\#198](https://github.com/jmuelbert/anniversaryreminder/pull/198)
+- Bump actions/setup-dotnet from 1.8.1 to 1.8.2 [\#196](https://github.com/jmuelbert/anniversaryreminder/pull/196)
 - Bump Bogus from 33.0.2 to 33.1.1 [\#194](https://github.com/jmuelbert/anniversaryreminder/pull/194)
 - Bump david-a-wheeler/flawfinder from 2.0.19.pre.alpha1 to 2.0.19 [\#193](https://github.com/jmuelbert/anniversaryreminder/pull/193)
 - Bump FluentValidation from 10.3.1 to 10.3.3 [\#192](https://github.com/jmuelbert/anniversaryreminder/pull/192)
@@ -92,18 +100,9 @@
 - Bump Microsoft.EntityFrameworkCore.InMemory from 3.1.9 to 5.0.2 [\#77](https://github.com/jmuelbert/anniversaryreminder/pull/77)
 - Bump Microsoft.AspNetCore.Identity.EntityFrameworkCore from 3.1.9 to 5.0.2 [\#76](https://github.com/jmuelbert/anniversaryreminder/pull/76)
 - Bump Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore from 3.1.9 to 5.0.2 [\#75](https://github.com/jmuelbert/anniversaryreminder/pull/75)
-- Bump Microsoft.EntityFrameworkCore.SqlServer from 3.1.9 to 5.0.2 [\#74](https://github.com/jmuelbert/anniversaryreminder/pull/74)
 - Bump actions/download-artifact from v2.0.6 to v2.0.8 [\#73](https://github.com/jmuelbert/anniversaryreminder/pull/73)
 - Bump actions/upload-artifact from v2.2.1 to v2.2.2 [\#72](https://github.com/jmuelbert/anniversaryreminder/pull/72)
 - Bump release-drafter/release-drafter from v5.12.1 to v5.13.0 [\#71](https://github.com/jmuelbert/anniversaryreminder/pull/71)
-- Bump peter-evans/create-pull-request from v2 to v3.5.1 [\#57](https://github.com/jmuelbert/anniversaryreminder/pull/57)
-- Bump actions/upload-artifact from v2.2.0 to v2.2.1 [\#55](https://github.com/jmuelbert/anniversaryreminder/pull/55)
-- Bump actions/download-artifact from v2.0.5 to v2.0.6 [\#54](https://github.com/jmuelbert/anniversaryreminder/pull/54)
-- Bump Microsoft.VisualStudio.Web.CodeGeneration.Design from 3.1.0 to 5.0.0 [\#53](https://github.com/jmuelbert/anniversaryreminder/pull/53)
-- Bump Microsoft.EntityFrameworkCore.Tools from 3.1.9 to 5.0.0 [\#52](https://github.com/jmuelbert/anniversaryreminder/pull/52)
-- Bump Microsoft.AspNetCore.Identity.UI from 3.1.9 to 5.0.0 [\#51](https://github.com/jmuelbert/anniversaryreminder/pull/51)
-- Bump Microsoft.VisualStudio.Web.CodeGeneration.Utils from 3.1.4 to 5.0.0 [\#50](https://github.com/jmuelbert/anniversaryreminder/pull/50)
-- Bump Microsoft.NET.Test.Sdk from 16.7.1 to 16.8.0 [\#49](https://github.com/jmuelbert/anniversaryreminder/pull/49)
 
 
 
