@@ -4,6 +4,7 @@
 
 **Merged pull requests:**
 
+- Bump Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore from 5.0.9 to 5.0.10 [\#211](https://github.com/jmuelbert/anniversaryreminder/pull/211)
 - Bump Microsoft.EntityFrameworkCore.Sqlite from 5.0.9 to 5.0.10 [\#206](https://github.com/jmuelbert/anniversaryreminder/pull/206)
 - Bump Microsoft.EntityFrameworkCore.Design from 5.0.9 to 5.0.10 [\#205](https://github.com/jmuelbert/anniversaryreminder/pull/205)
 - Bump Microsoft.EntityFrameworkCore.InMemory from 5.0.9 to 5.0.10 [\#204](https://github.com/jmuelbert/anniversaryreminder/pull/204)
