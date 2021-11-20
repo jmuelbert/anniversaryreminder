@@ -4,7 +4,9 @@
 
 **Merged pull requests:**
 
+- Bump Microsoft.EntityFrameworkCore.InMemory from 5.0.10 to 5.0.11 [\#216](https://github.com/jmuelbert/anniversaryreminder/pull/216)
 - Bump Microsoft.EntityFrameworkCore from 5.0.10 to 5.0.11 [\#215](https://github.com/jmuelbert/anniversaryreminder/pull/215)
+- Bump Microsoft.EntityFrameworkCore.Tools from 5.0.10 to 5.0.11 [\#214](https://github.com/jmuelbert/anniversaryreminder/pull/214)
 - Bump Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore from 5.0.9 to 5.0.10 [\#211](https://github.com/jmuelbert/anniversaryreminder/pull/211)
 - Bump Microsoft.EntityFrameworkCore.Sqlite from 5.0.9 to 5.0.10 [\#206](https://github.com/jmuelbert/anniversaryreminder/pull/206)
 - Bump Microsoft.EntityFrameworkCore.Design from 5.0.9 to 5.0.10 [\#205](https://github.com/jmuelbert/anniversaryreminder/pull/205)
@@ -95,11 +97,8 @@
 - Bump Microsoft.EntityFrameworkCore.Tools from 5.0.0 to 5.0.2 [\#84](https://github.com/jmuelbert/anniversaryreminder/pull/84)
 - Bump Microsoft.CodeAnalysis.Analyzers from 3.3.1 to 3.3.2 [\#83](https://github.com/jmuelbert/anniversaryreminder/pull/83)
 - Bump Microsoft.VisualStudio.Web.CodeGeneration.Design from 5.0.0 to 5.0.1 [\#82](https://github.com/jmuelbert/anniversaryreminder/pull/82)
-- Bump Microsoft.CodeQuality.Analyzers from 3.3.1 to 3.3.2 [\#81](https://github.com/jmuelbert/anniversaryreminder/pull/81)
 - Bump Microsoft.AspNetCore.Identity.UI from 5.0.0 to 5.0.2 [\#80](https://github.com/jmuelbert/anniversaryreminder/pull/80)
-- Bump Microsoft.VisualStudio.Web.CodeGeneration.Utils from 5.0.0 to 5.0.1 [\#79](https://github.com/jmuelbert/anniversaryreminder/pull/79)
-- Bump Microsoft.EntityFrameworkCore.Sqlite from 3.1.9 to 5.0.2 [\#78](https://github.com/jmuelbert/anniversaryreminder/pull/78)
-- Bump Microsoft.EntityFrameworkCore.InMemory from 3.1.9 to 5.0.2 [\#77](https://github.com/jmuelbert/anniversaryreminder/pull/77)
+- Bump Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore from 3.1.9 to 5.0.2 [\#75](https://github.com/jmuelbert/anniversaryreminder/pull/75)
 - Bump actions/download-artifact from v2.0.6 to v2.0.8 [\#73](https://github.com/jmuelbert/anniversaryreminder/pull/73)
 - Bump actions/upload-artifact from v2.2.1 to v2.2.2 [\#72](https://github.com/jmuelbert/anniversaryreminder/pull/72)
 - Bump release-drafter/release-drafter from v5.12.1 to v5.13.0 [\#71](https://github.com/jmuelbert/anniversaryreminder/pull/71)
