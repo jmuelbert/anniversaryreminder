@@ -98,6 +98,7 @@
 - Bump Microsoft.CodeAnalysis.Analyzers from 3.3.1 to 3.3.2 [\#83](https://github.com/jmuelbert/anniversaryreminder/pull/83)
 - Bump Microsoft.VisualStudio.Web.CodeGeneration.Design from 5.0.0 to 5.0.1 [\#82](https://github.com/jmuelbert/anniversaryreminder/pull/82)
 - Bump Microsoft.AspNetCore.Identity.UI from 5.0.0 to 5.0.2 [\#80](https://github.com/jmuelbert/anniversaryreminder/pull/80)
+- Bump Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore from 3.1.9 to 5.0.2 [\#75](https://github.com/jmuelbert/anniversaryreminder/pull/75)
 - Bump actions/download-artifact from v2.0.6 to v2.0.8 [\#73](https://github.com/jmuelbert/anniversaryreminder/pull/73)
 - Bump actions/upload-artifact from v2.2.1 to v2.2.2 [\#72](https://github.com/jmuelbert/anniversaryreminder/pull/72)
 - Bump release-drafter/release-drafter from v5.12.1 to v5.13.0 [\#71](https://github.com/jmuelbert/anniversaryreminder/pull/71)
