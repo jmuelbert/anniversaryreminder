@@ -6,6 +6,8 @@
 
 **Merged pull requests:**
 
+- Bump Microsoft.EntityFrameworkCore.Sqlite from 5.0.10 to 6.0.0 [\#237](https://github.com/jmuelbert/anniversaryreminder/pull/237) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump Microsoft.EntityFrameworkCore.Sqlserver from 5.0.10 to 6.0.0 [\#236](https://github.com/jmuelbert/anniversaryreminder/pull/236) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump Microsoft.EntityFrameworkCore.InMemory from 5.0.11 to 6.0.0 [\#235](https://github.com/jmuelbert/anniversaryreminder/pull/235) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump Microsoft.AspNetCore.Identity.EntityFrameworkCore from 5.0.10 to 6.0.0 [\#234](https://github.com/jmuelbert/anniversaryreminder/pull/234) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump Microsoft.EntityFrameworkCore from 5.0.11 to 6.0.0 [\#233](https://github.com/jmuelbert/anniversaryreminder/pull/233) ([dependabot[bot]](https://github.com/apps/dependabot))
@@ -40,6 +42,7 @@
 - Bump Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore from 5.0.9 to 5.0.10 [\#198](https://github.com/jmuelbert/anniversaryreminder/pull/198) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump tomwhross/write-good-action from 1.2 to 1.5 [\#197](https://github.com/jmuelbert/anniversaryreminder/pull/197) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump actions/setup-dotnet from 1.8.1 to 1.8.2 [\#196](https://github.com/jmuelbert/anniversaryreminder/pull/196) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump Bogus from 33.0.2 to 33.1.1 [\#195](https://github.com/jmuelbert/anniversaryreminder/pull/195) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump Bogus from 33.0.2 to 33.1.1 [\#194](https://github.com/jmuelbert/anniversaryreminder/pull/194) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump david-a-wheeler/flawfinder from 2.0.19.pre.alpha1 to 2.0.19 [\#193](https://github.com/jmuelbert/anniversaryreminder/pull/193) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump FluentValidation from 10.3.1 to 10.3.3 [\#192](https://github.com/jmuelbert/anniversaryreminder/pull/192) ([dependabot[bot]](https://github.com/apps/dependabot))
