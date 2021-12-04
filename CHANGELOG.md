@@ -6,6 +6,8 @@
 
 **Merged pull requests:**
 
+- Bump Bogus from 33.0.2 to 34.0.1 [\#239](https://github.com/jmuelbert/anniversaryreminder/pull/239) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump actions/setup-dotnet from 1.8.2 to 1.9.0 [\#238](https://github.com/jmuelbert/anniversaryreminder/pull/238) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump Microsoft.EntityFrameworkCore.Sqlite from 5.0.10 to 6.0.0 [\#237](https://github.com/jmuelbert/anniversaryreminder/pull/237) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump Microsoft.EntityFrameworkCore.Sqlserver from 5.0.10 to 6.0.0 [\#236](https://github.com/jmuelbert/anniversaryreminder/pull/236) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump Microsoft.EntityFrameworkCore.InMemory from 5.0.11 to 6.0.0 [\#235](https://github.com/jmuelbert/anniversaryreminder/pull/235) ([dependabot[bot]](https://github.com/apps/dependabot))
