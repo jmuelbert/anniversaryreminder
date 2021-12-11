@@ -4,8 +4,16 @@
 
 [Full Changelog](https://github.com/jmuelbert/anniversaryreminder/compare/497f96e89a9352a014be3ab2023bafb18433b077...HEAD)
 
+**Fixed bugs:**
+
+- Appveyor Build is failed [\#210](https://github.com/jmuelbert/anniversaryreminder/issues/210)
+- Workflow release.yml [\#209](https://github.com/jmuelbert/anniversaryreminder/issues/209)
+- Workflow codeql-analysis.yml [\#208](https://github.com/jmuelbert/anniversaryreminder/issues/208)
+- Build error from workflow [\#207](https://github.com/jmuelbert/anniversaryreminder/issues/207)
+
 **Merged pull requests:**
 
+- Bump FluentValidation from 10.3.4 to 10.3.5 [\#240](https://github.com/jmuelbert/anniversaryreminder/pull/240) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump Bogus from 33.0.2 to 34.0.1 [\#239](https://github.com/jmuelbert/anniversaryreminder/pull/239) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump actions/setup-dotnet from 1.8.2 to 1.9.0 [\#238](https://github.com/jmuelbert/anniversaryreminder/pull/238) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump Microsoft.EntityFrameworkCore.Sqlite from 5.0.10 to 6.0.0 [\#237](https://github.com/jmuelbert/anniversaryreminder/pull/237) ([dependabot[bot]](https://github.com/apps/dependabot))
