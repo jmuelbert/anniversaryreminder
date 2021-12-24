@@ -13,6 +13,9 @@
 
 **Merged pull requests:**
 
+- Bump Microsoft.EntityFrameworkCore.InMemory from 6.0.0 to 6.0.1 [\#243](https://github.com/jmuelbert/anniversaryreminder/pull/243) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump Microsoft.EntityFrameworkCore.Tools from 6.0.0 to 6.0.1 [\#242](https://github.com/jmuelbert/anniversaryreminder/pull/242) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump peter-evans/create-pull-request from 3.11.0 to 3.12.0 [\#241](https://github.com/jmuelbert/anniversaryreminder/pull/241) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump FluentValidation from 10.3.4 to 10.3.5 [\#240](https://github.com/jmuelbert/anniversaryreminder/pull/240) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump Bogus from 33.0.2 to 34.0.1 [\#239](https://github.com/jmuelbert/anniversaryreminder/pull/239) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump actions/setup-dotnet from 1.8.2 to 1.9.0 [\#238](https://github.com/jmuelbert/anniversaryreminder/pull/238) ([dependabot[bot]](https://github.com/apps/dependabot))
