@@ -13,8 +13,15 @@
 
 **Merged pull requests:**
 
+- Bump Microsoft.EntityFrameworkCore.Sqlite from 6.0.0 to 6.0.1 [\#253](https://github.com/jmuelbert/anniversaryreminder/pull/253) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore from 6.0.0 to 6.0.1 [\#252](https://github.com/jmuelbert/anniversaryreminder/pull/252) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump Microsoft.VisualStudio.Web.CodeGeneration.Design from 6.0.0 to 6.0.1 [\#251](https://github.com/jmuelbert/anniversaryreminder/pull/251) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump Microsoft.AspNetCore.Identity.UI from 6.0.0 to 6.0.1 [\#250](https://github.com/jmuelbert/anniversaryreminder/pull/250) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump Microsoft.EntityFrameworkCore.Design from 6.0.0 to 6.0.1 [\#249](https://github.com/jmuelbert/anniversaryreminder/pull/249) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump Microsoft.EntityFrameworkCore from 6.0.0 to 6.0.1 [\#248](https://github.com/jmuelbert/anniversaryreminder/pull/248) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump Microsoft.AspNetCore.Identity.EntityFrameworkCore from 6.0.0 to 6.0.1 [\#247](https://github.com/jmuelbert/anniversaryreminder/pull/247) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump Microsoft.VisualStudio.Web.CodeGeneration.Utils from 6.0.0 to 6.0.1 [\#246](https://github.com/jmuelbert/anniversaryreminder/pull/246) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Bump Microsoft.EntityFrameworkCore.Sqlserver from 6.0.0 to 6.0.1 [\#245](https://github.com/jmuelbert/anniversaryreminder/pull/245) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump FluentValidation from 10.3.5 to 10.3.6 [\#244](https://github.com/jmuelbert/anniversaryreminder/pull/244) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump Microsoft.EntityFrameworkCore.InMemory from 6.0.0 to 6.0.1 [\#243](https://github.com/jmuelbert/anniversaryreminder/pull/243) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump Microsoft.EntityFrameworkCore.Tools from 6.0.0 to 6.0.1 [\#242](https://github.com/jmuelbert/anniversaryreminder/pull/242) ([dependabot[bot]](https://github.com/apps/dependabot))
