@@ -13,6 +13,7 @@
 
 **Merged pull requests:**
 
+- Bump Microsoft.EntityFrameworkCore from 6.0.0 to 6.0.1 [\#248](https://github.com/jmuelbert/anniversaryreminder/pull/248) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump Microsoft.VisualStudio.Web.CodeGeneration.Utils from 6.0.0 to 6.0.1 [\#246](https://github.com/jmuelbert/anniversaryreminder/pull/246) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump FluentValidation from 10.3.5 to 10.3.6 [\#244](https://github.com/jmuelbert/anniversaryreminder/pull/244) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump Microsoft.EntityFrameworkCore.InMemory from 6.0.0 to 6.0.1 [\#243](https://github.com/jmuelbert/anniversaryreminder/pull/243) ([dependabot[bot]](https://github.com/apps/dependabot))
