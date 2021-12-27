@@ -7,7 +7,7 @@
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <AssemblyName>AnniversaryReminder-tests</AssemblyName>
     <OutputType>Exe</OutputType>
-    <PackageId>AnniversaryReminder</PackageId>
+		<AssemblyName>AnniversaryReminder-tests</AssemblyName>
     <IsPackable>false</IsPackable>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/jmuelbert/AnniversaryReminder</RepositoryUrl>
