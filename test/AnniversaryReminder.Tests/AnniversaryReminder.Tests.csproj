@@ -5,7 +5,7 @@
     <Version>0.1.0</Version>
     <TargetFramework>net6.0</TargetFramework>
     <PreserveCompilationContext>true</PreserveCompilationContext>
-    <AssemblyName>jmbde-tests</AssemblyName>
+    <AssemblyName>AnniversaryReminder-tests</AssemblyName>
     <OutputType>Exe</OutputType>
     <PackageId>AnniversaryReminder</PackageId>
     <IsPackable>false</IsPackable>
@@ -33,7 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\AnniversaryReminder\AnniversaryReminder.csproj" />
+    <ProjectReference Include="..\..\src\lib\jmbdeData\jmbdeData.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,43 +1,55 @@
+---
 name: Build
 
 on:
   push:
     branches: [master]
     tags-ignore:
-      - "*"
-    paths-ignore:
-      - "*.md"
-      - ".editorconfig"
-      - "docs/**"
+      - '*'
+    paths:
+      - src/**
+      - global.json
+      - AnniversaryReminder.sln
+      - .github/workflows/build.yml
 
   pull_request:
     branches: [master]
-    tags-ignore:
-      - "*"
     paths-ignore:
-      - "*.md"
-      - ".editorconfig"
-      - "docs/**"
-
-  workflow_dispatch:
+      - '**/*.md'
+      - '**/*.txt'
+      - '.editorconfig'
+      - 'docs/**'
 
 env:
-  DOTNET_NOLOGO: true
+  CONFIGURATION: Release
   DOTNET_CLI_TELEMETRY_OPTOUT: true
+  DOTNET_NOLOGO: 1
+  DOTNET_SDK_VERSION: 6.0.x
+  NET_CORE_VERSION: net6.0
+  NET_FRAMEWORK_VERSION: net48
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
 
 jobs:
   build:
+    name: Module Build
+    needs: tests
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.4.0
+        with:
+          fetch-depth: 2
       - name: Fetch all history for all tags and branches
         run: git fetch --prune --unshallow
+
       - name: Install GitVersion
         uses: gittools/actions/gitversion/setup@v0.9.11
         with:
-          versionSpec: "5.x"
+          versionSpec: '5.x'
+
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
+          include-prerelease: true
 
       - name: Check dotnet sdk install
         run: dotnet --info
@@ -52,18 +64,209 @@ jobs:
       - name: Display the version
         run: |
           echo "Version: ${{ steps.gitversion.outputs.semVer }}"
+
       - name: Build solution
         run: |
-          dotnet build -p:Configuration=Release --no-restore -p:version=${{ steps.gitversion.outputs.semVer }}
+          dotnet tool update --global dotnet-ef
+          dotnet ef database update --project src/AnniversaryReminder
+          dotnet build  -p:Configuration=Release --no-restore -p:version=${{ steps.gitversion.outputs.semVer }} --output ${{runner.workspace}}/dist
+
+      - name: Upload package
+        uses: actions/upload-artifact@v2.3.1
+        with:
+          name: DotnetSolution
+          path: ${{runner.workspace}}/dist
+
+  build_GH_Pages:
+    name: Build GH Pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.4.0
+        with:
+          fetch-depth: 2
+      - name: Fetch all history for all tags and branches
+        run: git fetch --prune --unshallow
+
+      - name: Set up Python
+        uses: actions/setup-python@v2.3.1
+        with:
+          python-version: '3.10'
+
+      - name: Install sphinx
+        run: |
+          pip install -r docs/requirements.txt
+
+      - name: Running the Sphinx to gh-pages Action
+        run: |
+          sphinx-build docs docs/_build
+        # uses: uibcdf/action-sphinx-docs-to-gh-pages@v1.0-beta.2
+        # with:
+        #   branch: master
+        #   dir_docs: docs/manual
+        #   sphinxopts: ''
+
+      - name: Upload documentation
+        uses: actions/upload-artifact@v2.3.1
+        with:
+          name: docs
+          path: docs/_build
+
+  tests:
+    name: ${{ matrix.session }} ${{ matrix.dotnet-version }} / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { dotnet-version: '6.0.100', os: ubuntu-latest }
+          - { dotnet-version: '6.0.100', os: 'windows-latest' }
+          - { dotnet-version: '6.0.100', os: 'macos-latest' }
+    steps:
+      - uses: actions/checkout@v2.4.0
+        with:
+          fetch-depth: 2
+      - name: Fetch all history for all tags and branches
+        run: git fetch --prune --unshallow
+
+      - name: Install GitVersion
+        uses: gittools/actions/gitversion/setup@v0.9.11
+        with:
+          versionSpec: '5.x'
+
+      - uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '6.0.x'
+          include-prerelease: true
+
+      - name: Check dotnet sdk install
+        run: dotnet --info
+
+      - name: Install dependencies
+        run: dotnet restore
+
+      - name: Use GitVersion
+        id: gitversion
+        uses: gittools/actions/gitversion/execute@v0.9.11
+
+      - name: Display the version
+        run: |
+          echo "Version: ${{ steps.gitversion.outputs.semVer }}"
 
       - name: Unit & integration test
         run: |
-          dotnet test -p:Configuration=Release --no-restore -p:version=${{ steps.gitversion.outputs.semVer }}
+          dotnet tool update --global dotnet-ef
+          dotnet ef database update --project src/AnniversaryReminder
+          dotnet test  -p:Configuration=Release --no-restore -p:version=${{ steps.gitversion.outputs.semVer }} --output ${{runner.workspace}}/dist
+
+  releaseNotes:
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.4.0
+        with:
+          fetch-depth: 2
+      - name: Fetch all history for all tags and branches
+        run: git fetch --prune --unshallow
+
+      - name: Build Releasenotes
+        id: github_releasenotes
+        uses: release-drafter/release-drafter@v5.15.0
+        with:
+          publish: "${{ steps.check-version.outputs.tag != '' }}"
+          tag: '${{ steps.check-version.outputs.tag }}'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+
+  changeLog:
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2.4.0
+        with:
+          fetch-depth: 2
+      - name: Fetch all history for all tags and branches
+        run: git fetch --prune --unshallow
+
+      - name: Build ChangeLog
+        id: github_changelog
+        uses: mikepenz/release-changelog-builder-action@v2.7.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Release
+        uses: actions/create-release@v1
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: ${{ github.ref }}
+          body: ${{ steps.check-version.outputs }}
+        env:
+          GITHUB_TOKEN: $${{ secrets.GITHUB_TOKEN }}
+
+  deployGHPages:
+    runs-on: ubuntu-latest
+    needs: build_GH_Pages
+    steps:
+      - name: Download Artifact with Pages
+        uses: actions/download-artifact@v2.1.0
+        with:
+          name: docs
+          path: docs/_build
+
+      - name: Deploy to GitHub Pages
+        uses: Cecilapp/GitHub-Pages-deploy@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          email: juergen.muelbert@gmail.com
+          build_dir: docs/_build
+
+  deployPrereleases:
+    name: Deploy Pre-Release
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-20.04
+    environment: PreRelease
+    needs:
+      - build
+      - tests
+      - deployGHPages
+
+    steps:
+      - name: Restore Dotnet Solution
+        uses: actions/download-artifact@v2.1.0
+        with:
+          name: DotnetSolution
+          path: dist
+
+      - name: Upload Artifact to Pre-Release
+        uses: actions/upload-artifact@v2.3.1
+        with:
+          name: Pre-Release Solution
+          path: dist
+
+  deploy:
+    name: Deploy Release on nuget
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-20.04
+    environment: Release
+    needs:
+      - build
+      - tests
+      - changeLog
+      - releaseNotes
+      - deployGHPages
+
+    steps:
+      - name: Restore Dotnet Solution
+        uses: actions/download-artifact@v2.1.0
+        with:
+          name: DotnetSolution
+          path: dist/
 
       - name: Collect Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v2.3.1
         with:
           name: nuget-packages
-          path: "**/*.nupkg"
+          path: '**/*.nupkg'
+
       # - name: Publish the package to NuGet.Org
       #  run: dotnet nuget push "**/*.nupkg" -s https://api.nuget.org/v3/index.json -k ${{ secrets.PUBLISH_NUGET_ORG }} --skip-duplicate
