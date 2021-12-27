@@ -33,7 +33,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\lib\jmbdeData\jmbdeData.csproj" />
+    <ProjectReference Include="..\..\lib\jmbdeData\jmbdeData.csproj" />
   </ItemGroup>
 
 </Project>
