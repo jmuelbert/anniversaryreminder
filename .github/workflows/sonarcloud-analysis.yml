@@ -1,40 +1,54 @@
 ---
-name: Sonar Cloud Scan
+name: Sonar Cloud Analysis
 
 on:
   push:
     branches:
       - master
+    paths:
+      - '**.cs'
+      - '**.sln'
+      - '**.csproj'
+      - '.github/workflows/sonarcloud-analysis.yml'      
   pull_request:
     types: [opened, synchronize, reopened]
+    paths:
+      - '**.cs'
+      - '**.sln'
+      - '**.csproj'
+      - '.github/workflows/sonarcloud-analysis.yml' 
   schedule:
-    - cron: '16 20 * * 3'
+    - cron: '21 21 * * 2'
 
 jobs:
   build:
-    name: Sonar Cloud Scan
+    name: Sonar Cloud Analysis
     runs-on: windows-latest
     steps:
-      - name: Set up JDK 11
-        uses: actions/setup-java@v2.5.0
-        with:
-          java-version: 1.11
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0 # Shallow clones should be disabled for a better relevancy of analysis
+    
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+          
       - name: Cache SonarCloud packages
-        uses: actions/cache@v2.1.7
+        uses: actions/cache@v2
         with:
           path: ~\sonar\cache
           key: ${{ runner.os }}-sonar
           restore-keys: ${{ runner.os }}-sonar
+          
       - name: Cache SonarCloud scanner
         id: cache-sonar-scanner
-        uses: actions/cache@v2.1.7
+        uses: actions/cache@v2
         with:
           path: .\.sonar\scanner
           key: ${{ runner.os }}-sonar-scanner
           restore-keys: ${{ runner.os }}-sonar-scanner
+          
       - name: Install SonarCloud scanner
         if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
         shell: powershell
