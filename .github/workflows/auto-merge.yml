@@ -1,11 +1,11 @@
 name: Auto-merge minor/patch
 on:
   schedule:
-    - cron: "0 * * * *"
+    - cron: '0 * * * *'
 jobs:
   test:
     name: Auto-merge minor and patch updates
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: koj-co/dependabot-pr-action@master
         with:
