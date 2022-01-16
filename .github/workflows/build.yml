@@ -287,7 +287,7 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: source-files/*
+          file: ./source-files/
           asset_name: anniversary-reminder-${{ steps.get_version.outputs.VERSION }}-source-all.7z
           tag: ${{ github.ref }}
           overwrite: true
