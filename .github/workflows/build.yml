@@ -40,9 +40,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: '🧰 Fetch all history for all tags and branches'
-        run: git fetch --prune --unshallow
-
       - name: '⚙️ Install GitVersion'
         uses: gittools/actions/gitversion/setup@v0.9.11
         with:
@@ -114,7 +111,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: source-files
-          path: anniversary-${{ steps.get_version.outputs.VERSION }}-source-all.7z
+          path: ./anniversary-reminder-${{ steps.get_version.outputs.VERSION }}-source-all.7z
 
   tests:
     name: ${{ matrix.session }} ${{ matrix.dotnet-version }} / ${{ matrix.os }}
