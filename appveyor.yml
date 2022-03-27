@@ -2,7 +2,7 @@
 version: 0.2.{build}
 max_jobs: 1
 image:
-  - Visual Studio 2019
+  - Visual Studio 2022
   - Ubuntu
   - macOS
 
