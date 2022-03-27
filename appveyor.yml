@@ -52,7 +52,6 @@ for:
     # TODO: Activate by available LTS Version 3.1.100
     dotnet_csproj:
       patch: true
-      file: '**/*.csproj'
       version: '{version}'
       package_version: '{version}'
       assembly_version: '{version}'
@@ -114,8 +113,8 @@ for:
       #    - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
       - call set ENVIRONMENT_NAME=%%ENVIRONMENT_NAME:PLATFORM=%platform%%%
       - call set ENVIRONMENT_NAME=%%ENVIRONMENT_NAME:CONFIGURATION=%configuration%%%
-      # - ps: $ENV:PLATFORM="x64"
-      # - ps: $ENV:VCVARSALL="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat"
+      - ps: $ENV:PLATFORM="x64"
+      - ps: $ENV:VCVARSALL="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat"
 
     clone_folder: c:\projects\AnniversaryReminder
 
