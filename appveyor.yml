@@ -52,7 +52,6 @@ for:
     # TODO: Activate by available LTS Version 3.1.100
     dotnet_csproj:
       patch: true
-      file: '**/*.csproj'
       version: '{version}'
       package_version: '{version}'
       assembly_version: '{version}'
