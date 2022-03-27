@@ -13,7 +13,7 @@
     <PackageId>AnniversaryReminder_1</PackageId>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/jmuelbert/AnniversaryReminder</RepositoryUrl>
-    <ReleaseVersion>0.1</ReleaseVersion>
+    <ReleaseVersion>0.2</ReleaseVersion>
 		<RootNamespace>anniversaryreminder</RootNamespace>
   </PropertyGroup>
 
@@ -34,6 +34,7 @@
     <LangVersion>latestmajor</LangVersion>
   </PropertyGroup>
 
+	<PropertyGroup Condition=" '$(RunConfiguration)' == 'AnniversaryReminder' " />
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="11.0.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
