@@ -52,6 +52,7 @@ for:
     # TODO: Activate by available LTS Version 3.1.100
     dotnet_csproj:
       patch: true
+      file: '**\*.csproj'
       version: '{version}'
       package_version: '{version}'
       assembly_version: '{version}'
@@ -123,11 +124,6 @@ for:
       - cinst opencover.portable
       - cinst codecov
       - nuget install secure-file -ExcludeVersion
-
-    before_build:
-      - call "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat" %PLATFORM%
-      - cmd: chdir %APPVEYOR_BUILD_FOLDER%
-      - appveyor-retry dotnet restore -v Minimal
 
     dotnet_csproj:
       patch: true
