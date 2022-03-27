@@ -15,6 +15,7 @@ platform:
   # failures will be caught by Jenkins.
   # - x86
   # - x64
+  - "Any CPU"
 
 skip_tags: true
 skip_branch_with_pr: true
