@@ -102,7 +102,7 @@ for:
   ########## WINDOWS SPECIFIC CONFIGURATION ##########
   - matrix:
       only:
-        - image: Visual Studio 2019
+        - image: Visual Studio 2022
       fast_finish: false # set this flag to true to immediately finish build once one of the jobs fails.
 
     cache:
@@ -115,7 +115,7 @@ for:
       - call set ENVIRONMENT_NAME=%%ENVIRONMENT_NAME:PLATFORM=%platform%%%
       - call set ENVIRONMENT_NAME=%%ENVIRONMENT_NAME:CONFIGURATION=%configuration%%%
       - ps: $ENV:PLATFORM="x64"
-      - ps: $ENV:VCVARSALL="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Auxiliary\Build\vcvarsall.bat"
+      - ps: $ENV:VCVARSALL="C:\Program Files (x86)\Microsoft Visual Studio\2022\Community\VC\Auxiliary\Build\vcvarsall.bat"
 
     clone_folder: c:\projects\AnniversaryReminder
 
