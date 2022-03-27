@@ -106,6 +106,18 @@ for:
         - image: Visual Studio 2022
       fast_finish: false # set this flag to true to immediately finish build once one of the jobs fails.
 
+
+      # build platform, i.e. x86, x64, Any CPU. This setting is optional.
+      platform: Any CPU
+
+      # to add several platforms to build matrix:
+      #platform:
+      #  - x86
+      #  - Any CPU
+
+      # build Configuration, i.e. Debug, Release, etc.
+      configuration: Release
+
     cache:
       - C:\Users\appveyor\clcache -> .appveyor.yml, build_msvc\**, **\Makefile.am, **\*.vcxproj.in
 
@@ -137,10 +149,10 @@ for:
 
     build_script:
       - ps: dotnet --info
-      - ps: dotnet build .\AnniversaryReminder.sln -c Release
+      - ps: dotnet build .\AnniversaryReminder.sln 
 
     after_build:
-      - ps: dotnet publish .\AnniversaryReminder.sln -c Release -o .\artifacts
+      - ps: dotnet publish .\AnniversaryReminder.sln -o .\artifacts
 
     test_script:
       - ps: dotnet test .\test\AnniversaryReminder.Tests\AnniversaryReminder.Tests.csproj
