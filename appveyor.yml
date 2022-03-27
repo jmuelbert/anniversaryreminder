@@ -6,16 +6,25 @@ image:
   - Ubuntu
   - macOS
 
-configuration:
-  - Release
-  # - Debug
+#---------------------------------#
+#       build configuration       #
+#---------------------------------#
 
-platform:
-  # Disable x86 builds since we only get one concurrent build on AppVeyor and x86
-  # failures will be caught by Jenkins.
-  # - x86
-  # - x64
-  - "Any CPU"
+# build platform, i.e. x86, x64, Any CPU. This setting is optional.
+platform: Any CPU
+
+# to add several platforms to build matrix:
+#platform:
+#  - x86
+#  - Any CPU
+
+# build Configuration, i.e. Debug, Release, etc.
+configuration: Release
+
+# to add several configurations to build matrix:
+#configuration:
+#  - Debug
+#  - Release
 
 skip_tags: true
 skip_branch_with_pr: true
@@ -62,10 +71,10 @@ for:
 
     build_script:
       - dotnet --info
-      - dotnet build ./AnniversaryReminder.sln -c Release
+      - dotnet build ./AnniversaryReminder.sln 
 
     after_build:
-      - dotnet publish ./AnniversaryReminder.sln -c Release -o ./artifacts
+      - dotnet publish ./AnniversaryReminder.sln -o ./artifacts
 
     test_script:
       - dotnet test ./test/AnniversaryReminder.Tests/AnniversaryReminder.Tests.csproj
@@ -91,10 +100,10 @@ for:
 
     build_script:
       - dotnet --info
-      - dotnet build ./AnniversaryReminder.sln -c Release
+      - dotnet build ./AnniversaryReminder.sln 
 
     after_build:
-      - dotnet publish ./AnniversaryReminder.sln -c Release -o ./artifacts
+      - dotnet publish ./AnniversaryReminder.sln -o ./artifacts
 
     test_script:
       - dotnet test ./test/AnniversaryReminder.Tests/AnniversaryReminder.Tests.csproj
@@ -105,18 +114,6 @@ for:
       only:
         - image: Visual Studio 2022
       fast_finish: false # set this flag to true to immediately finish build once one of the jobs fails.
-
-
-      # build platform, i.e. x86, x64, Any CPU. This setting is optional.
-      platform: Any CPU
-
-      # to add several platforms to build matrix:
-      #platform:
-      #  - x86
-      #  - Any CPU
-
-      # build Configuration, i.e. Debug, Release, etc.
-      configuration: Release
 
     cache:
       - C:\Users\appveyor\clcache -> .appveyor.yml, build_msvc\**, **\Makefile.am, **\*.vcxproj.in
