@@ -146,7 +146,7 @@ for:
 
     build_script:
       - ps: dotnet --info
-      - ps: dotnet build .\AnniversaryReminder.sln -c $ENV:configuration -a $ENV:platform
+      - dotnet build .\AnniversaryReminder.sln -c %CONFIGURATION% -a %PLATFORM%
 
     after_build:
       - ps: dotnet publish .\AnniversaryReminder.sln -o .\artifacts
