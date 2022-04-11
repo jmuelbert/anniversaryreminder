@@ -72,7 +72,7 @@ jobs:
           dotnet build  -p:Configuration=Release --no-restore -p:version=${{ steps.gitversion.outputs.semVer }} --output ${{runner.workspace}}/dist
 
       - name: '📤 Upload artifact: Application'
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: DotnetSolution
           path: ${{runner.workspace}}/dist
@@ -108,7 +108,7 @@ jobs:
           pathTarget: ./anniversary-reminder-${{ steps.get_version.outputs.VERSION }}-source-all.7z
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: source-files
           path: ./anniversary-reminder-${{ steps.get_version.outputs.VERSION }}-source-all.7z
@@ -237,7 +237,7 @@ jobs:
           sphinx-build docs docs/_build
 
       - name: Upload documentation
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: docs
           path: docs/_build
@@ -294,7 +294,7 @@ jobs:
 
       - name: Collect Artifacts
         if: github.ref == 'refs/heads/master'
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: nuget-packages
           path: '**/*.nupkg'
@@ -338,7 +338,7 @@ jobs:
 
       - name: Collect Artifacts
         if: startsWith(github.ref, 'refs/tags/')
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: nuget-packages
           path: '**/*.nupkg'
