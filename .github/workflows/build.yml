@@ -211,56 +211,7 @@ jobs:
         env:
           GITHUB_TOKEN: $${{ secrets.GITHUB_TOKEN }}
 
-  build_GH_Pages:
-    name: Build GH Pages
-    runs-on: ubuntu-latest
-    needs: upload
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
-
-      - name: Fetch all history for all tags and branches
-        run: git fetch --prune --unshallow
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Install sphinx
-        run: |
-          pip install -r docs/requirements.txt
-
-      - name: Running the Sphinx to gh-pages Action
-        run: |
-          sphinx-build docs docs/_build
-
-      - name: Upload documentation
-        uses: actions/upload-artifact@v3
-        with:
-          name: docs
-          path: docs/_build
-
-  deployGHPages:
-    runs-on: ubuntu-latest
-    needs: build_GH_Pages
-    steps:
-      - name: Download Artifact with Pages
-        uses: actions/download-artifact@v3
-        with:
-          name: docs
-          path: docs/_build
-
-      - name: Deploy to GitHub Pages
-        uses: Cecilapp/GitHub-Pages-deploy@v3
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          email: juergen.muelbert@gmail.com
-          build_dir: docs/_build
-
-  # Upload continous build
+    # Upload continous build
   upload-prereleases:
     name: '🗂 Create pre-release and upload artifacts'
     environment: PreRelease
