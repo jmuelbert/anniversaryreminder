@@ -46,7 +46,7 @@ jobs:
           versionSpec: '5.x'
 
       - name: '⚙️ Setup dotnet'
-        uses: actions/setup-dotnet@v2
+        uses: actions/setup-dotnet@v3
         with:
           dotnet-version: '6.0.x'
           include-prerelease: true
@@ -137,7 +137,7 @@ jobs:
         with:
           versionSpec: '5.x'
 
-      - uses: actions/setup-dotnet@v2
+      - uses: actions/setup-dotnet@v3
         with:
           dotnet-version: |
             5.0.x
