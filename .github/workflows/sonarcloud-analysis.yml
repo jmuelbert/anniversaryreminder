@@ -36,7 +36,7 @@ jobs:
 
       - uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '6.0.x'
+          global-json-file: global.json
 
       - name: Check dotnet sdk install
         run: dotnet --info
