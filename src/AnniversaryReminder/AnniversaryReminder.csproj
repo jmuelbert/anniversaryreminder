@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
 		<AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
     <UserSecretsId>aspnet-AnniversaryReminder-6B312B33-B8CC-4E66-AC6E-626FDDF45C0B</UserSecretsId>
     <Description>Reminder for Anniversaries with the Database for BDE</Description>
