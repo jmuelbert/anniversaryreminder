@@ -14,10 +14,16 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [master]
+    branches:
+      - main
+      - develop
+
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [master]
+    branches:
+      - main
+      - develop
+
   schedule:
     - cron: "15 10 * * 3"
 
@@ -51,7 +57,7 @@ jobs:
           # By default, queries listed here will override any specified in a config file.
           # Prefix the list here with "+" to use these queries and those in the config file.
           # queries: ./path/to/local/query, your-org/your-repo/queries@main
-          
+
       - name: Install Dotnet
         if: matrix.language == 'csharp'
         uses: actions/setup-dotnet@v3
@@ -69,7 +75,7 @@ jobs:
       - name: Build solution
         if: matrix.language == 'csharp'
         run: dotnet build
-        
+
       # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
       # If this step fails, then you should remove it and run the build manually (see below)
       # - name: Autobuild

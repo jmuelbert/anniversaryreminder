@@ -7,16 +7,22 @@ name: DevSkim
 
 on:
   push:
-    branches: [ master ]
+    branches:
+      - main
+      - develop
+
   pull_request:
-    branches: [ master ]
+    branches:
+      - main
+      - develop
+
   schedule:
-    - cron: '26 20 * * 2'
+    - cron: "26 20 * * 2"
 
 jobs:
   lint:
     name: DevSkim
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     permissions:
       actions: read
       contents: read
@@ -27,7 +33,7 @@ jobs:
 
       - name: Run DevSkim scanner
         uses: microsoft/DevSkim-Action@v1
-        
+
       - name: Upload DevSkim scan results to GitHub Security tab
         uses: github/codeql-action/upload-sarif@v2
         with:

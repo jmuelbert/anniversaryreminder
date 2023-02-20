@@ -4,7 +4,7 @@ name: All Source Files
 on:
   push:
     branches:
-      - "master"
+      - main
     paths-ignore:
       - "docs/**"
       - ".github/ISSUE_TEMPLATE/**"
@@ -21,9 +21,10 @@ on:
       - "Docker/**"
       - "report/**"
       - "resources/**"
+
   pull_request:
     branches:
-      - "master"
+      - main
     types: [opened, reopened]
     paths-ignore:
       - "docs/**"

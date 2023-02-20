@@ -1,9 +1,4 @@
 {
-  // Comment
-  "component.configuration": "value",
-  "[language]": {
-       "component.configuration": "value"
-  },
   "editor.formatOnSave": true,
   "files.exclude": {
 	  "llvm-project": true,
@@ -14,13 +9,10 @@
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "python.linting.pylintEnabled": false,
-  "python.pythonPath": "/Users/juergen/.pyenv/shims/python",
-  "python.testing.nosetestsEnabled": false,
   "python.testing.promptToConfigure": false,
   "python.testing.pytestEnabled": false,
   "python.testing.unittestEnabled": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
-  "restructuredtext.confPath": "",
   "files.associations": {
 	  "filesystem": "cpp",
 	  "string": "cpp",

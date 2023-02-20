@@ -6,7 +6,9 @@ name: "MegaLinter"
 on:
   # Trigger mega-linter at every push. Action will also be visible from Pull Requests to master
   push: # Comment this line to trigger action only on pull-requests (not recommended if you don't pay for GH Actions)
-    branches: [master]
+    branches:
+      - main
+      - develop
   pull_request:
     # The branches below must be a subset of the branches above
     types: [opened, synchronize, reopened]
