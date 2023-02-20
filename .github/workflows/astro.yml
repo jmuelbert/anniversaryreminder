@@ -1,3 +1,4 @@
+---
 # Sample workflow for building and deploying an Astro site to GitHub Pages
 #
 # To get started with Astro see: https://docs.astro.build/en/getting-started/
@@ -24,8 +25,8 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  BUILD_PATH: "." # default value when not using subfolders
-  # BUILD_PATH: subfolder
+  # BUILD_PATH: "." # default value when not using subfolders
+  BUILD_PATH: pages
 
 jobs:
   build:
