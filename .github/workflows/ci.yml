@@ -72,7 +72,7 @@ jobs:
         run: |
           dotnet tool update --global dotnet-ef
           dotnet ef database update --project src/AnniversaryReminder
-          dotnet build  -p:Configuration=Release --no-restore -p:version=${{ steps.gitversion.outputs.semVer }} --output ${{runner.workspace}}/dist
+          dotnet build  -p:Configuration=Release --no-restore -p:version=${{ steps.gitversion.outputs.semVer }}
 
       - name: "📤 Upload artifact: Application"
         uses: actions/upload-artifact@v3
@@ -167,7 +167,7 @@ jobs:
         run: |
           dotnet tool update --global dotnet-ef
           dotnet ef database update --project src/AnniversaryReminder
-          dotnet test  -p:Configuration=Release --no-restore -p:version=${{ steps.gitversion.outputs.semVer }} --output ${{runner.workspace}}/dist
+          dotnet test  -p:Configuration=Release --no-restore -p:version=${{ steps.gitversion.outputs.semVer }}
           
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
