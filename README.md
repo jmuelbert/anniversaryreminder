@@ -9,7 +9,6 @@ anniversaryreminder is a program that do you remind you to anniversaries in a co
 [![CI on Branches and PRs](https://github.com/jmuelbert/anniversaryreminder/actions/workflows/ci.yml/badge.svg)](https://github.com/jmuelbert/anniversaryreminder/actions/workflows/ci.yml)
 [![CodeQL](https://github.com/jmuelbert/anniversaryreminder/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/jmuelbert/anniversaryreminder/actions/workflows/codeql-analysis.yml)
 [![Codacy Security Scan](https://github.com/jmuelbert/anniversaryreminder/actions/workflows/codacy-analysis.yml/badge.svg)](https://github.com/jmuelbert/anniversaryreminder/actions/workflows/codacy-analysis.yml)
-[![flawfinder](https://github.com/jmuelbert/anniversaryreminder/actions/workflows/flawfinder-analysis.yml/badge.svg)](https://github.com/jmuelbert/anniversaryreminder/actions/workflows/flawfinder-analysis.yml)
 [![GitHub All Releases][downloads_all-shield]][downloads_all-url]
 [![Issues][issues-shield]][issues-url]
 [![Help wanted issues][help-issues-shield]][help-issues-url]
