@@ -142,12 +142,10 @@ jobs:
         with:
           versionSpec: "5.x"
 
-      - uses: actions/setup-dotnet@v3
+      - name: Use dotnet-version ${{matrix.dotnet-version}} 
+        uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: |
-            5.x
-            6.x
-            7.x
+          dotnet-version: ${{ matrix.dotnet-version }}
 
       - name: Check dotnet sdk install
         run: dotnet --info
