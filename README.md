@@ -18,11 +18,11 @@ anniversaryreminder is a program that do you remind you to anniversaries in a co
 [![Documentation][documentation-shield]][documentation-url]
 [![License][license-shield]][license-url]
 
-[Features](https://github.com/jmuelbert/anniversaryreminder) | [Documentation](https://jmuelbert.github.io/anniversaryreminder/) | [Changelog](CHANGELOG.md) | [Contributing](CONTRIBUTING.md) | [FAQ](https://github.com/jmuelbert/anniversaryreminder/wiki/FAQ) | [deutsch](README_de-DE.md)
+[Features](https://github.com/jmuelbert/anniversaryreminder) | [Documentation](https://jmuelbert.github.io/anniversaryreminder/) | [Changelog](CHANGELOG.md) | [Contributing](CONTRIBUTING.md) | [FAQ](https://github.com/jmuelbert/anniversaryreminder/wiki/FAQ)
 
 anniversaryreminder is free software; you can redistribute it and/or modify it under the terms
 of the [European Public License Version 1.2](https://joinup.ec.europa.eu/page/eupl-text-11-12).
-Please read the [LICENSE](https://github.com/jmuelbert/anniversaryreminder/blob/master/LICENSE.EUPL-1_2.txt) for additional information.
+Please read the [LICENSE](https://github.com/jmuelbert/anniversaryreminder/blob/master/LICENSE) for additional information.
 
  The master branch represents the latest pre-release code.
 
@@ -47,15 +47,15 @@ Please read the [LICENSE](https://github.com/jmuelbert/anniversaryreminder/blob/
 
 #### For Windows
 
-- [.NET Core SDK 3.1 for Windows](https://www.microsoft.com/net/download/windows)
+- [.NET Core SDK 7.x for Windows](https://www.microsoft.com/net/download/windows)
 
 #### For Linux
 
-- [.NET Core SDK 3.1 for Linux](https://www.microsoft.com/net/download/linux)
+- [.NET Core SDK 7.x for Linux](https://www.microsoft.com/net/download/linux)
 
 #### For Mac
 
-- [.NET Core SDK 3.1 for MacOS](https://www.microsoft.com/net/download/macos)
+- [.NET Core SDK 7.x for MacOS](https://www.microsoft.com/net/download/macos)
 
 ## Prepare the App
 
