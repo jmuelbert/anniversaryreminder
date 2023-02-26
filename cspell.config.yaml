@@ -2,45 +2,25 @@
 version: '0.2'
 files:
   - '**/*'
-dictionaryDefinitions:
-  - name: cmake-refined
-    path: ./config/cmake-refined-words.txt
-    addWords: false
-  - name: qt
-    path: ./config/qt-words.txt
-    addWords: false
-  - name: linux-package
-    path: ./config/linux-package-words.txt
-    addWords: false
-  - name: taskfile
-    path: ./config/taskfile-words.txt
-    addWords: false
 dictionaries:
-  - qt
   - taskfile
   - bash
-  - cmake-refined
-  - cpp-refined
   - docker
-  - linux-package
-  - python-common
 ignorePaths:
   - s**/node_modules/**
   - '**/vscode-extension/**'
   - '**/.git/**'
   - '.github/actions/**'
   - '.github/workflows/**'
-  - 'cmake/modules/**'
+  - '.github/labels.yml'
   - 'docs/api-docs/**'
   - 'cspell.config.yaml'
-  - '.clang-tidy'
-  - '.cmake-format.yaml'
-  - '.cmake-lint.yaml'
   - '.codespell.rc'
   - '*.gz'
   - '*.lock'
   - '*.svg'
   - .gitignore
+  - .gitattributes
   - .devcontainer/.dockerignore
   - .vscode
   - megalinter
@@ -60,20 +40,12 @@ language: en, en-GB, de, de-DE
 allowCompoundWords: true
 enableGlobDot: true
 words:
-  - aqtinstall
   - APPL
   - ARGN
+  - asdict
   - cbproj
-  - ccache
-  - ccmake
-  - clangd
-  - cmakelang
   - Codacy
   - codecov
-  - cppcheck
-  - cppstd
-  - cpptools
-  - cschlosser.doxdocgen
   - Devel
   - DCOMPONENT
   - DOPTION*
@@ -90,34 +62,35 @@ words:
   - giticket
   - groupproj
   - gtest
+  - HADOLINT
   - hmarr
   - hwrap
   - icns
+  - idiv
   - IHELP
   - IOPTIONS
+  - itertools
   - IQUIT
   - IWYU
   - jamf
   - jinja
   - jmuelbert
   - juergen
+  - kondo
   - kwarg
   - kwargs
   - LCOV
-  - libcxx
-  - libfmt
-  - libgmp
-  - libmpfr
-  - libspdlog
-  - lstrip
   - muelbert
   - Mülbert
+  - mkdocs
+  - msvs
   - munki
   - munkiadmin
   - munkipkg
   - myclass
+  - mypackage
+  - mypy
   - noqa
-  - oclint
   - parg
   - pargs
   - Pavlik
@@ -128,11 +101,14 @@ words:
   - PTRACE
   - pthread
   - pthreads
+  - pydocstyle
   - pylance
+  - pylint
+  - PYRIGHT
   - pyyaml
-  - qtconanboilerplate
-  - qtwidgettest
+  - rdiv
   - REDIST
+  - rgxs
   - SAST
   - sectnums
   - socat
@@ -140,20 +116,15 @@ words:
   - spdlog
   - svgz
   - SYSREQUIRES
+  - tetris
+  - tkinter
   - rubocop
+  - TRIVY
   - twxs
-  - uncrustify
   - venv
   - VRAC
   - webp
-  - Wextra
   - Wignored
   - winver
-  - Wmaybe
-  - Wmissing
-  - Wpedantic
-  - Wreorder
-  - Wreturn
-  - Wuninitialized
-  - Wunused
-  - xcodeproj
+  - xreadlines
+  - xrange
