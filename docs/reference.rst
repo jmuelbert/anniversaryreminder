@@ -1,11 +1,10 @@
-
-Reference
-=========
+###########
+ Reference
+###########
 
 .. contents::
-    :local:
-    :backlinks: none
-
+   :local:
+   :backlinks: none
 
 jmbde.main
 

@@ -3,7 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
 		<AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
-    <UserSecretsId>aspnet-AnniversaryReminder-6B312B33-B8CC-4E66-AC6E-626FDDF45C0B</UserSecretsId>
+    <UserSecretsId
+        >aspnet-AnniversaryReminder-6B312B33-B8CC-4E66-AC6E-626FDDF45C0B</UserSecretsId>
     <Description>Reminder for Anniversaries with the Database for BDE</Description>
     <VersionPrefix>0.1.0
     </VersionPrefix>
@@ -37,15 +38,31 @@
 	<PropertyGroup Condition=" '$(RunConfiguration)' == 'AnniversaryReminder' " />
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="7.0.3" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.3" />
+    <PackageReference
+            Include="AutoMapper.Extensions.Microsoft.DependencyInjection"
+            Version="12.0.0"
+        />
+    <PackageReference
+            Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore"
+            Version="7.0.3"
+        />
+    <PackageReference
+            Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore"
+            Version="7.0.3"
+        />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.3" />
+    <PackageReference
+            Include="Microsoft.EntityFrameworkCore.InMemory"
+            Version="7.0.3"
+        />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlserver" Version="7.0.3" />
+    <PackageReference
+            Include="Microsoft.EntityFrameworkCore.Sqlserver"
+            Version="7.0.3"
+        />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.3">
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <IncludeAssets
+            >runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>

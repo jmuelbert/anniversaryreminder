@@ -1,4 +1,3 @@
-
 /*
  * Copyright (c) 2018-2020 Jürgen Mülbert. All rights reserved.
  *
@@ -52,21 +51,21 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AnniversaryReminder.Pages.Employees
 {
-	[AllowAnonymous]
-	public class IndexModel : PageModel
-	{
-		private readonly AnniversaryReminder.Data.ApplicationDbContext _context;
+    [AllowAnonymous]
+    public class IndexModel : PageModel
+    {
+        private readonly AnniversaryReminder.Data.ApplicationDbContext _context;
 
-		public IndexModel(AnniversaryReminder.Data.ApplicationDbContext context)
-		{
-			_context = context;
-		}
+        public IndexModel(AnniversaryReminder.Data.ApplicationDbContext context)
+        {
+            _context = context;
+        }
 
-		public IList<Employee> Employee { get; set; }
+        public IList<Employee> Employee { get; set; }
 
-		public async Task OnGetAsync()
-		{
-			Employee = await _context.Employee.ToListAsync();
-		}
-	}
+        public async Task OnGetAsync()
+        {
+            Employee = await _context.Employee.ToListAsync();
+        }
+    }
 }

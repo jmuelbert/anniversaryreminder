@@ -13,7 +13,7 @@ updates:
       interval: "daily"
     commit-message:
       prefix: ":rocket: gha"
-  
+
   # Enable version updates for Docker
   - package-ecosystem: "docker"
     # Look for a `Dockerfile` in the `root` directory
@@ -39,5 +39,3 @@ updates:
       interval: "daily"
     commit-message:
       prefix: ":rocket: pip"
-
-

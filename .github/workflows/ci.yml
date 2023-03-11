@@ -108,13 +108,17 @@ jobs:
         uses: DuckSoft/create-7z-action@v1.0
         with:
           pathSource: ./
-          pathTarget: ./anniversary-reminder-${{ steps.get_version.outputs.VERSION }}-source-all.7z
+          pathTarget:
+            ./anniversary-reminder-${{ steps.get_version.outputs.VERSION
+            }}-source-all.7z
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: source-files
-          path: ./anniversary-reminder-${{ steps.get_version.outputs.VERSION }}-source-all.7z
+          path:
+            ./anniversary-reminder-${{ steps.get_version.outputs.VERSION
+            }}-source-all.7z
 
   tests:
     name: ${{ matrix.session }} ${{ matrix.dotnet-version }} / ${{ matrix.os }}
@@ -142,7 +146,7 @@ jobs:
         with:
           versionSpec: "5.x"
 
-      - name: Use dotnet-version ${{matrix.dotnet-version}} 
+      - name: Use dotnet-version ${{matrix.dotnet-version}}
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: ${{ matrix.dotnet-version }}
@@ -166,7 +170,7 @@ jobs:
           dotnet tool update --global dotnet-ef
           dotnet ef database update --project src/AnniversaryReminder
           dotnet test  -p:Configuration=Release --no-restore -p:version=${{ steps.gitversion.outputs.semVer }}
-          
+
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
 
@@ -245,7 +249,8 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ./source-files/
-          asset_name: anniversary-reminder-${{ steps.get_version.outputs.VERSION }}-source-all.7z
+          asset_name:
+            anniversary-reminder-${{ steps.get_version.outputs.VERSION }}-source-all.7z
           tag: ${{ github.ref }}
           overwrite: true
 
@@ -258,7 +263,9 @@ jobs:
 
       - name: Deploy Release on nuget
         if: startsWith(github.ref, 'refs/tags/')
-        run: dotnet nuget push "**/*.nupkg" -s https://api.nuget.org/v3/index.json -k ${{ secrets.PUBLISH_NUGET_ORG }} --skip-duplicate
+        run:
+          dotnet nuget push "**/*.nupkg" -s https://api.nuget.org/v3/index.json -k ${{
+          secrets.PUBLISH_NUGET_ORG }} --skip-duplicate
 
   # Upload continous build
   upload:
@@ -302,4 +309,6 @@ jobs:
 
       - name: Deploy Release on nuget
         if: startsWith(github.ref, 'refs/tags/')
-        run: dotnet nuget push "**/*.nupkg" -s https://api.nuget.org/v3/index.json -k ${{ secrets.PUBLISH_NUGET_ORG }} --skip-duplicate
+        run:
+          dotnet nuget push "**/*.nupkg" -s https://api.nuget.org/v3/index.json -k ${{
+          secrets.PUBLISH_NUGET_ORG }} --skip-duplicate

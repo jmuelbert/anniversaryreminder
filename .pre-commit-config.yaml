@@ -5,7 +5,7 @@
 exclude: ^3rd-party|COPYING|.gitmodules|conan
 default_language_version:
   python: python3
-fail_fast: true
+fail_fast: false
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
@@ -13,18 +13,13 @@ repos:
       - id: check-added-large-files
         args: [--maxkb=150]
       - id: check-ast
-      - id: check-byte-order-marker
-        exclude: ^.*(\.cs|\.cbproj|\.groupproj|\.props|\.sln|\.vcxproj|\.vcxproj.filters)$
+      - id: fix-byte-order-marker
+        exclude: ^.*(\.cbproj|\.groupproj|\.props|\.sln|\.vcxproj|\.vcxproj.filters)$
       - id: check-builtin-literals
       - id: check-case-conflict
       - id: check-docstring-first
       - id: check-executables-have-shebangs
       - id: check-json
-        exclude: >
-          (?x)(
-           ^\.vscode/.*\.json|
-           ^\.github/.*\.yml
-           )$
       - id: check-merge-conflict
       - id: check-shebang-scripts-are-executable
       - id: check-symlinks
@@ -49,7 +44,8 @@ repos:
         args: [--fix=auto]
       - id: name-tests-test
       - id: no-commit-to-branch
-        args: [--branch, gh-pages]
+        # protect main and any branch that has a semver-like name
+        args: [-b, main, -p, '^\d+\.\d+(?:\.\d+)?$']
       - id: pretty-format-json
         exclude: >
           (?x)(
@@ -167,7 +163,7 @@ repos:
         stages: [commit-msg]
 
   - repo: https://github.com/psf/black
-    rev: 22.12.0
+    rev: 23.1.0
     hooks:
       - id: black
 
@@ -201,7 +197,7 @@ repos:
         args: ['--regex=PROJ-[0-9]', '--format={ticket} {commit_msg}'] # Optional
 
   - repo: https://github.com/homebysix/pre-commit-macadmin
-    rev: v1.12.3
+    rev: v1.12.4
     hooks:
       - id: check-autopkg-recipe-list
       - id: check-autopkg-recipes
@@ -231,3 +227,18 @@ repos:
     rev: v0.33.0
     hooks:
       - id: markdownlint
+
+  - repo: https://github.com/oxsecurity/megalinter
+    rev: v6.19.0 # Git tag specifying the hook, not mega-linter-runner, version
+    hooks:
+      - id: megalinter-incremental # Faster, less thorough
+        stages:
+          - commit
+      - id: megalinter-full # Slower, more thorough
+        stages:
+          - push
+
+  - repo: https://github.com/fsfe/reuse-tool
+    rev: v1.0.0
+    hooks:
+      - id: reuse

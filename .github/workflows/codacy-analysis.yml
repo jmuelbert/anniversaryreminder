@@ -21,7 +21,7 @@ on:
       - develop
 
   schedule:
-    - cron: '38 5 * * 4'
+    - cron: "38 5 * * 4"
 
 jobs:
   codacy-security-scan:

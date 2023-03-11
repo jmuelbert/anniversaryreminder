@@ -18,8 +18,7 @@ assignees: ''
 
 <!-- If applicable, add screenshots to help explain your problem. -->
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+**Expected behavior** A clear and concise description of what you expected to happen.
 
 **Screenshots**
 
@@ -30,8 +29,8 @@ A clear and concise description of what you expected to happen.
 <!-- Your environment is usually important for finding the cause of the bug. -->
 <!-- You can get the anniversaryreminder version by clicking `Help`->`Build Info` in the GUI. -->
 
- - OS: [e.g. macOS 10.15 /  Windows 10 / Ubuntu 18.04]
- - anniversaryreminder Version: [e.g. 6.0.2]
+- OS: [e.g. macOS 10.15 / Windows 10 / Ubuntu 18.04]
+- anniversaryreminder Version: [e.g. 6.0.2]
 
 **Additional context**
 

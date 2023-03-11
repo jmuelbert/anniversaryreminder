@@ -1,6 +1,7 @@
 # anniversaryreminder
 
-anniversaryreminder is a program that do you remind you to anniversaries in a company. i.e. The employee is 10 Years, 25 years in the company. Or the employee has birthday.
+anniversaryreminder is a program that do you remind you to anniversaries in a company.
+i.e. The employee is 10 Years, 25 years in the company. Or the employee has birthday.
 
 ---
 
@@ -9,6 +10,7 @@ anniversaryreminder is a program that do you remind you to anniversaries in a co
 [![CI on Branches and PRs](https://github.com/jmuelbert/anniversaryreminder/actions/workflows/ci.yml/badge.svg)](https://github.com/jmuelbert/anniversaryreminder/actions/workflows/ci.yml)
 [![CodeQL](https://github.com/jmuelbert/anniversaryreminder/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/jmuelbert/anniversaryreminder/actions/workflows/codeql-analysis.yml)
 [![Codacy Security Scan](https://github.com/jmuelbert/anniversaryreminder/actions/workflows/codacy-analysis.yml/badge.svg)](https://github.com/jmuelbert/anniversaryreminder/actions/workflows/codacy-analysis.yml)
+[![MegaLinter](https://github.com/jmuelbert/anniversaryreminder/workflows/MegaLinter/badge.svg?branch=main)][mega-linter]
 [![GitHub All Releases][downloads_all-shield]][downloads_all-url]
 [![Issues][issues-shield]][issues-url]
 [![Help wanted issues][help-issues-shield]][help-issues-url]
@@ -18,13 +20,19 @@ anniversaryreminder is a program that do you remind you to anniversaries in a co
 [![Documentation][documentation-shield]][documentation-url]
 [![License][license-shield]][license-url]
 
-[Features](https://github.com/jmuelbert/anniversaryreminder) | [Documentation](https://jmuelbert.github.io/anniversaryreminder/) | [Changelog](CHANGELOG.md) | [Contributing](CONTRIBUTING.md) | [FAQ](https://github.com/jmuelbert/anniversaryreminder/wiki/FAQ)
+[Features](https://github.com/jmuelbert/anniversaryreminder) |
+[Documentation](https://jmuelbert.github.io/anniversaryreminder/) |
+[Changelog](CHANGELOG.md) | [Contributing](CONTRIBUTING.md) |
+[FAQ](https://github.com/jmuelbert/anniversaryreminder/wiki/FAQ)
 
-anniversaryreminder is free software; you can redistribute it and/or modify it under the terms
-of the [European Public License Version 1.2](https://joinup.ec.europa.eu/page/eupl-text-11-12).
-Please read the [LICENSE](https://github.com/jmuelbert/anniversaryreminder/blob/master/LICENSE) for additional information.
+anniversaryreminder is free software; you can redistribute it and/or modify it under the
+terms of the
+[European Public License Version 1.2](https://joinup.ec.europa.eu/page/eupl-text-11-12).
+Please read the
+[LICENSE](https://github.com/jmuelbert/anniversaryreminder/blob/master/LICENSE) for
+additional information.
 
- The master branch represents the latest pre-release code.
+The master branch represents the latest pre-release code.
 
 - [Releases](https://github.com/jmuelbert/anniversaryreminder/releases)
 
@@ -43,7 +51,7 @@ Please read the [LICENSE](https://github.com/jmuelbert/anniversaryreminder/blob/
 
 ## Building
 
-### Requirments
+### Requirements
 
 #### For Windows
 
@@ -63,11 +71,11 @@ Please read the [LICENSE](https://github.com/jmuelbert/anniversaryreminder/blob/
 
 - Open a command prompt
 
-    ```cmd
-        cd src\anniversaryreminder
-        dotnet build
-        dotnet ef database update
-    ```
+  ```cmd
+      cd src\anniversaryreminder
+      dotnet build
+      dotnet ef database update
+  ```
 
 - Create the app and a new blank database.
 
@@ -75,11 +83,11 @@ Please read the [LICENSE](https://github.com/jmuelbert/anniversaryreminder/blob/
 
 - Open a command prompt and execute
 
-    ```bash
-        cd src/anniversaryreminder
-        dotnet build
-        dotnet ef database update
-    ```
+  ```bash
+      cd src/anniversaryreminder
+      dotnet build
+      dotnet ef database update
+  ```
 
 - Create the app and a new blank database.
 
@@ -89,24 +97,25 @@ Please read the [LICENSE](https://github.com/jmuelbert/anniversaryreminder/blob/
 
 - Open a command prompt and execute
 
-    ```cmd
-        cd src\anniversaryreminder
-        dotnet run
-    ```
+  ```cmd
+      cd src\anniversaryreminder
+      dotnet run
+  ```
 
-- This hosts the app in a console application - Application started at URL **`http://localhost:5000/`**.
-
+- This hosts the app in a console application - Application started at URL
+  **`http://localhost:5000/`**.
 
 ### Run on Linux or macOS
 
 - Open a command prompt and execute
 
-    ```bash
-        cd src/anniversaryreminder
-        dotnet run
-    ```
+  ```bash
+      cd src/anniversaryreminder
+      dotnet run
+  ```
 
-- This hosts the app in a console application - Application started at URL **`http://localhost:5000/`**.
+- This hosts the app in a console application - Application started at URL
+  **`http://localhost:5000/`**.
 
 ## Publish the anniversaryreminder App
 
@@ -114,19 +123,19 @@ Please read the [LICENSE](https://github.com/jmuelbert/anniversaryreminder/blob/
 
 - Open a command prompt and execute
 
-    ```cmd
-        cd src\anniversaryreminder
-        dotnet publish -c Release -o [RELEASEDIRECTORY]
-    ```
+  ```cmd
+      cd src\anniversaryreminder
+      dotnet publish -c Release -o [RELEASEDIRECTORY]
+  ```
 
 ### Publish on Linux or macOS
 
 - Open a command prompt and execute
 
-    ```bash
-        cd src/anniversaryreminder
-        dotnet publish -c Release -o [RELEASEDIRECTORY]
-    ```
+  ```bash
+      cd src/anniversaryreminder
+      dotnet publish -c Release -o [RELEASEDIRECTORY]
+  ```
 
 ## License
 
@@ -135,51 +144,40 @@ EUPL-1.2 © [Jürgen Mülbert](https:/github.com/jmuelbert/anniversaryreminder
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/jmuelbert/anniversaryreminder
-[contributors-url]: https://github.com/jmuelbert/anniversaryreminder/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/jmuelbert/anniversaryreminder
-[forks-url]: https://github.com/jmuelbert/anniversaryreminder/network/members
+[contributors-shield]:
+ https://img.shields.io/github/contributors/jmuelbert/anniversaryreminder
 [issues-shield]: https://img.shields.io/github/issues-raw/jmuelbert/anniversaryreminder
 [issues-url]: https://github.com//jmuelbert/anniversaryreminder/issues
 [license-shield]: https://img.shields.io/badge/license-EUPL-blue.svg
 [license-url]: https://github.com/jmuelbert/anniversaryreminder/blob/master/LICENSE
-[product-screenshot]: images/doc/images/Logo_template.png
 [build-shield]:
-    https://img.shields.io/github/workflow/status/jmuelbert/anniversaryreminder/Build/release
-[build-url]: https://github.com/jmuelbert/anniversaryreminder/workflows/Build
+ https://img.shields.io/github/workflow/status/jmuelbert/anniversaryreminder/Build/release
 [gitpod-shield]: https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod
 [gitpod-url]: https://gitpod.io/#https://github.com/jmuelbert/anniversaryreminder
 [codacy-shield]:
-    https://api.codacy.com/project/badge/Grade/945eee726f39449ca83631edd119aee1
+ https://api.codacy.com/project/badge/Grade/945eee726f39449ca83631edd119aee1
 [codacy-url]:
-   https://app.codacy.com/gh/jmuelbert/anniversaryreminder?utm_source=github.com&utm_medium=referral&utm_content=jmuelbert/anniversaryreminder&utm_campaign=Badge_Grade
+ https://app.codacy.com/gh/jmuelbert/anniversaryreminder?utm_source=github.com&utm_medium=referral&utm_content=jmuelbert/anniversaryreminder&utm_campaign=Badge_Grade
 [downloads_all-shield]:
-    https://img.shields.io/github/downloads/jmuelbert/anniversaryreminder/total?label=downloads%40all
+ https://img.shields.io/github/downloads/jmuelbert/anniversaryreminder/total?label=downloads%40all
 [downloads_all-url]: https://github.com/jmuelbert/anniversaryreminder/releases
 [pre-commit-shield]:
-    https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
+ https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
 [pre-commit-url]: https://github.com/pre-commit/pre-commit
 [misspell_fixer-shield]:
-    https://github.com/jmuelbert/anniversaryreminder/workflows/Misspell%20fixer/badge.svg
+ https://github.com/jmuelbert/anniversaryreminder/workflows/Misspell%20fixer/badge.svg
 [misspell_fixer-url]: https://github.com/marketplace/actions/misspell-fixer-action
 [help-issues-shield]:
-    https://img.shields.io/github/issues/jmuelbert/anniversaryreminder/help%20wanted
+ https://img.shields.io/github/issues/jmuelbert/anniversaryreminder/help%20wanted
 [help-issues-url]:
-    https://github.com/jmuelbert/anniversaryreminder/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22
+ https://github.com/jmuelbert/anniversaryreminder/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22
 [documentation-shield]: https://img.shields.io/badge/Documentation-latest-blue.svg
 [documentation-url]: https://jmuelbert.github.io/anniversaryreminder
-[lgtm-alerts-shield]: https://img.shields.io/lgtm/alerts/g/jmuelbert/anniversaryreminder.svg?logo=lgtm&logoWidth=18
-[lgtm-alerts-url]: https://lgtm.com/projects/g/jmuelbert/anniversaryreminder/alerts/
-[lgtm-csharp-shield]:
-    https://img.shields.io/lgtm/grade/csharp/g/jmuelbert/anniversaryreminder.svg?logo=lgtm&logoWidth=18
-[lgtm-csharp-url]: https://lgtm.com/projects/g/jmuelbert/anniversaryreminder/context:csharp
-[lgtm-python-shield]: https://img.shields.io/lgtm/grade/python/g/jmuelbert/anniversaryreminder.svg?logo=lgtm&logoWidth=18
-[lgtm-python-url]: https://lgtm.com/projects/g/jmuelbert/anniversaryreminder/context:python
-[lgtm-js-shield]: https://img.shields.io/lgtm/grade/javascript/g/jmuelbert/anniversaryreminder.svg?logo=lgtm&logoWidth=18
-[lgtm-js-url]: https://lgtm.com/projects/g/jmuelbert/anniversaryreminder/context:javascript
-[cdash-shield]: https://img.shields.io/badge/CDash-Access-blue.svg
-[cdash-url]: http://my.cdash.org/index.php?project=anniversaryreminder
-[pr-shield]: https://img.shields.io/github/issues-pr-raw/jmuelbert/anniversaryreminder.svg
+[pr-shield]:
+ https://img.shields.io/github/issues-pr-raw/jmuelbert/anniversaryreminder.svg
 [pr-url]: https://github.com/jmuelbert/anniversaryreminder/pulls
-[codecov-shield]: https://codecov.io/gh/jmuelbert/anniversaryreminder/branch/master/graph/badge.svg
+[codecov-shield]:
+ https://codecov.io/gh/jmuelbert/anniversaryreminder/branch/master/graph/badge.svg
 [codecov-url]: https://codecov.io/gh/jmuelbert/anniversaryreminder
+[mega-linter]:
+ https://github.com/jmuelbert/anniversaryreminder/actions?query=workflow%3AMegaLinter+branch%3Amain
