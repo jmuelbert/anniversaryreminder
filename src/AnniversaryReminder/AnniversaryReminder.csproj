@@ -60,7 +60,7 @@
             Include="Microsoft.EntityFrameworkCore.Sqlserver"
             Version="7.0.3"
         />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.3">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.4">
       <IncludeAssets
             >runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
