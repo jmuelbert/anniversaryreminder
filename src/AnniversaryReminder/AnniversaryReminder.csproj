@@ -58,7 +58,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.3" />
     <PackageReference
             Include="Microsoft.EntityFrameworkCore.Sqlserver"
-            Version="7.0.3"
+            Version="7.0.4"
         />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.3">
       <IncludeAssets
