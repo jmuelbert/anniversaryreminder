@@ -10,26 +10,31 @@
 # the `language` matrix defined below to confirm you have the correct set of
 # supported CodeQL languages.
 #
-name: "CodeQL"
+name: 'CodeQL Analysis'
 
 on:
   push:
-    branches:
-      - main
-      - develop
-
+    branches: [main, develop, protected]
+    paths-ignore:
+      - '**/*.md'
+      - '**/*.txt'
   pull_request:
     # The branches below must be a subset of the branches above
-    branches:
-      - main
-      - develop
+    types: [opened, synchronize, reopened]
 
   schedule:
     - cron: "15 10 * * 3"
 
+permissions:
+  contents: read
+  
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
+  
 jobs:
-  analyze:
-    name: Analyze
+  codeql-analyze:
+    name: "CodeQL Analyze"
     runs-on: ubuntu-latest
     permissions:
       actions: read

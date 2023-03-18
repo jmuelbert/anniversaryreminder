@@ -1,24 +1,24 @@
 ---
-# SPDX-FileCopyrightText: Jürgen Mülbert <juergen.muelbert@web.de>
+# SPDX-FileCopyrightText: Tom Ross
 #
-# SPDX-License-Identifier: EUPL-1.2
+# SPDX-License-Identifier: MIT
 #
 name: "Write good"
 
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - master
+      - main
 
 jobs:
   write_good_job:
     runs-on: ubuntu-latest
     name: A job to lint Markdown files
     steps:
-      - uses: actions/checkout@v3.3.0
+      - uses: actions/checkout@v3
       - name: write-good action step
         id: write-good
         uses: tomwhross/write-good-action@v1.6
@@ -32,5 +32,4 @@ jobs:
           message: |
             ${{ steps.write-good.outputs.result }}
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          repo-token-user-login: "github-actions[bot]" # The user.login for temporary GitHub tokens
           allow-repeats: false # This is the default

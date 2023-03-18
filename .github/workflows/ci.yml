@@ -33,6 +33,10 @@ env:
   NET_FRAMEWORK_VERSION: net48
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
 
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
+
 jobs:
   build:
     name: "🧊 Module Build"
@@ -45,9 +49,12 @@ jobs:
           fetch-depth: 0
 
       - name: "⚙️ Install GitVersion"
-        uses: gittools/actions/gitversion/setup@v0.10.2
-        with:
-          versionSpec: "5.x"
+        id: gitversion
+        uses: gittools/actions/gitversion/execute@v0.10.2
+
+      - name: "⚙ Display the version"
+        run: |
+          echo "Version: ${{ steps.gitversion.outputs.semVer }}"
 
       - name: "⚙️ Setup dotnet"
         uses: actions/setup-dotnet@v3
@@ -59,14 +66,6 @@ jobs:
 
       - name: "⚙️ Install dependencies"
         run: dotnet restore
-
-      - name: "🚧 Use GitVersion"
-        id: gitversion
-        uses: gittools/actions/gitversion/execute@v0.10.2
-
-      - name: "🚧 Display the version"
-        run: |
-          echo "Version: ${{ steps.gitversion.outputs.semVer }}"
 
       - name: "🚧 Build solution"
         run: |
@@ -86,10 +85,10 @@ jobs:
     needs: tests
 
     steps:
-      - name: Checkout Source Code
+      - name: "🧰 Checkout Source Code"
         uses: actions/checkout@v3
         with:
-          submodules: "recursive"
+          fetch-depth: 0
 
       - name: Restoring submodules
         run: git submodule update --init
@@ -108,16 +107,14 @@ jobs:
         uses: DuckSoft/create-7z-action@v1.0
         with:
           pathSource: ./
-          pathTarget:
-            ./anniversary-reminder-${{ steps.get_version.outputs.VERSION
+          pathTarget: ./anniversary-reminder-${{ steps.get_version.outputs.VERSION
             }}-source-all.7z
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: source-files
-          path:
-            ./anniversary-reminder-${{ steps.get_version.outputs.VERSION
+          path: ./anniversary-reminder-${{ steps.get_version.outputs.VERSION
             }}-source-all.7z
 
   tests:
@@ -133,37 +130,41 @@ jobs:
           - { dotnet-version: "6.x", os: ubuntu-latest }
           - { dotnet-version: "6.x", os: windows-latest }
           - { dotnet-version: "6.x", os: macos-latest }
+
     steps:
-      - uses: actions/checkout@v3
+      - name: "🧰 Checkout Source Code"
+        uses: actions/checkout@v3
         with:
-          fetch-depth: 2
+          fetch-depth: 0
 
-      - name: Fetch all history for all tags and branches
-        run: git fetch --prune --unshallow
-
-      - name: Install GitVersion
-        uses: gittools/actions/gitversion/setup@v0.10.2
+      - name: "⚙️ Install GitVersion"
+        uses: gittools/actions/gitversion/setup@v0.9.15
         with:
           versionSpec: "5.x"
 
-      - name: Use dotnet-version ${{matrix.dotnet-version}}
-        uses: actions/setup-dotnet@v3
+      - name: "⚙️ Install GitVersion"
+        uses: gittools/actions/gitversion/setup@v0.9.15
         with:
-          dotnet-version: ${{ matrix.dotnet-version }}
+          versionSpec: "5.x"
 
-      - name: Check dotnet sdk install
-        run: dotnet --info
-
-      - name: Install dependencies
-        run: dotnet restore
-
-      - name: Use GitVersion
+      - name: "⚙️ Execute GitVersion"
         id: gitversion
         uses: gittools/actions/gitversion/execute@v0.10.2
 
-      - name: Display the version
+      - name: "⚙ Display the version"
         run: |
           echo "Version: ${{ steps.gitversion.outputs.semVer }}"
+
+      - name: "⚙️ Setup dotnet"
+        uses: actions/setup-dotnet@v3
+        with:
+          global-json-file: global.json
+
+      - name: "⚙️ Check dotnet sdk install"
+        run: dotnet --info
+
+      - name: "⚙️ Install dependencies"
+        run: dotnet restore
 
       - name: Unit & integration test
         run: |
@@ -249,8 +250,7 @@ jobs:
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: ./source-files/
-          asset_name:
-            anniversary-reminder-${{ steps.get_version.outputs.VERSION }}-source-all.7z
+          asset_name: anniversary-reminder-${{ steps.get_version.outputs.VERSION }}-source-all.7z
           tag: ${{ github.ref }}
           overwrite: true
 
@@ -263,8 +263,7 @@ jobs:
 
       - name: Deploy Release on nuget
         if: startsWith(github.ref, 'refs/tags/')
-        run:
-          dotnet nuget push "**/*.nupkg" -s https://api.nuget.org/v3/index.json -k ${{
+        run: dotnet nuget push "**/*.nupkg" -s https://api.nuget.org/v3/index.json -k ${{
           secrets.PUBLISH_NUGET_ORG }} --skip-duplicate
 
   # Upload continous build
@@ -309,6 +308,5 @@ jobs:
 
       - name: Deploy Release on nuget
         if: startsWith(github.ref, 'refs/tags/')
-        run:
-          dotnet nuget push "**/*.nupkg" -s https://api.nuget.org/v3/index.json -k ${{
+        run: dotnet nuget push "**/*.nupkg" -s https://api.nuget.org/v3/index.json -k ${{
           secrets.PUBLISH_NUGET_ORG }} --skip-duplicate

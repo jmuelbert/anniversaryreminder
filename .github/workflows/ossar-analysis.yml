@@ -10,13 +10,20 @@ name: OSSAR
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [master]
+    types: [opened, synchronize, reopened]
   schedule:
     - cron: "30 12 * * 3"
 
+permissions:
+  contents: read
+  
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
+  
 jobs:
   OSSAR-Scan:
     # OSSAR runs on windows-latest.

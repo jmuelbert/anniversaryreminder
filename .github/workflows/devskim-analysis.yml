@@ -1,3 +1,4 @@
+---
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
@@ -19,8 +20,15 @@ on:
   schedule:
     - cron: "26 20 * * 2"
 
+permissions:
+  contents: read
+  
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
+  
 jobs:
-  lint:
+  devskim:
     name: DevSkim
     runs-on: ubuntu-latest
     permissions:
