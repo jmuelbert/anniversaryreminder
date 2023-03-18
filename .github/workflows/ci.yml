@@ -45,9 +45,13 @@ jobs:
           fetch-depth: 0
 
       - name: "⚙️ Install GitVersion"
-        uses: gittools/actions/gitversion/setup@v0.10.2
-        with:
-          versionSpec: "5.x"
+        id: gitversion
+        uses: gittools/actions/gitversion/execute@v0.10.2
+
+      - name: "⚙ Display the version"
+        run: |
+          echo "Version: ${{ steps.gitversion.outputs.semVer }}"
+
 
       - name: "⚙️ Setup dotnet"
         uses: actions/setup-dotnet@v3
@@ -59,14 +63,6 @@ jobs:
 
       - name: "⚙️ Install dependencies"
         run: dotnet restore
-
-      - name: "🚧 Use GitVersion"
-        id: gitversion
-        uses: gittools/actions/gitversion/execute@v0.10.2
-
-      - name: "🚧 Display the version"
-        run: |
-          echo "Version: ${{ steps.gitversion.outputs.semVer }}"
 
       - name: "🚧 Build solution"
         run: |
@@ -86,10 +82,10 @@ jobs:
     needs: tests
 
     steps:
-      - name: Checkout Source Code
+      - name: "🧰 Checkout Source Code"    
         uses: actions/checkout@v3
         with:
-          submodules: "recursive"
+          fetch-depth: 0
 
       - name: Restoring submodules
         run: git submodule update --init
@@ -133,37 +129,31 @@ jobs:
           - { dotnet-version: "6.x", os: ubuntu-latest }
           - { dotnet-version: "6.x", os: windows-latest }
           - { dotnet-version: "6.x", os: macos-latest }
+          
     steps:
-      - uses: actions/checkout@v3
+      - name: "🧰 Checkout Source Code"    
+        uses: actions/checkout@v3
         with:
-          fetch-depth: 2
+          fetch-depth: 0
 
-      - name: Fetch all history for all tags and branches
-        run: git fetch --prune --unshallow
-
-      - name: Install GitVersion
-        uses: gittools/actions/gitversion/setup@v0.10.2
-        with:
-          versionSpec: "5.x"
-
-      - name: Use dotnet-version ${{matrix.dotnet-version}}
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: ${{ matrix.dotnet-version }}
-
-      - name: Check dotnet sdk install
-        run: dotnet --info
-
-      - name: Install dependencies
-        run: dotnet restore
-
-      - name: Use GitVersion
+      - name: "⚙️ Install GitVersion"
         id: gitversion
         uses: gittools/actions/gitversion/execute@v0.10.2
 
-      - name: Display the version
+      - name: "⚙ Display the version"
         run: |
           echo "Version: ${{ steps.gitversion.outputs.semVer }}"
+
+      - name: "⚙️ Setup dotnet"
+        uses: actions/setup-dotnet@v3
+        with:
+          global-json-file: global.json
+
+      - name: "⚙️ Check dotnet sdk install"
+        run: dotnet --info
+
+      - name: "⚙️ Install dependencies"
+        run: dotnet restore
 
       - name: Unit & integration test
         run: |
