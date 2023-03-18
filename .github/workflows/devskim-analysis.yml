@@ -20,6 +20,13 @@ on:
   schedule:
     - cron: "26 20 * * 2"
 
+permissions:
+  contents: read
+  
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
+  
 jobs:
   devskim:
     name: DevSkim
