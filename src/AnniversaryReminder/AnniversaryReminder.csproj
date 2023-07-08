@@ -53,7 +53,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.8" />
     <PackageReference
             Include="Microsoft.EntityFrameworkCore.InMemory"
-            Version="7.0.5"
+            Version="7.0.8"
         />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.8" />
     <PackageReference
