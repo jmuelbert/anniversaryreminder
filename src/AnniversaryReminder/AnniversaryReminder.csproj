@@ -44,7 +44,7 @@
         />
     <PackageReference
             Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore"
-            Version="7.0.8"
+            Version="7.0.9"
         />
     <PackageReference
             Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore"
