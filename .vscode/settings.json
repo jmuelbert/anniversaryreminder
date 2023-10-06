@@ -1,25 +1,7 @@
 {
-    "editor.formatOnSave": true,
-    "files.exclude": {
-        "llvm-project": true,
-        "stl/msbuild": true,
-        "vcpkg": true
-    },
-    "files.insertFinalNewline": true,
-    "files.trimFinalNewlines": true,
-    "files.trimTrailingWhitespace": true,
-    "python.linting.pylintEnabled": false,
-    "python.testing.promptToConfigure": false,
-    "python.testing.pytestEnabled": false,
-    "python.testing.unittestEnabled": false,
-    "workbench.editor.enablePreviewFromQuickOpen": false,
-    "files.associations": {
-        "filesystem": "cpp",
-        "string": "cpp",
-        "*.tcc": "cpp",
-        "__hash_table": "cpp",
-        "__tree": "cpp",
-        "algorithm": "cpp",
-        "list": "cpp"
-    }
+  "files.exclude": {
+    "bin": true,
+    "obj": true
+  },
+  "dotnet.defaultSolution": "jmbde.sln"
 }
