@@ -19,6 +19,6 @@ jobs:
       - name: Move Issue to Triage Column
         uses: alex-page/github-project-automation-plus@v0.8.3
         with:
-          project: jmbde-dotnet
+          project: anniversaryreminder
           column: Triage
           repo-token: ${{ secrets.GITHUB_TOKEN }}

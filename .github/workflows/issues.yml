@@ -1,5 +1,5 @@
 ---
-# SPDX-FileCopyrightText: Jürgen Mülbert <juergen.muelbert@web.de>
+# SPDX-FileCopyrightText: Jürgen Mülbert <juergen.muelbert@outlook.de>
 #
 # SPDX-License-Identifier: EUPL-1.2
 #
@@ -13,7 +13,10 @@ jobs:
     name: fastlane env reminder
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3.3.0
-      - uses: fastlane/github-actions/fastlane-env-reminder@latest
+      - name: "🧰 Check out code"
+        uses: actions/checkout@v3
+
+      - name: Send Issue Processing Reminder
+        uses: fastlane/github-actions/fastlane-env-reminder@latest
         with:
-          repo-token: "${{ secrets.BOT_GITHUB_TOKEN }}"
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"

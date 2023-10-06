@@ -27,11 +27,11 @@ on:
 
 permissions:
   contents: read
-  
+
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
   cancel-in-progress: true
-  
+
 jobs:
   codeql-analyze:
     name: "CodeQL Analyze"
@@ -40,6 +40,9 @@ jobs:
       actions: read
       contents: read
       security-events: write
+
+    # Skip any PR created by dependabot to avoid permission issues:
+    if: (github.actor != 'dependabot[bot]')
 
     strategy:
       fail-fast: false
@@ -70,34 +73,26 @@ jobs:
         with:
           global-json-file: global.json
 
-      - name: Check dotnet sdk install
-        if: matrix.language == 'csharp'
-        run: dotnet --info
+      - name: Cache NuGet packages
+        uses: actions/cache@v2
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
 
-      - name: Install dependencies
+      - name: Install dependencies and Build
         if: matrix.language == 'csharp'
-        run: dotnet restore
-
-      - name: Build solution
-        if: matrix.language == 'csharp'
-        run: dotnet build
+        run: |
+          dotnet --info
+          dotnet restore
+          dotnet build
 
      # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
       # If this step fails, then you should remove it and run the build manually (see below)
       - name: Autobuild
         if: matrix.language != 'csharp'
         uses: github/codeql-action/autobuild@v2
-
-      # ℹ️ Command-line programs to run using the OS shell.
-      # 📚 https://git.io/JvXDl
-
-      # ✏️ If the Autobuild fails above, remove it and uncomment the following three lines
-      #    and modify them (or add more) to build your code if your project
-      #    uses a compiled language
-
-      #- run: |
-      #   make bootstrap
-      #   make release
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2

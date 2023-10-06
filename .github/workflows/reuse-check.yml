@@ -14,13 +14,16 @@ on:
 jobs:
   ReuseCheck:
     runs-on: ubuntu-latest
+
+    # Skip any PR created by dependabot to avoid permission issues:
+    if: (github.actor != 'dependabot[bot]')
+
     steps:
-      - name: "🧰 Checkout"
-        uses: actions/checkout@v3.3.0
+      - name: "🧰 Check out code"
+        uses: actions/checkout@v3
         with:
           # Full git history is needed to get a proper list of changed files within `super-linter`
           fetch-depth: 0
 
       - name: REUSE Compliance Check
-        uses: fsfe/reuse-action@v1
-
+        uses: fsfe/reuse-action@v2

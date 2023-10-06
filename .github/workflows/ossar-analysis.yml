@@ -20,11 +20,11 @@ on:
 
 permissions:
   contents: read
-  
+
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
   cancel-in-progress: true
-  
+
 jobs:
   OSSAR-Scan:
     # OSSAR runs on windows-latest.
@@ -32,8 +32,9 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout repository
+      - name: "🧰 Check out code"
         uses: actions/checkout@v3
+
 
       # Ensure a compatible version of dotnet is installed.
       # The [Microsoft Security Code Analysis CLI](https://aka.ms/mscadocs) is built with dotnet v3.1.201.

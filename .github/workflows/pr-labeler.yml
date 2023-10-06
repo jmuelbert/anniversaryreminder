@@ -1,5 +1,5 @@
 ---
-# SPDX-FileCopyrightText: Jürgen Mülbert <juergen.muelbert@web.de>
+# SPDX-FileCopyrightText: Jürgen Mülbert <juergen.muelbert@outlook.de>
 #
 # SPDX-License-Identifier: MIT
 #
@@ -11,9 +11,7 @@
 # https://github.com/actions/labeler
 
 name: Labeler
-# yamllint disable
 on:
-  # yamllint enable
   pull_request:
 
 jobs:

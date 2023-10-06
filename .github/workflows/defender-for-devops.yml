@@ -1,3 +1,4 @@
+---
 # This workflow uses actions that are not certified by GitHub.
 # They are provided by a third-party and are governed by
 # separate terms of service, privacy policy, and support
@@ -24,15 +25,17 @@ on:
     paths: # Nur ausführen, wenn diese Dateien geändert wurden
     - "src/**"
     - "test/**"
-    - ".github/workflows/msdo.yml"   
+    - ".github/workflows/msdo.yml"
+
   pull_request:
       types: [opened, synchronize, reopened]
+
   schedule:
-    - cron: "32 6 * * 5"
+    - cron: "32 8 * * 5"
 
 permissions:
   contents: read
-    
+
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
   cancel-in-progress: true
@@ -53,7 +56,7 @@ jobs:
       - name: "🧰 Check out code"
         uses: actions/checkout@v3
 
-      - name: "⚙️ Setup dotnet"        
+      - name: "⚙️ Setup dotnet"
         uses: actions/setup-dotnet@v3
         with:
           dotnet-version: |
@@ -66,12 +69,12 @@ jobs:
           path: ~/.nuget/packages
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
           restore-keys: |
-                ${{ runner.os }}-nuget-
+            ${{ runner.os }}-nuget-
 
       - name: Run Microsoft Security DevOps
         uses: microsoft/security-devops-action@v1.6.0
         id: msdo
- 
+
       - name: Upload results to Security tab
         uses: github/codeql-action/upload-sarif@v2
         with:

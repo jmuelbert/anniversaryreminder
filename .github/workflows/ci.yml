@@ -1,13 +1,15 @@
 ---
-name: Build
+# SPDX-FileCopyrightText: © 2016-2023 Jürgen Mülbert
+#
+# SPDX-License-Identifier: EUPL-1.2
+#
+
+name: CI
 
 on:
   push:
     branches:
       - main
-
-    tags-ignore:
-      - "*"
     paths:
       - src/**
       - global.json
@@ -15,14 +17,14 @@ on:
       - .github/workflows/ci.yml
 
   pull_request:
-    branches:
-      - main
+    types: [opened, synchronize, reopened]
 
-    paths:
-      - src/**
-      - global.json
-      - AnniversaryReminder.sln
-      - .github/workflows/ci.yml
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
 
 env:
   CONFIGURATION: Release
@@ -32,10 +34,6 @@ env:
   NET_CORE_VERSION: net7.0
   NET_FRAMEWORK_VERSION: net48
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
-
-concurrency:
-  group: ${{ github.ref }}-${{ github.workflow }}
-  cancel-in-progress: true
 
 jobs:
   build:
@@ -48,7 +46,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: "⚙️ Install GitVersion"
+      - name: "⚙️ Execute GitVersion"
         id: gitversion
         uses: gittools/actions/gitversion/execute@v0.10.2
 
@@ -59,16 +57,20 @@ jobs:
       - name: "⚙️ Setup dotnet"
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: "7.x"
+          global-json-file: global.json
 
-      - name: "⚙️ Check dotnet sdk install"
-        run: dotnet --info
+      - name: Cache NuGet packages
+        uses: actions/cache@v2
+        with:
+          path: ~/.nuget/packages
+          key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+          restore-keys: |
+            ${{ runner.os }}-nuget-
 
-      - name: "⚙️ Install dependencies"
-        run: dotnet restore
-
-      - name: "🚧 Build solution"
+      - name: "🚧 Install dependencies and Build"
         run: |
+          dotnet --info
+          dotnet restore
           dotnet tool update --global dotnet-ef
           dotnet ef database update --project src/AnniversaryReminder
           dotnet build  -p:Configuration=Release --no-restore -p:version=${{ steps.gitversion.outputs.semVer }}
@@ -77,7 +79,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: DotnetSolution
-          path: ${{runner.workspace}}/dist
+          path: ${{github.workspace}}/dist
 
   source-archive:
     name: All Source Files
@@ -89,6 +91,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          submodules: "recursive"
 
       - name: Restoring submodules
         run: git submodule update --init
@@ -97,11 +100,6 @@ jobs:
         id: get_version
         shell: bash
         run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
-
-      - name: Checking out sources
-        uses: actions/checkout@v3
-        with:
-          submodules: "recursive"
 
       - name: Create 7z source-archive
         uses: DuckSoft/create-7z-action@v1.0
@@ -118,7 +116,7 @@ jobs:
             }}-source-all.7z
 
   tests:
-    name: ${{ matrix.session }} ${{ matrix.dotnet-version }} / ${{ matrix.os }}
+    name: "${{ matrix.os }} with dotnet-version: ${{ matrix.dotnet-version }}"
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -137,16 +135,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: "⚙️ Install GitVersion"
-        uses: gittools/actions/gitversion/setup@v0.10.2
-        with:
-          versionSpec: "5.x"
-
-      - name: "⚙️ Install GitVersion"
-        uses: gittools/actions/gitversion/setup@v0.10.2
-        with:
-          versionSpec: "5.x"
-
       - name: "⚙️ Execute GitVersion"
         id: gitversion
         uses: gittools/actions/gitversion/execute@v0.10.2
@@ -160,153 +148,88 @@ jobs:
         with:
           global-json-file: global.json
 
-      - name: "⚙️ Check dotnet sdk install"
-        run: dotnet --info
-
-      - name: "⚙️ Install dependencies"
-        run: dotnet restore
+      - name: "⚙️ Check dotnet sdk install & restore"
+        run: |
+          dotnet --info
+          dotnet restore
+          dotnet tool update --global dotnet-ef
 
       - name: Unit & integration test
         run: |
-          dotnet tool update --global dotnet-ef
           dotnet ef database update --project src/AnniversaryReminder
           dotnet test  -p:Configuration=Release --no-restore -p:version=${{ steps.gitversion.outputs.semVer }}
 
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
 
-  releaseNotes:
-    if: startsWith(github.ref, 'refs/tags/')
+  update_release_draft:
+    if: startsWith(github.ref, 'refs/tags/') || github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
+    permissions:
+      # write permission is required to create a github release
+      contents: write
+      # write permission is required for autolabeler
+      # otherwise, read permission is required at least
+      pull-requests: write
     steps:
-      - uses: actions/checkout@v3
+      - name: "🧰 Checkout Source Code"
+        uses: actions/checkout@v3
         with:
           fetch-depth: 2
 
-      - name: Fetch all history for all tags and branches
-        run: git fetch --prune --unshallow
-
-      - name: Build Releasenotes
-        id: github_releasenotes
-        uses: release-drafter/release-drafter@v5
+      - name: Create Release Notes and Pre-Release
+        id: release_gh
+        uses: softprops/action-gh-release@v1
         with:
-          publish: "${{ steps.check-version.outputs.tag != '' }}"
-          tag: "${{ steps.check-version.outputs.tag }}"
-        env:
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          draft: true # create a draft (unpublished) release
+          prerelease: true # identify the release as a prerelease
+          body_path: ./CHANGELOG.md # use the contents of this file as the body of the release notes
 
-  changeLog:
-    if: startsWith(github.ref, 'refs/tags/')
+  deployPrereleases:
+    name: Deploy Pre-Release
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 2
-
-      - name: Fetch all history for all tags and branches
-        run: git fetch --prune --unshallow
-
-      - name: Build ChangeLog
-        id: github_changelog
-        uses: mikepenz/release-changelog-builder-action@v4
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Create Release
-        uses: actions/create-release@v1
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
-          body: ${{ steps.check-version.outputs }}
-        env:
-          GITHUB_TOKEN: $${{ secrets.GITHUB_TOKEN }}
-
-    # Upload continous build
-  upload-prereleases:
-    name: "🗂 Create pre-release and upload artifacts"
     environment: PreRelease
     needs:
       - build
-      - source-archive
-
-    runs-on: ubuntu-latest
+      - tests
+      - update_release_draft
 
     steps:
-      - name: Get the version
-        id: get_version
-        shell: bash
-        run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
-
-      - name: "📥 Download artifacts"
+      - name: Restore Dotnet Solution
         uses: actions/download-artifact@v3
-
-      - name: "🗂 Inspect directory after downloading artifacts"
-        run: ls -alFR
-
-      - name: Upload source archive
-        if: github.ref == 'refs/heads/master'
-        uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: ./source-files/
-          asset_name: anniversary-reminder-${{ steps.get_version.outputs.VERSION }}-source-all.7z
-          tag: ${{ github.ref }}
-          overwrite: true
+          name: DotnetSolution
+          path: dist
 
-      - name: Collect Artifacts
-        if: github.ref == 'refs/heads/master'
+      - name: Upload Artifact to Pre-Release
         uses: actions/upload-artifact@v3
         with:
-          name: nuget-packages
-          path: "**/*.nupkg"
+          name: Pre-Release Solution
+          path: dist
 
-      - name: Deploy Release on nuget
-        if: startsWith(github.ref, 'refs/tags/')
-        run: dotnet nuget push "**/*.nupkg" -s https://api.nuget.org/v3/index.json -k ${{
-          secrets.PUBLISH_NUGET_ORG }} --skip-duplicate
-
-  # Upload continous build
-  upload:
-    name: "🗂 Create release and upload artifacts"
-    environment: Release
+  deploy:
+    name: Deploy Release on nuget
+    if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
+    environment: Release
     needs:
       - build
-      - source-archive
-      - changeLog
-      - releaseNotes
+      - tests
+      - update_release_draft
 
     steps:
-      - name: Get the version
-        id: get_version
-        shell: bash
-        run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
-
-      - name: "📥 Download artifacts"
+      - name: Restore Dotnet Solution
         uses: actions/download-artifact@v3
-
-      - name: "🗂 Inspect directory after downloading artifacts"
-        run: ls -alFR
-
-      - name: Upload source archive
-        if: startsWith(github.ref, 'refs/tags/')
-        uses: svenstaro/upload-release-action@v2
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: anniversary-${{ steps.get_version.outputs.VERSION }}-source-all.7z
-          asset_name: jmbde-qt-${{ steps.get_version.outputs.VERSION }}-source-all.7z
-          tag: ${{ github.ref }}
-          overwrite: true
+          name: DotnetSolution
+          path: dist/
 
       - name: Collect Artifacts
-        if: startsWith(github.ref, 'refs/tags/')
         uses: actions/upload-artifact@v3
         with:
           name: nuget-packages
           path: "**/*.nupkg"
 
-      - name: Deploy Release on nuget
-        if: startsWith(github.ref, 'refs/tags/')
-        run: dotnet nuget push "**/*.nupkg" -s https://api.nuget.org/v3/index.json -k ${{
-          secrets.PUBLISH_NUGET_ORG }} --skip-duplicate
+        # - name: Publish the package to NuGet.Org
+        #  run: dotnet nuget push "**/*.nupkg" -s https://api.nuget.org/v3/index.json -k ${{ secrets.PUBLISH_NUGET_ORG }} --skip-duplicate
