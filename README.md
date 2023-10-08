@@ -18,6 +18,7 @@ i.e. The employee is 10 Years, 25 years in the company. Or the employee has birt
 [![Codecov][codecov-shield]][codecov-url]
 [![Misspell fixer][misspell_fixer-shield]][misspell_fixer-url]
 [![Documentation][documentation-shield]][documentation-url]
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 [![License][license-shield]][license-url]
 
 [Features](https://github.com/jmuelbert/anniversaryreminder) |
