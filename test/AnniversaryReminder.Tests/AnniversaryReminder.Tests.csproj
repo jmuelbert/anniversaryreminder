@@ -7,7 +7,7 @@
     <PreserveCompilationContext>true</PreserveCompilationContext>
     <AssemblyName>AnniversaryReminder-tests</AssemblyName>
     <OutputType>Exe</OutputType>
-		<AssemblyName>AnniversaryReminder-tests</AssemblyName>
+    <AssemblyName>AnniversaryReminder-tests</AssemblyName>
     <IsPackable>false</IsPackable>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/jmuelbert/AnniversaryReminder</RepositoryUrl>
@@ -18,9 +18,8 @@
     <None Remove="jmbdesqlite.db3" />
   </ItemGroup>
 
-
   <ItemGroup>
-		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3" />
     <PackageReference Include="xunit" Version="2.5.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.5.0">
       <IncludeAssets
@@ -35,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\lib\jmbdeData\jmbdeData.csproj" />
+    <ProjectReference Include="..\..\src\lib\jmbdeData\jmbdeData.csproj" />
   </ItemGroup>
 
 </Project>

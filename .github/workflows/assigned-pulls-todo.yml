@@ -3,7 +3,7 @@
 #
 # SPDX-License-Identifier: MIT
 
-name: Auto Assign to Project(s)
+name: "Auto Assign to Project(s)"
 
 on:
   pull_request_target:
@@ -15,16 +15,20 @@ permissions:
 jobs:
   assign_one_project:
     runs-on: ubuntu-latest
-    name: Assign to One Project
+    name: "Assign to One Project"
 
     steps:
-      - name: Assign NEW issues and NEW pull requests to project 11
+      - name: "Assign NEW issues and NEW pull requests to project 11"
         uses: srggrs/assign-one-project-github-action@1.2.1
         if: github.event.action == 'opened'
         with:
-          project: "11"
+          project:
+            "11"
+            # Specify the column name where the issues and
+            # pull_request will be assigned
+          column_name: "To do"
 
-      - name: Assign issues and pull requests with `bug` label to project 11
+      - name: "Assign issues and pull requests with `bug` label to project 11"
         uses: srggrs/assign-one-project-github-action@1.2.1
         if: contains(github.event.pull_request.labels.*.name, 'bug')
         with:

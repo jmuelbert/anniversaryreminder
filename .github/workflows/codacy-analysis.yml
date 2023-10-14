@@ -1,4 +1,8 @@
 ---
+# SPDX-FileCopyrightText: Codacy Analysis CLI GitHub Action Group
+#
+# SPDX-License-Identifier: Apache-2.0
+#
 # This workflow checks out code, performs a Codacy security scan
 # and integrates the results with the
 # GitHub Advanced Security code scanning feature.  For more information on
@@ -20,7 +24,7 @@ on:
     types: [opened, synchronize, reopened]
 
   schedule:
-    - cron: "38 5 * * 4"
+    - cron: "48 5 * * 4"
 
 permissions:
   contents: read

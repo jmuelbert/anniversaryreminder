@@ -36,4 +36,4 @@ jobs:
           message: |
             ${{ steps.write-good.outputs.result }}
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          allow-repeats: false # This is the default
+          allow-repeats: false #This is the default
