@@ -47,8 +47,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace AnniversaryReminder.Pages
 {
-    public class IndexModel : PageModel
-    {
-        public void OnGet() { }
-    }
+	public class IndexModel : PageModel
+	{
+		public void OnGet() { }
+	}
 }

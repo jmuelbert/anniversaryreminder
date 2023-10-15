@@ -1,7 +1,7 @@
 # anniversaryreminder
 
-anniversaryreminder is a program that do you remind you to anniversaries in a company.
-i.e. The employee is 10 Years, 25 years in the company. Or the employee has birthday.
+anniversaryreminder is a program that do you remind you to anniversaries in a company. i.e. The
+employee is 10 Years, 25 years in the company. Or the employee has birthday.
 
 ---
 
@@ -12,8 +12,7 @@ i.e. The employee is 10 Years, 25 years in the company. Or the employee has birt
 [![Codacy Security Scan](https://github.com/jmuelbert/anniversaryreminder/actions/workflows/codacy-analysis.yml/badge.svg)](https://github.com/jmuelbert/anniversaryreminder/actions/workflows/codacy-analysis.yml)
 [![MegaLinter](https://github.com/jmuelbert/anniversaryreminder/workflows/MegaLinter/badge.svg?branch=main)][mega-linter]
 [![GitHub All Releases][downloads_all-shield]][downloads_all-url]
-[![Issues][issues-shield]][issues-url]
-[![Help wanted issues][help-issues-shield]][help-issues-url]
+[![Issues][issues-shield]][issues-url] [![Help wanted issues][help-issues-shield]][help-issues-url]
 [![Pull Requests][pr-shield]][pr-url] [![pre-commit][pre-commit-shield]][pre-commit-url]
 [![Codecov][codecov-shield]][codecov-url]
 [![Misspell fixer][misspell_fixer-shield]][misspell_fixer-url]
@@ -22,15 +21,12 @@ i.e. The employee is 10 Years, 25 years in the company. Or the employee has birt
 [![License][license-shield]][license-url]
 
 [Features](https://github.com/jmuelbert/anniversaryreminder) |
-[Documentation](https://jmuelbert.github.io/anniversaryreminder/) |
-[Changelog](CHANGELOG.md) | [Contributing](CONTRIBUTING.md) |
-[FAQ](https://github.com/jmuelbert/anniversaryreminder/wiki/FAQ)
+[Documentation](https://jmuelbert.github.io/anniversaryreminder/) | [Changelog](CHANGELOG.md) |
+[Contributing](CONTRIBUTING.md) | [FAQ](https://github.com/jmuelbert/anniversaryreminder/wiki/FAQ)
 
-anniversaryreminder is free software; you can redistribute it and/or modify it under the
-terms of the
-[European Public License Version 1.2](https://joinup.ec.europa.eu/page/eupl-text-11-12).
-Please read the
-[LICENSE](https://github.com/jmuelbert/anniversaryreminder/blob/master/LICENSE) for
+anniversaryreminder is free software; you can redistribute it and/or modify it under the terms of
+the [European Public License Version 1.2](https://joinup.ec.europa.eu/page/eupl-text-11-12). Please
+read the [LICENSE](https://github.com/jmuelbert/anniversaryreminder/blob/master/LICENSE) for
 additional information.
 
 The master branch represents the latest pre-release code.
@@ -142,11 +138,9 @@ The master branch represents the latest pre-release code.
 
 EUPL-1.2 © [Jürgen Mülbert](https:/github.com/jmuelbert/anniversaryreminder/)
 
-<!-- MARKDOWN LINKS & IMAGES -->
+<!-- Markdown LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]:
- https://img.shields.io/github/contributors/jmuelbert/anniversaryreminder
 [issues-shield]: https://img.shields.io/github/issues-raw/jmuelbert/anniversaryreminder
 [issues-url]: https://github.com//jmuelbert/anniversaryreminder/issues
 [license-shield]: https://img.shields.io/badge/license-EUPL-blue.svg
@@ -155,8 +149,6 @@ EUPL-1.2 © [Jürgen Mülbert](https:/github.com/jmuelbert/anniversaryreminder
  https://img.shields.io/github/workflow/status/jmuelbert/anniversaryreminder/Build/release
 [gitpod-shield]: https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod
 [gitpod-url]: https://gitpod.io/#https://github.com/jmuelbert/anniversaryreminder
-[codacy-shield]:
- https://api.codacy.com/project/badge/Grade/945eee726f39449ca83631edd119aee1
 [codacy-url]:
  https://app.codacy.com/gh/jmuelbert/anniversaryreminder?utm_source=github.com&utm_medium=referral&utm_content=jmuelbert/anniversaryreminder&utm_campaign=Badge_Grade
 [downloads_all-shield]:
@@ -174,11 +166,9 @@ EUPL-1.2 © [Jürgen Mülbert](https:/github.com/jmuelbert/anniversaryreminder
  https://github.com/jmuelbert/anniversaryreminder/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22
 [documentation-shield]: https://img.shields.io/badge/Documentation-latest-blue.svg
 [documentation-url]: https://jmuelbert.github.io/anniversaryreminder
-[pr-shield]:
- https://img.shields.io/github/issues-pr-raw/jmuelbert/anniversaryreminder.svg
+[pr-shield]: https://img.shields.io/github/issues-pr-raw/jmuelbert/anniversaryreminder.svg
 [pr-url]: https://github.com/jmuelbert/anniversaryreminder/pulls
-[codecov-shield]:
- https://codecov.io/gh/jmuelbert/anniversaryreminder/branch/master/graph/badge.svg
+[codecov-shield]: https://codecov.io/gh/jmuelbert/anniversaryreminder/branch/master/graph/badge.svg
 [codecov-url]: https://codecov.io/gh/jmuelbert/anniversaryreminder
 [mega-linter]:
  https://github.com/jmuelbert/anniversaryreminder/actions?query=workflow%3AMegaLinter+branch%3Amain

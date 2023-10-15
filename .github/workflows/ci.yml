@@ -109,15 +109,13 @@ jobs:
         uses: DuckSoft/create-7z-action@v1.0
         with:
           pathSource: ./
-          pathTarget: ./anniversary-reminder-${{ steps.get_version.outputs.VERSION
-            }}-source-all.7z
+          pathTarget: ./anniversary-reminder-${{ steps.gitversion.outputs.semVer }}-source-all.7z
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: source-files
-          path: ./anniversary-reminder-${{ steps.get_version.outputs.VERSION
-            }}-source-all.7z
+          path: ./anniversary-reminder-${{ steps.gitversion.outputs.semVer }}-source-all.7z
 
   tests:
     name: "${{ matrix.os }} with dotnet-version: ${{ matrix.dotnet-version }}"

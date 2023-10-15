@@ -1,7 +1,7 @@
 * text=auto !eol svneol=native#text/plain
 *.gitattributes text svneol=native#text/plain
 
-# Scriptish formats
+# Script's formats
 *.bat text svneol=native#text/plain
 *.bsh text svneol=native#text/x-beanshell
 *.cgi text svneol=native#text/plain

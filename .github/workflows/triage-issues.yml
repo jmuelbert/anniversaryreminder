@@ -20,7 +20,7 @@ on:
 
   schedule:
     # Einmal täglich um Mitternacht UTC
-    - cron: '0 0 * * *'
+    - cron: "0 0 * * *"
 
 permissions:
   issues: write
@@ -35,7 +35,7 @@ jobs:
     if: |
       startsWith(github.repository, 'jmuelbert/') &&
       (
-        !startsWith(github.event.repository.name, 'dependabot/') || 
+        !startsWith(github.event.repository.name, 'dependabot/') ||
         (github.event_name == 'schedule') ||
         (
           contains(github.event.issue.labels.*.name, 'stale') ||
@@ -56,14 +56,14 @@ jobs:
           stale-pr-message: |
             Dieser Pull Request wurde automatisch als veraltet markiert, da er seit geraumer Zeit keine Aktivität mehr hatte.
             Er wird geschlossen, wenn keine weitere Aktivität erfolgt.
-          exempt-issue-labels: 'gsoc-outreachy, help wanted, in progress'
-          exempt-pr-labels: 'gsoc-outreachy, help wanted, in progress'
+          exempt-issue-labels: "gsoc-outreachy, help wanted, in progress"
+          exempt-pr-labels: "gsoc-outreachy, help wanted, in progress"
 
   bump-pr-stale:
     if: |
       startsWith(github.repository, 'jmuelbert/') &&
       (
-        !startsWith(github.event.repository.name, 'dependabot/') || 
+        !startsWith(github.event.repository.name, 'dependabot/') ||
         (github.event_name == 'schedule') ||
         (
           contains(github.event.issue.labels.*.name, 'stale') ||
@@ -81,8 +81,8 @@ jobs:
           stale-pr-message: |
             Dieser Pull Request wurde automatisch als veraltet markiert, da er seit geraumer Zeit keine Aktivität mehr hatte.
             Er wird geschlossen, wenn keine weitere Aktivität erfolgt. Um diesen Pull Request offen zu halten, fügen Sie ein `help wanted` oder `in progress` Label hinzu.
-          exempt-pr-labels: 'help wanted, in progress'
-          any-of-labels: 'bump-formula-pr, bump-cask-pr'
+          exempt-pr-labels: "help wanted, in progress"
+          any-of-labels: "bump-formula-pr, bump-cask-pr"
 
   lock-threads:
     if: startsWith(github.repository, 'jmuelbert/') && github.event_name != 'issue_comment'

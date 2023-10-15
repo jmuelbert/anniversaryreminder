@@ -3,5 +3,8 @@
     "bin": true,
     "obj": true
   },
-  "dotnet.defaultSolution": "jmbde.sln"
+  "dotnet.defaultSolution": "jmbde.sln",
+  "cSpell.words": [
+    "Colab"
+  ]
 }

@@ -14,6 +14,8 @@ on:
 jobs:
   ReuseCheck:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
 
     # Skip any PR created by dependabot to avoid permission issues:
     if: (github.actor != 'dependabot[bot]')

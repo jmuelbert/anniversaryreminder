@@ -12,6 +12,9 @@ jobs:
   fastlane-env:
     name: fastlane env reminder
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      
     steps:
       - name: "🧰 Check out code"
         uses: actions/checkout@v3

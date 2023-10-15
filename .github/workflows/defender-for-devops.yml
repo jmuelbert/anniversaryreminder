@@ -23,12 +23,12 @@ on:
   push:
     branches: ["main"]
     paths: # Nur ausführen, wenn diese Dateien geändert wurden
-    - "src/**"
-    - "test/**"
-    - ".github/workflows/msdo.yml"
+      - "src/**"
+      - "test/**"
+      - ".github/workflows/msdo.yml"
 
   pull_request:
-      types: [opened, synchronize, reopened]
+    types: [opened, synchronize, reopened]
 
   schedule:
     - cron: "32 8 * * 5"

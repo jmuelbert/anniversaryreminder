@@ -8,7 +8,7 @@
 ## Related Issues / Pull Requests
 
 <!--- If your PR fixes/resolves one or more issues, or is related to another PR, link to them here. -->
-<!--- See: https://docs.github.com/en/free-pro-team@latest/github/managing-your-work-on-github/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword --->
+<!--- See: https://docs.GitHub.com/en/free-pro-team@latest/GitHub/managing-your-work-on-GitHub/linking-a-pull-request-to-an-issue#linking-a-pull-request-to-an-issue-using-a-keyword --->
 
 ## Motivation and Context
 
@@ -29,10 +29,8 @@
       [Contributing](https://github.com/jmuelbert/anniversaryreminder/blob/master/CONTRIBUTING.md)
       document?
 - [ ] Have you checked to ensure there aren't other open
-      [Pull Requests](https://github.com/jmuelbert/anniversaryreminder/pulls) for the
-      same change?
-- [ ] Have you added an explanation of what your changes do and why you'd like us to
-      include them?
+      [Pull Requests](https://github.com/jmuelbert/anniversaryreminder/pulls) for the same change?
+- [ ] Have you added an explanation of what your changes do and why you'd like us to include them?
 - [ ] Have you written new tests for your changes?
       [Here's an introduction](https://help.github.com/articles/creating-a-pull-request/).
 - [ ] If needed, I have opened a pull request or an issue to update the

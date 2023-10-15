@@ -8,10 +8,18 @@ on:
     paths:
       - ".github/labels.yml"
       - ".github/workflows/labels.yml"
+  pull_request:
+    paths:
+      - ".github/labels.yml"
+      - ".github/workflows/labels.yml"
 
 jobs:
   labeler:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
     steps:
       - name: "🧰 Check out code"
         uses: actions/checkout@v3

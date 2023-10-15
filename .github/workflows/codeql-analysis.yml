@@ -10,14 +10,14 @@
 # the `language` matrix defined below to confirm you have the correct set of
 # supported CodeQL languages.
 #
-name: 'CodeQL Analysis'
+name: "CodeQL Analysis"
 
 on:
   push:
     branches: [main, develop, protected]
     paths-ignore:
-      - '**/*.md'
-      - '**/*.txt'
+      - "**/*.md"
+      - "**/*.txt"
   pull_request:
     # The branches below must be a subset of the branches above
     types: [opened, synchronize, reopened]
@@ -88,7 +88,7 @@ jobs:
           dotnet restore
           dotnet build
 
-     # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
+      # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
       # If this step fails, then you should remove it and run the build manually (see below)
       - name: Autobuild
         if: matrix.language != 'csharp'
