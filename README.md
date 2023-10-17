@@ -145,30 +145,22 @@ EUPL-1.2 © [Jürgen Mülbert](https:/github.com/jmuelbert/anniversaryreminder
 [issues-url]: https://github.com//jmuelbert/anniversaryreminder/issues
 [license-shield]: https://img.shields.io/badge/license-EUPL-blue.svg
 [license-url]: https://github.com/jmuelbert/anniversaryreminder/blob/master/LICENSE
-[build-shield]:
- https://img.shields.io/github/workflow/status/jmuelbert/anniversaryreminder/Build/release
+[build-shield]: https://img.shields.io/github/workflow/status/jmuelbert/anniversaryreminder/Build/release
 [gitpod-shield]: https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod
 [gitpod-url]: https://gitpod.io/#https://github.com/jmuelbert/anniversaryreminder
-[codacy-url]:
- https://app.codacy.com/gh/jmuelbert/anniversaryreminder?utm_source=github.com&utm_medium=referral&utm_content=jmuelbert/anniversaryreminder&utm_campaign=Badge_Grade
-[downloads_all-shield]:
- https://img.shields.io/github/downloads/jmuelbert/anniversaryreminder/total?label=downloads%40all
+[codacy-url]: https://app.codacy.com/gh/jmuelbert/anniversaryreminder?utm_source=github.com&utm_medium=referral&utm_content=jmuelbert/anniversaryreminder&utm_campaign=Badge_Grade
+[downloads_all-shield]: https://img.shields.io/github/downloads/jmuelbert/anniversaryreminder/total?label=downloads%40all
 [downloads_all-url]: https://github.com/jmuelbert/anniversaryreminder/releases
-[pre-commit-shield]:
- https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
+[pre-commit-shield]: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
 [pre-commit-url]: https://github.com/pre-commit/pre-commit
-[misspell_fixer-shield]:
- https://github.com/jmuelbert/anniversaryreminder/workflows/Misspell%20fixer/badge.svg
+[misspell_fixer-shield]: https://github.com/jmuelbert/anniversaryreminder/workflows/Misspell%20fixer/badge.svg
 [misspell_fixer-url]: https://github.com/marketplace/actions/misspell-fixer-action
-[help-issues-shield]:
- https://img.shields.io/github/issues/jmuelbert/anniversaryreminder/help%20wanted
-[help-issues-url]:
- https://github.com/jmuelbert/anniversaryreminder/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22
+[help-issues-shield]: https://img.shields.io/github/issues/jmuelbert/anniversaryreminder/help%20wanted
+[help-issues-url]: https://github.com/jmuelbert/anniversaryreminder/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22
 [documentation-shield]: https://img.shields.io/badge/Documentation-latest-blue.svg
 [documentation-url]: https://jmuelbert.github.io/anniversaryreminder
 [pr-shield]: https://img.shields.io/github/issues-pr-raw/jmuelbert/anniversaryreminder.svg
 [pr-url]: https://github.com/jmuelbert/anniversaryreminder/pulls
 [codecov-shield]: https://codecov.io/gh/jmuelbert/anniversaryreminder/branch/master/graph/badge.svg
 [codecov-url]: https://codecov.io/gh/jmuelbert/anniversaryreminder
-[mega-linter]:
- https://github.com/jmuelbert/anniversaryreminder/actions?query=workflow%3AMegaLinter+branch%3Amain
+[mega-linter]: https://github.com/jmuelbert/anniversaryreminder/actions?query=workflow%3AMegaLinter+branch%3Amain

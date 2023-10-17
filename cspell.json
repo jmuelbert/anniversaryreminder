@@ -1,11 +1,7 @@
 {
   "version": "0.2",
   "language": "en,en-US",
-  "dictionaries": [
-    "bash",
-    "docker",
-    "project-words"
-  ],
+  "dictionaries": ["bash", "docker", "project-words"],
   "noConfigSearch": true,
   "dictionaryDefinitions": [
     {
@@ -25,7 +21,6 @@
     "docs/api-docs/**",
     "*.gz",
     "*.lock",
-    "*.svg",
     ".gitignore",
     ".gitattributes",
     ".devcontainer/.dockerignore",
@@ -40,7 +35,8 @@
   "words": [
     "Bazel",
     "Cuda",
-    "Colab""jmuelbert",
+    "Colab",
+    "jmuelbert",
     "Jürgen",
     "megalinter",
     "MSDO",
@@ -49,7 +45,5 @@
     "oxsecurity",
     "svneol"
   ],
-  "flagWords": [
-    "hte"
-  ]
+  "flagWords": ["hte"]
 }

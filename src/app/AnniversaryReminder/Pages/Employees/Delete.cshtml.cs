@@ -50,50 +50,52 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AnniversaryReminder.Pages.Employees
 {
-	public class DeleteModel : PageModel
-	{
-		private readonly AnniversaryReminder.Data.ApplicationDbContext _context;
+    public class DeleteModel : PageModel
+    {
+        private readonly AnniversaryReminder.Data.ApplicationDbContext _context;
 
-		public DeleteModel(AnniversaryReminder.Data.ApplicationDbContext context)
-		{
-			_context = context;
-		}
+        public DeleteModel(AnniversaryReminder.Data.ApplicationDbContext context)
+        {
+            _context = context;
+        }
 
-		[BindProperty]
-		public Employee Employee { get; set; }
+        [BindProperty]
+        public Employee Employee { get; set; }
 
-		public async Task<IActionResult> OnGetAsync(long? id)
-		{
-			if (id == null)
-			{
-				return NotFound();
-			}
+        public async Task<IActionResult> OnGetAsync(long? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-			Employee = await _context.Employee.FirstOrDefaultAsync(m => m.EmployeeId == id).ConfigureAwait(false);
+            Employee = await _context.Employee
+                .FirstOrDefaultAsync(m => m.EmployeeId == id)
+                .ConfigureAwait(false);
 
-			if (Employee == null)
-			{
-				return NotFound();
-			}
-			return Page();
-		}
+            if (Employee == null)
+            {
+                return NotFound();
+            }
+            return Page();
+        }
 
-		public async Task<IActionResult> OnPostAsync(long? id)
-		{
-			if (id == null)
-			{
-				return NotFound();
-			}
+        public async Task<IActionResult> OnPostAsync(long? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-			Employee = await _context.Employee.FindAsync(id).ConfigureAwait(false);
+            Employee = await _context.Employee.FindAsync(id).ConfigureAwait(false);
 
-			if (Employee != null)
-			{
-				_context.Employee.Remove(Employee);
-				await _context.SaveChangesAsync().ConfigureAwait(false);
-			}
+            if (Employee != null)
+            {
+                _context.Employee.Remove(Employee);
+                await _context.SaveChangesAsync().ConfigureAwait(false);
+            }
 
-			return RedirectToPage("./Index");
-		}
-	}
+            return RedirectToPage("./Index");
+        }
+    }
 }

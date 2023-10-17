@@ -73,6 +73,9 @@ on:
     types:
       - "created"
 
+permissions:
+  contents: read
+
 jobs:
   spelling:
     name: Check Spelling

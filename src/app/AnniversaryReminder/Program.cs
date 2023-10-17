@@ -52,32 +52,32 @@ using Microsoft.Extensions.Logging;
 
 namespace AnniversaryReminder
 {
-	public static class Program
-	{
-		public static void Main(string[] args)
-		{
-			var host = CreateWebHostBuilder(args).Build();
+    public static class Program
+    {
+        public static void Main(string[] args)
+        {
+            var host = CreateWebHostBuilder(args).Build();
 
-			using (var scope = host.Services.CreateScope())
-			{
-				var services = scope.ServiceProvider;
+            using (var scope = host.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
 
-				try
-				{
-					var context = services.GetRequiredService<ApplicationDbContext>();
-					// SeedData.Initialize(services, "not used");
-				}
-				catch (Exception ex)
-				{
-					var logger = services.GetRequiredService<ILogger<Program>>();
-					logger.LogError(ex, "An error occurred seeding the DB.");
-				}
-			}
+                try
+                {
+                    var context = services.GetRequiredService<ApplicationDbContext>();
+                    // SeedData.Initialize(services, "not used");
+                }
+                catch (Exception ex)
+                {
+                    var logger = services.GetRequiredService<ILogger<Program>>();
+                    logger.LogError(ex, "An error occurred seeding the DB.");
+                }
+            }
 
-			host.Run();
-		}
+            host.Run();
+        }
 
-		public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-			WebHost.CreateDefaultBuilder(args).UseStartup<Startup>();
-	}
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
+            WebHost.CreateDefaultBuilder(args).UseStartup<Startup>();
+    }
 }

@@ -13,6 +13,9 @@ on:
       - ".github/labels.yml"
       - ".github/workflows/labels.yml"
 
+permissions:
+  contents: read
+
 jobs:
   labeler:
     runs-on: ubuntu-latest

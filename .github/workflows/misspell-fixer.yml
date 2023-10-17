@@ -8,6 +8,9 @@ on:
     # The branches below must be a subset of the branches above
     types: [opened, synchronize, reopened]
 
+permissions:
+  contents: read
+
 jobs:
   misspell-fixer:
     runs-on: ubuntu-latest
