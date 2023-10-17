@@ -18,6 +18,7 @@ APPLY_FIXES: all
 # - COPYPASTE # Uncomment to disable checks of excessive copy-pastes
 # - SPELL # Uncomment to disable checks of spelling mistakes
 
+EDITORCONFIG_FILTER_REGEX_EXCLUDE: (.devcontainer/entrypoint|LICENSE|LICENSES/)
 SPELL_LYCHEE_FILE_EXTENSIONS: (\.github/workflow|docs/package.json|docs/pnpm-lock.yml)
 MARKDOWN_MARKDOWNLINT_FILTER_REGEX_EXCLUDE: (\.github/actions/spelling)
 SPELL_CSPELL_CONFIG_FILE: cspell.json

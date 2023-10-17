@@ -47,7 +47,7 @@ trim_trailing_whitespace = false
 tab_width = 4
 
 # Source code files
-[*.{c,cxx,cpp,h,hxx,hpp,java,m,mm,py,swift,xsl}]
+[*.{c,cxx,cpp,h,hxx,hpp,java,m,mm,py,swift,xsl,astro}]
 indent_size = 2
 tab_width = 2
 
@@ -57,7 +57,9 @@ trim_trailing_whitespace = false
 
 [*.{sh,msx}]
 indent_size = 2
-indent_style = space
+
+[*.{css}]
+indent_size = 2
 
 [LICENSE]
 insert_final_newline = false

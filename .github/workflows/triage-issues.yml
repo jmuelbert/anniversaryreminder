@@ -3,9 +3,6 @@
 #
 # SPDX-License-Identifier: EUPL-1.2
 #
-# Dies ist eine GitHub-Workflow-Datei zur automatischen Triage von Issues und Pull Requests.
-# Sie wird einmal täglich ausgeführt und markiert oder schließt veraltete Elemente.
-# Weitere Informationen finden Sie in der Dokumentation.
 
 name: Triage Issues
 
@@ -19,7 +16,6 @@ on:
       - edited
 
   schedule:
-    # Einmal täglich um Mitternacht UTC
     - cron: "0 0 * * *"
 
 permissions:
@@ -51,11 +47,9 @@ jobs:
           days-before-stale: 365
           days-before-close: 30
           stale-issue-message: |
-            Dieses Issue wurde automatisch als veraltet markiert, da es seit geraumer Zeit keine Aktivität mehr gab.
-            Es wird geschlossen, wenn keine weitere Aktivität erfolgt.
+            This issue was automatically marked as deprecated because there has been no activity for quite some time. It will be closed if there is no further activity.
           stale-pr-message: |
-            Dieser Pull Request wurde automatisch als veraltet markiert, da er seit geraumer Zeit keine Aktivität mehr hatte.
-            Er wird geschlossen, wenn keine weitere Aktivität erfolgt.
+            This pull request was automatically marked as deprecated because it hasn't had any activity in quite some time. It will be closed if there is no further activity.
           exempt-issue-labels: "gsoc-outreachy, help wanted, in progress"
           exempt-pr-labels: "gsoc-outreachy, help wanted, in progress"
 
@@ -79,9 +73,7 @@ jobs:
           days-before-stale: 2
           days-before-close: 1
           stale-pr-message: |
-            Dieser Pull Request wurde automatisch als veraltet markiert, da er seit geraumer Zeit keine Aktivität mehr hatte.
-            Er wird geschlossen, wenn keine weitere Aktivität erfolgt. Um diesen Pull Request offen zu halten, fügen Sie ein `help wanted` oder `in progress` Label hinzu.
-          exempt-pr-labels: "help wanted, in progress"
+            This pull request was automatically marked as deprecated because it hasn't had any activity in quite some time. It will be closed if there is no further activity. To keep this pull request open, add a 'help wanted' or 'in progress' label.          exempt-pr-labels: "help wanted, in progress"
           any-of-labels: "bump-formula-pr, bump-cask-pr"
 
   lock-threads:

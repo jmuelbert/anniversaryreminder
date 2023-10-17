@@ -1,7 +1,11 @@
 {
   "version": "0.2",
   "language": "en,en-US",
-  "dictionaries": ["bash", "docker", "project-words"],
+  "dictionaries": [
+    "bash",
+    "docker",
+    "project-words"
+  ],
   "noConfigSearch": true,
   "dictionaryDefinitions": [
     {
@@ -33,17 +37,47 @@
     "out/**"
   ],
   "words": [
+    "accessibility",
+    "Astro",
+    "Autobuild",
+    "autolabeler",
     "Bazel",
-    "Cuda",
+    "[Cc]odacy",
+    "[Cc]odecov",
+    "codeql",
     "Colab",
+    "commitlint",
+    "compat",
+    "Cuda",
+    "devskim",
+    "fsfe",
+    "haml",
+    "ghaction",
     "jmuelbert",
     "Jürgen",
+    "locproj",
+    "Makefiles",
+    "matthiashermsen",
     "megalinter",
     "MSDO",
     "mkdirp",
     "Mülbert",
+    "nativeproj",
+    "OSSAR",
+    "ossf",
     "oxsecurity",
-    "svneol"
+    "returntocorp",
+    "ruleset",
+    "sarif",
+    "semgrep",
+    "srggrs",
+    "stefanzweifel",
+    "sobolevn",
+    "stylecop",
+    "svneol",
+    "withastro"
   ],
-  "flagWords": ["hte"]
+  "flagWords": [
+    "hte"
+  ]
 }

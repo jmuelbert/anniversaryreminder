@@ -1,5 +1,12 @@
 anniversaryreminder
+camelcase
 devcontainer
 gittools
-srggrs
+ipascalcase
+NOLOGO
+nupkg
+OPTOUT
+pascalcase
+resx
 tfversion
+tpascalcase

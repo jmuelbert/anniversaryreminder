@@ -22,7 +22,7 @@ name: "Microsoft Defender For Devops"
 on:
   push:
     branches: ["main"]
-    paths: # Nur ausführen, wenn diese Dateien geändert wurden
+    paths:
       - "src/**"
       - "test/**"
       - ".github/workflows/msdo.yml"
