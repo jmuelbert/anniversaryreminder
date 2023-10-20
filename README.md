@@ -145,10 +145,8 @@ EUPL-1.2 © [Jürgen Mülbert](https:/github.com/jmuelbert/anniversaryreminder
 [issues-url]: https://github.com//jmuelbert/anniversaryreminder/issues
 [license-shield]: https://img.shields.io/badge/license-EUPL-blue.svg
 [license-url]: https://github.com/jmuelbert/anniversaryreminder/blob/master/LICENSE
-[build-shield]: https://img.shields.io/github/workflow/status/jmuelbert/anniversaryreminder/Build/release
 [gitpod-shield]: https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod
 [gitpod-url]: https://gitpod.io/#https://github.com/jmuelbert/anniversaryreminder
-[codacy-url]: https://app.codacy.com/gh/jmuelbert/anniversaryreminder?utm_source=github.com&utm_medium=referral&utm_content=jmuelbert/anniversaryreminder&utm_campaign=Badge_Grade
 [downloads_all-shield]: https://img.shields.io/github/downloads/jmuelbert/anniversaryreminder/total?label=downloads%40all
 [downloads_all-url]: https://github.com/jmuelbert/anniversaryreminder/releases
 [pre-commit-shield]: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white

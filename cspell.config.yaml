@@ -1,0 +1,134 @@
+---
+version: '0.2'
+language: en
+files:
+  - .github/**/*.{md,txt,yaml,yml}
+  - .git/COMMIT_EDITMSG
+  - '*.{md,txt,yaml,yml}'
+  - dictionaries/**/*.{md,txt,yaml,yml,js,tex}
+  - docs/**/*.md
+  - scripts/**
+  - src/**
+  - tests/**
+  - shared-sources/**
+words:
+  - Jürgen
+  - Mülbert
+  - jmuelbert
+  - jmbde
+  - Akka
+  - Astro
+  - Autobuild
+  - autolabeler
+  - Bazel
+  - Codecov
+  - Codacy
+  - Colab
+  - commitlint
+  - Cuda
+  - codeql
+  - dessant
+  - devskim
+  - fsfe
+  - ghaction
+  - gittools
+  - gsoc
+  - lengthframeencoder
+  - matthiashermsen
+  - MSDO
+  - mshick
+  - OSSAR
+  - ossf
+  - outreachy
+  - Preacts
+  - recvbuffer
+  - returntocorp
+  - Sarif
+  - Semgrep
+  - Signup
+  - sobolevn
+  - srggrs
+  - stefanzweifel
+  - tomwhross
+  - Unported
+  - wagoid
+  - withastro
+
+flagWords:
+  - hte
+maxNumberOfProblems: 1000
+ignorePaths:
+  - .git
+  - .github/actions/spelling/**
+  - .github/labels.yml
+  - .github/pr-labeler.yml
+  - .gitignore
+  - .vscode/**
+  - '*.lock'
+  - '*-lock.yaml'
+  - '*.log'
+  - '*.aff'
+  - '*.dic'
+  - '*.gz'
+  - '*.snap'
+  - '*.trie'
+  - '**/.git/!(COMMIT_EDITMSG)'
+  - '**/.git/!(COMMIT_EDITMSG)/**'
+  - CHANGELOG.md
+  - checksum.txt
+  - cSpell.json
+  - cspell.json
+  - cspell.config.yaml
+  - LICENSES/**
+  - node_modules
+  - package.json
+  - .prettierignore
+  - shared-additional-words.txt
+  - source-dependencies.txt
+  - source-files.txt
+  - snapshots/**
+  - ./project-words.txt
+import: []
+useGitignore: true
+overrides:
+  - filename: '**/de_DE/**'
+    language: en,de
+  - filename: '**/nl_NL/**'
+    language: en,nl
+  - filename: '**/ru_RU/samples/**'
+    language: ru,en
+  - filename: '**/sv/**'
+    language: en,sv
+  - filename: 'package.json'
+    ignoreWords:
+      - colour
+      - canot
+cache:
+  useCache: true
+  cacheStrategy: content
+enableFiletypes:
+  - shellscript
+dictionaryDefinitions:
+  - name: ./project-words
+    addWords: true
+    scope:
+      - workspace
+    path: ./project-words.txt
+dictionaries:
+  - ./project-words
+  - bash
+  - companies
+  - csharp
+  - css
+  - docker
+  - dotnet
+  - git
+  - node
+  - npm
+  - powershell
+  - public-licenses
+  - python
+  - software-terms
+  - sql
+  - typescript
+  - strong-weak-map
