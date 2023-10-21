@@ -69,7 +69,9 @@ ignorePaths:
   - .github/pr-labeler.yml
   - .gitattributes
   - .gitignore
+  - .gitlint
   - .vscode/**
+  - .tfignore
   - '*.lock'
   - '*-lock.yaml'
   - '*.log'

@@ -94,7 +94,7 @@ always from a feature branch created by you.
   (search first) create one.
 - Get any changes from _upstream_.
 
-```
+```bash
 git checkout dev
 git fetch upstream
 git merge --ff-only upstream/dev
@@ -108,7 +108,7 @@ See <https://help.github.com/articles/fetching-a-remote> for more info
   `implement-lengthframeencoder-323` or `295-implement-recvbuffer`, so that others can see what is
   being worked on.
 
-```
+```bash
 git checkout -b my-new-branch-123
 ```
 
@@ -117,7 +117,7 @@ git checkout -b my-new-branch-123
 - Make sure you adhere to _Checklist before creating a Pull Request_ described above.
 - Push the branch to your fork on GitHub
 
-```
+```bash
 git push origin my-new-branch-123
 ```
 
@@ -134,13 +134,13 @@ updated. If this happens you should:
 
 - [Stash](http://git-scm.com/book/en/Git-Tools-Stashing) any un-committed changes you need to
 
-```
+```bash
 git stash
 ```
 
 - Update your local _dev_ by fetching from _upstream_
 
-```
+```bash
 git checkout dev
 git fetch upstream
 git merge --ff-only upstream/dev
@@ -150,7 +150,7 @@ git merge --ff-only upstream/dev
   [Git Branching - Rebasing](http://git-scm.com/book/en/Git-Branching-Rebasing) for more info on
   rebasing
 
-```
+```bash
 git checkout my-new-branch-123
 git rebase dev
 git push origin dev     #(optional) this makes sure dev in your own fork on GitHub is up to date
@@ -172,7 +172,7 @@ included in the Pull request. If we ask you to change already published commits 
 rebase (like squashing or splitting commits or rewriting commit messages) you need to force push
 using `-f`:
 
-```
+```bash
 git push -f origin my-new-branch-123
 ```
 
@@ -183,7 +183,7 @@ If all commits are on _develop_ you need to move them to a new feature branch.
 You can rebase your local _develop_ on _upstream/develop_ (to remove any merge commits), rename it,
 and recreate _develop_
 
-```
+```bash
 git checkout develop
 git rebase upstream/develop
 git branch -m my-new-branch-123
@@ -192,7 +192,7 @@ git branch develop upstream/develop
 
 Or you can create a new branch off of _develop_ and then cherry pick the commits
 
-```
+```bash
 git checkout -b my-new-branch-123 upstream/develop
 git cherry-pick rev                   #rev is the revisions you want to pick
 git cherry-pick rev                   #repeat until you have picked all commits
