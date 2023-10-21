@@ -21,6 +21,7 @@ words:
   - Autobuild
   - autolabeler
   - Bazel
+  - Bitstream
   - Codecov
   - Codacy
   - Colab
@@ -29,6 +30,7 @@ words:
   - codeql
   - dessant
   - devskim
+  - devcontainers
   - fsfe
   - ghaction
   - gittools
@@ -41,6 +43,7 @@ words:
   - ossf
   - outreachy
   - Preacts
+  - rarr
   - recvbuffer
   - returntocorp
   - Sarif
@@ -50,6 +53,7 @@ words:
   - srggrs
   - stefanzweifel
   - tomwhross
+  - tsconfigs
   - Unported
   - wagoid
   - withastro
@@ -58,10 +62,12 @@ flagWords:
   - hte
 maxNumberOfProblems: 1000
 ignorePaths:
+  - .devcontainer/.dockerignore
   - .git
   - .github/actions/spelling/**
   - .github/labels.yml
   - .github/pr-labeler.yml
+  - .gitattributes
   - .gitignore
   - .vscode/**
   - '*.lock'
@@ -79,6 +85,7 @@ ignorePaths:
   - cSpell.json
   - cspell.json
   - cspell.config.yaml
+  - LICENSE
   - LICENSES/**
   - node_modules
   - package.json
@@ -120,15 +127,12 @@ dictionaries:
   - companies
   - csharp
   - css
-  - docker
-  - dotnet
-  - git
+  - filetypes
+  - fonts
+  - misc
   - node
   - npm
   - powershell
-  - public-licenses
   - python
   - software-terms
-  - sql
   - typescript
-  - strong-weak-map
