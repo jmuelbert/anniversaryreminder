@@ -22,7 +22,7 @@ DISABLE_LINTERS:
 
 EDITORCONFIG_FILTER_REGEX_EXCLUDE: (LICENSE|LICENSES/)
 JSON_V8R_FILTER_REGEX_EXCLUDE: (\.devcontainer/devcontainer.json|\.vscode/)
-SPELL_LYCHEE_FILTER_REGEX_EXCLUDE: (\.github/workflows/**|\.github/actions/|**|docs/pnpm-lock.yaml)
+SPELL_LYCHEE_FILTER_REGEX_EXCLUDE: (\.github/workflows/|\.github/actions/|docs/pnpm-lock.yaml)
 MARKDOWN_MARKDOWNLINT_FILTER_REGEX_EXCLUDE: (\.github/actions/spelling)
 YAML_YAMLLINT_FILTER_REGEX_EXCLUDE: (docs/pnpm-lock.yaml)
 
