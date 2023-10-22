@@ -20,7 +20,7 @@ relevant as explained below.
 - **Squash commits** Often we create temporary commits like _"Started implementing feature x"_ and
   then _"Did a bit more on feature x"_. Squash these commits together using
   [interactive rebase](https://help.github.com/articles/about-git-rebase). Also see
-  [Squashing commits with rebase](http://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html).
+  [Squashing commits with rebase](https://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html).
 - **Descriptive commit messages** If a commit's message isn't descriptive, change it using
   [interactive rebase](https://help.github.com/articles/about-git-rebase). Refer to issues using
   `#issue`. Example of a bad message ~~"Small cleanup"~~. Example of good message: _"Removed
@@ -30,7 +30,7 @@ relevant as explained below.
   [writing good commit messages](https://github.com/erlang/otp/wiki/Writing-good-commit-messages).
 - **No one-commit-to-rule-them-all** Large commits that changes too many things at the same time are
   very hard to review. Split large commits into smaller. See this
-  [StackOverflow question](http://stackoverflow.com/questions/6217156/break-a-previous-commit-into-multiple-commits)
+  [StackOverflow question](https://stackoverflow.com/questions/6217156/break-a-previous-commit-into-multiple-commits)
   for information on how to do this.
 - **Tests** Add relevant tests and make sure all existing ones still passes. Tests can be run using
   the command
@@ -60,13 +60,13 @@ Make sure you have a [GitHub](https://github.com/) account.
 - Fork by clicking _Fork_ on <https://github.com/jmuelbert/anniversaryreminder>
 - Clone your fork locally.
 
-```
+```bash
 git clone https://github.com/YOUR-USERNAME/anniversaryreminder
 ```
 
 - Add an upstream remote.
 
-```
+```bash
 git remote add upstream https://github.com/jmuelbert/anniversaryreminder
 ```
 
@@ -132,7 +132,7 @@ See also: [Understanding the GitHub Flow](https://guides.github.com/introduction
 While you're working away in your branch it's quite possible that your upstream _dev_ may be
 updated. If this happens you should:
 
-- [Stash](http://git-scm.com/book/en/Git-Tools-Stashing) any un-committed changes you need to
+- [Stash](https://git-scm.com/book/en/Git-Tools-Stashing) any un-committed changes you need to
 
 ```bash
 git stash
@@ -147,7 +147,7 @@ git merge --ff-only upstream/dev
 ```
 
 - Rebase your feature branch on _dev_. See
-  [Git Branching - Rebasing](http://git-scm.com/book/en/Git-Branching-Rebasing) for more info on
+  [Git Branching - Rebasing](https s://git-scm.com/book/en/Git-Branching-Rebasing) for more info on
   rebasing
 
 ```bash

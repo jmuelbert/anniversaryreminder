@@ -5,6 +5,10 @@
  ** SPDX-License-Identifier: EUPL-1.2
  **
  *************************************************************************/
+
+/*
+** jscpd:ignore-start
+*/
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +22,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+
+/*
+** jscpd:ignore-start
+*/
 
 namespace AnniversaryReminder.Pages.Employees
 {

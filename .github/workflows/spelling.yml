@@ -110,8 +110,7 @@ jobs:
             ${{ (!github.event.pull_request || (github.event.pull_request.head.repo.full_name ==
             github.repository)) && 1 }}
           extra_dictionary_limit: 20
-          extra_dictionaries:
-            cspell:bash/bash-words.txt
+          extra_dictionaries: cspell:bash/bash-words.txt
             cspell:companies/companies.txt
             cspell:csharp/csharp.txt
             cspell:css/css.txt

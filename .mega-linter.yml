@@ -13,13 +13,18 @@ APPLY_FIXES: all
 # If you use ENABLE_LINTERS variable, all other linters will be disabled by
 # default
 # ENABLE_LINTERS:
+DISABLE_LINTERS:
+  - CSHARP_DOTNET_FORMAT
 
 # DISABLE:
 # - COPYPASTE # Uncomment to disable checks of excessive copy-pastes
 # - SPELL # Uncomment to disable checks of spelling mistakes
 
 EDITORCONFIG_FILTER_REGEX_EXCLUDE: (LICENSE|LICENSES/)
+JSON_V8R_FILTER_REGEX_EXCLUDE: (\.devcontainer/devcontainer.json|\.vscode/)
+SPELL_LYCHEE_FILTER_REGEX_EXCLUDE: (\.github/workflows/**|\.github/actions/**|docs/pnpm-lock.yaml)
 MARKDOWN_MARKDOWNLINT_FILTER_REGEX_EXCLUDE: (\.github/actions/spelling)
+YAML_YAMLLINT_FILTER_REGEX_EXCLUDE: (docs/pnpm-lock.yaml)
 
 SHOW_ELAPSED_TIME: true
 

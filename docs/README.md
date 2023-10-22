@@ -1,6 +1,6 @@
 # Astro Starter Kit: Basics
 
-```
+```bash
 npm create astro@latest -- --template basics
 ```
 
@@ -15,7 +15,7 @@ npm create astro@latest -- --template basics
 
 Inside of your Astro project, you'll see the following folders and files:
 
-```
+```bash
 /
 ├── public/
 │   └── favicon.svg

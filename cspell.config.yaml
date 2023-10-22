@@ -4,18 +4,16 @@ language: en
 files:
   - .github/**/*.{md,txt,yaml,yml}
   - .git/COMMIT_EDITMSG
-  - '*.{md,txt,yaml,yml}'
-  - dictionaries/**/*.{md,txt,yaml,yml,js,tex}
-  - docs/**/*.md
+  - docs/**/**
   - scripts/**
   - src/**
   - tests/**
-  - shared-sources/**
 words:
   - Jürgen
   - Mülbert
   - jmuelbert
   - jmbde
+  - adoc
   - Akka
   - Astro
   - Autobuild
@@ -30,6 +28,7 @@ words:
   - codeql
   - dessant
   - devskim
+  - devcontainer
   - devcontainers
   - fsfe
   - ghaction
@@ -63,13 +62,12 @@ flagWords:
 maxNumberOfProblems: 1000
 ignorePaths:
   - .devcontainer/.dockerignore
-  - .git
+  - '**/.git/**'
   - .github/actions/spelling/**
   - .github/labels.yml
   - .github/pr-labeler.yml
   - .gitattributes
   - .gitignore
-  - .gitlint
   - .vscode/**
   - .tfignore
   - '*.lock'
@@ -89,13 +87,14 @@ ignorePaths:
   - cspell.config.yaml
   - LICENSE
   - LICENSES/**
-  - node_modules
+  - '**/node_modules/**'
+  - '**/vscode_extension/**'
   - package.json
   - .prettierignore
-  - shared-additional-words.txt
-  - source-dependencies.txt
-  - source-files.txt
   - snapshots/**
+  - '**/.pnpm-lock.json'
+  - 'package-lock.json'
+  - 'megalinter-reports'
   - ./project-words.txt
 import: []
 useGitignore: true

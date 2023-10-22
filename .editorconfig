@@ -40,7 +40,6 @@ indent_size = 2
 # Makefile
 [Makefile, *.mk]
 indent_style = tab
-indent_size = 4
 trim_trailing_whitespace = false
 
 [{CMakeLists.txt,*.cmake}]
@@ -51,8 +50,8 @@ tab_width = 4
 indent_size = 2
 tab_width = 2
 
-[*.{md,markdown}]
-indent_size = 1
+[*.{adoc,md,markdown}]
+ident_size = 2
 trim_trailing_whitespace = false
 
 [*.{sh,msx}]
@@ -65,7 +64,7 @@ indent_size = 2
 insert_final_newline = false
 
 # C# files
-[*.cs]
+[*.{cs,cbproj,sln}]
 
 #### Core EditorConfig Options ####
 

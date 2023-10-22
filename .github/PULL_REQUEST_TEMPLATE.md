@@ -1,7 +1,7 @@
 <!--- We squash and merge pull requests, so the title of the PR will be the title of the merge commit -->
 <!--- Please follow https://www.conventionalcommits.org/ in the title --->
 
-## Description
+# Description
 
 <!--- Describe your changes in detail -->
 
@@ -34,7 +34,7 @@
 - [ ] Have you written new tests for your changes?
       [Here's an introduction](https://help.github.com/articles/creating-a-pull-request/).
 - [ ] If needed, I have opened a pull request or an issue to update the
-      [documentation](http://jmuelbert.github.io/anniversaryreminder/).
+      [documentation](https://jmuelbert.github.io/anniversaryreminder/).
 - [ ] If these changes are notable, they are documented in
       [CHANGELOG.md](https://github.com/jmuelbert/anniversaryreminder/blob/master/CHANGELOG.md).
 

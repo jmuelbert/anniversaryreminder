@@ -17,7 +17,7 @@ employee is 10 Years, 25 years in the company. Or the employee has birthday.
 [![Codecov][codecov-shield]][codecov-url]
 [![Misspell fixer][misspell_fixer-shield]][misspell_fixer-url]
 [![Documentation][documentation-shield]][documentation-url]
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
 [![License][license-shield]][license-url]
 
 [Features](https://github.com/jmuelbert/anniversaryreminder) |
@@ -52,15 +52,7 @@ The master branch represents the latest pre-release code.
 
 #### For Windows
 
-- [.NET Core SDK 7.x for Windows](https://www.microsoft.com/net/download/windows)
-
-#### For Linux
-
-- [.NET Core SDK 7.x for Linux](https://www.microsoft.com/net/download/linux)
-
-#### For Mac
-
-- [.NET Core SDK 7.x for MacOS](https://www.microsoft.com/net/download/macos)
+- [.NET Core SDK 7.x] (<https://dotnet.microsoft.com/en-us/download>)
 
 ## Prepare the App
 

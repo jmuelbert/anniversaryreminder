@@ -1,15 +1,15 @@
 {
+  "name": "documentation",
+  "type": "module",
+  "version": "0.0.1",
   "dependencies": {
     "astro": "^2.10.15"
   },
-  "name": "Documentation",
   "scripts": {
     "astro": "astro",
     "build": "astro build",
     "dev": "astro dev",
     "preview": "astro preview",
     "start": "astro dev"
-  },
-  "type": "module",
-  "version": "0.0.1"
+  }
 }

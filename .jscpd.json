@@ -1,6 +1,9 @@
 {
   "threshold": 0,
-  "reporters": ["html", "markdown"],
+  "reporters": [
+    "html",
+    "markdown"
+  ],
   "ignore": [
     "**/node_modules/**",
     "**/.git/**",
@@ -12,6 +15,9 @@
     "**/report/**",
     "**/*.svg",
     "**/wwwroot/**",
-    "**/*.txt"
+    "**/*.txt",
+    "src/app/AnniversaryReminder/obj/**",
+    "src/lib/jmbdeData/obj/**",
+    "test/AnniversaryReminder.Tests/obj/**"
   ]
 }
