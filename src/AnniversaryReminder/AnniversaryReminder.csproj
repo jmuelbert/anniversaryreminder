@@ -44,7 +44,7 @@
         />
     <PackageReference
             Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore"
-            Version="7.0.11"
+            Version="7.0.13"
         />
     <PackageReference
             Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore"
@@ -58,7 +58,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.11" />
     <PackageReference
             Include="Microsoft.EntityFrameworkCore.Sqlserver"
-            Version="7.0.11"
+            Version="7.0.13"
         />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.13">
       <IncludeAssets
