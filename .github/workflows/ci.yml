@@ -124,12 +124,12 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - { dotnet-version: "7.x", os: ubuntu-latest }
-          - { dotnet-version: "7.x", os: windows-latest }
-          - { dotnet-version: "7.x", os: macos-latest }
-          - { dotnet-version: "6.x", os: ubuntu-latest }
-          - { dotnet-version: "6.x", os: windows-latest }
-          - { dotnet-version: "6.x", os: macos-latest }
+          - {dotnet-version: "7.x", os: ubuntu-latest}
+          - {dotnet-version: "7.x", os: windows-latest}
+          - {dotnet-version: "7.x", os: macos-latest}
+          - {dotnet-version: "6.x", os: ubuntu-latest}
+          - {dotnet-version: "6.x", os: windows-latest}
+          - {dotnet-version: "6.x", os: macos-latest}
 
     steps:
       - name: "🧰 Checkout Source Code"
@@ -208,5 +208,5 @@ jobs:
           name: nuget-packages
           path: "**/*.nupkg"
 
-        # - name: Publish the package to NuGet.Org
-        #  run: dotnet nuget push "**/*.nupkg" -s https://api.nuget.org/v3/index.json -k ${{ secrets.PUBLISH_NUGET_ORG }} --skip-duplicate
+      # - name: Publish the package to NuGet.Org
+      #  run: dotnet nuget push "**/*.nupkg" -s https://api.nuget.org/v3/index.json -k ${{ secrets.PUBLISH_NUGET_ORG }} --skip-duplicate

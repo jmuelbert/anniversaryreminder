@@ -1,3 +1,4 @@
+---
 version: '3'
 services:
   web:
@@ -9,6 +10,6 @@ services:
   db:
     image: 'microsoft/mssql-server-linux'
     environment:
-      SA_PASSWORD: 'Your_password123' #NO_CHECK
+      SA_PASSWORD: 'Your_password123' # NO_CHECK
       # checkov:skip=CKV_SECRET_6: ADD REASON
       ACCEPT_EULA: 'Y'

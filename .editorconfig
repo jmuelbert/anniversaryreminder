@@ -29,7 +29,7 @@ indent_size = 2
 indent_size = 2
 
 # Indentation override for all JS under lib directory
-[*.{js,json,vue,scss,rb,haml,yml,yaml,toml}]
+[*.{js,cjs,json,vue,scss,rb,haml,yml,yaml,toml}]
 indent_size = 2
 
 # The indent size used in the `package.json` file cannot be changed
@@ -64,7 +64,7 @@ indent_size = 2
 insert_final_newline = false
 
 # C# files
-[*.{cs,cbproj,sln}]
+[*.{cs}]
 
 #### Core EditorConfig Options ####
 

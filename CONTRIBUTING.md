@@ -11,29 +11,29 @@ Submit only relevant commits. We don't mind many commits in a pull request, but 
 relevant as explained below.
 
 - **Use a feature branch** The pull request should be created from a feature branch, and not from
-  _develop_. See below for why.
+    _develop_. See below for why.
 - **No merge-commits** If you have commits that looks like this _"Merge branch 'my-branch' into
-  develop"_ or _"Merge branch 'develop' of <https://github.com/jmuelbert/anniversaryreminder> into
-  develop"_ you're probably using merge instead of
-  [rebase](https://help.github.com/articles/about-git-rebase) locally. See below on _Handling
-  updates from upstream_.
+    develop"_ or _"Merge branch 'develop' of <https://github.com/jmuelbert/anniversaryreminder> into
+    develop"_ you're probably using merge instead of
+    [rebase](https://help.github.com/articles/about-git-rebase) locally. See below on _Handling
+    updates from upstream_.
 - **Squash commits** Often we create temporary commits like _"Started implementing feature x"_ and
-  then _"Did a bit more on feature x"_. Squash these commits together using
-  [interactive rebase](https://help.github.com/articles/about-git-rebase). Also see
-  [Squashing commits with rebase](https://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html).
+    then _"Did a bit more on feature x"_. Squash these commits together using
+    [interactive rebase](https://help.github.com/articles/about-git-rebase). Also see
+    [Squashing commits with rebase](https://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html).
 - **Descriptive commit messages** If a commit's message isn't descriptive, change it using
-  [interactive rebase](https://help.github.com/articles/about-git-rebase). Refer to issues using
-  `#issue`. Example of a bad message ~~"Small cleanup"~~. Example of good message: _"Removed
-  Security.Claims header from FSM, which broke Mono build per #62"_. Don't be afraid to write long
-  messages, if needed. Try to explain _why_ you've done the changes. The Erlang repo has some info
-  on
-  [writing good commit messages](https://github.com/erlang/otp/wiki/Writing-good-commit-messages).
+    [interactive rebase](https://help.github.com/articles/about-git-rebase). Refer to issues using
+    `#issue`. Example of a bad message ~~"Small cleanup"~~. Example of good message: _"Removed
+    Security.Claims header from FSM, which broke Mono build per #62"_. Don't be afraid to write long
+    messages, if needed. Try to explain _why_ you've done the changes. The Erlang repo has some info
+    on
+    [writing good commit messages](https://github.com/erlang/otp/wiki/Writing-good-commit-messages).
 - **No one-commit-to-rule-them-all** Large commits that changes too many things at the same time are
-  very hard to review. Split large commits into smaller. See this
-  [StackOverflow question](https://stackoverflow.com/questions/6217156/break-a-previous-commit-into-multiple-commits)
-  for information on how to do this.
+    very hard to review. Split large commits into smaller. See this
+    [StackOverflow question](https://stackoverflow.com/questions/6217156/break-a-previous-commit-into-multiple-commits)
+    for information on how to do this.
 - **Tests** Add relevant tests and make sure all existing ones still passes. Tests can be run using
-  the command
+    the command
 - **No Warnings** Make sure your code do not produce any build warnings.
 
 After reviewing a Pull request, we might ask you to fix some commits. After you've done that you
@@ -54,8 +54,8 @@ you just intend to reorder the code? Justify why the changes are needed.
 Make sure you have a [GitHub](https://github.com/) account.
 
 - Fork, clone, add upstream to the dotNetty repository. See
-  [Fork a repo](https://help.github.com/articles/fork-a-repo) for more detailed instructions or
-  follow the instructions below.
+    [Fork a repo](https://help.github.com/articles/fork-a-repo) for more detailed instructions or
+    follow the instructions below.
 
 - Fork by clicking _Fork_ on <https://github.com/jmuelbert/anniversaryreminder>
 - Clone your fork locally.
@@ -91,7 +91,7 @@ New to Git? See
 always from a feature branch created by you.
 
 - Pick an [issue](https://github.com/jmuelbert/anniversaryreminder/issues). If no issue exists
-  (search first) create one.
+    (search first) create one.
 - Get any changes from _upstream_.
 
 ```bash
@@ -104,9 +104,9 @@ git push origin dev     #(optional) this makes sure dev in your own fork on GitH
 See <https://help.github.com/articles/fetching-a-remote> for more info
 
 - Create a new feature branch. It's important that you do your work on your own branch and that it's
-  created off of _dev_. Tip: Give it a descriptive name and include the issue number, e.g.
-  `implement-lengthframeencoder-323` or `295-implement-recvbuffer`, so that others can see what is
-  being worked on.
+    created off of _dev_. Tip: Give it a descriptive name and include the issue number, e.g.
+    `implement-lengthframeencoder-323` or `295-implement-recvbuffer`, so that others can see what is
+    being worked on.
 
 ```bash
 git checkout -b my-new-branch-123
@@ -122,7 +122,7 @@ git push origin my-new-branch-123
 ```
 
 - Send a Pull Request, see <https://help.github.com/articles/using-pull-requests> to the _develop_
-  branch.
+    branch.
 
 See also: [Understanding the GitHub Flow](https://guides.github.com/introduction/flow/) (we're using
 `develop` as our master branch)
@@ -147,8 +147,8 @@ git merge --ff-only upstream/dev
 ```
 
 - Rebase your feature branch on _dev_. See
-  [Git Branching - Rebasing](https s://git-scm.com/book/en/Git-Branching-Rebasing) for more info on
-  rebasing
+    [Git Branching - Rebasing](https://git-scm.com/book/en/Git-Branching-Rebasing) for more info on
+    rebasing
 
 ```bash
 git checkout my-new-branch-123

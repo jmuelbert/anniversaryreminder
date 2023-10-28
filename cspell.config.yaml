@@ -1,6 +1,26 @@
 ---
 version: '0.2'
 language: en
+ignorePaths:
+  - '**/node_modules/**'
+  - '**/vscode_extension/**'
+  - '**/.git/**'
+  - '**/.pnpm-lock.json'
+  - '**/pnpm-lock.yaml'
+  - .vscode
+  - 'package-lock.json'
+  - 'megalinter-reports'
+  - '.devcontainer/.dockerignore'
+  - .gitattributes
+  - .gitignore
+  - '.github/actions/spelling/**'
+  - '.github/labels.yml'
+  - '.github/pr-labeler.yml'
+  - .prettierignore
+  - .tfignore
+  - CHANGELOG.md
+  - LICENSE
+  - LICENSES/**
 files:
   - .github/**/*.{md,txt,yaml,yml}
   - .git/COMMIT_EDITMSG
@@ -18,12 +38,15 @@ words:
   - Astro
   - Autobuild
   - autolabeler
+  - automerge
   - Bazel
   - Bitstream
   - Codecov
   - Codacy
+  - CODEOWNERS
   - Colab
   - commitlint
+  - COMMIT_EDITMSG
   - Cuda
   - codeql
   - dessant
@@ -33,6 +56,7 @@ words:
   - fsfe
   - ghaction
   - gittools
+  - goodcheck
   - gsoc
   - lengthframeencoder
   - matthiashermsen
@@ -45,12 +69,14 @@ words:
   - rarr
   - recvbuffer
   - returntocorp
+  - rubocop
   - Sarif
   - Semgrep
   - Signup
   - sobolevn
   - srggrs
   - stefanzweifel
+  - stylelintignore
   - tomwhross
   - tsconfigs
   - Unported
@@ -60,42 +86,6 @@ words:
 flagWords:
   - hte
 maxNumberOfProblems: 1000
-ignorePaths:
-  - .devcontainer/.dockerignore
-  - '**/.git/**'
-  - .github/actions/spelling/**
-  - .github/labels.yml
-  - .github/pr-labeler.yml
-  - .gitattributes
-  - .gitignore
-  - .vscode/**
-  - .tfignore
-  - '*.lock'
-  - '*-lock.yaml'
-  - '*.log'
-  - '*.aff'
-  - '*.dic'
-  - '*.gz'
-  - '*.snap'
-  - '*.trie'
-  - '**/.git/!(COMMIT_EDITMSG)'
-  - '**/.git/!(COMMIT_EDITMSG)/**'
-  - CHANGELOG.md
-  - checksum.txt
-  - cSpell.json
-  - cspell.json
-  - cspell.config.yaml
-  - LICENSE
-  - LICENSES/**
-  - '**/node_modules/**'
-  - '**/vscode_extension/**'
-  - package.json
-  - .prettierignore
-  - snapshots/**
-  - '**/.pnpm-lock.json'
-  - 'package-lock.json'
-  - 'megalinter-reports'
-  - ./project-words.txt
 import: []
 useGitignore: true
 overrides:

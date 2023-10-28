@@ -60,11 +60,11 @@ The master branch represents the latest pre-release code.
 
 - Open a command prompt
 
-  ```cmd
-      cd src\anniversaryreminder
-      dotnet build
-      dotnet ef database update
-  ```
+    ```cmd
+        cd src\anniversaryreminder
+        dotnet build
+        dotnet ef database update
+    ```
 
 - Create the app and a new blank database.
 
@@ -72,11 +72,11 @@ The master branch represents the latest pre-release code.
 
 - Open a command prompt and execute
 
-  ```bash
-      cd src/anniversaryreminder
-      dotnet build
-      dotnet ef database update
-  ```
+    ```bash
+        cd src/anniversaryreminder
+        dotnet build
+        dotnet ef database update
+    ```
 
 - Create the app and a new blank database.
 
@@ -86,25 +86,25 @@ The master branch represents the latest pre-release code.
 
 - Open a command prompt and execute
 
-  ```cmd
-      cd src\anniversaryreminder
-      dotnet run
-  ```
+    ```cmd
+        cd src\anniversaryreminder
+        dotnet run
+    ```
 
 - This hosts the app in a console application - Application started at URL
-  **`http://localhost:5000/`**.
+    **`http://localhost:5000/`**.
 
 ### Run on Linux or macOS
 
 - Open a command prompt and execute
 
-  ```bash
-      cd src/anniversaryreminder
-      dotnet run
-  ```
+    ```bash
+        cd src/anniversaryreminder
+        dotnet run
+    ```
 
 - This hosts the app in a console application - Application started at URL
-  **`http://localhost:5000/`**.
+    **`http://localhost:5000/`**.
 
 ## Publish the anniversaryreminder App
 
@@ -112,19 +112,19 @@ The master branch represents the latest pre-release code.
 
 - Open a command prompt and execute
 
-  ```cmd
-      cd src\anniversaryreminder
-      dotnet publish -c Release -o [RELEASEDIRECTORY]
-  ```
+    ```cmd
+        cd src\anniversaryreminder
+        dotnet publish -c Release -o [RELEASEDIRECTORY]
+    ```
 
 ### Publish on Linux or macOS
 
 - Open a command prompt and execute
 
-  ```bash
-      cd src/anniversaryreminder
-      dotnet publish -c Release -o [RELEASEDIRECTORY]
-  ```
+    ```bash
+        cd src/anniversaryreminder
+        dotnet publish -c Release -o [RELEASEDIRECTORY]
+    ```
 
 ## License
 
