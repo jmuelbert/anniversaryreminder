@@ -2,7 +2,7 @@
 # Name of this GitHub Actions workflow.
 name: Semgrep
 
-on:
+on: # yamllint disable-line rule:truthy
   pull_request:
   workflow_dispatch:
   push:

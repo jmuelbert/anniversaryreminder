@@ -20,6 +20,11 @@ insert_final_newline = true
 [*.{csproj,vcxproj,vcxproj.filters,proj,nativeproj,locproj}]
 indent_size = 2
 
+# Microsoft Solution
+[*.sln]
+ident_size = 2
+insert_final_newline = true
+
 # Xml build files
 [*.builds]
 indent_size = 2

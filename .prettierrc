@@ -3,6 +3,7 @@
     "singleQuote": true,
     "arrowParens": "always",
     "trailingComma": "all",
+    "bracketSpacing": false,
     "overrides": [
         {
             "files": ".github/**/*.yml",

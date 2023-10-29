@@ -5,7 +5,7 @@
 
 name: "Auto Assign to Project(s)"
 
-on:
+on: # yamllint disable-line rule:truthy
   pull_request_target:
     types: [opened, labeled]
 
@@ -19,7 +19,7 @@ jobs:
 
     steps:
       - name: "Assign NEW issues and NEW pull requests to project 11"
-        uses: srggrs/assign-one-project-github-action@1.2.1
+        uses: srggrs/assign-one-project-github-action@1
         if: github.event.action == 'opened'
         with:
           project:
@@ -29,7 +29,7 @@ jobs:
           column_name: "To do"
 
       - name: "Assign issues and pull requests with `bug` label to project 11"
-        uses: srggrs/assign-one-project-github-action@1.2.1
+        uses: srggrs/assign-one-project-github-action@1
         if: contains(github.event.pull_request.labels.*.name, 'bug')
         with:
           project: "11"

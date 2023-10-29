@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: MIT
 #
 name: Lint Commit Messages
-on: [pull_request]
+on: [pull_request] # yamllint disable-line rule:truthy
 
 permissions:
   actions: read

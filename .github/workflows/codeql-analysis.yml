@@ -12,7 +12,7 @@
 #
 name: "CodeQL Analysis"
 
-on:
+on: # yamllint disable-line rule:truthy
   push:
     branches: [main, develop, protected]
     paths-ignore:

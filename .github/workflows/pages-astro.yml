@@ -11,7 +11,7 @@ permissions:
   pages: write
   id-token: write
 
-on:
+on: # yamllint disable-line rule:truthy
   push:
     branches:
       - main

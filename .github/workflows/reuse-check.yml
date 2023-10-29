@@ -5,9 +5,7 @@
 
 name: REUSE Compliance Check
 
-# yamllint disable
-on:
-  # yamllint enable
+on: # yamllint disable-line rule:truthy
   push:
   pull_request:
 

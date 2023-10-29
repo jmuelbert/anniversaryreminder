@@ -4,7 +4,8 @@
 # policy, and support documentation.
 
 name: Scorecard supply-chain security
-on:
+
+on: # yamllint disable-line rule:truthy
   branch_protection_rule: # Schedule the workflow to run every Tuesday at 4:24 AM
 
   schedule:
@@ -31,14 +32,14 @@ jobs:
         uses: actions/checkout@v3
 
       - name: "Run analysis"
-        uses: ossf/scorecard-action@V2.3.0
+        uses: ossf/scorecard-action@v2
         with:
           results_file: results.sarif
           results_format: sarif
           publish_results: true
 
       - name: "Upload artifact"
-        uses: actions/upload-artifact@V3 # v3.1.2
+        uses: actions/upload-artifact@v3 # v3.1.2
         with:
           name: SARIF file
           path: results.sarif
@@ -46,6 +47,6 @@ jobs:
 
       # Upload the results to GitHub's code scanning dashboard.
       - name: "Upload to code-scanning"
-        uses: github/codeql-action/upload-sarif@V2# v2.2.4
+        uses: github/codeql-action/upload-sarif@v2 # v2.2.4
         with:
           sarif_file: results.sarif

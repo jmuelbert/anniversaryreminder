@@ -19,7 +19,7 @@
 
 name: "Microsoft Defender For Devops"
 
-on:
+on: # yamllint disable-line rule:truthy
   push:
     branches: ["main"]
     paths:
@@ -72,7 +72,7 @@ jobs:
             ${{ runner.os }}-nuget-
 
       - name: Run Microsoft Security DevOps
-        uses: microsoft/security-devops-action@v1.6.0
+        uses: microsoft/security-devops-action@v1
         id: msdo
 
       - name: Upload results to Security tab
