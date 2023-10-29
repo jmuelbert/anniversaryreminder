@@ -21,6 +21,7 @@ ignorePaths:
   - CHANGELOG.md
   - LICENSE
   - LICENSES/**
+  - cspell.config.yaml
 files:
   - .github/**/*.{md,txt,yaml,yml}
   - .git/COMMIT_EDITMSG
