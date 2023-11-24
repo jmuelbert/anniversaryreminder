@@ -53,9 +53,9 @@
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="8.0.0" />
     <PackageReference
             Include="Microsoft.EntityFrameworkCore.InMemory"
-            Version="7.0.13"
+            Version="8.0.0"
         />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.13" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.0" />
     <PackageReference
             Include="Microsoft.EntityFrameworkCore.Sqlserver"
             Version="8.0.0"
