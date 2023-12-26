@@ -74,7 +74,7 @@ jobs:
           dotnet build  -p:Configuration=Release --no-restore -p:version=${{ steps.gitversion.outputs.semVer }}
 
       - name: "📤 Upload artifact: Application"
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: DotnetSolution
           path: ${{runner.workspace}}/dist
@@ -111,7 +111,7 @@ jobs:
             }}-source-all.7z
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: source-files
           path: ./anniversary-reminder-${{ steps.get_version.outputs.VERSION
@@ -256,7 +256,7 @@ jobs:
 
       - name: Collect Artifacts
         if: github.ref == 'refs/heads/master'
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: nuget-packages
           path: "**/*.nupkg"
@@ -301,7 +301,7 @@ jobs:
 
       - name: Collect Artifacts
         if: startsWith(github.ref, 'refs/tags/')
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: nuget-packages
           path: "**/*.nupkg"
