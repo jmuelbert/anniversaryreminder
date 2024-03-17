@@ -69,7 +69,7 @@ jobs:
       
       - name: Run Microsoft Security DevOps
         uses: microsoft/security-devops-action@7e3060ae1e6a9347dd7de6b28195099f39852fe2 # v1.10.0
-          id: msdo
+        id: msdo
       
       # Upload the results to GitHub's code scanning dashboard.
       - name: "Upload to code-scanning"
