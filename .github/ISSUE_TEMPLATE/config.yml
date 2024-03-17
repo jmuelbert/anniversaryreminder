@@ -1,9 +1,19 @@
 ---
 blank_issues_enabled: false
 contact_links:
+ - name: 💡 Feature Request
+    url: https://github.com/jmuelbert/anniversaryreminder/discussions/new?category=feature-requests
+    about: Suggest an improvement you’d like to see added to `anniversaryreminder`
   - name: FAQ
     url: https://github.com/jmuelbert/anniversaryreminder/wiki/FAQ
     about: You may find your question and the answer to it here.
   - name: Documentation
-    url: http://jmuelbert.github.io/anniversaryreminder/
+    url: https://jmuelbert.github.io/anniversaryreminder/
     about: The documentation tells you how to use anniversaryreminder.
+  - name: GitHub Community Support
+    url: https://github.com/orgs/community/discussions
+    about: Please ask and answer questions here.
+  - name: GitHub Security Bug Bounty
+    url: https://bounty.github.com/
+    about: Please report security vulnerabilities here.
+

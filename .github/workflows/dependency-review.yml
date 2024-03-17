@@ -9,11 +9,13 @@
 # This Action will scan dependency manifest files that change as part of a
 # Pull Request, surfacing known-vulnerable versions of the packages declared
 # or updated in the PR. Once installed, if the workflow run is marked as
-# required, PRs introducing known-vulnerable packages will be blocked from merging.
+# required, PRs introducing known-vulnerable packages will be blocked from
+# merging.
 #
 # Source repository: https://github.com/actions/dependency-review-action
 # Public documentation:
 # https://docs.github.com/en/code-security/supply-chain-security/understanding-your-software-supply-chain/about-dependency-review#dependency-review-enforcement
+
 name: "Dependency Review"
 
 on: [pull_request] # yamllint disable-line rule:truthy
@@ -26,7 +28,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "🧰 Checkout Source Code"
-        uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
 
       - name: "Dependency Review"
-        uses: actions/dependency-review-action@v3
+        uses: actions/dependency-review-action@01bc87099ba56df1e897b6874784491ea6309bc4 # v3.1.4

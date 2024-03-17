@@ -17,3 +17,6 @@ shellcheck:
 rubocop:
   enabled: false
   config_file: .rubocop.yml
+
+swift:
+  config_file: .swiftlint.yml
