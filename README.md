@@ -31,20 +31,20 @@ additional information.
 
 The master branch represents the latest pre-release code.
 
--   [Releases](https://github.com/jmuelbert/anniversaryreminder/releases)
+- [Releases](https://github.com/jmuelbert/anniversaryreminder/releases)
 
--   [Milestones](https://github.com/jmuelbert/anniversaryreminder/milestones)
+- [Milestones](https://github.com/jmuelbert/anniversaryreminder/milestones)
 
 ## Requests and Bug reports
 
--   [GitHub issues (preferred)](https://github.com/jmuelbert/anniversaryreminder/issues)
+- [GitHub issues (preferred)](https://github.com/jmuelbert/anniversaryreminder/issues)
 
 ## Questions or Comments
 
 ## Wiki
 
--   [Main Page](https://github.com/jmuelbert/anniversaryreminder/wiki)
--   [User Manual](http://jmuelbert.github.io/anniversaryreminder/)
+- [Main Page](https://github.com/jmuelbert/anniversaryreminder/wiki)
+- [User Manual](http://jmuelbert.github.io/anniversaryreminder/)
 
 ## Building
 
@@ -52,79 +52,79 @@ The master branch represents the latest pre-release code.
 
 #### For Windows
 
--   [.NET Core SDK 7.x] (<https://dotnet.microsoft.com/en-us/download>)
+- [.NET Core SDK 7.x] (<https://dotnet.microsoft.com/en-us/download>)
 
 ## Prepare the App
 
 ### Windows
 
--   Open a command prompt
+- Open a command prompt
 
-    ```cmd
-        cd src\anniversaryreminder
-        dotnet build
-        dotnet ef database update
-    ```
+  ```cmd
+      cd src\anniversaryreminder
+      dotnet build
+      dotnet ef database update
+  ```
 
--   Create the app and a new blank database.
+- Create the app and a new blank database.
 
 ### Linux or macOS
 
--   Open a command prompt and execute
+- Open a command prompt and execute
 
-    ```bash
-        cd src/anniversaryreminder
-        dotnet build
-        dotnet ef database update
-    ```
+  ```bash
+      cd src/anniversaryreminder
+      dotnet build
+      dotnet ef database update
+  ```
 
--   Create the app and a new blank database.
+- Create the app and a new blank database.
 
 ## Run the anniversaryreminder App
 
 ### Run on Windows
 
--   Open a command prompt and execute
+- Open a command prompt and execute
 
-    ```cmd
-        cd src\anniversaryreminder
-        dotnet run
-    ```
+  ```cmd
+      cd src\anniversaryreminder
+      dotnet run
+  ```
 
--   This hosts the app in a console application - Application started at URL
-    **`http://localhost:5000/`**.
+- This hosts the app in a console application - Application started at URL
+  **`http://localhost:5000/`**.
 
 ### Run on Linux or macOS
 
--   Open a command prompt and execute
+- Open a command prompt and execute
 
-    ```bash
-        cd src/anniversaryreminder
-        dotnet run
-    ```
+  ```bash
+      cd src/anniversaryreminder
+      dotnet run
+  ```
 
--   This hosts the app in a console application - Application started at URL
-    **`http://localhost:5000/`**.
+- This hosts the app in a console application - Application started at URL
+  **`http://localhost:5000/`**.
 
 ## Publish the anniversaryreminder App
 
 ### Publish on Windows
 
--   Open a command prompt and execute
+- Open a command prompt and execute
 
-    ```cmd
-        cd src\anniversaryreminder
-        dotnet publish -c Release -o [RELEASEDIRECTORY]
-    ```
+  ```cmd
+      cd src\anniversaryreminder
+      dotnet publish -c Release -o [RELEASEDIRECTORY]
+  ```
 
 ### Publish on Linux or macOS
 
--   Open a command prompt and execute
+- Open a command prompt and execute
 
-    ```bash
-        cd src/anniversaryreminder
-        dotnet publish -c Release -o [RELEASEDIRECTORY]
-    ```
+  ```bash
+      cd src/anniversaryreminder
+      dotnet publish -c Release -o [RELEASEDIRECTORY]
+  ```
 
 ## License
 

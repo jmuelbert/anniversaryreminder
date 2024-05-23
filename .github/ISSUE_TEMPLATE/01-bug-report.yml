@@ -1,7 +1,7 @@
-name: "Bug Report"
+name: Bug Report
 description: Report an issue or possible bug
-title: "[Bug]:  "
-labels: ["bug", "triage"]
+title: "[Bug]: "
+labels: [bug, triage]
 assignees:
   - jmuelbert
 body:
@@ -11,6 +11,7 @@ body:
         Thank you for taking the time to file a bug report! Please fill out this form as completely as possible.
 
         ✅ I am using the **latest versions of anniversaryreminder**.
+
   - type: input
     id: anniversaryreminder-version
     attributes:
@@ -19,7 +20,7 @@ body:
     validations:
       required: true
   - type: input
-    id: Qt Version
+    id: dotnet-version
     attributes:
       label: What version of `dotnet` are you using?
       placeholder: 7.0.0
@@ -51,7 +52,7 @@ body:
       label: Participation
       options:
         - label: I am willing to submit a pull request for this issue.
-          required: false
+          required: true
   - type: checkboxes
     id: terms
     attributes:

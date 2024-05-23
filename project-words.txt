@@ -1,5 +1,5 @@
+jmbde
 anniversaryreminder
-jmbdesqlite
 accessibilities
 aspnet
 ASPNETCORE

@@ -9,4 +9,4 @@ until dotnet ef database update; do
 done
 
 echo >&2 "SQL Server is up - executing command"
-exec "$run_cmd"‚
+exec "${run_cmd}"

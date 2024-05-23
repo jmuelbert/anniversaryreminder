@@ -1,3 +1,6 @@
+name: Feature Request
+description: Request for a feature
+title: "[Feature]: "
 body:
   - type: markdown
     attributes:

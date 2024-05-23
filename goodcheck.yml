@@ -8,7 +8,7 @@ rules:
     glob:
       - '**/*.rb'
       - '**/*.{yaml,yml}'
-      - 'public/**/*.html'
+      - public/**/*.htmlcd
     fail:
       - Signup via GitHub
     pass:

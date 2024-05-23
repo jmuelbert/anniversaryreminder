@@ -54,7 +54,7 @@ words:
   - ccache
   - ccmake
   - choco
-   - cmake
+    - cmake
   - CMAKE
   - cmakelint
   - cmds

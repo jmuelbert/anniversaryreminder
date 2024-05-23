@@ -17,7 +17,7 @@
 # and provide permission before this can report data back to azure.
 # Read the official documentation here : https://learn.microsoft.com/en-us/azure/defender-for-cloud/quickstart-onboard-github
 
-name: 'Microsoft Defender For Devops'
+name: "Microsoft Defender For Devops"
 
 on:
   push:
@@ -27,7 +27,7 @@ on:
     types: [opened, synchronize, reopened]
 
   schedule:
-    - cron: '32 8 * * 5'
+    - cron: "32 8 * * 5"
 
 permissions:
   contents: read
@@ -65,15 +65,14 @@ jobs:
           path: ~/.nuget/packages
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
           restore-keys: |
-              ${{ runner.os }}-nuget-          
-      
+            ${{ runner.os }}-nuget-
+
       - name: Run Microsoft Security DevOps
         uses: microsoft/security-devops-action@7e3060ae1e6a9347dd7de6b28195099f39852fe2 # v1.10.0
-          id: msdo
-      
+        id: msdo
+
       # Upload the results to GitHub's code scanning dashboard.
       - name: "Upload to code-scanning"
         uses: github/codeql-action/upload-sarif@17573ee1cc1b9d061760f3a006fc4aac # v2.2.4
         with:
           sarif_file: ${{ steps.msdo.outputs.sarifFile }}
-      

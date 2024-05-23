@@ -7,35 +7,41 @@
 version: 2
 updates:
   # Maintain dependencies for GitHub Actions
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  - package-ecosystem: github-actions
+    directory: /
     schedule:
-      interval: "daily"
+      interval: monthly
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+    open-pull-requests-limit: 10
     commit-message:
-      prefix: ":rocket: gha"
+      include: scope
+      prefix: fix(gha)"
 
   # Enable version updates for Docker
-  - package-ecosystem: "docker"
+  - package-ecosystem: docker
     # Look for a `Dockerfile` in the `root` directory
-    directory: "/"
+    directory: /
     # Check for updates once a week
     schedule:
-      interval: "daily"
+      interval: monthly
     commit-message:
-      prefix: ":rocket: docker"
+      prefix: fix(docker)
 
   # Maintain dependencies for nuget
-  - package-ecosystem: "nuget" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: nuget # See documentation for possible values
+    directory: / # Location of package manifests
     schedule:
-      interval: "daily"
+      interval: monthly
     commit-message:
-      prefix: ":rocket: nuget"
+      prefix: fix(nuget)
 
   # Maintain dependencies for pip
-  - package-ecosystem: "pip" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: pip # See documentation for possible values
+    directory: / # Location of package manifests
     schedule:
-      interval: "daily"
+      interval: monthly
     commit-message:
-      prefix: ":rocket: pip"
+      prefix: fix(pip)

@@ -1,0 +1,52 @@
+# This file controls the behavior of Trunk: https://docs.trunk.io/cli
+# To learn more about the format of this file, see https://docs.trunk.io/reference/trunk-yaml
+version: 0.1
+cli:
+  version: 1.22.1
+# Trunk provides extensibility via plugins. (https://docs.trunk.io/plugins)
+plugins:
+  sources:
+    - id: trunk
+      ref: v1.5.0
+      uri: https://github.com/trunk-io/plugins
+# Many linters and tools depend on runtimes - configure them here. (https://docs.trunk.io/runtimes)
+runtimes:
+  enabled:
+    - go@1.21.0
+    - node@18.12.1
+    - python@3.10.8
+# This is the section where you manage your linters. (https://docs.trunk.io/check/configuration)
+lint:
+  enabled:
+    - gitleaks@8.18.2
+    - trufflehog-git@3.76.3
+    - codespell@2.2.6
+    - cspell@8.8.1
+    - dustilock@1.2.0
+    - markdown-link-check@3.11.2
+    - markdown-table-prettify@3.6.0
+    - pre-commit-hooks@4.6.0
+    - rubocop@1.39.0
+    - rufo@0.13.0
+    - semgrep@1.73.0
+    - sort-package-json@2.10.0
+    - stylelint@16.5.0
+    - actionlint@1.7.0
+    - checkov@3.2.103
+    - eslint@8.57.0
+    - git-diff-check
+    - markdownlint@0.40.0
+    - osv-scanner@1.7.3
+    - prettier@3.2.5
+    - shellcheck@0.10.0
+    - shfmt@3.6.0
+    - svgo@3.3.2
+    - trivy@0.51.2
+    - trufflehog@3.76.3
+    - yamllint@1.35.1
+actions:
+  enabled:
+    - trunk-announce
+    - trunk-check-pre-push
+    - trunk-fmt-pre-commit
+    - trunk-upgrade-available

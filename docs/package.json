@@ -1,15 +1,16 @@
 {
   "name": "documentation",
-  "type": "module",
   "version": "0.0.1",
-  "dependencies": {
-    "astro": "^2.10.15"
-  },
+  "type": "module",
   "scripts": {
     "astro": "astro",
     "build": "astro build",
     "dev": "astro dev",
     "preview": "astro preview",
     "start": "astro dev"
-  }
+  },
+  "dependencies": {
+    "astro": "^4.8.7"
+  },
+  "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
 }
