@@ -64,7 +64,7 @@ jobs:
             ${{ env.BUILD_PATH }}/${{ steps.detect-package-manager.outputs.dependency }}
       - name: Setup Pages
         id: pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
       - name: Install dependencies
         run:
           ${{ steps.detect-package-manager.outputs.manager }} ${{
