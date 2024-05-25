@@ -19,13 +19,10 @@ name: "CodeQL Analysis"
 
 on: # yamllint disable-line rule:truthy
   push:
-    branches: [main, develop, protected]
-    paths-ignore:
-      - "**/*.md"
-      - "**/*.txt"
+    branches: [main, develop, release]
   pull_request:
     # The branches below must be a subset of the branches above
-    types: [opened, synchronize, reopened]
+    branches: ["main"]
 
   schedule:
     - cron: "15 10 * * 3"
@@ -41,12 +38,18 @@ jobs:
   codeql-analyze:
     # Skip any PR created by dependabot to avoid permission issues:
     if: (github.actor != 'dependabot[bot]')
-    name: "CodeQL Analyze"
+    name: Analyze (${{ matrix.language }})
     runs-on: ubuntu-latest
     permissions:
+      # required for all workflows
+      security-events: write
+
+      # required to fetch internal or private CodeQL packs
+      packages: read
+
+      # only required for workflows in private repositories
       actions: read
       contents: read
-      security-events: write
 
     strategy:
       fail-fast: false
@@ -57,13 +60,14 @@ jobs:
         # https://docs.github.com/en/free-pro-team@latest/github/finding-security-vulnerabilities-and-errors-in-your-code/configuring-code-scanning#changing-the-languages-that-are-analyzed
 
     steps:
+      # Checkout the repository to the GitHub Actions runner
       - name: "🧰 Checkout Source Code"
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        uses: actions/checkout@44c2b7a8a4ea60a981eaca3cf939b5f4305c123b # v4.1.5
 
       # Initializes the CodeQL tools for scanning.
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v2
-        with:
+      - name: "Initialize CodeQL"
+        uses: github/codeql-action/init@b7cec7526559c32f1616476ff32d17ba4c59b2d6 # v3.25.5
+         with:
           languages: ${{ matrix.language }}
           # If you wish to specify custom queries, you can do so here or in a config file.
           # By default, queries listed here will override any specified in a config file.
@@ -71,32 +75,35 @@ jobs:
           # queries: ./path/to/local/query, your-org/your-repo/queries@main
           config-file: ./.github/codeql/codeql-config.yml
 
-      - name: Install Dotnet
+      - name: "⚙️ Setup dotnet"
         if: matrix.language == 'csharp'
-        uses: actions/setup-dotnet@v3
+        uses: actions/setup-dotnet@4d6c8fcf3c8f7a60068d26b594648e99df24cee3 # v4.0.0
         with:
           global-json-file: global.json
 
       - name: Cache NuGet packages
-        uses: actions/cache@v2
+        if: matrix.language == 'csharp'
+        uses: actions/cache@0c45773b623bea8c8e75f6c82b208c3cf94ea4f9 # v4.0.2
         with:
           path: ~/.nuget/packages
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
           restore-keys: |
             ${{ runner.os }}-nuget-
 
-      - name: Install dependencies and Build
+      - name: "🚧 Install dependencies and Build"
         if: matrix.language == 'csharp'
         run: |
           dotnet --info
           dotnet restore
-          dotnet build
+          dotnet tool update --global dotnet-ef
+          dotnet ef database update --project src/AnniversaryReminder
+          dotnet build  -p:Configuration=Release --no-restore -p:version=${{ steps.gitversion.outputs.semVer }}
 
       # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
       # If this step fails, then you should remove it and run the build manually (see below)
       - name: Autobuild
         if: matrix.language != 'csharp'
-        uses: github/codeql-action/autobuild@v2
+        uses: github/codeql-action/analyze@b7cec7526559c32f1616476ff32d17ba4c59b2d6 # v3.25.5
 
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2

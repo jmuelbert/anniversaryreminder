@@ -17,7 +17,7 @@ permissions:
 
 on: # yamllint disable-line rule:truthy
   push:
-    branches: [main, develop, release, improve_workflows]
+    branches: [main, develop, release]
 
   pull_request:
     # The branches below must be a subset of the branches above
@@ -38,11 +38,11 @@ jobs:
     if: (github.actor != 'dependabot[bot]')
 
     steps:
-      - name: "🧰 Checkout Source Code"
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - name: '🧰 Checkout Source Code'
+        uses: actions/checkout@44c2b7a8a4ea60a981eaca3cf939b5f4305c123b # v4.1.5
 
       - name: Build and Upload Site
-        uses: withastro/action@9a7959a16949e620a22e74f81c10cb7ce3b76924 # v1.0.6
+        uses: withastro/action@acfe56dffc635abfb9506c77d51ce097030360d1 # v2.0.0
         with:
           path:
             ./docs
@@ -60,4 +60,18 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5
+
+ # https://github.com/marketplace/actions/alls-green#why
+ release-all-green: # This job does nothing and is only used for the branch protection
+ if: always()
+ needs:
+   - build
+   - deploy
+ runs-on: ubuntu-latest
+
+ steps:
+   - name: "Decide whether the needed jobs succeeded or failed"
+     uses: re-actors/alls-green@223e4bb7a751b91f43eda76992bcfbf23b8b0302 # v1.2.2
+     with:
+       jobs: ${{ toJSON(needs) }}

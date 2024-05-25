@@ -1,16 +1,22 @@
 ---
-# SPDX-FileCopyrightText: Jürgen Mülbert
-#
+# SPDX-FileCopyrightText: Sergio Pintaldi
 # SPDX-License-Identifier: MIT
 
 # This script assigns pull requests to projects
 # based on their status and labels
 
+
 name: "Auto Assign to Project(s)"
 
 on: # yamllint disable-line rule:truthy
-  pull_request_target:
+  issues:
     types: [opened, labeled]
+  pull_request:
+    types: [opened, labeled]
+  issue_comment:
+    types: [created]
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 permissions:
   pull-requests: write
@@ -25,11 +31,11 @@ jobs:
         uses: srggrs/assign-one-project-github-action@65a8ddab497df42ef268001e67bbf976f8fd39e1 # v1.3.1
         if: github.event.action == 'opened'
         with:
-          project: "11"
+          project: "https://github.com/users/jmuelbert/projects/11"
 
       - name: Assign issues and pull requests with `bug` label to project 10
         uses: srggrs/assign-one-project-github-action@65a8ddab497df42ef268001e67bbf976f8fd39e1 # v1.3.1
         if: contains(github.event.pull_request.labels.*.name, 'bug')
         with:
-          project: "11"
+          project: "https://github.com/users/jmuelbert/projects/11"
           column_name: "Labeled"

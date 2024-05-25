@@ -1,6 +1,6 @@
-jmbde
-anniversaryreminder
 accessibilities
+anniversaryreminder
+anniversayreminder
 aspnet
 ASPNETCORE
 Autoincrement
@@ -11,8 +11,9 @@ crossorigin
 glyphicon
 haml
 HSTS
-latestmajor
 ipascalcase
+jmbde
+latestmajor
 locproj
 nativeproj
 netcoreapp
@@ -24,8 +25,8 @@ Preact
 RELEASEDIRECTORY
 resx
 ruleset
-stylecop
 Sqlserver
+stylecop
 tfversion
 tpascalcase
 xunit

@@ -26,7 +26,7 @@
 <!--- You can open a pull request before all these are done, but they should be done before getting merged. -->
 
 - [ ] Have you followed the guidelines in our
-      [Contributing](https://github.com/jmuelbert/anniversaryreminder/blob/master/CONTRIBUTING.md)
+      [Contributing](https://github.com/jmuelbert/anniversaryreminder/blob/main/.github/CONTRIBUTING.md)
       document?
 - [ ] Have you checked to ensure there aren't other open
       [Pull Requests](https://github.com/jmuelbert/anniversaryreminder/pulls) for the same change?
@@ -36,6 +36,6 @@
 - [ ] If needed, I have opened a pull request or an issue to update the
       [documentation](https://jmuelbert.github.io/anniversaryreminder/).
 - [ ] If these changes are notable, they are documented in
-      [CHANGELOG.md](https://github.com/jmuelbert/anniversaryreminder/blob/master/CHANGELOG.md).
+      [CHANGELOG.md](https://github.com/jmuelbert/anniversaryreminder/blob/main/CHANGELOG.md).
 
 ---

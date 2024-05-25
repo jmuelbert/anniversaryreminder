@@ -14,11 +14,29 @@
 # emails.
 #.go docs@example.com
 
+# The `src/*`pattern will match files like
+app/*                           @jmuelbert
+tests/*                         @jmuelbert
+
 # The `docs/*` pattern will match files like
-# `docs/getting-started.md` but not further nested files like
-# `docs/build-app/troubleshooting.md`.
-# docs/*  docs@example.com
+docs/*                          @jmuelbert
+pages/*                         @jmuelbert
 
 # Normally, *.ui, *.cpp and *.h files are reviewed by the core-cpp team only
 # All files containing UI text are reviewed by the ui-review team
-*                              @jmuelbert
+.editorconfig                   @jmuelbert
+.prettierignore                 @jmuelbert
+.prettierrc                     @jmuelbert
+*.conf                          @jmuelbert
+*.json                          @jmuelbert
+*.rb                            @jmuelbert
+*.gemspec                       @jmuelbert
+*.yaml                          @jmuelbert
+*.yml                           @jmuelbert
+*.toml                          @jmuelbert
+Rakefile                        @jmuelbert
+Gemfile                         @jmuelbert
+AUTHORS.md                      @jmuelbert
+CHANGELOG.md                    @jmuelbert
+README.md                       @jmuelbert
+SECURITY.md                     @jmuelbert
