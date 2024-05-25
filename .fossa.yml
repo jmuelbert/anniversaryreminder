@@ -6,7 +6,7 @@ version: 2
 cli:
   server: https://app.fossa.com
   fetcher: custom
-  project: https://github.com/jmuelbert/jmbde-QT
+  project: https://github.com/jmuelbert/anniversaryreminder
 analyze:
   modules:
     - name: jmbde

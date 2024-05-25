@@ -18,6 +18,8 @@ runtimes:
 # This is the section where you manage your linters. (https://docs.trunk.io/check/configuration)
 lint:
   enabled:
+    - trunk-toolbox@0.3.1
+    - taplo@0.8.1
     - gitleaks@8.18.2
     - trufflehog-git@3.76.3
     - codespell@2.2.6
@@ -48,5 +50,5 @@ actions:
   enabled:
     - trunk-announce
     - trunk-check-pre-push
-    # - trunk-fmt-pre-commit
+    - trunk-fmt-pre-commit
     - trunk-upgrade-available
