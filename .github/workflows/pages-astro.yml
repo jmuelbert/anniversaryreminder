@@ -49,7 +49,7 @@ jobs:
             # The root location of your Astro project inside the
             # repository. (optional)
             # node-version: 16 # The specific version of Node that should be used to build your site. Defaults to 16. (optional)
-          package-manager: pnpm@latest
+          package-manager: yarn
   deploy:
     environment:
       name: github-pages
@@ -62,16 +62,16 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4.0.5
 
- # https://github.com/marketplace/actions/alls-green#why
- release-all-green: # This job does nothing and is only used for the branch protection
- if: always()
- needs:
-   - build
-   - deploy
- runs-on: ubuntu-latest
+  # https://github.com/marketplace/actions/alls-green#wh
+  release-all-green: # This job does nothing and is only used for the branch protection
+    if: always()
+    needs:
+      - build
+      - deploy
+    runs-on: ubuntu-latest
 
- steps:
-   - name: "Decide whether the needed jobs succeeded or failed"
-     uses: re-actors/alls-green@223e4bb7a751b91f43eda76992bcfbf23b8b0302 # v1.2.2
-     with:
-       jobs: ${{ toJSON(needs) }}
+    steps:
+      - name: "Decide whether the needed jobs succeeded or failed"
+        uses: re-actors/alls-green@223e4bb7a751b91f43eda76992bcfbf23b8b0302 # v1.2.2
+        with:
+          jobs: ${{ toJSON(needs) }}
