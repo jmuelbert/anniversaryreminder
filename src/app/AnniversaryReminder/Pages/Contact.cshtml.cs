@@ -15,7 +15,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace AnniversaryReminder.Pages
 {
-    public class ContactModel : PageModel
+    public class Contactdotnet format style ./src --folderModel : PageModel
     {
         public string Message { get; set; }
 

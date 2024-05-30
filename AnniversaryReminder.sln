@@ -11,9 +11,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{DFD1AB7F-7B0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnniversaryReminder", "src\app\AnniversaryReminder\AnniversaryReminder.csproj", "{6CC8EABA-35E1-4587-A871-02C7ACD50418}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{CF6AD63A-9F87-48FC-A81E-E36FA18CDC18}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{CF6AD63A-9F87-48FC-A81E-E36FA18CDC18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnniversaryReminder.Tests", "test\AnniversaryReminder.Tests\AnniversaryReminder.Tests.csproj", "{AD898E3A-17AC-4005-8125-E2BEC3C99EC2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnniversaryReminder.Tests", "tests\AnniversaryReminder.Tests\AnniversaryReminder.Tests.csproj", "{AD898E3A-17AC-4005-8125-E2BEC3C99EC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

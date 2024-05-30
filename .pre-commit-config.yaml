@@ -1,59 +1,89 @@
+---
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
+files: ^(.*\.(py|json|md|sh|yaml|yml|in|cfg|txt|rst|toml|precommit-toml|wordlist))$
+# exclude: ^(\.[^/]*cache/.*)$
 ci:
-  skip: [pylint]
-  autoupdate_schedule: monthly
-
-exclude: ^(3rdpart|cmake/ECM|cmake/KDAB/|src/3rdparty/|code.dev.code-workspace)
+  autoupdate_schedule: weekly
+  skip: [mypy]
+  autofix_commit_msg: "ci: auto fixes from pre-commit.ci\n\nFor more information, see https://pre-commit.ci"
+  autoupdate_commit_msg: 'ci: pre-commit autoupdate [pre-commit.ci]'
+  autofix_prs: false
+default_language_version:
+  python: python3.11 # NOTE: sync with .python-version-default
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v4.6.0
     hooks:
       - id: trailing-whitespace
+        args: ['--markdown-linebreak-ext=md']
+        exclude: LICENSES/
       - id: end-of-file-fixer
-      - id: check-added-large-files
-        args: ['--maxkb=1000']
+        exclude: docs/.*
+      - id: check-merge-conflict
       - id: check-case-conflict
-      - id: check-xml
-      - id: check-yaml
-        args: [--allow-multiple-documents]
+      # - id: check-illegal-windows-names
       - id: check-json
-      - id: check-symlinks
+        exclude: (.devcontainer|.vscode/)
+      - id: check-toml
+      - id: check-yaml
+        args: [--unsafe, --allow-multiple-documents]
+      - id: check-ast
+      - id: debug-statements
       - id: destroyed-symlinks
-      - id: check-executables-have-shebangs
+      - id: check-docstring-first
+      - id: check-added-large-files
+        args: ['--maxkb=710']
+      - id: check-builtin-literals
+      - id: check-case-conflict
+      - id: detect-private-key
+      - id: mixed-line-ending
+      # - id: check-executables-have-shebangs
+      # - id: check-shebang-scripts-are-executable
+      - id: fix-byte-order-marker
+      # - id: file-contents-sorter
+      #  files: dictionary.*\.txt$|\.wordlist$
+      #  args: [--ignore-case]
+      - id: no-commit-to-branch
+        args:
+          - --branch=main
+          - --branch=develop
+          - --branch=release
+      - id: detect-private-key
+      - id: name-tests-test
+
+  - repo: https://github.com/mxr/sync-pre-commit-deps
+    rev: v0.0.1
+    hooks:
+      - id: sync-pre-commit-deps
+
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 0.28.2
+    hooks:
+      - id: check-dependabot
+      # - id: check-github-actions
+      - id: check-github-workflows
+      # - id: check-gitlab-ci
+      - id: check-readthedocs
+      # - id: check-taskfile
+      #   args: ['--verbose']
+
+  - repo: https://github.com/fsfe/reuse-tool
+    rev: v3.0.2
+    hooks:
+      - id: reuse
+
+  - repo: meta
+    hooks:
+      - id: check-hooks-apply
+      - id: check-useless-excludes
+
   - repo: https://github.com/pre-commit/mirrors-clang-format
     rev: v18.1.1
     hooks:
       - id: clang-format
         exclude: (.json)
-  - repo: https://github.com/PyCQA/pylint
-    rev: v3.1.0
-    hooks:
-      - id: pylint
-        exclude: ^(.cmake-format.py|conan/conanfile.py)
-        # additional_dependencies: ['PySide2', 'PySide6']
-  - repo: https://github.com/hhatto/autopep8
-    rev: v2.0.4
-    hooks:
-      - id: autopep8
-        exclude: ^(.cmake-format.py|conan/.*/conanfile.py)
-  - repo: https://github.com/codespell-project/codespell
-    rev: v2.2.6
-    hooks:
-      - id: codespell
-  - repo: https://github.com/cheshirekow/cmake-format-precommit
-    rev: v0.6.13
-    hooks:
-      - id: cmake-format
-      - id: cmake-lint
-        exclude: (cmake/Toolchain-QNX|.py.cmake|.h.cmake|.rc.cmake|Doxyfile.cmake|gammaray.qhcp.cmake)
-  - repo: https://github.com/markdownlint/markdownlint
-    rev: v0.12.0
-    hooks:
-      - id: markdownlint
-        entry: mdl
-        language: ruby
-        files: \.(md|mdown|markdown)$
+
   - repo: https://github.com/fsfe/reuse-tool
     rev: v3.0.1
     hooks:

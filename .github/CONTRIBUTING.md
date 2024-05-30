@@ -1,143 +1,209 @@
-# Contributor Guide
+# Contributing to anniversaryreminder
 
-Thank you for your interest in improving the checkconnect.
-This project is open-source under the [EUPL-1.2 license] and
-welcomes contributions in the form of bug reports, feature requests, and pull requests.
+anniversaryreminder is a large project and contributions are more than welcome, so thank you for wanting to
+contribute to anniversaryreminder!
 
-Here is a list of important resources for contributors:
+---
 
-- [Source Code]
-- [Documentation]
-- [Issue Tracker]
-- [Code of Conduct]
+## Checklist before creating a Pull Request
 
-## How to report a bug
+Submit only relevant commits. We don't mind many commits in a pull request, but they must be
+relevant as explained below.
 
-Report bugs on the [Issue Tracker].
+- **Use a feature branch** The pull request should be created from a feature branch, and not from
+  _develop_. See below for why.
+- **No merge-commits** If you have commits that looks like this _"Merge branch 'my-branch' into
+  develop"_ or _"Merge branch 'develop' of <https://github.com/jmuelbert/anniversaryreminder> into
+  develop"_ you're probably using merge instead of
+  [rebase](https://help.github.com/articles/about-git-rebase) locally. See below on _Handling
+  updates from upstream_.
+- **Squash commits** Often we create temporary commits like _"Started implementing feature x"_ and
+  then _"Did a bit more on feature x"_. Squash these commits together using
+  [interactive rebase](https://help.github.com/articles/about-git-rebase). Also see
+  [Squashing commits with rebase](https://gitready.com/advanced/2009/02/10/squashing-commits-with-rebase.html).
+- **Descriptive commit messages** If a commit's message isn't descriptive, change it using
+  [interactive rebase](https://help.github.com/articles/about-git-rebase). Refer to issues using
+  `#issue`. Example of a bad message ~~"Small cleanup"~~. Example of good message: _"Removed
+  Security.Claims header from FSM, which broke Mono build per #62"_. Don't be afraid to write long
+  messages, if needed. Try to explain _why_ you've done the changes. The Erlang repo has some info
+  on
+  [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+- **No one-commit-to-rule-them-all** Large commits that changes too many things at the same time are
+  very hard to review. Split large commits into smaller. See this
+  [StackOverflow question](https://stackoverflow.com/questions/6217156/break-a-previous-commit-into-multiple-commits)
+  for information on how to do this.
+- **Tests** Add relevant tests and make sure all existing ones still passes. Tests can be run using
+  the command
+- **No Warnings** Make sure your code do not produce any build warnings.
 
-When filing an issue, make sure to answer these questions:
+After reviewing a Pull request, we might ask you to fix some commits. After you've done that you
+need to force push to update your branch in your local fork.
 
-- Which operating system and dotnet version are you using?
-- Which version of this project are you using?
-- What did you do?
-- What did you expect to see?
-- What did you see instead?
+### Title and Description for the Pull Request
 
-The best way to get your bug fixed is to provide a test case,
-and/or steps to reproduce the issue.
+Give the PR a descriptive title and in the description field describe what you have done in general
+terms and why. This will help the reviewers greatly, and provide a history for the future.
 
-## How to request a feature
+Especially if you modify something existing, be very clear! Have you changed any algorithms, or did
+you just intend to reorder the code? Justify why the changes are needed.
 
-Request features on the [Issue Tracker].
+---
 
-## How to set up your development environment
+### Getting started
 
-You need dotnet 8+ and the following tools:
+Make sure you have a [GitHub](https://github.com/) account.
 
-- [dotnet-sdk
+- Fork, clone, add upstream to the anniversaryreminder repository. See
+  [Fork a repo](https://help.github.com/articles/fork-a-repo) for more detailed instructions or
+  follow the instructions below.
 
-Fork the repository on [GitHub],
-and clone the fork to your local machine. You can now generate a project
-from your development version:
+- Fork by clicking _Fork_ on <https://github.com/jmuelbert/anniversaryreminder>
+- Clone your fork locally.
 
-```console
-git clone https://github.com/jmuelbert/anniversaryreminder.git
+```bash
+git clone https://github.com/jmuelbert/anniversaryreminder
 ```
 
-You may also want to push your generated project to GitHub,
-and set up [continuous integration].
+- Add an upstream remote.
 
-## How to test the project
+```bash
+git remote add upstream https://github.com/YOUR-USERNAME/anniversaryreminder
+```
 
-Please refer to the [User Guide]
-for instructions on how to run the test suite locally.
+You now have two remotes: _upstream_ points to <https://github.com/jmuelbert/anniversaryreminder>,
+and _origin_ points to your fork on GitHub.
 
-## How to submit changes
+- Make changes. See below.
 
-Open a [pull request] to submit changes to this project.
+Unsure where to start? Issues marked with
+[_up for grabs_](https://github.com/jmuelbert/anniversaryreminder/labels/up%20for%20grabs) are
+things we want help with.
 
-Your pull request needs to meet the following guidelines for acceptance:
+See also:
+[Contributing to Open Source on GitHub](https://guides.github.com/activities/contributing-to-open-source/)
 
-- The Tests test suite must pass without errors and warnings.
-- Include unit tests. This project maintains 100% code coverage.
-- If your changes add functionality, update the documentation accordingly.
+New to Git? See
+<https://help.github.com/articles/what-are-other-good-resources-for-learning-git-and-github>
 
-Feel free to submit early, though—we can always iterate on this.
+### Making changes
 
-It is recommended to open an issue before starting work on anything.
-This will allow a chance to talk it over with the owners and validate your approach.
+**Never** work directly on _dev_ or _main_ and you should never send a pull request from main -
+always from a feature branch created by you.
 
-## How to accept changes
+- Pick an [issue](https://github.com/jmuelbert/anniversaryreminder/issues). If no issue exists
+  (search first) create one.
+- Get any changes from _upstream_.
 
-_You need to be a project maintainer to accept changes._
+```bash
+git checkout dev
+git fetch upstream
+git merge --ff-only upstream/dev
+git push origin dev     #(optional) this makes sure dev in your own fork on GitHub is up to date
+```
 
-Before accepting a pull request, go through the following checklist:
+See <https://help.github.com/articles/fetching-a-remote> for more info
 
-- The PR must pass all checks.
-- The PR must have a descriptive title.
-- The PR should be labelled with the kind of change (see below).
+- Create a new feature branch. It's important that you do your work on your own branch and that it's
+  created off of _dev_. Tip: Give it a descriptive name and include the issue number, e.g.
+  `implement-lengthframeencoder-323` or `295-implement-recvbuffer`, so that others can see what is
+  being worked on.
 
-Release notes are pre-filled with titles and authors of merged pull requests.
-Labels group the pull requests into sections.
-The following list shows the available sections,
-with associated labels in parentheses:
+```bash
+git checkout -b my-new-branch-123
+```
 
-- 💥 Breaking Changes (`breaking`)
-- 🚀 Features (`enhancement`)
-- 🔥 Removals and Deprecations (`removal`)
-- 🐞 Fixes (`bug`)
-- 🐎 Performance (`performance`)
-- 🚨 Testing (`testing`)
-- 👷 Continuous Integration (`ci`)
-- 📚 Documentation (`documentation`)
-- 🔨 Refactoring (`refactoring`)
-- 💄 Style (`style`)
-- 📦 Dependencies (`dependencies`)
+- Work on your feature. Commit.
+- Rebase often, see below.
+- Make sure you adhere to _Checklist before creating a Pull Request_ described above.
+- Push the branch to your fork on GitHub
 
-To merge the pull request, follow these steps:
+```bash
+git push origin my-new-branch-123
+```
 
-1. Click **Squash and Merge**.
-   (Select this option from the dropdown menu of the merge button, if it is not shown.)
-2. Click **Confirm squash and merge**.
-3. Click **Delete branch**.
+- Send a Pull Request, see <https://help.github.com/articles/using-pull-requests> to the _develop_
+  branch.
 
-## How to make a release
+See also: [Understanding the GitHub Flow](https://guides.github.com/introduction/flow/) (we're using
+`develop` as our main branch)
 
-_You need to be a project maintainer to make a release._
+### Handling updates from upstream
 
-Before making a release, go through the following checklist:
+While you're working away in your branch it's quite possible that your upstream _dev_ may be
+updated. If this happens you should:
 
-- All pull requests for the release have been merged.
-- The default branch passes all checks.
+- [Stash](https://git-scm.com/book/en/Git-Tools-Stashing) any un-committed changes you need to
 
-Releases are made by publishing a GitHub Release.
-A draft release is being maintained based on merged pull requests.
-To publish the release, follow these steps:
+```bash
+git stash
+```
 
-1. Click **Edit** next to the draft release.
-2. Enter a tag with the new version.
-3. Enter the release title, also the new version.
-4. Edit the release description, if required.
-5. Click **Publish Release**.
+- Update your local _dev_ by fetching from _upstream_
 
-Version numbers adhere to [semantic Versioning],
-of the form `X.Y.Z`.
+```bash
+git checkout dev
+git fetch upstream
+git merge --ff-only upstream/dev
+```
 
-After publishing the release, the following automated steps are triggered:
+- Rebase your feature branch on _dev_. See
+  [Git Branching - Rebasing](https://git-scm.com/book/en/Git-Branching-Rebasing) for more info on
+  rebasing
 
-- The Git tag is applied to the repository.
-- [Read the Docs] builds a new stable version of the documentation.
+```bash
+git checkout my-new-branch-123
+git rebase dev
+git push origin dev     #(optional) this makes sure dev in your own fork on GitHub is up to date
+```
 
-[semantic versioning]: https://semver.org
-[continuous integration]: https://cookiecutter-hypermodern-python.readthedocs.io/en/stable/quickstart.html#continuous-integration
-[documentation]: https://cookiecutter-hypermodern-python.readthedocs.io/
-[github]: https://github.com/cjolowicz/cookiecutter-hypermodern-python
-[issue tracker]: https://github.com/cjolowicz/cookiecutter-hypermodern-python/issues
-[pull request]: https://github.com/cjolowicz/cookiecutter-hypermodern-python/pulls
-[read the docs]: https://cookiecutter-hypermodern-python.readthedocs.io/
-[source code]: https://github.com/cjolowicz/cookiecutter-hypermodern-python
-[user guide]: https://cookiecutter-hypermodern-python.readthedocs.io/en/latest/guide.html#how-to-test-your-project
+This ensures that your history is "clean" i.e. you have one branch off from _dev_ followed by your
+changes in a straight line. Failing to do this ends up with several "messy" merges in your history,
+which we don't want. This is the reason why you should always work in a branch and you should never
+be working in, or sending pull requests from _dev_.
 
-<!-- github-only -->
+If you're working on a long running feature then you may want to do this quite often, rather than
+run the risk of potential merge issues further down the line.
 
-[code of conduct]: CODE_OF_CONDUCT.md
+### Making changes to a Pull request
+
+If you realize you've missed something after submitting a Pull request, just commit to your local
+branch and push the branch just like you did the first time. This commit will automatically be
+included in the Pull request. If we ask you to change already published commits using interactive
+rebase (like squashing or splitting commits or rewriting commit messages) you need to force push
+using `-f`:
+
+```bash
+git push -f origin my-new-branch-123
+```
+
+### All my commits are on develop. How do I get them to a new branch?
+
+If all commits are on _develop_ you need to move them to a new feature branch.
+
+You can rebase your local _develop_ on _upstream/develop_ (to remove any merge commits), rename it,
+and recreate _develop_
+
+```bash
+git checkout develop
+git rebase upstream/develop
+git branch -m my-new-branch-123
+git branch develop upstream/develop
+```
+
+Or you can create a new branch off of _develop_ and then cherry pick the commits
+
+```bash
+git checkout -b my-new-branch-123 upstream/develop
+git cherry-pick rev                   #rev is the revisions you want to pick
+git cherry-pick rev                   #repeat until you have picked all commits
+git branch -m develop old-develop     #rename dev
+git branch develop upstream/develop   #create a new dev
+```
+
+## Code guidelines
+
+See our
+[C# Coding Style](https://github.com/dotnet/runtime/blob/main/docs/coding-guidelines/coding-style.md) and the [csharp Naming Convention](hhttps://github.com/naming-convention/naming-convention-guides/blob/master/csharp/README.md) on GitHub
+for more information on following the project's conventions.
+
+---
