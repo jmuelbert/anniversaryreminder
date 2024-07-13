@@ -38,7 +38,6 @@ jobs:
       #  run: |
       #    echo "GHE_HOST=${GITHUB_SERVER_URL##https:\/\/}" >> $GITHUB_ENV
 
-
       # Drafts your next Release notes as Pull Requests are merged
       # into "master"
       - name: Release Drafter

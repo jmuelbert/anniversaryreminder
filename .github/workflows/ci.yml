@@ -40,7 +40,6 @@ env:
   NET_FRAMEWORK_VERSION: net48
   DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
 
-
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
   cancel-in-progress: true
@@ -51,7 +50,7 @@ jobs:
     needs: tests
     runs-on: ubuntu-latest
     steps:
-     # Checkout the repository to the GitHub Actions runner
+      # Checkout the repository to the GitHub Actions runner
       - name: "🧰 Checkout Source Code"
         uses: actions/checkout@44c2b7a8a4ea60a981eaca3cf939b5f4305c123b # v4.1.5
         with:
@@ -99,12 +98,12 @@ jobs:
       fail-fast: false
       matrix:
         include:
-          - {dotnet-version: "8.x", os: ubuntu-latest}
-          - {dotnet-version: "8.x", os: windows-latest}
-          - {dotnet-version: "8.x", os: macos-latest}
-          - {dotnet-version: "7.x", os: ubuntu-latest}
-          - {dotnet-version: "7.x", os: windows-latest}
-          - {dotnet-version: "7.x", os: macos-latest}
+          - { dotnet-version: "8.x", os: ubuntu-latest }
+          - { dotnet-version: "8.x", os: windows-latest }
+          - { dotnet-version: "8.x", os: macos-latest }
+          - { dotnet-version: "7.x", os: ubuntu-latest }
+          - { dotnet-version: "7.x", os: windows-latest }
+          - { dotnet-version: "7.x", os: macos-latest }
 
     steps:
       # Checkout the repository to the GitHub Actions runner
@@ -121,7 +120,6 @@ jobs:
         run: |
           echo "Version: ${{ steps.gitversion.outputs.semVer }}"
 
-
       - name: "⚙️ Setup dotnet"
         uses: actions/setup-dotnet@4d6c8fcf3c8f7a60068d26b594648e99df24cee3 # v4.0.0
         with:
@@ -133,7 +131,7 @@ jobs:
           path: ~/.nuget/packages
           key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
           restore-keys: |
-              ${{ runner.os }}-nuget-
+            ${{ runner.os }}-nuget-
 
       - name: "⚙️ Check dotnet sdk install & restore"
         run: |

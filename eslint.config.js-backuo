@@ -1,0 +1,80 @@
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+import { FlatCompat } from '@eslint/eslintrc';
+import tseslint from 'typescript-eslint';
+
+// plugins
+import noOnlyTestsEslint from 'eslint-plugin-no-only-tests';
+import regexpEslint from 'eslint-plugin-regexp';
+const typescriptEslint = tseslint.plugin;
+
+import globals from 'globals';
+import pluginJs from '@eslint/js';
+
+// parsers
+const typescriptParser = tseslint.parser;
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// ref: https://eslint.org/docs/latest/use/configure/migration-guide#using-eslintrc-configs-in-flat-config
+// mimic CommonJS variables -- not needed if using CommonJS
+const compat = new FlatCompat({
+	baseDirectory: __dirname
+});
+
+module.exports = [
+	{ files: ['**/*.{js,mjs,cjs,ts}'] },
+	{
+		ignores: [
+			'**/*.d.*',
+			'**/*.map.*',
+			'packages/**/*.min.js',
+			'packages/**/dist/',
+			'packages/**/fixtures/',
+			'packages/astro/vendor/vite/',
+			'benchmark/**/dist/',
+			'examples/',
+			'scripts/',
+			'.github/',
+			'.changeset/',
+			'**/wwwroot/**/*.js'
+		]
+	},
+	...tseslint.configs.recommendedTypeChecked,
+	...tseslint.configs.stylisticTypeChecked,
+	// mimic ESLintRC-style extends
+	...compat.extends('plugin:regexp/recommended'),
+	{
+		languageOptions: {
+			parser: typescriptParser,
+			parserOptions: {
+				project: ['./packages/*/tsconfig.json', './tsconfig.eslint.json'],
+				tsconfigRootDir: __dirname
+			},
+			ecmaVersion: 5,
+			sourceType: 'script',
+			globals: globals.browser
+		},
+		plugins: {
+			'@typescript-eslint': typescriptEslint,
+			'no-only-tests': noOnlyTestsEslint,
+			regexp: regexpEslint
+		}
+	},
+	pluginJs.configs.recommended,
+	// File-pattern specific overrides
+	{
+		files: ['src/**/*', 'test/**/*', 'docs/**/*'],
+		rules: {
+			semi: ['warn', 'always']
+		}
+	},
+	{
+		files: ['test/**/*'],
+		rules: {
+			'no-console': 'off'
+		}
+	}
+];

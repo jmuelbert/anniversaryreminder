@@ -880,7 +880,7 @@ packages:
   devalue@5.0.0:
     resolution: {integrity: sha512-gO+/OMXF7488D+u3ue+G7Y4AA3ZmUnB3eHJXmBTgNHvr4ZNzl36A0ZtG+XCRNYCkYx/bFmw4qtkoFLa+wSrwAA==}
 
-  devlop@1.1.0:
+  develop@1.1.0:
     resolution: {integrity: sha512-RWmIqhcFf1lRYBvNmr7qTNuyCt/7/ns2jbpp1+PalgE/rDQcBT0fioSMUpJ93irlUhC5hrg4cYqe6U+0ImW0rA==}
 
   diff@5.2.0:
@@ -1656,7 +1656,7 @@ packages:
   trim-lines@3.0.1:
     resolution: {integrity: sha512-kRj8B+YHZCc9kQYdWfJB2/oUl9rA99qbowYYBtr4ui4mZyAQ2JpvVBd/6U2YloATfqBhBTSMhTpgBHtU0Mf3Rg==}
 
-  trough@2.2.0:
+  through@2.2.0:
     resolution: {integrity: sha512-tmMpK00BjZiUyVyvrBK7knerNgmgvcV/KLVyuma/SC+TQN167GrMRciANTz09+k3zW8L8t60jWO1GpfkZdjTaw==}
 
   tsconfck@3.1.0:
@@ -2622,7 +2622,7 @@ snapshots:
 
   devalue@5.0.0: {}
 
-  devlop@1.1.0:
+  develop@1.1.0:
     dependencies:
       dequal: 2.0.3
 
@@ -2800,7 +2800,7 @@ snapshots:
   hast-util-from-html@2.0.1:
     dependencies:
       '@types/hast': 3.0.4
-      devlop: 1.1.0
+      develop: 1.1.0
       hast-util-from-parse5: 8.0.1
       parse5: 7.1.2
       vfile: 6.0.1
@@ -2810,7 +2810,7 @@ snapshots:
     dependencies:
       '@types/hast': 3.0.4
       '@types/unist': 3.0.2
-      devlop: 1.1.0
+      develop: 1.1.0
       hastscript: 8.0.0
       property-information: 6.5.0
       vfile: 6.0.1
@@ -2860,7 +2860,7 @@ snapshots:
     dependencies:
       '@types/hast': 3.0.4
       comma-separated-tokens: 2.0.3
-      devlop: 1.1.0
+      develop: 1.1.0
       property-information: 6.5.0
       space-separated-tokens: 2.0.2
       web-namespaces: 2.0.1
@@ -3013,7 +3013,7 @@ snapshots:
       '@types/mdast': 4.0.4
       '@types/unist': 3.0.2
       decode-named-character-reference: 1.0.2
-      devlop: 1.1.0
+      develop: 1.1.0
       mdast-util-to-string: 4.0.0
       micromark: 4.0.0
       micromark-util-decode-numeric-character-reference: 2.0.1
@@ -3029,14 +3029,14 @@ snapshots:
     dependencies:
       '@types/mdast': 4.0.4
       ccount: 2.0.1
-      devlop: 1.1.0
+      develop: 1.1.0
       mdast-util-find-and-replace: 3.0.1
       micromark-util-character: 2.1.0
 
   mdast-util-gfm-footnote@2.0.0:
     dependencies:
       '@types/mdast': 4.0.4
-      devlop: 1.1.0
+      develop: 1.1.0
       mdast-util-from-markdown: 2.0.1
       mdast-util-to-markdown: 2.1.0
       micromark-util-normalize-identifier: 2.0.0
@@ -3054,7 +3054,7 @@ snapshots:
   mdast-util-gfm-table@2.0.0:
     dependencies:
       '@types/mdast': 4.0.4
-      devlop: 1.1.0
+      develop: 1.1.0
       markdown-table: 3.0.3
       mdast-util-from-markdown: 2.0.1
       mdast-util-to-markdown: 2.1.0
@@ -3064,7 +3064,7 @@ snapshots:
   mdast-util-gfm-task-list-item@2.0.0:
     dependencies:
       '@types/mdast': 4.0.4
-      devlop: 1.1.0
+      develop: 1.1.0
       mdast-util-from-markdown: 2.0.1
       mdast-util-to-markdown: 2.1.0
     transitivePeerDependencies:
@@ -3092,7 +3092,7 @@ snapshots:
       '@types/hast': 3.0.4
       '@types/mdast': 4.0.4
       '@ungap/structured-clone': 1.2.0
-      devlop: 1.1.0
+      develop: 1.1.0
       micromark-util-sanitize-uri: 2.0.0
       trim-lines: 3.0.1
       unist-util-position: 5.0.0
@@ -3121,7 +3121,7 @@ snapshots:
   micromark-core-commonmark@2.0.1:
     dependencies:
       decode-named-character-reference: 1.0.2
-      devlop: 1.1.0
+      develop: 1.1.0
       micromark-factory-destination: 2.0.0
       micromark-factory-label: 2.0.0
       micromark-factory-space: 2.0.0
@@ -3146,7 +3146,7 @@ snapshots:
 
   micromark-extension-gfm-footnote@2.0.0:
     dependencies:
-      devlop: 1.1.0
+      develop: 1.1.0
       micromark-core-commonmark: 2.0.1
       micromark-factory-space: 2.0.0
       micromark-util-character: 2.1.0
@@ -3157,7 +3157,7 @@ snapshots:
 
   micromark-extension-gfm-strikethrough@2.0.0:
     dependencies:
-      devlop: 1.1.0
+      develop: 1.1.0
       micromark-util-chunked: 2.0.0
       micromark-util-classify-character: 2.0.0
       micromark-util-resolve-all: 2.0.0
@@ -3166,7 +3166,7 @@ snapshots:
 
   micromark-extension-gfm-table@2.0.0:
     dependencies:
-      devlop: 1.1.0
+      develop: 1.1.0
       micromark-factory-space: 2.0.0
       micromark-util-character: 2.1.0
       micromark-util-symbol: 2.0.0
@@ -3178,7 +3178,7 @@ snapshots:
 
   micromark-extension-gfm-task-list-item@2.0.1:
     dependencies:
-      devlop: 1.1.0
+      develop: 1.1.0
       micromark-factory-space: 2.0.0
       micromark-util-character: 2.1.0
       micromark-util-symbol: 2.0.0
@@ -3203,7 +3203,7 @@ snapshots:
 
   micromark-factory-label@2.0.0:
     dependencies:
-      devlop: 1.1.0
+      develop: 1.1.0
       micromark-util-character: 2.1.0
       micromark-util-symbol: 2.0.0
       micromark-util-types: 2.0.0
@@ -3278,7 +3278,7 @@ snapshots:
 
   micromark-util-subtokenize@2.0.1:
     dependencies:
-      devlop: 1.1.0
+      develop: 1.1.0
       micromark-util-chunked: 2.0.0
       micromark-util-symbol: 2.0.0
       micromark-util-types: 2.0.0
@@ -3292,7 +3292,7 @@ snapshots:
       '@types/debug': 4.1.12
       debug: 4.3.4
       decode-named-character-reference: 1.0.2
-      devlop: 1.1.0
+      develop: 1.1.0
       micromark-core-commonmark: 2.0.1
       micromark-factory-space: 2.0.0
       micromark-util-character: 2.1.0
@@ -3690,7 +3690,7 @@ snapshots:
 
   trim-lines@3.0.1: {}
 
-  trough@2.2.0: {}
+  through@2.2.0: {}
 
   tsconfck@3.1.0: {}
 
@@ -3708,17 +3708,17 @@ snapshots:
       extend: 3.0.2
       is-buffer: 2.0.5
       is-plain-obj: 4.1.0
-      trough: 2.2.0
+      through: 2.2.0
       vfile: 5.3.7
 
   unified@11.0.4:
     dependencies:
       '@types/unist': 3.0.2
       bail: 2.0.2
-      devlop: 1.1.0
+      develop: 1.1.0
       extend: 3.0.2
       is-plain-obj: 4.1.0
-      trough: 2.2.0
+      through: 2.2.0
       vfile: 6.0.1
 
   unist-util-find-after@5.0.0:
