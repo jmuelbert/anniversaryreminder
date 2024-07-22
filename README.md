@@ -10,7 +10,8 @@ i.e. The employee is 10 Years, 25 years in the company. Or the employee has birt
 [![CI on Branches and PRs](https://github.com/jmuelbert/anniversaryreminder/actions/workflows/ci.yml/badge.svg)](https://github.com/jmuelbert/anniversaryreminder/actions/workflows/ci.yml)
 [![CodeQL](https://github.com/jmuelbert/anniversaryreminder/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/jmuelbert/anniversaryreminder/actions/workflows/codeql-analysis.yml)
 [![Codacy Security Scan](https://github.com/jmuelbert/anniversaryreminder/actions/workflows/codacy-analysis.yml/badge.svg)](https://github.com/jmuelbert/anniversaryreminder/actions/workflows/codacy-analysis.yml)
-[![MegaLinter](https://github.com/jmuelbert/anniversaryreminder/workflows/MegaLinter/badge.svg?branch=main)][mega-linter]
+[![MegaLinter](https://github.com/jmuelbert/anniversaryreminder/workflows/MegaLinter/badge.svg?branch=main)][![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fjmuelbert%2Fanniversaryreminder.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fjmuelbert%2Fanniversaryreminder?ref=badge_shield)
+[mega-linter]
 [![GitHub All Releases][downloads_all-shield]][downloads_all-url]
 [![Issues][issues-shield]][issues-url]
 [![Help wanted issues][help-issues-shield]][help-issues-url]
@@ -181,3 +182,6 @@ EUPL-1.2 © [Jürgen Mülbert](https:/github.com/jmuelbert/anniversaryreminder
 [codecov-url]: https://codecov.io/gh/jmuelbert/anniversaryreminder
 [mega-linter]:
  https://github.com/jmuelbert/anniversaryreminder/actions?query=workflow%3AMegaLinter+branch%3Amain
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fjmuelbert%2Fanniversaryreminder.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fjmuelbert%2Fanniversaryreminder?ref=badge_large)
