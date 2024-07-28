@@ -10,11 +10,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
 using AnniversaryReminder.Data;
-
 using jmbdeData.Models;
-
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -40,8 +37,8 @@ namespace AnniversaryReminder.Pages.Employees
                 return NotFound();
             }
 
-            Employee = await _context.Employee
-                .FirstOrDefaultAsync(m => m.EmployeeId == id)
+            Employee = await _context
+                .Employee.FirstOrDefaultAsync(m => m.EmployeeId == id)
                 .ConfigureAwait(false);
 
             if (Employee == null)

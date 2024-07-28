@@ -7,7 +7,6 @@
  *************************************************************************/
 
 using System;
-
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AnniversaryReminder.Data.Migrations
@@ -18,16 +17,15 @@ namespace AnniversaryReminder.Data.Migrations
         {
             migrationBuilder.CreateTable(
                 name: "ChipCard",
-                columns: table =>
-                    new
-                    {
-                        ChipCardId = table
-                            .Column<long>(nullable: false)
-                            .Annotation("Sqlite:Autoincrement", true),
-                        Number = table.Column<string>(maxLength: 25, nullable: false),
-                        Locked = table.Column<bool>(nullable: false),
-                        LastUpdate = table.Column<DateTime>(nullable: false)
-                    },
+                columns: table => new
+                {
+                    ChipCardId = table
+                        .Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Number = table.Column<string>(maxLength: 25, nullable: false),
+                    Locked = table.Column<bool>(nullable: false),
+                    LastUpdate = table.Column<DateTime>(nullable: false)
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ChipCard", x => x.ChipCardId);
@@ -36,15 +34,14 @@ namespace AnniversaryReminder.Data.Migrations
 
             migrationBuilder.CreateTable(
                 name: "CityName",
-                columns: table =>
-                    new
-                    {
-                        CityNameId = table
-                            .Column<long>(nullable: false)
-                            .Annotation("Sqlite:Autoincrement", true),
-                        Name = table.Column<string>(maxLength: 50, nullable: false),
-                        LastUpdate = table.Column<DateTime>(nullable: false)
-                    },
+                columns: table => new
+                {
+                    CityNameId = table
+                        .Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(maxLength: 50, nullable: false),
+                    LastUpdate = table.Column<DateTime>(nullable: false)
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CityName", x => x.CityNameId);
@@ -53,16 +50,15 @@ namespace AnniversaryReminder.Data.Migrations
 
             migrationBuilder.CreateTable(
                 name: "Department",
-                columns: table =>
-                    new
-                    {
-                        DepartmentId = table
-                            .Column<long>(nullable: false)
-                            .Annotation("Sqlite:Autoincrement", true),
-                        Name = table.Column<string>(maxLength: 50, nullable: false),
-                        Priority = table.Column<long>(nullable: true),
-                        LastUpdate = table.Column<DateTime>(nullable: false)
-                    },
+                columns: table => new
+                {
+                    DepartmentId = table
+                        .Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(maxLength: 50, nullable: false),
+                    Priority = table.Column<long>(nullable: true),
+                    LastUpdate = table.Column<DateTime>(nullable: false)
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Department", x => x.DepartmentId);
@@ -71,15 +67,14 @@ namespace AnniversaryReminder.Data.Migrations
 
             migrationBuilder.CreateTable(
                 name: "DeviceName",
-                columns: table =>
-                    new
-                    {
-                        DeviceNameId = table
-                            .Column<long>(nullable: false)
-                            .Annotation("Sqlite:Autoincrement", true),
-                        Name = table.Column<string>(maxLength: 50, nullable: false),
-                        LastUpdate = table.Column<DateTime>(nullable: false)
-                    },
+                columns: table => new
+                {
+                    DeviceNameId = table
+                        .Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(maxLength: 50, nullable: false),
+                    LastUpdate = table.Column<DateTime>(nullable: false)
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DeviceName", x => x.DeviceNameId);
@@ -88,15 +83,14 @@ namespace AnniversaryReminder.Data.Migrations
 
             migrationBuilder.CreateTable(
                 name: "DeviceType",
-                columns: table =>
-                    new
-                    {
-                        DeviceTypeId = table
-                            .Column<long>(nullable: false)
-                            .Annotation("Sqlite:Autoincrement", true),
-                        Name = table.Column<string>(maxLength: 50, nullable: false),
-                        LastUpdate = table.Column<DateTime>(nullable: false)
-                    },
+                columns: table => new
+                {
+                    DeviceTypeId = table
+                        .Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(maxLength: 50, nullable: false),
+                    LastUpdate = table.Column<DateTime>(nullable: false)
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DeviceType", x => x.DeviceTypeId);
@@ -105,17 +99,16 @@ namespace AnniversaryReminder.Data.Migrations
 
             migrationBuilder.CreateTable(
                 name: "Inventory",
-                columns: table =>
-                    new
-                    {
-                        InventoryId = table
-                            .Column<long>(nullable: false)
-                            .Annotation("Sqlite:Autoincrement", true),
-                        Identifier = table.Column<string>(maxLength: 50, nullable: false),
-                        Description = table.Column<string>(maxLength: 100, nullable: true),
-                        Active = table.Column<bool>(nullable: false),
-                        LastUpdate = table.Column<DateTime>(nullable: false)
-                    },
+                columns: table => new
+                {
+                    InventoryId = table
+                        .Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Identifier = table.Column<string>(maxLength: 50, nullable: false),
+                    Description = table.Column<string>(maxLength: 100, nullable: true),
+                    Active = table.Column<bool>(nullable: false),
+                    LastUpdate = table.Column<DateTime>(nullable: false)
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Inventory", x => x.InventoryId);
@@ -124,16 +117,15 @@ namespace AnniversaryReminder.Data.Migrations
 
             migrationBuilder.CreateTable(
                 name: "JobTitle",
-                columns: table =>
-                    new
-                    {
-                        JobTitleId = table
-                            .Column<long>(nullable: false)
-                            .Annotation("Sqlite:Autoincrement", true),
-                        Name = table.Column<string>(maxLength: 50, nullable: false),
-                        FromDate = table.Column<DateTime>(nullable: false),
-                        LastUpdate = table.Column<DateTime>(nullable: false)
-                    },
+                columns: table => new
+                {
+                    JobTitleId = table
+                        .Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(maxLength: 50, nullable: false),
+                    FromDate = table.Column<DateTime>(nullable: false),
+                    LastUpdate = table.Column<DateTime>(nullable: false)
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_JobTitle", x => x.JobTitleId);
@@ -142,17 +134,16 @@ namespace AnniversaryReminder.Data.Migrations
 
             migrationBuilder.CreateTable(
                 name: "Place",
-                columns: table =>
-                    new
-                    {
-                        PlaceId = table
-                            .Column<long>(nullable: false)
-                            .Annotation("Sqlite:Autoincrement", true),
-                        Name = table.Column<string>(maxLength: 50, nullable: false),
-                        Room = table.Column<string>(maxLength: 50, nullable: false),
-                        Desk = table.Column<string>(maxLength: 50, nullable: false),
-                        LastUpdate = table.Column<DateTime>(nullable: false)
-                    },
+                columns: table => new
+                {
+                    PlaceId = table
+                        .Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(maxLength: 50, nullable: false),
+                    Room = table.Column<string>(maxLength: 50, nullable: false),
+                    Desk = table.Column<string>(maxLength: 50, nullable: false),
+                    LastUpdate = table.Column<DateTime>(nullable: false)
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Place", x => x.PlaceId);
@@ -161,17 +152,16 @@ namespace AnniversaryReminder.Data.Migrations
 
             migrationBuilder.CreateTable(
                 name: "Processor",
-                columns: table =>
-                    new
-                    {
-                        ProcessorId = table
-                            .Column<long>(nullable: false)
-                            .Annotation("Sqlite:Autoincrement", true),
-                        Name = table.Column<string>(maxLength: 50, nullable: false),
-                        ClockRate = table.Column<float>(nullable: false),
-                        Cores = table.Column<int>(nullable: false),
-                        LastUpdate = table.Column<DateTime>(nullable: false)
-                    },
+                columns: table => new
+                {
+                    ProcessorId = table
+                        .Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(maxLength: 50, nullable: false),
+                    ClockRate = table.Column<float>(nullable: false),
+                    Cores = table.Column<int>(nullable: false),
+                    LastUpdate = table.Column<DateTime>(nullable: false)
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Processor", x => x.ProcessorId);
@@ -180,16 +170,15 @@ namespace AnniversaryReminder.Data.Migrations
 
             migrationBuilder.CreateTable(
                 name: "ZipCode",
-                columns: table =>
-                    new
-                    {
-                        ZipCodeId = table
-                            .Column<long>(nullable: false)
-                            .Annotation("Sqlite:Autoincrement", true),
-                        Code = table.Column<string>(maxLength: 20, nullable: false),
-                        Country = table.Column<string>(maxLength: 20, nullable: true),
-                        LastUpdate = table.Column<DateTime>(nullable: false)
-                    },
+                columns: table => new
+                {
+                    ZipCodeId = table
+                        .Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Code = table.Column<string>(maxLength: 20, nullable: false),
+                    Country = table.Column<string>(maxLength: 20, nullable: true),
+                    LastUpdate = table.Column<DateTime>(nullable: false)
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ZipCode", x => x.ZipCodeId);
@@ -198,16 +187,15 @@ namespace AnniversaryReminder.Data.Migrations
 
             migrationBuilder.CreateTable(
                 name: "ChipCardProfile",
-                columns: table =>
-                    new
-                    {
-                        ChipCardProfileId = table
-                            .Column<long>(nullable: false)
-                            .Annotation("Sqlite:Autoincrement", true),
-                        Number = table.Column<string>(maxLength: 25, nullable: false),
-                        LastUpdate = table.Column<DateTime>(nullable: false),
-                        ChipCardId = table.Column<long>(nullable: true)
-                    },
+                columns: table => new
+                {
+                    ChipCardProfileId = table
+                        .Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Number = table.Column<string>(maxLength: 25, nullable: false),
+                    LastUpdate = table.Column<DateTime>(nullable: false),
+                    ChipCardId = table.Column<long>(nullable: true)
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ChipCardProfile", x => x.ChipCardProfileId);
@@ -223,24 +211,23 @@ namespace AnniversaryReminder.Data.Migrations
 
             migrationBuilder.CreateTable(
                 name: "Manufacturer",
-                columns: table =>
-                    new
-                    {
-                        ManufacturerId = table
-                            .Column<long>(nullable: false)
-                            .Annotation("Sqlite:Autoincrement", true),
-                        Name = table.Column<string>(maxLength: 50, nullable: false),
-                        Name2 = table.Column<string>(maxLength: 50, nullable: true),
-                        Supporter = table.Column<string>(maxLength: 50, nullable: true),
-                        Street = table.Column<string>(maxLength: 50, nullable: true),
-                        Street22 = table.Column<string>(maxLength: 50, nullable: true),
-                        ZipCodeId = table.Column<long>(nullable: true),
-                        MailAddress = table.Column<string>(maxLength: 50, nullable: true),
-                        PhoneNumber = table.Column<string>(maxLength: 50, nullable: true),
-                        FaxNumber = table.Column<string>(maxLength: 50, nullable: true),
-                        HotlineNumber = table.Column<string>(maxLength: 50, nullable: true),
-                        LastUpdate = table.Column<DateTime>(nullable: false)
-                    },
+                columns: table => new
+                {
+                    ManufacturerId = table
+                        .Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(maxLength: 50, nullable: false),
+                    Name2 = table.Column<string>(maxLength: 50, nullable: true),
+                    Supporter = table.Column<string>(maxLength: 50, nullable: true),
+                    Street = table.Column<string>(maxLength: 50, nullable: true),
+                    Street22 = table.Column<string>(maxLength: 50, nullable: true),
+                    ZipCodeId = table.Column<long>(nullable: true),
+                    MailAddress = table.Column<string>(maxLength: 50, nullable: true),
+                    PhoneNumber = table.Column<string>(maxLength: 50, nullable: true),
+                    FaxNumber = table.Column<string>(maxLength: 50, nullable: true),
+                    HotlineNumber = table.Column<string>(maxLength: 50, nullable: true),
+                    LastUpdate = table.Column<DateTime>(nullable: false)
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Manufacturer", x => x.ManufacturerId);
@@ -256,19 +243,18 @@ namespace AnniversaryReminder.Data.Migrations
 
             migrationBuilder.CreateTable(
                 name: "ChipCardDoor",
-                columns: table =>
-                    new
-                    {
-                        ChipCardDoorId = table
-                            .Column<long>(nullable: false)
-                            .Annotation("Sqlite:Autoincrement", true),
-                        Number = table.Column<string>(maxLength: 25, nullable: false),
-                        PlaceId = table.Column<long>(nullable: true),
-                        DepartmentId = table.Column<long>(nullable: true),
-                        LastUpdate = table.Column<DateTime>(nullable: false),
-                        ChipCardId = table.Column<long>(nullable: true),
-                        ChipCardProfileId = table.Column<long>(nullable: true)
-                    },
+                columns: table => new
+                {
+                    ChipCardDoorId = table
+                        .Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Number = table.Column<string>(maxLength: 25, nullable: false),
+                    PlaceId = table.Column<long>(nullable: true),
+                    DepartmentId = table.Column<long>(nullable: true),
+                    LastUpdate = table.Column<DateTime>(nullable: false),
+                    ChipCardId = table.Column<long>(nullable: true),
+                    ChipCardProfileId = table.Column<long>(nullable: true)
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ChipCardDoor", x => x.ChipCardDoorId);
@@ -305,25 +291,24 @@ namespace AnniversaryReminder.Data.Migrations
 
             migrationBuilder.CreateTable(
                 name: "Fax",
-                columns: table =>
-                    new
-                    {
-                        FaxId = table
-                            .Column<long>(nullable: false)
-                            .Annotation("Sqlite:Autoincrement", true),
-                        Number = table.Column<string>(maxLength: 50, nullable: false),
-                        SerialNumber = table.Column<string>(maxLength: 20, nullable: true),
-                        Pin = table.Column<string>(maxLength: 10, nullable: true),
-                        Active = table.Column<bool>(nullable: false),
-                        Replace = table.Column<bool>(nullable: false),
-                        DeviceNameId = table.Column<long>(nullable: true),
-                        DeviceTypeId = table.Column<long>(nullable: true),
-                        PlaceId = table.Column<long>(nullable: true),
-                        DepartmentId = table.Column<long>(nullable: true),
-                        ManufacturerId = table.Column<long>(nullable: true),
-                        InventoryId = table.Column<long>(nullable: true),
-                        LastUpdate = table.Column<DateTime>(nullable: false)
-                    },
+                columns: table => new
+                {
+                    FaxId = table
+                        .Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Number = table.Column<string>(maxLength: 50, nullable: false),
+                    SerialNumber = table.Column<string>(maxLength: 20, nullable: true),
+                    Pin = table.Column<string>(maxLength: 10, nullable: true),
+                    Active = table.Column<bool>(nullable: false),
+                    Replace = table.Column<bool>(nullable: false),
+                    DeviceNameId = table.Column<long>(nullable: true),
+                    DeviceTypeId = table.Column<long>(nullable: true),
+                    PlaceId = table.Column<long>(nullable: true),
+                    DepartmentId = table.Column<long>(nullable: true),
+                    ManufacturerId = table.Column<long>(nullable: true),
+                    InventoryId = table.Column<long>(nullable: true),
+                    LastUpdate = table.Column<DateTime>(nullable: false)
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Fax", x => x.FaxId);
@@ -374,26 +359,25 @@ namespace AnniversaryReminder.Data.Migrations
 
             migrationBuilder.CreateTable(
                 name: "Mobile",
-                columns: table =>
-                    new
-                    {
-                        MobileId = table
-                            .Column<long>(nullable: false)
-                            .Annotation("Sqlite:Autoincrement", true),
-                        Number = table.Column<string>(maxLength: 50, nullable: false),
-                        SerialNumber = table.Column<string>(maxLength: 20, nullable: true),
-                        Pin = table.Column<string>(maxLength: 10, nullable: true),
-                        CardNumber = table.Column<string>(maxLength: 30, nullable: true),
-                        Active = table.Column<bool>(nullable: false),
-                        Replace = table.Column<bool>(nullable: false),
-                        DeviceNameId = table.Column<long>(nullable: true),
-                        DeviceTypeId = table.Column<long>(nullable: true),
-                        PlaceId = table.Column<long>(nullable: true),
-                        DepartmentId = table.Column<long>(nullable: true),
-                        ManufacturerId = table.Column<long>(nullable: true),
-                        InventoryId = table.Column<long>(nullable: true),
-                        LastUpdate = table.Column<DateTime>(nullable: false)
-                    },
+                columns: table => new
+                {
+                    MobileId = table
+                        .Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Number = table.Column<string>(maxLength: 50, nullable: false),
+                    SerialNumber = table.Column<string>(maxLength: 20, nullable: true),
+                    Pin = table.Column<string>(maxLength: 10, nullable: true),
+                    CardNumber = table.Column<string>(maxLength: 30, nullable: true),
+                    Active = table.Column<bool>(nullable: false),
+                    Replace = table.Column<bool>(nullable: false),
+                    DeviceNameId = table.Column<long>(nullable: true),
+                    DeviceTypeId = table.Column<long>(nullable: true),
+                    PlaceId = table.Column<long>(nullable: true),
+                    DepartmentId = table.Column<long>(nullable: true),
+                    ManufacturerId = table.Column<long>(nullable: true),
+                    InventoryId = table.Column<long>(nullable: true),
+                    LastUpdate = table.Column<DateTime>(nullable: false)
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Mobile", x => x.MobileId);
@@ -444,25 +428,24 @@ namespace AnniversaryReminder.Data.Migrations
 
             migrationBuilder.CreateTable(
                 name: "Phone",
-                columns: table =>
-                    new
-                    {
-                        PhoneId = table
-                            .Column<long>(nullable: false)
-                            .Annotation("Sqlite:Autoincrement", true),
-                        Number = table.Column<string>(maxLength: 50, nullable: false),
-                        SerialNumber = table.Column<string>(maxLength: 20, nullable: true),
-                        Pin = table.Column<string>(maxLength: 10, nullable: true),
-                        Active = table.Column<bool>(nullable: false),
-                        Replace = table.Column<bool>(nullable: false),
-                        DeviceNameId = table.Column<long>(nullable: true),
-                        DeviceTypeId = table.Column<long>(nullable: true),
-                        PlaceId = table.Column<long>(nullable: true),
-                        DepartmentId = table.Column<long>(nullable: true),
-                        ManufacturerId = table.Column<long>(nullable: true),
-                        InventoryId = table.Column<long>(nullable: true),
-                        LastUpdate = table.Column<DateTime>(nullable: false)
-                    },
+                columns: table => new
+                {
+                    PhoneId = table
+                        .Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Number = table.Column<string>(maxLength: 50, nullable: false),
+                    SerialNumber = table.Column<string>(maxLength: 20, nullable: true),
+                    Pin = table.Column<string>(maxLength: 10, nullable: true),
+                    Active = table.Column<bool>(nullable: false),
+                    Replace = table.Column<bool>(nullable: false),
+                    DeviceNameId = table.Column<long>(nullable: true),
+                    DeviceTypeId = table.Column<long>(nullable: true),
+                    PlaceId = table.Column<long>(nullable: true),
+                    DepartmentId = table.Column<long>(nullable: true),
+                    ManufacturerId = table.Column<long>(nullable: true),
+                    InventoryId = table.Column<long>(nullable: true),
+                    LastUpdate = table.Column<DateTime>(nullable: false)
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Phone", x => x.PhoneId);
@@ -513,39 +496,38 @@ namespace AnniversaryReminder.Data.Migrations
 
             migrationBuilder.CreateTable(
                 name: "Employee",
-                columns: table =>
-                    new
-                    {
-                        EmployeeId = table
-                            .Column<long>(nullable: false)
-                            .Annotation("Sqlite:Autoincrement", true),
-                        EmployeeIdent = table.Column<string>(nullable: true),
-                        Gender = table.Column<int>(nullable: false),
-                        JobTitleId = table.Column<long>(nullable: true),
-                        FirstName = table.Column<string>(maxLength: 50, nullable: true),
-                        LastName = table.Column<string>(maxLength: 50, nullable: false),
-                        BirthDay = table.Column<DateTime>(nullable: false),
-                        Street = table.Column<string>(maxLength: 50, nullable: false),
-                        ZipCodeId = table.Column<long>(nullable: true),
-                        HomePhone = table.Column<string>(maxLength: 50, nullable: true),
-                        HomeMobile = table.Column<string>(maxLength: 50, nullable: true),
-                        HomeMailAddress = table.Column<string>(maxLength: 50, nullable: true),
-                        BusinessMailAddress = table.Column<string>(maxLength: 50, nullable: true),
-                        DataCare = table.Column<bool>(nullable: false),
-                        Active = table.Column<bool>(nullable: false),
-                        Photo = table.Column<byte[]>(nullable: true),
-                        Notes = table.Column<string>(nullable: true),
-                        HireDate = table.Column<DateTime>(nullable: false),
-                        EndDate = table.Column<DateTime>(nullable: false),
-                        DepartmentId = table.Column<long>(nullable: true),
-                        PhoneId = table.Column<long>(nullable: true),
-                        MobileId = table.Column<long>(nullable: true),
-                        FaxId = table.Column<long>(nullable: true),
-                        ChipCardId = table.Column<long>(nullable: true),
-                        LastUpdate = table.Column<DateTime>(nullable: false),
-                        ChipCardDoorId = table.Column<long>(nullable: true),
-                        ChipCardProfileId = table.Column<long>(nullable: true)
-                    },
+                columns: table => new
+                {
+                    EmployeeId = table
+                        .Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    EmployeeIdent = table.Column<string>(nullable: true),
+                    Gender = table.Column<int>(nullable: false),
+                    JobTitleId = table.Column<long>(nullable: true),
+                    FirstName = table.Column<string>(maxLength: 50, nullable: true),
+                    LastName = table.Column<string>(maxLength: 50, nullable: false),
+                    BirthDay = table.Column<DateTime>(nullable: false),
+                    Street = table.Column<string>(maxLength: 50, nullable: false),
+                    ZipCodeId = table.Column<long>(nullable: true),
+                    HomePhone = table.Column<string>(maxLength: 50, nullable: true),
+                    HomeMobile = table.Column<string>(maxLength: 50, nullable: true),
+                    HomeMailAddress = table.Column<string>(maxLength: 50, nullable: true),
+                    BusinessMailAddress = table.Column<string>(maxLength: 50, nullable: true),
+                    DataCare = table.Column<bool>(nullable: false),
+                    Active = table.Column<bool>(nullable: false),
+                    Photo = table.Column<byte[]>(nullable: true),
+                    Notes = table.Column<string>(nullable: true),
+                    HireDate = table.Column<DateTime>(nullable: false),
+                    EndDate = table.Column<DateTime>(nullable: false),
+                    DepartmentId = table.Column<long>(nullable: true),
+                    PhoneId = table.Column<long>(nullable: true),
+                    MobileId = table.Column<long>(nullable: true),
+                    FaxId = table.Column<long>(nullable: true),
+                    ChipCardId = table.Column<long>(nullable: true),
+                    LastUpdate = table.Column<DateTime>(nullable: false),
+                    ChipCardDoorId = table.Column<long>(nullable: true),
+                    ChipCardProfileId = table.Column<long>(nullable: true)
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Employee", x => x.EmployeeId);
@@ -617,24 +599,23 @@ namespace AnniversaryReminder.Data.Migrations
 
             migrationBuilder.CreateTable(
                 name: "Company",
-                columns: table =>
-                    new
-                    {
-                        CompanyId = table
-                            .Column<long>(nullable: false)
-                            .Annotation("Sqlite:Autoincrement", true),
-                        Name = table.Column<string>(maxLength: 50, nullable: false),
-                        Name2 = table.Column<string>(maxLength: 50, nullable: true),
-                        Street = table.Column<string>(maxLength: 50, nullable: true),
-                        ZipCodeId = table.Column<long>(nullable: true),
-                        PhoneNumber = table.Column<string>(maxLength: 50, nullable: true),
-                        FaxNumber = table.Column<string>(maxLength: 50, nullable: true),
-                        MobileNumber = table.Column<string>(maxLength: 50, nullable: true),
-                        MailAddress = table.Column<string>(maxLength: 50, nullable: true),
-                        Active = table.Column<bool>(nullable: false),
-                        EmployeeId = table.Column<long>(nullable: true),
-                        LastUpdate = table.Column<DateTime>(nullable: false)
-                    },
+                columns: table => new
+                {
+                    CompanyId = table
+                        .Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(maxLength: 50, nullable: false),
+                    Name2 = table.Column<string>(maxLength: 50, nullable: true),
+                    Street = table.Column<string>(maxLength: 50, nullable: true),
+                    ZipCodeId = table.Column<long>(nullable: true),
+                    PhoneNumber = table.Column<string>(maxLength: 50, nullable: true),
+                    FaxNumber = table.Column<string>(maxLength: 50, nullable: true),
+                    MobileNumber = table.Column<string>(maxLength: 50, nullable: true),
+                    MailAddress = table.Column<string>(maxLength: 50, nullable: true),
+                    Active = table.Column<bool>(nullable: false),
+                    EmployeeId = table.Column<long>(nullable: true),
+                    LastUpdate = table.Column<DateTime>(nullable: false)
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Company", x => x.CompanyId);
@@ -657,17 +638,16 @@ namespace AnniversaryReminder.Data.Migrations
 
             migrationBuilder.CreateTable(
                 name: "Document",
-                columns: table =>
-                    new
-                    {
-                        DocumentId = table
-                            .Column<long>(nullable: false)
-                            .Annotation("Sqlite:Autoincrement", true),
-                        Name = table.Column<string>(maxLength: 50, nullable: false),
-                        DocumentData = table.Column<byte[]>(nullable: true),
-                        LastUpdate = table.Column<DateTime>(nullable: false),
-                        EmployeeId = table.Column<long>(nullable: true)
-                    },
+                columns: table => new
+                {
+                    DocumentId = table
+                        .Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(maxLength: 50, nullable: false),
+                    DocumentData = table.Column<byte[]>(nullable: true),
+                    LastUpdate = table.Column<DateTime>(nullable: false),
+                    EmployeeId = table.Column<long>(nullable: true)
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Document", x => x.DocumentId);
@@ -683,17 +663,16 @@ namespace AnniversaryReminder.Data.Migrations
 
             migrationBuilder.CreateTable(
                 name: "Function",
-                columns: table =>
-                    new
-                    {
-                        FunctionId = table
-                            .Column<long>(nullable: false)
-                            .Annotation("Sqlite:Autoincrement", true),
-                        Name = table.Column<string>(maxLength: 50, nullable: false),
-                        Priority = table.Column<long>(nullable: true),
-                        LastUpdate = table.Column<DateTime>(nullable: false),
-                        EmployeeId = table.Column<long>(nullable: true)
-                    },
+                columns: table => new
+                {
+                    FunctionId = table
+                        .Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(maxLength: 50, nullable: false),
+                    Priority = table.Column<long>(nullable: true),
+                    LastUpdate = table.Column<DateTime>(nullable: false),
+                    EmployeeId = table.Column<long>(nullable: true)
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Function", x => x.FunctionId);
@@ -709,32 +688,31 @@ namespace AnniversaryReminder.Data.Migrations
 
             migrationBuilder.CreateTable(
                 name: "Printer",
-                columns: table =>
-                    new
-                    {
-                        PrinterId = table
-                            .Column<long>(nullable: false)
-                            .Annotation("Sqlite:Autoincrement", true),
-                        Name = table.Column<string>(maxLength: 50, nullable: false),
-                        SerialNumber = table.Column<string>(maxLength: 20, nullable: true),
-                        ServiceTag = table.Column<string>(maxLength: 20, nullable: true),
-                        ServiceNumber = table.Column<string>(maxLength: 20, nullable: true),
-                        Network = table.Column<string>(maxLength: 50, nullable: true),
-                        NetworkIpAddress = table.Column<string>(maxLength: 50, nullable: true),
-                        Active = table.Column<bool>(nullable: false),
-                        Replace = table.Column<bool>(nullable: false),
-                        Resources = table.Column<string>(nullable: true),
-                        PaperSize = table.Column<int>(nullable: true),
-                        Color = table.Column<bool>(nullable: false),
-                        DeviceNameId = table.Column<long>(nullable: true),
-                        DeviceTypeId = table.Column<long>(nullable: true),
-                        EmployeeId = table.Column<long>(nullable: true),
-                        PlaceId = table.Column<long>(nullable: true),
-                        DepartmentId = table.Column<long>(nullable: true),
-                        ManufacturerId = table.Column<long>(nullable: true),
-                        InventoryId = table.Column<long>(nullable: true),
-                        LastUpdate = table.Column<DateTime>(nullable: false)
-                    },
+                columns: table => new
+                {
+                    PrinterId = table
+                        .Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(maxLength: 50, nullable: false),
+                    SerialNumber = table.Column<string>(maxLength: 20, nullable: true),
+                    ServiceTag = table.Column<string>(maxLength: 20, nullable: true),
+                    ServiceNumber = table.Column<string>(maxLength: 20, nullable: true),
+                    Network = table.Column<string>(maxLength: 50, nullable: true),
+                    NetworkIpAddress = table.Column<string>(maxLength: 50, nullable: true),
+                    Active = table.Column<bool>(nullable: false),
+                    Replace = table.Column<bool>(nullable: false),
+                    Resources = table.Column<string>(nullable: true),
+                    PaperSize = table.Column<int>(nullable: true),
+                    Color = table.Column<bool>(nullable: false),
+                    DeviceNameId = table.Column<long>(nullable: true),
+                    DeviceTypeId = table.Column<long>(nullable: true),
+                    EmployeeId = table.Column<long>(nullable: true),
+                    PlaceId = table.Column<long>(nullable: true),
+                    DepartmentId = table.Column<long>(nullable: true),
+                    ManufacturerId = table.Column<long>(nullable: true),
+                    InventoryId = table.Column<long>(nullable: true),
+                    LastUpdate = table.Column<DateTime>(nullable: false)
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Printer", x => x.PrinterId);
@@ -792,17 +770,16 @@ namespace AnniversaryReminder.Data.Migrations
 
             migrationBuilder.CreateTable(
                 name: "SystemData",
-                columns: table =>
-                    new
-                    {
-                        SystemDataId = table
-                            .Column<long>(nullable: false)
-                            .Annotation("Sqlite:Autoincrement", true),
-                        Name = table.Column<string>(maxLength: 50, nullable: false),
-                        Local = table.Column<bool>(nullable: false),
-                        CompanyId = table.Column<long>(nullable: true),
-                        LastUpdate = table.Column<DateTime>(nullable: false)
-                    },
+                columns: table => new
+                {
+                    SystemDataId = table
+                        .Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(maxLength: 50, nullable: false),
+                    Local = table.Column<bool>(nullable: false),
+                    CompanyId = table.Column<long>(nullable: true),
+                    LastUpdate = table.Column<DateTime>(nullable: false)
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_SystemData", x => x.SystemDataId);
@@ -818,18 +795,17 @@ namespace AnniversaryReminder.Data.Migrations
 
             migrationBuilder.CreateTable(
                 name: "SystemAccount",
-                columns: table =>
-                    new
-                    {
-                        SystemAccountId = table
-                            .Column<long>(nullable: false)
-                            .Annotation("Sqlite:Autoincrement", true),
-                        UserName = table.Column<string>(maxLength: 50, nullable: false),
-                        PassWord = table.Column<string>(maxLength: 25, nullable: false),
-                        SystemDataId = table.Column<long>(nullable: true),
-                        LastUpdate = table.Column<DateTime>(nullable: false),
-                        EmployeeId = table.Column<long>(nullable: true)
-                    },
+                columns: table => new
+                {
+                    SystemAccountId = table
+                        .Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    UserName = table.Column<string>(maxLength: 50, nullable: false),
+                    PassWord = table.Column<string>(maxLength: 25, nullable: false),
+                    SystemDataId = table.Column<long>(nullable: true),
+                    LastUpdate = table.Column<DateTime>(nullable: false),
+                    EmployeeId = table.Column<long>(nullable: true)
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_SystemAccount", x => x.SystemAccountId);
@@ -852,19 +828,18 @@ namespace AnniversaryReminder.Data.Migrations
 
             migrationBuilder.CreateTable(
                 name: "Software",
-                columns: table =>
-                    new
-                    {
-                        SoftwareId = table
-                            .Column<long>(nullable: false)
-                            .Annotation("Sqlite:Autoincrement", true),
-                        Name = table.Column<string>(maxLength: 50, nullable: false),
-                        Version = table.Column<string>(maxLength: 25, nullable: true),
-                        Revision = table.Column<string>(maxLength: 25, nullable: true),
-                        Fix = table.Column<string>(maxLength: 25, nullable: true),
-                        LastUpdate = table.Column<DateTime>(nullable: false),
-                        ComputerId = table.Column<long>(nullable: true)
-                    },
+                columns: table => new
+                {
+                    SoftwareId = table
+                        .Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(maxLength: 50, nullable: false),
+                    Version = table.Column<string>(maxLength: 25, nullable: true),
+                    Revision = table.Column<string>(maxLength: 25, nullable: true),
+                    Fix = table.Column<string>(maxLength: 25, nullable: true),
+                    LastUpdate = table.Column<DateTime>(nullable: false),
+                    ComputerId = table.Column<long>(nullable: true)
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Software", x => x.SoftwareId);
@@ -873,32 +848,31 @@ namespace AnniversaryReminder.Data.Migrations
 
             migrationBuilder.CreateTable(
                 name: "Computer",
-                columns: table =>
-                    new
-                    {
-                        ComputerId = table
-                            .Column<long>(nullable: false)
-                            .Annotation("Sqlite:Autoincrement", true),
-                        Name = table.Column<string>(maxLength: 50, nullable: false),
-                        SerialNumber = table.Column<string>(maxLength: 20, nullable: true),
-                        ServiceTag = table.Column<string>(maxLength: 20, nullable: true),
-                        ServiceNumber = table.Column<string>(maxLength: 20, nullable: true),
-                        Memory = table.Column<long>(nullable: true),
-                        Network = table.Column<string>(maxLength: 50, nullable: true),
-                        NetworkIpAddress = table.Column<string>(maxLength: 50, nullable: true),
-                        Active = table.Column<bool>(nullable: false),
-                        Replace = table.Column<bool>(nullable: false),
-                        DeviceNameId = table.Column<long>(nullable: true),
-                        DeviceTypeId = table.Column<long>(nullable: true),
-                        PlaceId = table.Column<long>(nullable: true),
-                        DepartmentId = table.Column<long>(nullable: true),
-                        ManufacturerId = table.Column<long>(nullable: true),
-                        InventoryId = table.Column<long>(nullable: true),
-                        ProcessorId = table.Column<long>(nullable: true),
-                        OSSoftwareId = table.Column<long>(nullable: true),
-                        LastUpdate = table.Column<DateTime>(nullable: false),
-                        EmployeeId = table.Column<long>(nullable: true)
-                    },
+                columns: table => new
+                {
+                    ComputerId = table
+                        .Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(maxLength: 50, nullable: false),
+                    SerialNumber = table.Column<string>(maxLength: 20, nullable: true),
+                    ServiceTag = table.Column<string>(maxLength: 20, nullable: true),
+                    ServiceNumber = table.Column<string>(maxLength: 20, nullable: true),
+                    Memory = table.Column<long>(nullable: true),
+                    Network = table.Column<string>(maxLength: 50, nullable: true),
+                    NetworkIpAddress = table.Column<string>(maxLength: 50, nullable: true),
+                    Active = table.Column<bool>(nullable: false),
+                    Replace = table.Column<bool>(nullable: false),
+                    DeviceNameId = table.Column<long>(nullable: true),
+                    DeviceTypeId = table.Column<long>(nullable: true),
+                    PlaceId = table.Column<long>(nullable: true),
+                    DepartmentId = table.Column<long>(nullable: true),
+                    ManufacturerId = table.Column<long>(nullable: true),
+                    InventoryId = table.Column<long>(nullable: true),
+                    ProcessorId = table.Column<long>(nullable: true),
+                    OSSoftwareId = table.Column<long>(nullable: true),
+                    LastUpdate = table.Column<DateTime>(nullable: false),
+                    EmployeeId = table.Column<long>(nullable: true)
+                },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Computer", x => x.ComputerId);

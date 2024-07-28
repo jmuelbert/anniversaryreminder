@@ -27,7 +27,7 @@ on: # yamllint disable-line rule:truthy
 
 # Allow one concurrent deployment
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: true
 
 jobs:
@@ -49,7 +49,7 @@ jobs:
             # The root location of your Astro project inside the
             # repository. (optional)
             # node-version: 16 # The specific version of Node that should be used to build your site. Defaults to 16. (optional)
-          package-manager: yarn
+          package-manager: pnpm@latest
   deploy:
     environment:
       name: github-pages
@@ -71,7 +71,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: "Decide whether the needed jobs succeeded or failed"
+      - name: Decide whether the needed jobs succeeded or failed
         uses: re-actors/alls-green@223e4bb7a751b91f43eda76992bcfbf23b8b0302 # v1.2.2
         with:
           jobs: ${{ toJSON(needs) }}

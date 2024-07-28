@@ -1,21 +1,22 @@
 {
-  "threshold": 0,
-  "reporters": ["html", "markdown"],
-  "ignore": [
-    "**/node_modules/**",
-    "**/.git/**",
-    "**/.rbenv/**",
-    "**/.venv/**",
-    "**/*cache*/**",
-    "**/.github/**",
-    "**/.idea/**",
-    "**/report/**",
-    "**/*.svg",
-    "**/wwwroot/**",
-    "**/*.txt",
-    "src/app/AnniversaryReminder/Data/Migrations",
-    "src/app/AnniversaryReminder/obj/**",
-    "src/lib/jmbdeData/obj/**",
-    "test/AnniversaryReminder.Tests/obj/**"
-  ]
+	"ignore": [
+		"**/node_modules/**",
+		"**/.git/**",
+		"**/.rbenv/**",
+		"**/.venv/**",
+		"**/*cache*/**",
+		"**/.github/**",
+		"**/.idea/**",
+		"**/report/**",
+		"**/*.svg",
+		"**/wwwroot/**",
+		"**/*.txt",
+		"**/docs/.astro/**",
+		"src/app/AnniversaryReminder/Data/Migrations",
+		"src/app/AnniversaryReminder/obj/**",
+		"src/lib/jmbdeData/obj/**",
+		"test/AnniversaryReminder.Tests/obj/**"
+	],
+	"reporters": ["html", "markdown"],
+	"threshold": 0
 }

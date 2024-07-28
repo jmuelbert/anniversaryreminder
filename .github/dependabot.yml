@@ -14,11 +14,11 @@ updates:
     groups:
       github-actions:
         patterns:
-          - "*"
+          - '*'
     open-pull-requests-limit: 10
     commit-message:
       include: scope
-      prefix: fix(gha)"
+      prefix: fix(gha)
 
   # Enable version updates for Docker
   - package-ecosystem: docker
@@ -45,3 +45,19 @@ updates:
       interval: monthly
     commit-message:
       prefix: fix(pip)
+
+  # Maintain dependencies for npm
+  - package-ecosystem: 'npm'
+    directory: '/'
+    schedule:
+      interval: 'monthly'
+    commit-message:
+      prefix: fix(npm)
+
+  # Maintain dependencies for npm
+  - package-ecosystem: 'npm'
+    directory: '/docs'
+    schedule:
+      interval: 'monthly'
+    commit-message:
+      prefix: fix(npm for astrodoc)

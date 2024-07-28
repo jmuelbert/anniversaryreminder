@@ -59,6 +59,7 @@ export default tseslint.config(
 			'benchmark/**/dist/',
 			'examples/',
 			'scripts/',
+			'megalinter-reports/',
 			'.github/',
 			'.changeset/',
 			'**/wwwroot/**/*.js',
