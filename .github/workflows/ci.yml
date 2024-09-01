@@ -50,7 +50,7 @@ jobs:
 
       - name: "⚙️ Install GitVersion"
         id: gitversion
-        uses: gittools/actions/gitversion/execute@v1.2.0
+        uses: gittools/actions/gitversion/execute@v3.0.0
 
       - name: "⚙ Display the version"
         run: |
@@ -138,18 +138,18 @@ jobs:
           fetch-depth: 0
 
       - name: "⚙️ Install GitVersion"
-        uses: gittools/actions/gitversion/setup@v1.2.0
+        uses: gittools/actions/gitversion/setup@v3.0.0
         with:
           versionSpec: "5.x"
 
       - name: "⚙️ Install GitVersion"
-        uses: gittools/actions/gitversion/setup@v1.2.0
+        uses: gittools/actions/gitversion/setup@v3.0.0
         with:
           versionSpec: "5.x"
 
       - name: "⚙️ Execute GitVersion"
         id: gitversion
-        uses: gittools/actions/gitversion/execute@v1.2.0
+        uses: gittools/actions/gitversion/execute@v3.0.0
 
       - name: "⚙ Display the version"
         run: |
@@ -209,7 +209,7 @@ jobs:
 
       - name: Build ChangeLog
         id: github_changelog
-        uses: mikepenz/release-changelog-builder-action@v4
+        uses: mikepenz/release-changelog-builder-action@v5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
