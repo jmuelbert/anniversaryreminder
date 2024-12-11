@@ -173,7 +173,7 @@ jobs:
           dotnet test  -p:Configuration=Release --no-restore -p:version=${{ steps.gitversion.outputs.semVer }}
 
       - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v4
+        uses: codecov/codecov-action@v5
 
   releaseNotes:
     if: startsWith(github.ref, 'refs/tags/')
